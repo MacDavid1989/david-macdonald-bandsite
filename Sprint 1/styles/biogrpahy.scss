@@ -1,0 +1,9 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+* {
+    @include boundary-reset;
+    box-sizing: border-box;
+    font-family: $font-family;
+    font-size: $font-size-html;
+}
