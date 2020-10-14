@@ -1,2 +1,8 @@
-$font-family: 'Avenir Next Regular';
+@use '../partials/typography' as *;
+@include font-regular;
+@include font-demi;
+@include font-bold;
+$font-family-base: 'Avenir Next Regular';
+$font-family-demi: 'Avenir Next Demi';
+$font-family-bold: 'Avenir Next Bold';
 $font-size-html: 10px;

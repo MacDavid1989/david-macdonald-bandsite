@@ -1,0 +1,32 @@
+@mixin font-regular {
+    @font-face {
+        font-family: 'Avenir Next Regular';
+        src: url("../assets/fonts/avenir-next-regular.ttf") format("truetype"), 
+        url("../../assets/fonts/avenir-next-regular.woff") format("woff"), 
+        url("../../assets/fonts/avenir-next-regular.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@mixin font-demi {
+    @font-face {
+        font-family: 'Avenir Next Demi';
+        src: url("../assets/fonts/avenir-next-demi.ttf") format("truetype"), 
+        url("../../assets/fonts/avenir-next-demi.woff") format("woff"), 
+        url("../../assets/fonts/avenir-next-demi.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+    }
+}
+
+@mixin font-bold {
+    @font-face {
+        font-family: 'Avenir Next Bold';
+        src: url("../assets/fonts/avenir-next-bold.ttf") format("truetype"), 
+        url("../../assets/fonts/avenir-next-bold.woff") format("woff"), 
+        url("../../assets/fonts/avenir-next-bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+    }
+}
