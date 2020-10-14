@@ -1,9 +1,11 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-* {
+*, *::before, *::after {
     @include boundary-reset;
     box-sizing: border-box;
-    font-family: $font-family-base;
+    font-family: $font-family;
     font-size: $font-size-html;
+    font-weight: normal;
 }
+
