@@ -377,17 +377,21 @@
 }
 .footer .connect {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+}
+@media (min-width: 402px) {
+  .footer .connect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 @media (min-width: 768px) {
   .footer .connect {
@@ -417,9 +421,9 @@
   display: -ms-flexbox;
   display: flex;
 }
-@media (min-width: 376px) {
+@media (min-width: 402px) {
   .footer .connect-social {
-    margin-left: 3.90625vw;
+    margin-left: 3rem;
   }
 }
 @media (min-width: 768px) {
@@ -482,6 +486,7 @@
 }
 .footer__card .info-card__contact {
   margin-top: 2.4rem;
+  font-size: 1.2rem;
   color: #FFF;
 }
 @media (min-width: 768px) {
@@ -497,9 +502,9 @@
   font-size: 1.2rem;
   color: #FFF;
 }
-@media (min-width: 388px) {
+@media (min-width: 328px) {
   .footer .copyright__description {
-    width: 34.8rem;
+    width: 29.6rem;
   }
 }
 @media (min-width: 768px) {

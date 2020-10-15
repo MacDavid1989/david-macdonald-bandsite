@@ -305,10 +305,13 @@
 
     .connect {
         position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: flex-start;
+        
+        @include mobile-tablet-transition(402px){
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: flex-start;
+        }
 
         @include tablet {
             display: flex;
@@ -329,8 +332,8 @@
             height: 2rem;
             display: flex;
 
-            @include mobile-tablet-transition(376px) {
-                margin-left: 3.90625vw;
+            @include mobile-tablet-transition(402px) {
+                margin-left: 3rem;
             }
 
             @include tablet {
@@ -396,6 +399,7 @@
     
             &__contact {
                 margin-top: 2.4rem;
+                font-size: 1.2rem;
                 color: $white;
             }
     
@@ -414,8 +418,8 @@
             font-size: 1.2rem;
             color: $white;
 
-            @include mobile-tablet-transition(388px) {
-                width: 34.8rem;
+            @include mobile-tablet-transition(328px) {
+                width: 29.6rem;
             }
 
             @include tablet {
