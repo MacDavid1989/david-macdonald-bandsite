@@ -178,4 +178,60 @@
   width: 28.8rem;
   height: 16.2rem;
 }
+
+.footer {
+  background-color: #323232;
+  width: 100%;
+  padding: 4.8rem 1.6rem;
+}
+.footer .connect__title {
+  height: 3.6rem;
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: #FFF;
+}
+.footer .connect-social {
+  margin-top: 2.4rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .connect-social__link {
+  height: 100%;
+}
+.footer .connect-social__link--margin {
+  margin: 0 3.2rem;
+}
+.footer .connect-social__link-icon {
+  height: 100%;
+}
+.footer .info-card__title {
+  width: 19.26rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #FFF;
+}
+.footer .info-card__title--margin {
+  margin-top: 2.4rem;
+}
+.footer .info-card__description {
+  font-size: 1.2rem;
+  color: #FFF;
+}
+.footer .info-card__description--margin {
+  margin-top: 2.4rem;
+}
+.footer .info-card__contact {
+  margin-top: 2.4rem;
+  color: #FFF;
+}
+.footer .copyright {
+  margin-top: 4rem;
+  width: 19.26rem;
+}
+.footer .copyright__description {
+  font-size: 1.2rem;
+  color: #FFF;
+}
 /*# sourceMappingURL=biography.css.map */
