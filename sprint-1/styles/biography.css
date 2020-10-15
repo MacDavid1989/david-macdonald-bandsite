@@ -145,6 +145,11 @@
 @media (min-width: 768px) {
   .hero {
     height: 40rem;
+    padding: 0 2.4rem;
+  }
+  .hero__title {
+    font-size: 6rem;
+    width: 67.6rem;
   }
 }
 

@@ -100,6 +100,12 @@
 
     @include tablet {
         height: 40rem;
+        padding: 0 2.4rem;
+
+        &__title {
+            font-size: 6rem;
+            width: 67.6rem;
+        }
     }
 }
 
