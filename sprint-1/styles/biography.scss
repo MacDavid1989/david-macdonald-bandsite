@@ -77,6 +77,10 @@
 
     }
 
+    @include desktop {
+        padding: 4.8rem 7.8125vw;
+    }
+
 }
 
 .hero {
@@ -95,6 +99,7 @@
         color: $white;
         font-size: 2.4rem;
         font-weight: bold;
+        line-height: 3.2rem;
         width: 20.5rem;
     }
 
@@ -106,7 +111,15 @@
         &__title {
             font-size: 6rem;
             width: 51rem;
+            line-height: 6.8rem;
         }
+    }
+
+    @include desktop {
+        height: 52.34375vw;
+        box-shadow: inset 52.34375vw $hero-overlay;
+        padding: 0 7.8125vw;
+
     }
 }
 
@@ -119,6 +132,10 @@
 
     @include tablet {
         padding: 4.8rem 3.125vw 4rem;
+    }
+
+    @include desktop {
+        padding: 4.8rem 7.8125vw 4rem;
     }
 }
 
@@ -145,17 +162,40 @@
             width: 93.75vw;
             height: 47.1354166vw;
         }
+
+        @include tablet-desktop-transition(955.7333px){
+            width: 89.6rem;
+            height: 45rem;
+            align-self: center;
+        }
+
+        @include desktop {
+            width: 70vw;
+            height: 35.15625vw;
+        }
     }
 
     &__text {
         font-size: 1.6rem;
         font-weight: 600;
+        line-height: 2.4rem;
         width: 90vw;
 
         @include tablet {
             font-size: 2.4rem;
             font-weight: bold;
+            line-height: 3.2rem;
             width: 93.75vw;
+        }
+
+        @include tablet-desktop-transition(955.7333px){
+            width: 89.6rem;
+            align-self: center;
+        }
+
+        @include desktop {
+            width: 70vw;
+            align-self: center;
         }
 
         &-speaker {
@@ -172,6 +212,11 @@
 
     @include tablet {
         width: 100%;
+    }
+
+    @include tablet-desktop-transition(955.7333px) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -203,6 +248,8 @@
     &__text {
         font-size: 1.2rem;
         width: 90vw;
+        line-height: 2rem;
+
 
         @include mobile-tablet-transition(658px){
             width: 43.7689969vw;
@@ -215,10 +262,23 @@
         @include tablet {
             font-size: 1.4rem;
             width: 44.921875vw;
+            line-height: 2.2rem;
 
             &:last-of-type{
                 margin-left: 3.125vw;
             }
+        }
+
+        @include tablet-desktop-transition(955.7333px){
+            width: 42rem;
+        
+            &:last-of-type{
+                margin-left: 2.4rem;
+            }
+        }
+
+        @include desktop {
+            width: 32.8125vw;
         }
 
         &--margin {
@@ -229,6 +289,14 @@
     @include tablet {
         margin: 5.6rem 0 4.8rem;
         width: 93.75vw;
+    }
+    
+    @include tablet-desktop-transition(955.7333px){
+        width: 89.6rem;
+    }
+
+    @include desktop {
+        width: 70vw;
     }
 }
 
@@ -287,11 +355,24 @@
                 margin-left: 3.125vw;
             }
         }
+
+        @include desktop {
+            width: 26.875vw;
+            height: 15.078125vw;
+
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 1.875vw;
+            }
+        }
     }
 
     @include tablet {
         margin-top: 4.8rem;
         width: 93.75vw;
+    }
+
+    @include desktop {
+        width: 84.375vw;
     }
 }
 
@@ -313,6 +394,9 @@
     .connect {
         position: relative;
         height: 3.6rem;
+        margin-bottom: 3.2rem;
+        display: flex;
+        flex-wrap: wrap;
         
         @include mobile-tablet-transition(410px){
             display: flex;
@@ -335,21 +419,32 @@
             font-size: 3.6rem;
             font-weight: bold;
             color: $white;
+            margin-bottom: 1.8rem;
+
+            @include mobile-tablet-transition(410px) {
+                margin-bottom: 0;
+            }
+
+            @include tablet {
+                width: 25.2rem;
+            }
+
         }
 
         &-social {
-            margin-top: 2.4rem;
             height: 2rem;
             display: flex;
 
             @include mobile-tablet-transition(410px) {
+                margin-top: 2.4rem;
                 margin-left: 3rem;
                 margin-top: 0;
             }
 
             @include tablet {
-                margin-left: 7rem;
+                margin-left: 2.4rem;
             }
+
 
             &__link {
                 height: 100%;
@@ -394,6 +489,7 @@
                 width: 19.26rem;
                 font-size: 1.4rem;
                 font-weight: 600;
+                line-height: 2.2rem;
                 color: $white;
 
                 &--margin {
@@ -403,6 +499,7 @@
                 @include tablet {
                     width: 22.4rem;
                     font-size: 1.6rem;
+                    line-height: 2.4rem;
 
                     &--margin {
                         margin-top: 0;
@@ -413,6 +510,7 @@
     
             &__description {
                 font-size: 1.2rem;
+                line-height: 2rem;
                 color: $white;
 
                 @include tablet {
@@ -441,6 +539,10 @@
                     margin-left: 2.4rem;
                 }
             }
+
+            @include desktop {
+                width: 25.2rem;
+            }
         }
     }
     
@@ -458,7 +560,12 @@
             }
 
             @include tablet {
+                font-size: 1.4rem;
                 width: 34.8rem;
+            }
+
+            @include desktop {
+                width: 36.8rem;
             }
         }
     }
