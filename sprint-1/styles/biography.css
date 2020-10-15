@@ -83,7 +83,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.nav__link:hover {
+.nav__link:hover, .nav__link-current {
   color: #FFF;
   font-weight: 600;
   border-bottom: #FFF solid 0.4rem;
@@ -120,7 +120,7 @@
 }
 @media (min-width: 1280px) {
   .nav {
-    padding: 4.8rem 7.8125vw;
+    padding: 0 7.8125vw;
   }
 }
 
@@ -417,6 +417,12 @@
   margin-top: 1.6rem;
   width: 90vw;
   height: 50.625vw;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+.gallery__image:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 @media (min-width: 658px) {
   .gallery__image {

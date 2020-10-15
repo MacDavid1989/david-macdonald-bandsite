@@ -46,7 +46,7 @@
         align-items: flex-start;
         justify-content: center;
 
-        &:hover{
+        &:hover, &-current {
             color: $white;
             font-weight: 600;
             border-bottom: $white solid 0.4rem;
@@ -78,7 +78,7 @@
     }
 
     @include desktop {
-        padding: 4.8rem 7.8125vw;
+        padding: 0 7.8125vw;
     }
 
 }
@@ -332,6 +332,11 @@
         margin-top: 1.6rem;
         width: 90vw;
         height: 50.625vw;
+        filter: grayscale(100%);
+
+        &:hover {
+            filter: grayscale(0);
+        }
 
         @include mobile-tablet-transition(658px){
             width: 43.7689969vw;
