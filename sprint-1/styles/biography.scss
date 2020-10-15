@@ -128,7 +128,14 @@
 .gallery {
     margin-top: 3.2rem;
 
+    &__title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+    }
+
     &__image {
+        margin-top: 1.6rem;
         width: 28.8rem;
         height: 16.2rem;
     }

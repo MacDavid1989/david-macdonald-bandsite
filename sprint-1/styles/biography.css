@@ -168,7 +168,13 @@
 .gallery {
   margin-top: 3.2rem;
 }
+.gallery__title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
 .gallery__image {
+  margin-top: 1.6rem;
   width: 28.8rem;
   height: 16.2rem;
 }
