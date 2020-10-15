@@ -126,8 +126,8 @@
   background-repeat: no-repeat;
   -webkit-box-shadow: inset 0 40rem rgba(50, 50, 50, 0.5);
           box-shadow: inset 0 40rem rgba(50, 50, 50, 0.5);
-  padding: 0 1.6rem;
-  height: 18.3rem;
+  padding: 0 5vw;
+  height: 57.1875vw;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -157,7 +157,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 3.2rem 1.6rem;
+  padding: 3.2rem 5vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -171,35 +171,93 @@
 }
 
 .biography-card {
-  width: 28.8rem;
+  width: 100%;
 }
 .biography-card__title {
   font-size: 2.4rem;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  .biography-card__title {
+    font-size: 3.6rem;
+  }
+}
 .biography-card__image {
   margin: 2.4rem 0;
-  width: 28.8rem;
-  height: 14.5rem;
+  width: 90vw;
+  height: 45.3125vw;
+}
+@media (min-width: 768px) {
+  .biography-card__image {
+    width: 72rem;
+    height: 36.2rem;
+  }
 }
 .biography-card__text {
   font-size: 1.6rem;
   font-weight: 600;
+  width: 90vw;
+}
+@media (min-width: 768px) {
+  .biography-card__text {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
 }
 .biography-card__text-speaker {
   font-size: 1.4rem;
   margin-top: 3.2rem;
 }
+@media (min-width: 768px) {
+  .biography-card__text-speaker {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 768px) {
+  .biography-card {
+    width: 100%;
+  }
+}
 
 .biography {
   margin: 4rem 0;
+  width: 100%;
 }
 .biography__title {
   font-size: 1.6rem;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  .biography__title {
+    font-size: 2.4rem;
+  }
+}
+.biography__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 .biography__text {
   font-size: 1.2rem;
+  width: 28.8rem;
+}
+@media (min-width: 768px) {
+  .biography__text {
+    font-size: 1.4rem;
+    width: 30.5rem;
+  }
+  .biography__text:last-of-type {
+    margin-left: 2.4rem;
+  }
 }
 .biography__text--margin {
   margin: 2.4rem 0;
