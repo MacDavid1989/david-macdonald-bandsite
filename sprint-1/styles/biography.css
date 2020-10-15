@@ -148,8 +148,26 @@
 }
 .biography-card__text-speaker {
   font-size: 1.4rem;
+  margin-top: 3.2rem;
 }
 
+.biography {
+  margin: 4rem 0;
+}
+.biography__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.biography__text {
+  font-size: 1.2rem;
+}
+.biography__text--margin {
+  margin: 2.4rem 0;
+}
+
+.gallery {
+  margin-top: 3.2rem;
+}
 .gallery__image {
   width: 28.8rem;
   height: 16.2rem;

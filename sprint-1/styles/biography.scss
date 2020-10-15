@@ -102,11 +102,34 @@
 
         &-speaker {
             font-size: 1.4rem;
+            margin-top: 3.2rem;
         }
     }
 }
 
-.gallery__image {
-    width: 28.8rem;
-    height: 16.2rem;
+.biography {
+    margin: 4rem 0;
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+
+        &--margin {
+            margin: 2.4rem 0;
+        }
+    }
+
+}
+
+.gallery {
+    margin-top: 3.2rem;
+
+    &__image {
+        width: 28.8rem;
+        height: 16.2rem;
+    }
 }
