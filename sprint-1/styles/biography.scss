@@ -84,7 +84,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: inset 0 40rem $hero-overlay;
+    box-shadow: inset 0 57.1875vw $hero-overlay;
     padding: 0 5vw;
     height: 57.1875vw;
     width: 100%;
@@ -99,8 +99,9 @@
     }
 
     @include tablet {
-        height: 40rem;
-        padding: 0 2.4rem;
+        height: 52.08333333vw;
+        box-shadow: inset 52.08333333vw $hero-overlay;
+        padding: 0 3.125vw;
 
         &__title {
             font-size: 6rem;
@@ -115,6 +116,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include tablet {
+        padding: 3.2rem 3.125vw;
+    }
 }
 
 .biography-card {
@@ -135,8 +140,8 @@
         height: 45.3125vw;
 
         @include tablet {
-            width: 72rem;
-            height: 36.2rem;
+            width: 93.75vw;
+            height: 47.1354166;
         }
     }
 
@@ -148,6 +153,7 @@
         @include tablet {
             font-size: 2.4rem;
             font-weight: bold;
+            width: 93.75vw;
         }
 
         &-speaker {
@@ -168,45 +174,69 @@
 
 .biography {
     margin: 4rem 0;
-    width: 100%;
+    width: 90vw;
 
     &__title {
         font-size: 1.6rem;
         font-weight: bold;
 
         @include tablet {
+            display: flex;
             font-size: 2.4rem;
+            width: 72rem;
+            margin-left: calc((93.75vw - 71.4rem)/2);
         }
     }
 
     &__content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
+        
+        @include mobile-tablet-transition(658px){
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+
+        @include tablet {
+            justify-content: center;
+        }
     }
 
     &__text {
         font-size: 1.2rem;
-        width: 28.8rem;
+        width: 90vw;
+
+        @include mobile-tablet-transition(658px){
+            width: 43.7689969vw;
+            &:last-of-type{
+                margin-left: 1.6rem;
+            }
+        }
+        
 
         @include tablet {
             font-size: 1.4rem;
-            width: 30.5rem;
+            width: 34.5rem;
 
             &:last-of-type{
-                margin-left: 2.4rem;
+                margin-left: 3.125vw;
             }
         }
 
         &--margin {
             margin: 2.4rem 0;
-        }
+        }  
+    }
+
+    @include tablet {
+        width: 93.75vw;
     }
 }
 
 .gallery {
     margin-top: 3.2rem;
+    width: 90vw;
 
     &__title {
         font-size: 2.4rem;
@@ -214,10 +244,51 @@
         margin-bottom: 0.8rem;
     }
 
+    &__content {
+
+        @include mobile-tablet-transition(658px){
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
     &__image {
         margin-top: 1.6rem;
-        width: 28.8rem;
-        height: 16.2rem;
+        width: 90vw;
+        height: 50.625vw;
+
+        @include mobile-tablet-transition(658px){
+            width: 43.7689969vw;
+            height: 24.62006079vw;
+
+            &:nth-of-type(2n) {
+                margin-left: 1.6rem;
+            }
+        }
+
+        @include tablet {
+            margin-top: 2.4rem;
+            width: 22.4rem;
+            height: 12.6rem;
+
+            &:nth-of-type(2n) {
+                margin-left: 0;
+            }
+
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 2.4rem;
+            }
+        }
+    }
+
+    
+    @include tablet {
+        width: 72rem;
     }
 }
 
@@ -228,7 +299,23 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        padding: 4.8rem 2.4rem;
+    }
+
     .connect {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: flex-start;
+
+        @include tablet {
+            display: flex;
+            flex-wrap: unset;
+            align-items: baseline;
+            justify-content: flex-start;
+        }
 
         &__title {
             height: 3.6rem;
@@ -242,6 +329,14 @@
             height: 2rem;
             display: flex;
 
+            @include mobile-tablet-transition(376px) {
+                margin-left: 3.90625vw;
+            }
+
+            @include tablet {
+                margin-left: 3rem;
+            }
+
             &__link {
                 height: 100%;
 
@@ -254,35 +349,62 @@
                 }
             }
         }
-    }
 
-    .info-card {
+        .logo {
+            display: none;
 
-        &__title {
-            width: 19.26rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: $white;
-
-            &--margin {
-                margin-top: 2.4rem;
+            @include tablet {
+                display: block;
+                position: absolute;
+                bottom: 0.5rem;
+                right: 0;
             }
         }
+    }
 
-        &__description {
-            font-size: 1.2rem;
-            color: $white;
+    &__card {
+        display: flex;
+        flex-wrap: wrap;
 
-            &--margin {
+        @include tablet {
+            display: flex;
+        }
+
+        .info-card {
+
+            width: 22.4rem;
+
+            &__title {
+                width: 19.26rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: $white;
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+    
+            &__description {
+                font-size: 1.2rem;
+                color: $white;
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+    
+            &__contact {
                 margin-top: 2.4rem;
+                color: $white;
+            }
+    
+            @include tablet {
+                width: 22.4rem;
             }
         }
-
-        &__contact {
-            margin-top: 2.4rem;
-            color: $white;
-        }
     }
+    
 
     .copyright {
         margin-top: 4rem;
@@ -291,6 +413,14 @@
         &__description {
             font-size: 1.2rem;
             color: $white;
+
+            @include mobile-tablet-transition(388px) {
+                width: 34.8rem;
+            }
+
+            @include tablet {
+                width: 34.8rem;
+            }
         }
     }
 }

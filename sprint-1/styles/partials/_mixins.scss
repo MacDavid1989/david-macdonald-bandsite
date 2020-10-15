@@ -14,3 +14,9 @@
         @content;
     }    
 }
+
+@mixin mobile-tablet-transition($width) {
+    @media (min-width: $width) {
+        @content;
+    }    
+}
