@@ -1,2 +1,90 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/avenir-next-regular.ttf") format("truetype"), url("../../assets/fonts/avenir-next-regular.woff") format("woff"), url("../../assets/fonts/avenir-next-regular.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/avenir-next-demi.ttf") format("truetype"), url("../../assets/fonts/avenir-next-demi.woff") format("woff"), url("../../assets/fonts/avenir-next-demi.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/avenir-next-bold.ttf") format("truetype"), url("../../assets/fonts/avenir-next-bold.woff") format("woff"), url("../../assets/fonts/avenir-next-bold.woff2") format("woff2");
+  font-weight: bold;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Avenir Next";
+  font-size: 10px;
+  font-weight: normal;
+}
 
+.nav {
+  background-color: #323232;
+  width: 100%;
+  height: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.nav__logo {
+  margin-top: 1.3rem;
+  width: 12rem;
+  height: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.nav__list {
+  margin-top: 1.6rem;
+  height: 2.7rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.nav__link {
+  text-decoration: none;
+  height: 100%;
+  width: 16rem;
+  font-size: 1.4rem;
+  color: #AFAFAF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.nav__link:hover {
+  color: #FFF;
+  font-weight: 600;
+  border-bottom: #FFF solid 0.4rem;
+}
 /*# sourceMappingURL=shows.css.map */

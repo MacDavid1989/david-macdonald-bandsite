@@ -2,5 +2,19 @@
 @include font-regular;
 @include font-demi;
 @include font-bold;
+
+// Global Fonts
 $font-family: 'Avenir Next';
 $font-size-html: 10px;
+
+// Global Colors
+$text-paragraph: #323232;
+$text-label: #AFAFAF;
+$text-border: #E1E1E1;
+$text-background: #FAFAFA;
+$white: #FFF;
+
+// BandSite Colors
+$nav-background: #323232;
+$calltoaction: #323232;
+$calltoaction-hover: #000000;
