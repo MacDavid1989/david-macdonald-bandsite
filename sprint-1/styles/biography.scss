@@ -56,7 +56,7 @@
     @include tablet {
         flex-direction: row;
         justify-content: flex-start;
-        padding: 0 2.4rem;
+        padding: 0 3.125vw;
 
         &__logo {
             margin-top: 0;
@@ -105,7 +105,7 @@
 
         &__title {
             font-size: 6rem;
-            width: 67.6rem;
+            width: 51rem;
         }
     }
 }
@@ -118,7 +118,7 @@
     justify-content: center;
 
     @include tablet {
-        padding: 3.2rem 3.125vw;
+        padding: 4.8rem 3.125vw 4rem;
     }
 }
 
@@ -131,6 +131,7 @@
         
         @include tablet {
             font-size: 3.6rem;
+            height: 3.6rem;
         }
     }
 
@@ -140,8 +141,9 @@
         height: 45.3125vw;
 
         @include tablet {
+            margin: 4.8rem 0;
             width: 93.75vw;
-            height: 47.1354166;
+            height: 47.1354166vw;
         }
     }
 
@@ -161,6 +163,7 @@
             margin-top: 3.2rem;
 
             @include tablet {
+                margin-top: 4rem;
                 font-size: 1.6rem;
                 font-weight: 600;
             }
@@ -178,13 +181,12 @@
 
     &__title {
         font-size: 1.6rem;
-        font-weight: bold;
+        font-weight: 600;
 
         @include tablet {
             display: flex;
             font-size: 2.4rem;
-            width: 72rem;
-            margin-left: calc((93.75vw - 71.4rem)/2);
+            font-weight: bold;
         }
     }
 
@@ -196,11 +198,6 @@
             align-items: center;
             justify-content: flex-start;
         }
-        
-
-        @include tablet {
-            justify-content: center;
-        }
     }
 
     &__text {
@@ -210,14 +207,14 @@
         @include mobile-tablet-transition(658px){
             width: 43.7689969vw;
             &:last-of-type{
-                margin-left: 1.6rem;
+                margin-left: 2.4316109vw;
             }
         }
         
 
         @include tablet {
             font-size: 1.4rem;
-            width: 34.5rem;
+            width: 44.921875vw;
 
             &:last-of-type{
                 margin-left: 3.125vw;
@@ -230,6 +227,7 @@
     }
 
     @include tablet {
+        margin: 5.6rem 0 4.8rem;
         width: 93.75vw;
     }
 }
@@ -242,6 +240,11 @@
         font-size: 2.4rem;
         font-weight: bold;
         margin-bottom: 0.8rem;
+
+        @include tablet {
+            font-size: 3.6rem;
+            margin-bottom: 4rem;
+        }
     }
 
     &__content {
@@ -267,50 +270,56 @@
             height: 24.62006079vw;
 
             &:nth-of-type(2n) {
-                margin-left: 1.6rem;
+                margin-left: 2.4316109vw;
             }
         }
 
         @include tablet {
             margin-top: 2.4rem;
-            width: 22.4rem;
-            height: 12.6rem;
+            width: 29.166666vw;
+            height: 16.40625vw;
 
             &:nth-of-type(2n) {
                 margin-left: 0;
             }
 
             &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
-                margin-left: 2.4rem;
+                margin-left: 3.125vw;
             }
         }
     }
 
-    
     @include tablet {
-        width: 72rem;
+        margin-top: 4.8rem;
+        width: 93.75vw;
     }
 }
 
 .footer {
     background-color: $nav-background;
     width: 100%;
-    padding: 4.8rem 1.6rem;
+    padding: 4.8rem 5vw;
     display: flex;
     flex-direction: column;
 
     @include tablet {
-        padding: 4.8rem 2.4rem;
+        padding: 4.8rem 3.125vw;
+    }
+
+    @include desktop {
+        padding: 4.8rem 7.8125vw;
     }
 
     .connect {
         position: relative;
+        height: 3.6rem;
         
-        @include mobile-tablet-transition(402px){
+        @include mobile-tablet-transition(410px){
             display: flex;
             flex-wrap: wrap;
             align-items: baseline;
             justify-content: flex-start;
+            margin-bottom: 3.2rem;
         }
 
         @include tablet {
@@ -319,6 +328,7 @@
             align-items: baseline;
             justify-content: flex-start;
         }
+
 
         &__title {
             height: 3.6rem;
@@ -332,12 +342,13 @@
             height: 2rem;
             display: flex;
 
-            @include mobile-tablet-transition(402px) {
+            @include mobile-tablet-transition(410px) {
                 margin-left: 3rem;
+                margin-top: 0;
             }
 
             @include tablet {
-                margin-left: 3rem;
+                margin-left: 7rem;
             }
 
             &__link {
@@ -371,7 +382,9 @@
 
         @include tablet {
             display: flex;
+            margin-top: 2.4rem;
         }
+
 
         .info-card {
 
@@ -382,15 +395,29 @@
                 font-size: 1.4rem;
                 font-weight: 600;
                 color: $white;
-    
+
                 &--margin {
                     margin-top: 2.4rem;
                 }
+
+                @include tablet {
+                    width: 22.4rem;
+                    font-size: 1.6rem;
+
+                    &--margin {
+                        margin-top: 0;
+                    }
+                }
+    
             }
     
             &__description {
                 font-size: 1.2rem;
                 color: $white;
+
+                @include tablet {
+                    font-size: 1.4rem;
+                }
     
                 &--margin {
                     margin-top: 2.4rem;
@@ -401,10 +428,18 @@
                 margin-top: 2.4rem;
                 font-size: 1.2rem;
                 color: $white;
+
+                @include tablet {
+                    font-size: 1.4rem;
+                }
             }
     
             @include tablet {
                 width: 22.4rem;
+
+                &--margin-left {
+                    margin-left: 2.4rem;
+                }
             }
         }
     }
