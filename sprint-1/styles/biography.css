@@ -89,10 +89,27 @@
 }
 
 .hero {
-  background-image: url("https://via.placeholder.com/1440x183");
+  background-image: url("../assets/images/hero.jpg");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0 2000px rgba(50, 50, 50, 0.5);
+          box-shadow: inset 0 2000px rgba(50, 50, 50, 0.5);
+  padding: 0 1.6rem;
   height: 18.3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero__title {
+  color: #FFF;
+  font-size: 2.4rem;
+  font-weight: bold;
+  width: 20.5rem;
 }
 
 .gallery__image {
