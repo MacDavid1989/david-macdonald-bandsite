@@ -8,8 +8,7 @@
     font-size: $font-size-html;
     font-weight: normal;
     color: $text-paragraph;
-}
-// 
+} 
 .header {
     display: flex;
     flex-direction: column;
@@ -92,11 +91,10 @@
 // Desktop Navigation Queries
     @include desktop {
         box-sizing: border-box;
-        width: 100%;
         align-self: flex-start;
+        width: 100%;
         padding: 0 7.8125vw;
     }
-
 }
 // Spacer To Position Content Beneath Nav
 .spacer {
