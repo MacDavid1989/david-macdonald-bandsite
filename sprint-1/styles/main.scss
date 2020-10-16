@@ -1,14 +1,15 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
-
+// Global Rulesets
 *, *::before, *::after {
     @include boundary-reset;
     box-sizing: border-box;
     font-family: $font-family;
     font-size: $font-size-html;
     font-weight: normal;
+    color: $text-paragraph;
 }
-
+// Header Navigation
 .nav {
     background-color: $nav-background;
     width: 100%;
@@ -17,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
+// Navigation Logo Anchor Boundary
     &__logo {
         margin-top: 1.3rem;
         width: 12rem;
@@ -26,7 +27,7 @@
         align-items: center;
         justify-content: center;
     }
-
+// Navigation Container Excluding Logo
     &__list {
         margin-top: 1.6rem;
         height: 2.7rem;
@@ -34,7 +35,7 @@
         display: flex;
         justify-content: space-evenly;
     }
-
+// Navigation Link & States 
     &__link {
         text-decoration: none;
         height: 100%;
@@ -45,10 +46,276 @@
         align-items: flex-start;
         justify-content: center;
 
-        &:hover{
+        &:hover, &-current {
             color: $white;
             font-weight: 600;
             border-bottom: $white solid 0.4rem;
+        }
+    }
+// Tablet Navigation Queries
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 3.125vw;
+
+        &__logo {
+            margin-top: 0;
+        }
+    
+        &__list {
+            margin-top: 0;
+            padding-top: 1rem;
+            height: 8rem;
+            width: fit-content;
+        }
+    
+        &__link {
+            margin-left: 5.6rem;
+            width: 8rem;
+            align-items: center;
+        }
+    }
+// Desktop Navigation Queries
+    @include desktop {
+        padding: 0 7.8125vw;
+    }
+
+}
+
+// Hero Banner Background & Container
+.hero {
+    background-image: url("../assets/images/hero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 57.1875vw $hero-overlay;
+    padding: 0 5vw;
+    height: 57.1875vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+// Hero Banner Heading
+    &__title {
+        color: $white;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 3.2rem;
+        width: 20.5rem;
+    }
+// Tablet Hero Banner Queries
+    @include tablet {
+        height: 52.08333333vw;
+        box-shadow: inset 52.08333333vw $hero-overlay;
+        padding: 0 3.125vw;
+
+        &__title {
+            font-size: 6rem;
+            width: 51rem;
+            line-height: 6.8rem;
+        }
+    }
+// Desktop Hero Banner Queries
+    @include desktop {
+        height: 52.34375vw;
+        box-shadow: inset 52.34375vw $hero-overlay;
+        padding: 0 7.8125vw;
+
+    }
+}
+
+// Footer Info Section
+.footer {
+    background-color: $nav-background;
+    width: 100%;
+    padding: 4.8rem 5vw;
+    display: flex;
+    flex-direction: column;
+// Social Media Banner
+    .connect {
+        position: relative;
+        height: 3.6rem;
+        margin-bottom: 3.2rem;
+// Get In Touch Heading
+        &__title {
+            height: 3.6rem;
+            font-size: 3.6rem;
+            font-weight: bold;
+            color: $white;
+            margin-bottom: 1.8rem;
+        }
+// Social Media Icon Links
+        &-social {
+            height: 2rem;
+            display: flex;
+
+            &__link {
+                height: 100%;
+
+                &--margin {
+                    margin: 0 3.2rem;
+                }
+
+                &-icon {
+                    height: 100%;
+                }
+            }
+        }
+// Logo Mobile Hidden Condition
+        .logo {
+            display: none;
+        }
+    }
+// Contact Cards Container
+    &__card {
+        display: flex;
+        flex-wrap: wrap;
+// Contact Cards
+        .info-card {
+            width: 22.4rem;
+// Card Owner and Company
+            &__title {
+                width: 19.26rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 2.2rem;
+                color: $white;
+
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+// Card Location 
+            &__description {
+                font-size: 1.2rem;
+                line-height: 2rem;
+                color: $white;
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+// Card Email  
+            &__contact {
+                margin-top: 2.4rem;
+                font-size: 1.2rem;
+                color: $white;
+            }
+        }
+    }
+// Copyright Section
+    .copyright {
+        margin-top: 4rem;
+        width: 19.26rem;
+//  Copyright Info Statement
+        &__description {
+            font-size: 1.2rem;
+            color: $white;
+        }
+    }
+// Transition Queries to Unwrap Copyright for New Spacing
+    @include mobile-tablet-transition(328px) {
+        .copyright {
+            width: 29.6rem;
+        }
+    }
+// Transition Queries to Unwrap Social Section Links
+    @include mobile-tablet-transition(410px) {
+        .connect {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: flex-start;
+            margin-bottom: 3.2rem;
+
+            &__title {
+                margin-bottom: 0;
+            }
+
+            &-social {
+                margin-top: 2.4rem;
+                margin-left: 3rem;
+                margin-top: 0;
+            }
+        }
+    }
+// Tablet Footer Queries
+    @include tablet {
+        padding: 4.8rem 3.125vw;
+
+        .connect {
+            display: flex;
+            flex-wrap: unset;
+            align-items: baseline;
+            justify-content: flex-start;
+
+            &__title {
+                width: 25.2rem;
+            }
+
+            &-social {
+                margin-left: 2.4rem;
+            }
+
+            .logo {
+                display: block;
+                position: absolute;
+                bottom: 0.5rem;
+                right: 0;
+            }
+        }
+
+        &__card {
+            display: flex;
+            margin-top: 2.4rem;
+
+            .info-card {
+                width: 22.4rem;
+    
+                &--margin-left {
+                        margin-left: 2.4rem;
+                    }
+                
+                &__title {
+                    width: 22.4rem;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+
+                    &--margin {
+                        margin-top: 0;
+                    }
+                }
+
+                &__description {
+                    font-size: 1.4rem;
+                }
+
+                &__contact {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        .copyright {
+            &__description {
+                font-size: 1.4rem;
+                width: 34.8rem;
+            }
+        }
+    }
+// Desktop Footer Queries
+    @include desktop {
+        padding: 4.8rem 7.8125vw;
+
+        &__card {
+            .info-card {
+                width: 25.2rem;
+            }
+        }
+
+        .copyright {
+            &__description {
+                width: 36.8rem;
+            }
         }
     }
 }
