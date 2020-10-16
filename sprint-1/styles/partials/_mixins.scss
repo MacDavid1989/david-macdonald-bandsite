@@ -1,8 +1,10 @@
+// Global Mixins
 @mixin boundary-reset {
     margin: 0;
     padding: 0;
 }
 
+// Breakpoint Mixins
 @mixin desktop() {
     @media (min-width: 1280px) {
         @content;
