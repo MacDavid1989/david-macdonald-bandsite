@@ -587,10 +587,10 @@
     margin-left: 2.4rem;
   }
   .footer .connect .logo {
-    display: block;
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto;
   }
   .footer__card {
     display: -webkit-box;
