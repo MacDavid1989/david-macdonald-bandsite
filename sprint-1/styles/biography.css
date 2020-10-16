@@ -24,6 +24,16 @@
   color: #323232;
 }
 
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .nav {
   background-color: #323232;
   width: 100%;
@@ -120,8 +130,23 @@
             align-items: center;
   }
 }
+@media (min-width: 1152px) {
+  .nav {
+    -webkit-box-sizing: unset;
+            box-sizing: unset;
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 108rem;
+    padding: 0 100%;
+  }
+}
 @media (min-width: 1280px) {
   .nav {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     padding: 0 7.8125vw;
   }
 }
@@ -167,12 +192,28 @@
     line-height: 6.8rem;
   }
 }
+@media (min-width: 1152px) {
+  .hero {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hero .wrapper {
+    width: 108rem;
+  }
+}
 @media (min-width: 1280px) {
   .hero {
     height: 52.34375vw;
     -webkit-box-shadow: inset 52.34375vw rgba(50, 50, 50, 0.5);
             box-shadow: inset 52.34375vw rgba(50, 50, 50, 0.5);
     padding: 0 7.8125vw;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .hero__wrapper {
+    width: 100%;
   }
 }
 
@@ -276,7 +317,18 @@
         align-self: center;
   }
 }
+@media (min-width: 1152px) {
+  .biography-card__title {
+    width: 108rem;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
 @media (min-width: 1280px) {
+  .biography-card__title {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
   .biography-card__image {
     width: 70vw;
     height: 35.15625vw;
@@ -434,7 +486,7 @@
     margin-left: 3.125vw;
   }
 }
-@media (min-width: 1179.428598px) {
+@media (min-width: 1152px) {
   .gallery {
     width: 108rem;
   }
@@ -636,9 +688,34 @@
     width: 34.8rem;
   }
 }
+@media (min-width: 1152px) {
+  .footer {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer .connect {
+    width: 108rem;
+  }
+  .footer__card {
+    width: 108rem;
+  }
+  .footer .copyright {
+    width: 108rem;
+  }
+}
 @media (min-width: 1280px) {
   .footer {
     padding: 4.8rem 7.8125vw;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footer .connect {
+    width: 100%;
+  }
+  .footer__card {
+    width: 100%;
   }
   .footer__card .info-card {
     width: 25.2rem;

@@ -9,6 +9,11 @@
     font-weight: normal;
     color: $text-paragraph;
 }
+// 
+.header {
+    display: flex;
+    flex-direction: column;
+}
 // Header Navigation
 .nav {
     background-color: $nav-background;
@@ -77,8 +82,18 @@
             align-items: center;
         }
     }
+// Transition Queries to Smooth Tablet into Desktop Layout
+    @include tablet-desktop-transition(1152px) {
+        box-sizing: unset;
+        align-self: center;
+        width: 108rem;
+        padding: 0 100%;
+    }
 // Desktop Navigation Queries
     @include desktop {
+        box-sizing: border-box;
+        width: 100%;
+        align-self: flex-start;
         padding: 0 7.8125vw;
     }
 
@@ -119,12 +134,24 @@
             line-height: 6.8rem;
         }
     }
+// Transition Queries to Smooth Tablet into Desktop Layout
+    @include tablet-desktop-transition(1152px) {
+        justify-content: center;
+
+        .wrapper {
+            width: 108rem;
+        }
+    }
 // Desktop Hero Banner Queries
     @include desktop {
         height: 52.34375vw;
         box-shadow: inset 52.34375vw $hero-overlay;
         padding: 0 7.8125vw;
+        justify-content: flex-start;
 
+        &__wrapper {
+            width: 100%;
+        }
     }
 }
 // Main Container Layout
@@ -217,8 +244,19 @@
             align-self: center;
         }
     }
+// Transition Queries to Smooth Tablet into Desktop Layout
+@include tablet-desktop-transition(1152px) {
+    &__title {
+    width: 108rem;
+    align-self: center;
+    }
+}
 // Desktop Biography Card Queries
     @include desktop {
+        &__title {
+            align-self: flex-start;
+        }
+
         &__image {
             width: 70vw;
             height: 35.15625vw;
@@ -379,7 +417,7 @@
         }
     }
 // Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1179.428598px) {
+    @include tablet-desktop-transition(1152px) {
         width: 108rem;
 
         &__image {
@@ -587,11 +625,34 @@
             }
         }
     }
+// Transition Queries to Smooth Tablet into Desktop Layout
+    @include tablet-desktop-transition(1152px) {
+        align-items: center;
+
+        .connect {
+             width: 108rem;
+        }
+
+        &__card {
+            width: 108rem;
+        }
+
+        .copyright {
+            width: 108rem;
+        }
+        
+    }
 // Desktop Footer Queries
     @include desktop {
         padding: 4.8rem 7.8125vw;
+        align-items: flex-start;
+
+        .connect {
+            width: 100%;
+        }
 
         &__card {
+            width: 100%;
             .info-card {
                 width: 25.2rem;
             }
