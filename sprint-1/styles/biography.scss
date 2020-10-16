@@ -364,6 +364,19 @@
             }
         }
     }
+// Transition Queries to Smooth Tablet into Desktop Layout
+    @include tablet-desktop-transition(1179.428598px) {
+        width: 108rem;
+
+        &__image {
+            width: 34.4rem;
+            height: 19.3rem;
+        
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 2.4rem;
+            }
+        }
+    }
 // Desktop Gallery Queries
     @include desktop {
         width: 84.375vw;
