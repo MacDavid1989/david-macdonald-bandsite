@@ -48,7 +48,7 @@
         text-decoration: none;
         height: 100%;
         width: 16rem;
-        font-size: 1.4rem;
+        font-size: $font-size-header;
         color: $color-text-alternate;
         display: flex;
         align-items: flex-start;
@@ -83,7 +83,7 @@
     // Hero Banner Heading
     &__title {
         color: $color-heading-alternate;
-        font-size: 7.5vw;
+        font-size: $font-size-mobile-hero;
         font-weight: bold;
         line-height: $line-height-hero-mobile;
         width: 65.7552083vw;
@@ -105,7 +105,7 @@
 
     // Card Heading
     &__title {
-        font-size: 2.4rem;
+        font-size: $font-size-mobile-lgheading;
         line-height: $line-height-fs24px;
         font-weight: bold;
     }
@@ -119,14 +119,14 @@
 
     // Card Quote
     &__text {
-        font-size: 1.6rem;
+        font-size: $font-size-mobile-lgparagraph;
         font-weight: 600;
         line-height: $line-height-fs16px;
         width: 90vw;
 
     // Card Quote Speaker
         &-speaker {
-            font-size: 1.4rem;
+            font-size: $font-size-mobile-mdparagraph;
             line-height: $line-height-fs14px;
             margin-top: 3.2rem;
         }
@@ -140,14 +140,14 @@
 
     // Biography Heading
     &__title {
-        font-size: 1.6rem;
+        font-size: $font-size-mobile-smheading;
         line-height: $line-height-fs16px;
         font-weight: 600;
     }
 
     // Biography Paragraphs
     &__text {
-        font-size: 1.2rem;
+        font-size: $font-size-mobile-smparagraph;
         width: 89.75vw;
         line-height: $line-height-fs12px;
 
@@ -164,7 +164,7 @@
 
     // Gallery Heading
     &__title {
-        font-size: 2.4rem;
+        font-size: $font-size-mobile-lgheading;
         line-height: $line-height-fs24px;
         font-weight: bold;
         margin-bottom: 0.8rem;
@@ -198,7 +198,7 @@
     // Get In Touch Heading
         &__title {
             height: 3.6rem;
-            font-size: 3.6rem;
+            font-size: $font-size-desktop-lgheading;
             line-height: $line-height-fs36px;
             font-weight: bold;
             color: $color-heading-alternate;
@@ -240,7 +240,7 @@
             // Card Owner and Company
             &__title {
                 width: 19.26rem;
-                font-size: 1.4rem;
+                font-size: $font-size-mobile-mdparagraph;
                 font-weight: 600;
                 line-height: $line-height-fs14px;
                 color: $color-heading-alternate;
@@ -252,7 +252,7 @@
 
             // Card Location 
             &__description {
-                font-size: 1.2rem;
+                font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
                 color: $color-text-alternate;
     
@@ -264,7 +264,7 @@
             // Card Email  
             &__contact {
                 margin-top: 2.4rem;
-                font-size: 1.2rem;
+                font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
                 color: $color-text-alternate;
             }
@@ -278,7 +278,7 @@
 
         //  Copyright Info Statement
         &__description {
-            font-size: 1.2rem;
+            font-size: $font-size-mobile-smparagraph;
             line-height: $line-height-fs12px;
             color: $color-text-alternate;
         }
@@ -387,7 +387,7 @@
         padding: 0 3.125vw;
 
         &__title {
-            font-size: 6rem;
+            font-size: $font-size-desktop-hero;
             width: 51rem;
             line-height: $line-height-fs60px;
         }
@@ -401,7 +401,7 @@
         width: 100%;
 
         &__title {
-            font-size: 3.6rem;
+            font-size: $font-size-desktop-lgheading;
             line-height: $line-height-fs36px;
             height: 3.6rem;
         }
@@ -413,14 +413,14 @@
         }
 
         &__text {
-            font-size: 2.4rem;
+            font-size: $font-size-desktop-smheading;
             font-weight: bold;
             line-height: $line-height-fs24px;
             width: 93.75vw;
 
             &-speaker {
                 margin-top: 4rem;
-                font-size: 1.6rem;
+                font-size: $font-size-desktop-lgparagraph;
                 line-height: $line-height-fs16px;
                 font-weight: 600;
             }
@@ -433,13 +433,13 @@
 
         &__title {
             display: flex;
-            font-size: 2.4rem;
+            font-size: $font-size-desktop-smheading;
             line-height: $line-height-fs24px;
             font-weight: bold;
         }
 
         &__text {
-            font-size: 1.4rem;
+            font-size: $font-size-desktop-smparagraph;
             width: 44.921875vw;
             line-height: $line-height-fs14px;
 
@@ -454,7 +454,7 @@
         width: 93.75vw;
 
         &__title {
-            font-size: 3.6rem;
+            font-size: $font-size-desktop-lgheading;
             line-height: $line-height-fs36px;
             margin-bottom: 4rem;
         }
@@ -514,7 +514,7 @@
                 
                 &__title {
                     width: 22.4rem;
-                    font-size: 1.6rem;
+                    font-size: $font-size-desktop-lgparagraph;
                     line-height: $line-height-fs16px;
 
                     &--margin {
@@ -523,12 +523,12 @@
                 }
 
                 &__description {
-                    font-size: 1.4rem;
+                    font-size: $font-size-desktop-smparagraph;
                     line-height: $line-height-fs14px-alt;
                 }
 
                 &__contact {
-                    font-size: 1.4rem;
+                    font-size: $font-size-desktop-smparagraph;
                     line-height: $line-height-fs14px-alt;
                 }
             }
@@ -536,7 +536,7 @@
 
         .copyright {
             &__description {
-                font-size: 1.4rem;
+                font-size: $font-size-desktop-smparagraph;
                 line-height: $line-height-fs14px-alt;
                 width: 34.8rem;
             }
