@@ -626,6 +626,9 @@
   .footer__card {
     width: 108rem;
   }
+  .footer__card .info-card {
+    width: 19.44vw;
+  }
   .footer .copyright {
     width: 108rem;
   }
