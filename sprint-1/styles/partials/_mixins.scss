@@ -1,8 +1,16 @@
+@use './variables' as *;
+
 // Global Mixins
 @mixin boundary-reset {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+@mixin font-stack {
+    font-family: $font-family;
+    font-size: $font-size-html;
+    font-weight: normal;
 }
 
 // Breakpoint Mixins

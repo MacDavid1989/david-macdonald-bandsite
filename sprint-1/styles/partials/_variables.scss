@@ -7,20 +7,12 @@
 $font-family: 'Avenir Next';
 $font-size-html: 10px;
 
-// Global Colors
-$text-paragraph: #323232;
-$text-label: #AFAFAF;
-$text-border: #E1E1E1;
-$text-background: #FAFAFA;
-$white: #FFF;
-
-// BandSite Colors
-$nav-background: #323232;
-$calltoaction: #323232;
-$calltoaction-hover: #000000;
-$hero-overlay: rgba($color: #323232, $alpha: 0.5);
-
 // Colors
 $color-text-base: #323232;
 $color-background-alternate: #323232;
+$color-background-base: #FAFAFA;
 $color-text-alternate: #FAFAFA;
+$color-text-hover: #FFF;
+$color-heading-alternate: #FFF;
+$color-white: #FFF;
+$color-overlay: rgba($color: #323232, $alpha: 0.5);

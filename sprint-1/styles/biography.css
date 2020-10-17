@@ -218,6 +218,7 @@
 }
 
 .main {
+  background-color: #FAFAFA;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,7 +296,7 @@
     font-weight: 600;
   }
 }
-@media (min-width: 955.7333px) {
+@media (min-width: 955px) {
   .biography-card {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -400,7 +401,7 @@
     margin-left: 3.125vw;
   }
 }
-@media (min-width: 955.7333px) {
+@media (min-width: 955px) {
   .biography {
     width: 89.6rem;
   }
@@ -576,7 +577,7 @@
 .footer__card .info-card__description {
   font-size: 1.2rem;
   line-height: 2rem;
-  color: #FFF;
+  color: #FAFAFA;
 }
 .footer__card .info-card__description--margin {
   margin-top: 2.4rem;
@@ -585,7 +586,7 @@
   margin-top: 2.4rem;
   font-size: 1.2rem;
   line-height: 2rem;
-  color: #FFF;
+  color: #FAFAFA;
 }
 .footer .copyright {
   margin-top: 4rem;
@@ -594,7 +595,7 @@
 .footer .copyright__description {
   font-size: 1.2rem;
   line-height: 2rem;
-  color: #FFF;
+  color: #FAFAFA;
 }
 @media (min-width: 328px) {
   .footer .copyright {
