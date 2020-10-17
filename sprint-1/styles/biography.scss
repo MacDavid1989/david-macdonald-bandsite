@@ -7,8 +7,7 @@
     color: $color-text-base;
 } 
 .header {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 }
 // Header Navigation
 .nav {
@@ -17,8 +16,7 @@
     height: 8rem;
     position: fixed;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
     justify-content: space-between;
 // Navigation Logo Anchor Boundary
@@ -55,43 +53,7 @@
             border-bottom: $color-text-hover solid 0.4rem;
         }
     }
-// Tablet Navigation Queries
-    @include tablet {
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0 3.125vw;
 
-        &__logo {
-            margin-top: 0;
-        }
-    
-        &__list {
-            margin-top: 0;
-            padding-top: 1rem;
-            height: 8rem;
-            width: fit-content;
-        }
-    
-        &__link {
-            margin-left: 5.6rem;
-            width: 8rem;
-            align-items: center;
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
-        box-sizing: unset;
-        align-self: center;
-        width: 108rem;
-        padding: 0 100%;
-    }
-// Desktop Navigation Queries
-    @include desktop {
-        box-sizing: border-box;
-        align-self: flex-start;
-        width: 100%;
-        padding: 0 7.8125vw;
-    }
 }
 // Spacer To Position Content Beneath Nav
 .spacer {
@@ -117,37 +79,8 @@
         line-height: 3.2rem;
         width: 20.5rem;
     }
-// Tablet Hero Banner Queries
-    @include tablet {
-        height: 52.08333333vw;
-        box-shadow: inset 52.08333333vw $color-overlay;
-        padding: 0 3.125vw;
 
-        &__title {
-            font-size: 6rem;
-            width: 51rem;
-            line-height: 6.8rem;
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
-        justify-content: center;
 
-        .wrapper {
-            width: 108rem;
-        }
-    }
-// Desktop Hero Banner Queries
-    @include desktop {
-        height: 52.34375vw;
-        box-shadow: inset 52.34375vw $color-overlay;
-        padding: 0 7.8125vw;
-        justify-content: flex-start;
-
-        &__wrapper {
-            width: 100%;
-        }
-    }
 }
 // Main Container Layout
 .main {
@@ -157,14 +90,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-// Tablet Main Queries
-    @include tablet {
-        padding: 4.8rem 3.125vw 4rem;
-    }
-// Desktop Main Queries
-    @include desktop {
-        padding: 4.8rem 7.8125vw 4rem;
-    }
+
 }
 // Biography Section Card Container Including Image
 .biography-card {
@@ -194,75 +120,9 @@
             margin-top: 3.2rem;
         }
     }
-// Tablet Biography Card Queries
-    @include tablet {
-        width: 100%;
 
-        &__title {
-            font-size: 3.6rem;
-            line-height: 4.4rem;
-            height: 3.6rem;
-        }
 
-        &__image {
-            margin: 4.8rem 0;
-            width: 93.75vw;
-            height: 47.1354166vw;
-        }
 
-        &__text {
-            font-size: 2.4rem;
-            font-weight: bold;
-            line-height: 3.2rem;
-            width: 93.75vw;
-
-            &-speaker {
-                margin-top: 4rem;
-                font-size: 1.6rem;
-                line-height: 2.4rem;
-                font-weight: 600;
-            }
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(955px) {
-        display: flex;
-        flex-direction: column;
-
-        &__image {
-            width: 89.6rem;
-            height: 45rem;
-            align-self: center;
-        }
-
-        &__text {
-            width: 89.6rem;
-            align-self: center;
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-@include tablet-desktop-transition(1152px) {
-    &__title {
-    width: 108rem;
-    align-self: center;
-    }
-}
-// Desktop Biography Card Queries
-    @include desktop {
-        &__title {
-            align-self: flex-start;
-        }
-
-        &__image {
-            width: 70vw;
-            height: 35.15625vw;
-        }
-
-        &__text {
-            width: 70vw;
-            align-self: center;
-        }
-    }
 }
 // Written Biography Section
 .biography {
@@ -284,65 +144,7 @@
             margin: 2.4rem 0;
         }  
     }
-// Transition Queries to Smooth Mobile into Tablet Layout
-    @include mobile-tablet-transition(658px) {
-        &__content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-start;
-        }
 
-        &__text {
-            width: 43.7689969vw;
-
-            &:last-of-type{
-                margin-left: 2.4316109vw;
-            }
-        }
-    }
-// Tablet Biography Queries
-    @include tablet {
-        margin: 5.6rem 0 4.8rem;
-        width: 93.75vw;
-
-        &__title {
-            display: flex;
-            font-size: 2.4rem;
-            line-height: 3.2rem;
-            font-weight: bold;
-        }
-
-        &__text {
-            font-size: 1.4rem;
-            width: 44.921875vw;
-            line-height: 2.2rem;
-
-            &:last-of-type{
-                margin-left: 3.125vw;
-            }
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(955px){
-        width: 89.6rem;
-
-        &__text {
-            width: 42rem;
-        
-            &:last-of-type{
-                margin-left: 2.4rem;
-            }
-        }
-    }
-// Desktop Biography Queries
-    @include desktop {
-        width: 70vw;
-
-        &__text {
-            width: 32.8125vw;
-        }
-    }
 }
 // Photo Gallery Section
 .gallery {
@@ -366,78 +168,8 @@
             filter: grayscale(0);
         }
     }
-// Transition Queries to Smooth Mobile into Tablet Layout
-    @include mobile-tablet-transition(658px){
-        &__content {
-            display: flex;
-            flex-wrap: wrap;
-        }
 
-        &__image {
-            width: 43.7689969vw;
-            height: 24.62006079vw;
 
-            &:nth-of-type(2n) {
-                margin-left: 2.4316109vw;
-            }
-        }
-    }
-// Tablet Gallery Queries
-    @include tablet {
-        margin-top: 4.8rem;
-        width: 93.75vw;
-
-        &__title {
-            font-size: 3.6rem;
-            line-height: 4.4rem;
-            margin-bottom: 4rem;
-        }
-
-        &__content {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        &__image {
-            margin-top: 2.4rem;
-            width: 29.166666vw;
-            height: 16.40625vw;
-
-            &:nth-of-type(2n) {
-                margin-left: 0;
-            }
-
-            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
-                margin-left: 3.125vw;
-            }
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
-        width: 108rem;
-
-        &__image {
-            width: 34.4rem;
-            height: 19.3rem;
-        
-            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
-                margin-left: 2.4rem;
-            }
-        }
-    }
-// Desktop Gallery Queries
-    @include desktop {
-        width: 84.375vw;
-
-        &__image {
-            width: 26.875vw;
-            height: 15.078125vw;
-
-            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
-                margin-left: 1.875vw;
-            }
-        }
-    }
 }
 // Footer Info Section
 .footer {
@@ -530,14 +262,21 @@
             color: $color-text-alternate;
         }
     }
+
+
+}
 // Transition Queries to Unwrap Copyright for New Spacing
-    @include mobile-tablet-transition(328px) {
+@include mobile-tablet-transition(328px) {
+    .footer{
         .copyright {
             width: 29.6rem;
         }
     }
+}
+
 // Transition Queries to Unwrap Social Section Links
-    @include mobile-tablet-transition(410px) {
+@include mobile-tablet-transition(410px) {
+    .footer {
         .connect {
             display: flex;
             flex-wrap: wrap;
@@ -556,8 +295,166 @@
             }
         }
     }
-// Tablet Footer Queries
-    @include tablet {
+}
+// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(658px) {
+    .biography{
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &__text {
+            width: 43.7689969vw;
+
+            &:last-of-type{
+                margin-left: 2.4316109vw;
+            }
+        }
+    }
+
+    .gallery {
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__image {
+            width: 43.7689969vw;
+            height: 24.62006079vw;
+
+            &:nth-of-type(2n) {
+                margin-left: 2.4316109vw;
+            }
+        }
+    }
+}
+// Tablet Layout Queries
+@include tablet {
+    .nav {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 3.125vw;
+
+        &__logo {
+            margin-top: 0;
+        }
+
+        &__list {
+            margin-top: 0;
+            padding-top: 1rem;
+            height: 8rem;
+            width: fit-content;
+        }
+
+        &__link {
+            margin-left: 5.6rem;
+            width: 8rem;
+            align-items: center;
+        }
+    }
+
+    .hero {
+        height: 52.08333333vw;
+        box-shadow: inset 52.08333333vw $color-overlay;
+        padding: 0 3.125vw;
+
+        &__title {
+            font-size: 6rem;
+            width: 51rem;
+            line-height: 6.8rem;
+        }
+    }
+
+    .main {
+        padding: 4.8rem 3.125vw 4rem;
+    }
+
+    .biography-card {
+        width: 100%;
+
+        &__title {
+            font-size: 3.6rem;
+            line-height: 4.4rem;
+            height: 3.6rem;
+        }
+
+        &__image {
+            margin: 4.8rem 0;
+            width: 93.75vw;
+            height: 47.1354166vw;
+        }
+
+        &__text {
+            font-size: 2.4rem;
+            font-weight: bold;
+            line-height: 3.2rem;
+            width: 93.75vw;
+
+            &-speaker {
+                margin-top: 4rem;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .biography {
+        margin: 5.6rem 0 4.8rem;
+        width: 93.75vw;
+
+        &__title {
+            display: flex;
+            font-size: 2.4rem;
+            line-height: 3.2rem;
+            font-weight: bold;
+        }
+
+        &__text {
+            font-size: 1.4rem;
+            width: 44.921875vw;
+            line-height: 2.2rem;
+
+            &:last-of-type{
+                margin-left: 3.125vw;
+            }
+        }
+    }
+
+    .gallery {
+        margin-top: 4.8rem;
+        width: 93.75vw;
+
+        &__title {
+            font-size: 3.6rem;
+            line-height: 4.4rem;
+            margin-bottom: 4rem;
+        }
+
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__image {
+            margin-top: 2.4rem;
+            width: 29.166666vw;
+            height: 16.40625vw;
+
+            &:nth-of-type(2n) {
+                margin-left: 0;
+            }
+
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 3.125vw;
+            }
+        }
+    }
+
+    .footer {
         padding: 4.8rem 3.125vw;
 
         .connect {
@@ -621,8 +518,75 @@
             }
         }
     }
+}
 // Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
+@include tablet-desktop-transition(955px) {
+    .biography-card {
+        display: flex;
+        flex-direction: column;
+
+        &__image {
+            width: 89.6rem;
+            height: 45rem;
+            align-self: center;
+        }
+
+        &__text {
+            width: 89.6rem;
+            align-self: center;
+        }
+    }
+
+    .biography {
+        width: 89.6rem;
+
+        &__text {
+            width: 42rem;
+        
+            &:last-of-type{
+                margin-left: 2.4rem;
+            }
+        }
+    }
+}
+// Transition Queries to Smooth Tablet into Desktop Layout
+@include tablet-desktop-transition(1152px) {
+    .nav {
+        box-sizing: unset;
+        align-self: center;
+        width: 108rem;
+        padding: 0 100%;
+    }
+
+    .hero {
+        justify-content: center;
+
+        .wrapper {
+            width: 108rem;
+        }
+    }
+
+    .biography-card {
+        &__title {
+        width: 108rem;
+        align-self: center;
+        }
+    }
+
+    .gallery {
+        width: 108rem;
+
+        &__image {
+            width: 34.4rem;
+            height: 19.3rem;
+        
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 2.4rem;
+            }
+        }
+    }
+
+    .footer {
         align-items: center;
 
         .connect {
@@ -638,8 +602,69 @@
         }
         
     }
-// Desktop Footer Queries
-    @include desktop {
+}
+// Desktop Queries
+@include desktop {
+    .nav {
+        box-sizing: border-box;
+        align-self: flex-start;
+        width: 100%;
+        padding: 0 7.8125vw;
+    }
+
+    .hero {
+        height: 52.34375vw;
+        box-shadow: inset 52.34375vw $color-overlay;
+        padding: 0 7.8125vw;
+        justify-content: flex-start;
+
+        &__wrapper {
+            width: 100%;
+        }
+    }
+
+    .main {
+        padding: 4.8rem 7.8125vw 4rem;
+    }
+
+    .biography-card {
+        &__title {
+            align-self: flex-start;
+        }
+
+        &__image {
+            width: 70vw;
+            height: 35.15625vw;
+        }
+
+        &__text {
+            width: 70vw;
+            align-self: center;
+        }
+    }
+
+    .biography {
+        width: 70vw;
+
+        &__text {
+            width: 32.8125vw;
+        }
+    }
+
+    .gallery {
+        width: 84.375vw;
+
+        &__image {
+            width: 26.875vw;
+            height: 15.078125vw;
+
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 1.875vw;
+            }
+        }
+    }
+
+    .footer {
         padding: 4.8rem 7.8125vw;
         align-items: flex-start;
 

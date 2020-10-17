@@ -13,6 +13,11 @@
     font-weight: normal;
 }
 
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 // Breakpoint Mixins
 @mixin desktop() {
     @media (min-width: 1280px) {
