@@ -321,11 +321,7 @@
   }
   .footer .connect__title {
     margin-bottom: 0;
-  }
-  .footer .connect-social {
-    margin-top: 2.4rem;
-    margin-left: 3rem;
-    margin-top: 0;
+    width: 24.5rem;
   }
 }
 @media (min-width: 658px) {
