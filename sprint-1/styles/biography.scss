@@ -3,7 +3,6 @@
 // Global Rulesets
 *, *::before, *::after {
     @include boundary-reset;
-    box-sizing: border-box;
     font-family: $font-family;
     font-size: $font-size-html;
     font-weight: normal;
