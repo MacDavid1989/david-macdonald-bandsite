@@ -13,19 +13,14 @@
     font-weight: normal;
 }
 
-// Display Mixins
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
+@mixin flexing($display, $direction, $wrap, $align, $self, $justify) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    align-items: $align;
+    align-self: $self;
+    justify-content: $justify;
 }
-
-@mixin flex-wrap {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-// Font Mixins
-
 
 // Breakpoint Mixins
 @mixin desktop() {

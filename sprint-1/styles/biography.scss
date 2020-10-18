@@ -10,7 +10,7 @@
 
 // Header Display 
 .header {
-    @include flex-column;
+    @include flexing(flex, column, initial, initial, initial, initial);
 }
 
 // Header Navigation
@@ -20,18 +20,14 @@
     height: 8rem;
     position: fixed;
     z-index: 1;
-    @include flex-column;
-    align-items: center;
-    justify-content: space-between;
+    @include flexing(flex, column, initial, center, initial, space-between);
 
     // Navigation Logo Anchor Boundary
     &__logo {
         margin-top: 1.3rem;
         width: 12rem;
         height: 2.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexing(flex, initial, initial, center, initial, center);
     }
 
     // Navigation Container Excluding Logo
@@ -39,8 +35,7 @@
         margin-top: 1.6rem;
         height: 2.7rem;
         width: 100%;
-        display: flex;
-        justify-content: space-evenly;
+        @include flexing(flex, initial, initial, initial, initial, space-evenly);
     }
 
     // Navigation Link & States 
@@ -50,9 +45,7 @@
         width: 16rem;
         font-size: $font-size-header;
         color: $color-text-alternate;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        @include flexing(flex, initial, initial, flex-start, initial, center);
 
         &:hover, &-current {
             color: $color-text-hover;
@@ -77,8 +70,7 @@
     padding: 0 5vw;
     height: 57.1875vw;
     width: 100%;
-    display: flex;
-    align-items: center;
+    @include flexing(flex, initial, initial, center, initial, initial);
 
     // Hero Banner Heading
     &__title {
@@ -93,10 +85,8 @@
 // Main Container Layout
 .main {
     background-color: $color-background-base;
-    @include flex-column;
+    @include flexing(flex, column, initial, center, initial, center);
     padding: 3.2rem 5vw;
-    align-items: center;
-    justify-content: center;
 }
 
 // Biography Section Card Container Including Image
@@ -188,7 +178,8 @@
     background-color: $color-background-alternate;
     width: 100%;
     padding: 4.8rem 5vw;
-    @include flex-column;
+    @include flexing(flex, column, initial, initial, initial, initial);
+
 
     // Social Media Banner
     .connect {
@@ -208,7 +199,7 @@
         // Social Media Icon Links
         &-social {
             height: 2rem;
-            display: flex;
+            @include flexing(flex, initial, initial, initial, initial, initial);
 
             &__link {
                 height: 100%;
@@ -225,13 +216,13 @@
 
         // Logo Mobile Hidden Condition
         .logo {
-            display: none;
+            @include flexing(none, initial, initial, initial, initial, initial);
         }
     }
 
     // Contact Cards Container
     &__card {
-        @include flex-wrap;
+        @include flexing(flex, initial, wrap, initial, initial, initial);
 
         // Contact Cards
         .info-card {
@@ -298,9 +289,7 @@
 @include mobile-tablet-transition(410px) {
     .footer {
         .connect {
-            @include flex-wrap;
-            align-items: baseline;
-            justify-content: flex-start;
+            @include flexing(flex, initial, wrap, baseline, initial, flex-start);
             margin-bottom: 3.2rem;
 
             &__title {
@@ -321,9 +310,7 @@
 
     .biography{
         &__content {
-            @include flex-wrap;
-            align-items: center;
-            justify-content: flex-start;
+            @include flexing(flex, initial, wrap, center, initial, flex-start);
         }
 
         &__text {
@@ -337,7 +324,7 @@
 
     .gallery {
         &__content {
-            @include flex-wrap;
+            @include flexing(flex, initial, wrap, initial, initial, initial);
         }
 
         &__image {
@@ -354,8 +341,7 @@
 // Tablet Layout Queries
 @include tablet {
     .nav {
-        flex-direction: row;
-        justify-content: flex-start;
+        @include flexing(flex, row, initial, center, initial, flex-start);
         padding: 0 3.125vw;
 
         &__logo {
@@ -454,10 +440,6 @@
             margin-bottom: 4rem;
         }
 
-        &__content {
-            @include flex-wrap;
-        }
-
         &__image {
             margin-top: 2.4rem;
             width: 29.166666vw;
@@ -477,10 +459,6 @@
         padding: 4.8rem 3.125vw;
 
         .connect {
-            display: flex;
-            flex-wrap: unset;
-            align-items: baseline;
-            justify-content: flex-start;
 
             &__title {
                 width: 25.2rem;
@@ -542,7 +520,7 @@
 // Transition Queries to Smooth Tablet into Desktop Layout
 @include tablet-desktop-transition(955px) {
     .biography-card {
-        @include flex-column;
+        @include flexing(flex, column, initial, initial, initial, initial);
 
         &__image {
             width: 89.6rem;
@@ -631,7 +609,6 @@
 @include desktop {
     .nav {
         box-sizing: border-box;
-        align-self: flex-start;
         width: 100%;
         padding: 0 7.8125vw;
     }
