@@ -1,181 +1,114 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
-// Global Rulesets
+
+// Global Rule-sets
 *, *::before, *::after {
     @include boundary-reset;
-    box-sizing: border-box;
-    font-family: $font-family;
-    font-size: $font-size-html;
-    font-weight: normal;
-    color: $text-paragraph;
+    @include font-stack;
+    color: $color-text-base;
 }
+
+// Header Display 
 .header {
-    display: flex;
-    flex-direction: column;
+    @include flexing(flex, column, initial, initial, initial, initial);
 }
+
 // Header Navigation
 .nav {
-    background-color: $nav-background;
+    background-color: $color-background-alternate;
     width: 100%;
     height: 8rem;
     position: fixed;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-// Navigation Logo Anchor Boundary
+    @include flexing(flex, column, initial, center, initial, space-between);
+
+    // Navigation Logo Anchor Boundary
     &__logo {
         margin-top: 1.3rem;
         width: 12rem;
         height: 2.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexing(flex, initial, initial, center, initial, center);
     }
-// Navigation Container Excluding Logo
+
+    // Navigation Container Excluding Logo
     &__list {
         margin-top: 1.6rem;
         height: 2.7rem;
         width: 100%;
-        display: flex;
-        justify-content: space-evenly;
+        @include flexing(flex, initial, initial, initial, initial, space-evenly);
     }
-// Navigation Link & States 
+
+    // Navigation Link & States 
     &__link {
         text-decoration: none;
         height: 100%;
         width: 16rem;
-        font-size: 1.4rem;
-        color: $text-label;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        font-size: $font-size-header;
+        color: $color-text-alternate;
+        @include flexing(flex, initial, initial, flex-start, initial, center);
 
         &:hover, &-current {
-            color: $white;
+            color: $color-text-hover;
             font-weight: 600;
-            border-bottom: $white solid 0.4rem;
+            border-bottom: $color-text-hover solid 0.4rem;
         }
-    }
-// Tablet Navigation Queries
-    @include tablet {
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0 3.125vw;
-
-        &__logo {
-            margin-top: 0;
-        }
-    
-        &__list {
-            margin-top: 0;
-            padding-top: 1rem;
-            height: 8rem;
-            width: fit-content;
-        }
-    
-        &__link {
-            margin-left: 5.6rem;
-            width: 8rem;
-            align-items: center;
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
-        box-sizing: unset;
-        align-self: center;
-        width: 108rem;
-        padding: 0 100%;
-    }
-    // Desktop Navigation Queries
-    @include desktop {
-        box-sizing: border-box;
-        align-self: flex-start;
-        width: 100%;
-        padding: 0 7.8125vw;
     }
 }
+
 // Spacer To Position Content Beneath Nav
 .spacer {
     height: 8rem;
 }
+
 // Hero Banner Background & Container
 .hero {
     background-image: url("../assets/images/hero.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: inset 0 57.1875vw $hero-overlay;
+    box-shadow: inset 0 57.1875vw $color-overlay;
     padding: 0 5vw;
     height: 57.1875vw;
     width: 100%;
-    display: flex;
-    align-items: center;
-// Hero Banner Heading
+    @include flexing(flex, initial, initial, center, initial, initial);
+
+    // Hero Banner Heading
     &__title {
-        color: $white;
-        font-size: 2.4rem;
+        color: $color-heading-alternate;
+        font-size: $font-size-mobile-hero;
         font-weight: bold;
-        line-height: 3.2rem;
-        width: 20.5rem;
-    }
-// Tablet Hero Banner Queries
-    @include tablet {
-        height: 52.08333333vw;
-        box-shadow: inset 52.08333333vw $hero-overlay;
-        padding: 0 3.125vw;
-
-        &__title {
-            font-size: 6rem;
-            width: 51rem;
-            line-height: 6.8rem;
-        }
-    }
-// Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
-        justify-content: center;
-
-        .wrapper {
-            width: 108rem;
-        }
-    }
-// Desktop Hero Banner Queries
-    @include desktop {
-        height: 52.34375vw;
-        box-shadow: inset 52.34375vw $hero-overlay;
-        padding: 0 7.8125vw;
-        justify-content: flex-start;
-
-        &__wrapper {
-            width: 100%;
-        }
+        line-height: $line-height-hero-mobile;
+        width: 65.7552083vw;
     }
 }
+
 // Footer Info Section
 .footer {
-    background-color: $nav-background;
+    background-color: $color-background-alternate;
     width: 100%;
     padding: 4.8rem 5vw;
-    display: flex;
-    flex-direction: column;
-// Social Media Banner
+    @include flexing(flex, column, initial, initial, initial, initial);
+
+
+    // Social Media Banner
     .connect {
         height: 3.6rem;
         margin-bottom: 3.2rem;
-// Get In Touch Heading
+
+    // Get In Touch Heading
         &__title {
             height: 3.6rem;
-            font-size: 3.6rem;
-            line-height: 4.4rem;
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
             font-weight: bold;
-            color: $white;
+            color: $color-heading-alternate;
             margin-bottom: 1.8rem;
         }
-// Social Media Icon Links
+
+        // Social Media Icon Links
         &-social {
             height: 2rem;
-            display: flex;
+            @include flexing(flex, initial, initial, initial, initial, initial);
 
             &__link {
                 height: 100%;
@@ -189,95 +122,141 @@
                 }
             }
         }
-// Logo Mobile Hidden Condition
+
+        // Logo Mobile Hidden Condition
         .logo {
-            display: none;
+            @include flexing(none, initial, initial, initial, initial, initial);
         }
     }
-// Contact Cards Container
+
+    // Contact Cards Container
     &__card {
-        display: flex;
-        flex-wrap: wrap;
-// Contact Cards
+        @include flexing(flex, initial, wrap, initial, initial, initial);
+
+        // Contact Cards
         .info-card {
             width: 22.4rem;
-// Card Owner and Company
+
+            // Card Owner and Company
             &__title {
                 width: 19.26rem;
-                font-size: 1.4rem;
+                font-size: $font-size-mobile-mdparagraph;
                 font-weight: 600;
-                line-height: 2.2rem;
-                color: $white;
+                line-height: $line-height-fs14px;
+                color: $color-heading-alternate;
 
                 &--margin {
                     margin-top: 2.4rem;
                 }
             }
-// Card Location 
+
+            // Card Location 
             &__description {
-                font-size: 1.2rem;
-                line-height: 2rem;
-                color: $white;
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                color: $color-text-alternate;
     
                 &--margin {
                     margin-top: 2.4rem;
                 }
             }
-// Card Email  
+
+            // Card Email  
             &__contact {
                 margin-top: 2.4rem;
-                font-size: 1.2rem;
-                line-height: 2rem;
-                color: $white;
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                color: $color-text-alternate;
             }
         }
     }
-// Copyright Section
+
+    // Copyright Section
     .copyright {
         margin-top: 4rem;
         width: 19.26rem;
-//  Copyright Info Statement
+
+        //  Copyright Info Statement
         &__description {
-            font-size: 1.2rem;
-            line-height: 2rem;
-            color: $white;
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            color: $color-text-alternate;
         }
     }
+}
+
 // Transition Queries to Unwrap Copyright for New Spacing
-    @include mobile-tablet-transition(328px) {
+@include mobile-tablet-transition(328px) {
+    .footer{
         .copyright {
             width: 29.6rem;
         }
     }
+}
+
 // Transition Queries to Unwrap Social Section Links
-    @include mobile-tablet-transition(410px) {
+@include mobile-tablet-transition(410px) {
+    .footer {
         .connect {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: flex-start;
+            @include flexing(flex, initial, wrap, baseline, initial, flex-start);
             margin-bottom: 3.2rem;
 
             &__title {
                 margin-bottom: 0;
-            }
-
-            &-social {
-                margin-top: 2.4rem;
-                margin-left: 3rem;
-                margin-top: 0;
+                width: 24.5rem;
             }
         }
     }
-// Tablet Footer Queries
-    @include tablet {
+}
+// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(658px) {
+    .hero {
+        &__title {
+            line-height: $line-height-fs60px;
+        }
+    }
+}
+
+// Tablet Layout Queries
+@include tablet {
+    .nav {
+        @include flexing(flex, row, initial, center, initial, flex-start);
+        padding: 0 3.125vw;
+
+        &__logo {
+            margin-top: 0;
+        }
+
+        &__list {
+            margin-top: 0;
+            padding-top: 1rem;
+            height: 8rem;
+            width: fit-content;
+        }
+
+        &__link {
+            margin-left: 5.6rem;
+            width: 8rem;
+            align-items: center;
+        }
+    }
+
+    .hero {
+        height: 52.08333333vw;
+        box-shadow: inset 52.08333333vw $color-overlay;
+        padding: 0 3.125vw;
+
+        &__title {
+            font-size: $font-size-desktop-hero;
+            width: 51rem;
+            line-height: $line-height-fs60px;
+        }
+    }
+
+    .footer {
         padding: 4.8rem 3.125vw;
 
         .connect {
-            display: flex;
-            flex-wrap: unset;
-            align-items: baseline;
-            justify-content: flex-start;
 
             &__title {
                 width: 25.2rem;
@@ -306,8 +285,8 @@
                 
                 &__title {
                     width: 22.4rem;
-                    font-size: 1.6rem;
-                    line-height: 2.4rem;
+                    font-size: $font-size-desktop-lgparagraph;
+                    line-height: $line-height-fs16px;
 
                     &--margin {
                         margin-top: 0;
@@ -315,27 +294,45 @@
                 }
 
                 &__description {
-                    font-size: 1.4rem;
-                    line-height: 2rem;
+                    font-size: $font-size-desktop-smparagraph;
+                    line-height: $line-height-fs14px-alt;
                 }
 
                 &__contact {
-                    font-size: 1.4rem;
-                    line-height: 2rem;
+                    font-size: $font-size-desktop-smparagraph;
+                    line-height: $line-height-fs14px-alt;
                 }
             }
         }
 
         .copyright {
             &__description {
-                font-size: 1.4rem;
-                line-height: 2rem;
+                font-size: $font-size-desktop-smparagraph;
+                line-height: $line-height-fs14px-alt;
                 width: 34.8rem;
             }
         }
     }
+}
+
 // Transition Queries to Smooth Tablet into Desktop Layout
-    @include tablet-desktop-transition(1152px) {
+@include tablet-desktop-transition(1152px) {
+    .nav {
+        box-sizing: unset;
+        align-self: center;
+        width: 108rem;
+        padding: 0 100%;
+    }
+
+    .hero {
+        justify-content: center;
+
+        .wrapper {
+            width: 108rem;
+        }
+    }
+
+    .footer {
         align-items: center;
 
         .connect {
@@ -344,15 +341,38 @@
 
         &__card {
             width: 108rem;
+
+            .info-card {
+            width: 19.44vw;
+            }
         }
 
         .copyright {
             width: 108rem;
-        }
-        
+        }   
     }
-// Desktop Footer Queries
-    @include desktop {
+}
+
+// Desktop Queries
+@include desktop {
+    .nav {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 7.8125vw;
+    }
+
+    .hero {
+        height: 52.34375vw;
+        box-shadow: inset 52.34375vw $color-overlay;
+        padding: 0 7.8125vw;
+        justify-content: flex-start;
+
+        &__wrapper {
+            width: 100%;
+        }
+    }
+
+    .footer {
         padding: 4.8rem 7.8125vw;
         align-items: flex-start;
 
