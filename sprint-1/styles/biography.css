@@ -589,13 +589,16 @@
     line-height: 3.2rem;
     font-weight: bold;
   }
+  .biography__content {
+    margin-top: 3.2rem;
+  }
   .biography__text {
     font-size: 1.4rem;
     width: 44.921875vw;
     line-height: 2.2rem;
   }
   .biography__text--margin {
-    margin-top: 3.2rem;
+    margin: 0;
   }
   .biography__text:last-of-type {
     margin-left: 3.125vw;

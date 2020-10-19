@@ -420,13 +420,17 @@
             font-weight: bold;
         }
 
+        &__content {
+            margin-top: 3.2rem;
+        }
+
         &__text {
             font-size: $font-size-desktop-smparagraph;
             width: 44.921875vw;
             line-height: $line-height-fs14px;
 
             &--margin {
-                margin-top: 3.2rem;
+                margin: 0;
             }
 
             &:last-of-type{
