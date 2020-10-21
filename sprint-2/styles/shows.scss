@@ -66,19 +66,19 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: inset 0 57.1875vw $color-overlay;
+    box-shadow: inset 0 147.5vw $color-overlay;
     padding: 0 5vw;
-    height: 57.1875vw;
+    height: 147.5vw;
     width: 100%;
-    @include flexing(flex, initial, initial, center, initial, initial);
+    @include flexing(flex, column, initial, center, initial, initial);
 
     // Hero Banner Heading
     &__title {
         color: $color-heading-alternate;
-        font-size: $font-size-mobile-hero;
+        font-size: $font-size-desktop-lgheading;
         font-weight: bold;
-        line-height: $line-height-hero-mobile;
-        width: 65.7552083vw;
+        line-height: $line-height-fs36px;
+        width: 90vw;
     }
 }
 
