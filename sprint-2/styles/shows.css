@@ -165,21 +165,24 @@
           flex-direction: column;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-item-align: initial;
       align-self: initial;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.hero .wrapper {
+  width: 28.8rem;
+  margin-bottom: 4.8rem;
 }
 .hero__subtitle {
   color: #FFF;
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 2.2rem;
-  width: 90vw;
   margin-bottom: 0.8rem;
 }
 .hero__title {
@@ -187,8 +190,8 @@
   font-size: 3.6rem;
   font-weight: bold;
   line-height: 4.4rem;
-  width: 90vw;
 }
+
 .footer {
   background-color: #323232;
   width: 100%;
