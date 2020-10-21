@@ -208,6 +208,7 @@
         }
     }
 }
+
 // Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
 @include mobile-tablet-transition(658px) {
     .hero {
