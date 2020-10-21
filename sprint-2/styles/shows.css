@@ -170,9 +170,17 @@
           align-items: center;
   -ms-flex-item-align: initial;
       align-self: initial;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.hero__subtitle {
+  color: #FFF;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+  width: 90vw;
+  margin-bottom: 0.8rem;
 }
 .hero__title {
   color: #FFF;
@@ -181,7 +189,6 @@
   line-height: 4.4rem;
   width: 90vw;
 }
-
 .footer {
   background-color: #323232;
   width: 100%;

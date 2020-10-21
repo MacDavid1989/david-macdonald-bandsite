@@ -70,7 +70,22 @@
     padding: 0 5vw;
     height: 147.5vw;
     width: 100%;
-    @include flexing(flex, column, initial, center, initial, initial);
+    @include flexing(flex, column, initial, center, initial, space-evenly);
+
+    // Hero Text Wrapper
+    .wrapper {
+        // margin: 2.4rem 0;
+    }
+
+    // Hero Banner Subheading
+    &__subtitle {
+        color: $color-heading-alternate;
+        font-size: $font-size-mobile-mdparagraph;
+        font-weight: 600;
+        line-height: $line-height-fs14px;
+        width: 90vw;
+        margin-bottom: 0.8rem;
+    }
 
     // Hero Banner Heading
     &__title {
@@ -79,6 +94,10 @@
         font-weight: bold;
         line-height: $line-height-fs36px;
         width: 90vw;
+    }
+
+    &__song {
+        // margin: 2.4rem 0;
     }
 }
 
