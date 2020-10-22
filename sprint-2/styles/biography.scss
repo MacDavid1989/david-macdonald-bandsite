@@ -100,7 +100,7 @@
 .main {
     background-color: $color-white;
     @include flexing(flex, column, initial, center, initial, center);
-    padding: 3.2rem 5vw 0rem;
+    padding: 3.2rem 5vw 4rem;
 }
 
 // Biography Section Card Container Including Image
@@ -185,12 +185,102 @@
         &:hover {
             filter: grayscale(0);
         }
+    }      
+}
+
+// Comments Section
+.comments {
+    &__title {
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+        margin-bottom: 1.6rem;
     }
 
-    // Comments Section
-    .comments {
-        
-    }   
+    .form {
+        @include flexing(flex, initial, wrap, initial, initial, space-between);
+        width: 28.8rem;
+            border-bottom: 0.1rem solid #E1E1E1;
+            padding: 1.6rem 0;
+
+        &__image {
+            height: 4.8rem;
+            width: 4.8rem;
+            border-radius: 50%;
+        }
+
+        &__list {
+            list-style-type: none;
+        }
+
+        &__item {
+            @include flexing(flex, column, initial, initial, initial, initial);
+
+            #name {
+                width: 22.4rem;
+                height: 4.8rem;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+            }
+
+            #comment {
+                width: 22.4rem;
+                height: 4.8rem;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, initial, center);
+                border-radius: 0.4rem;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                text-decoration: none;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: 22.4rem;
+                height: 4.8rem;
+                margin-top: 2.4rem;
+            }
+        }
+
+        &__label {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+        }
+    }
+
+    &__cards {
+        .card{
+            width: 28.8rem;
+            border-bottom: 0.1rem solid #E1E1E1;
+            padding: 1.6rem 0;
+    
+            &__label {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 0.8rem;
+            }
+    
+            &__text-title {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 1.6rem;
+            }
+    
+            &__text {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                margin-bottom: 1.6rem;
+            }   
+        }
+    }
 }
 
 // Footer Info Section
