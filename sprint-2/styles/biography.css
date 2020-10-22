@@ -263,7 +263,7 @@
 .gallery {
   background-color: #FAFAFA;
   width: 100vw;
-  padding: 3.2rem 5vw;
+  padding: 3.2rem 5vw 4rem;
 }
 .gallery__title {
   font-size: 2.4rem;
@@ -283,11 +283,15 @@
           filter: grayscale(0);
 }
 
+.comments {
+  background-color: #FFF;
+  padding: 3.2rem 0 0 0;
+}
 .comments__title {
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: bold;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
 }
 .comments .form {
   display: -webkit-box;
@@ -304,20 +308,22 @@
           align-items: initial;
   -ms-flex-item-align: initial;
       align-self: initial;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   width: 28.8rem;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0;
+  padding: 1.6rem 0 3.2rem;
 }
 .comments .form__image {
   height: 4.8rem;
   width: 4.8rem;
   border-radius: 50%;
+  margin-top: 2rem;
 }
 .comments .form__list {
   list-style-type: none;
+  margin-left: 1.6rem;
 }
 .comments .form__item {
   display: -webkit-box;
@@ -343,12 +349,17 @@
   height: 4.8rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
+  padding: 0 0.8rem;
+}
+.comments .form__item--margin {
+  margin-top: 1.6rem;
 }
 .comments .form__item #comment {
   width: 22.4rem;
-  height: 4.8rem;
+  height: 9.6rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
+  padding: 0.8rem;
 }
 .comments .form__item .button {
   display: -webkit-box;
@@ -369,15 +380,15 @@
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 0.4rem;
+  border: none;
   background-color: #323232;
   color: #FFF;
-  text-decoration: none;
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
   width: 22.4rem;
   height: 4.8rem;
-  margin-top: 2.4rem;
+  margin-top: 1.6rem;
 }
 .comments .form__label {
   font-size: 1.2rem;
@@ -386,9 +397,56 @@
   color: #AFAFAF;
 }
 .comments__cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   width: 28.8rem;
   border-bottom: 0.1rem solid #E1E1E1;
   padding: 1.6rem 0;
+}
+.comments__cards .card__image {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-top: 0.8rem;
+}
+.comments__cards .card__body {
+  width: 23.1rem;
+  margin-left: 0.8rem;
+}
+.comments__cards .card__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.8rem;
 }
 .comments__cards .card__label {
   font-size: 1.4rem;
@@ -406,7 +464,7 @@
 .comments__cards .card__text {
   font-size: 1.4rem;
   line-height: 2.2rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
 }
 
 .footer {

@@ -165,7 +165,7 @@
 .gallery {
     background-color: $color-background-base;
     width: 100vw;
-    padding: 3.2rem 5vw;
+    padding: 3.2rem 5vw 4rem;
 
     // Gallery Heading
     &__title {
@@ -190,27 +190,32 @@
 
 // Comments Section
 .comments {
+    background-color: $color-white;
+    padding: 3.2rem 0 0 0;
+
     &__title {
         font-size: $font-size-mobile-lgheading;
         line-height: $line-height-fs24px;
         font-weight: bold;
-        margin-bottom: 1.6rem;
+        margin-bottom: 2.4rem;
     }
 
     .form {
-        @include flexing(flex, initial, wrap, initial, initial, space-between);
+        @include flexing(flex, initial, wrap, initial, initial, initial);
         width: 28.8rem;
             border-bottom: 0.1rem solid #E1E1E1;
-            padding: 1.6rem 0;
+            padding: 1.6rem 0 3.2rem;
 
         &__image {
             height: 4.8rem;
             width: 4.8rem;
             border-radius: 50%;
+            margin-top: 2rem;
         }
 
         &__list {
             list-style-type: none;
+            margin-left: 1.6rem;
         }
 
         &__item {
@@ -221,27 +226,34 @@
                 height: 4.8rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
+                
+                padding: 0 0.8rem;
+            }
+
+            &--margin {
+                margin-top: 1.6rem;
             }
 
             #comment {
                 width: 22.4rem;
-                height: 4.8rem;
+                height: 9.6rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
+                padding: 0.8rem;
             }
 
             .button {
                 @include flexing(flex, initial, initial, center, initial, center);
                 border-radius: 0.4rem;
+                border: none;
                 background-color: $color-background-alternate;
                 color: $color-white;
-                text-decoration: none;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
                 width: 22.4rem;
                 height: 4.8rem;
-                margin-top: 2.4rem;
+                margin-top: 1.6rem;
             }
         }
 
@@ -255,9 +267,27 @@
 
     &__cards {
         .card{
+            @include flexing(flex, initial, initial, initial, initial, initial);
             width: 28.8rem;
             border-bottom: 0.1rem solid #E1E1E1;
             padding: 1.6rem 0;
+
+            &__image {
+                height: 4.8rem;
+                width: 4.8rem;
+                border-radius: 50%;
+                margin-top: 0.8rem;
+            }
+
+            &__body {
+                width: 23.1rem;
+                margin-left: 0.8rem;
+            }
+
+            &__heading {
+                @include flexing(flex, initial, initial, initial, initial, space-between);
+                margin-top: 0.8rem;
+            }
     
             &__label {
                 font-size: $font-size-mobile-mdparagraph;
@@ -277,7 +307,7 @@
             &__text {
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
-                margin-bottom: 1.6rem;
+                margin-bottom: 0.8rem;
             }   
         }
     }
