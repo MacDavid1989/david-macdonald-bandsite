@@ -230,9 +230,11 @@
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 outline-color: $color-background-alternate;
-                // border-radius: 0.4rem;
-                // background-color: $color-text-alternate;
+                border-radius: 0.4rem;
+                background-color: $color-text-alternate;
+                border-color: $color-divider;
                 padding: 0 0.8rem;
+                border-style: solid;
             }
 
             &--margin {
@@ -248,7 +250,10 @@
                 resize: none;
                 outline-color: $color-background-alternate;
                 border-radius: 0.4rem;
+                border-color: $color-divider;
                 background-color: $color-text-alternate;
+                border-style: solid;
+                border-width: 0.2rem;
             }
 
             .button {

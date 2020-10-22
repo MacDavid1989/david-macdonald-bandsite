@@ -353,7 +353,11 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   outline-color: #323232;
+  border-radius: 0.4rem;
+  background-color: #FAFAFA;
+  border-color: #E1E1E1;
   padding: 0 0.8rem;
+  border-style: solid;
 }
 .comments .form__item--margin {
   margin-top: 1.6rem;
@@ -367,7 +371,10 @@
   resize: none;
   outline-color: #323232;
   border-radius: 0.4rem;
+  border-color: #E1E1E1;
   background-color: #FAFAFA;
+  border-style: solid;
+  border-width: 0.2rem;
 }
 .comments .form__item .button {
   display: -webkit-box;
