@@ -49,7 +49,7 @@
   width: 100%;
   height: 8rem;
   position: fixed;
-  z-index: 1;
+  z-index: 11;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,6 +207,87 @@
 .hero__song {
   position: relative;
   z-index: 10;
+}
+
+.shows {
+  background-color: #FAFAFA;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  padding: 3.2rem 1.6rem;
+}
+.shows__title {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 1.6rem;
+}
+.shows .card {
+  width: 28.8rem;
+  border-bottom: 0.1rem solid #E1E1E1;
+  padding: 1.6rem 0;
+}
+.shows .card__label {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: #AFAFAF;
+  margin-bottom: 0.8rem;
+}
+.shows .card__text-title {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+.shows .card__text {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: 1.6rem;
+}
+.shows .card .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0.4rem;
+  background-color: #323232;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  width: 28.8rem;
+  height: 4.8rem;
+  margin-top: 2.4rem;
 }
 
 .footer {

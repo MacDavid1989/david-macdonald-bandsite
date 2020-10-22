@@ -19,7 +19,7 @@
     width: 100%;
     height: 8rem;
     position: fixed;
-    z-index: 1;
+    z-index: 11;
     @include flexing(flex, column, initial, center, initial, space-between);
 
     // Navigation Logo Anchor Boundary
@@ -112,6 +112,63 @@
     &__song {
         position: relative;
         z-index: 10;
+    }
+}
+
+// Shows Section
+.shows {
+    background-color: $color-background-base;
+    width: 100%;
+    @include flexing(flex, column, wrap, flex-start, initial, initial);
+    padding: 3.2rem 1.6rem;
+
+
+    &__title {
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+        margin-bottom: 1.6rem;
+    }
+
+    .card{
+        width: 28.8rem;
+        border-bottom: 0.1rem solid #E1E1E1;
+        padding: 1.6rem 0;
+
+        &__label {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+            margin-bottom: 0.8rem;
+        }
+
+        &__text-title {
+            font-size: $font-size-mobile-mdparagraph;
+            line-height: $line-height-fs14px;
+            font-weight: 600;
+            margin-bottom: 1.6rem;
+        }
+
+        &__text {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            margin-bottom: 1.6rem;
+        }
+
+        .button {
+            @include flexing(flex, initial, initial, center, initial, center);
+            border-radius: 0.4rem;
+            background-color: $color-background-alternate;
+            color: $color-white;
+            text-decoration: none;
+            font-size: $font-size-mobile-mdparagraph;
+            line-height: $line-height-fs14px;
+            font-weight: 600;
+            width: 28.8rem;
+            height: 4.8rem;
+            margin-top: 2.4rem;
+        }
     }
 }
 
