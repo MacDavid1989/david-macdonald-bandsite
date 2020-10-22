@@ -197,16 +197,19 @@
         font-size: $font-size-mobile-lgheading;
         line-height: $line-height-fs24px;
         font-weight: bold;
-        margin-bottom: 2.4rem;
+        margin-bottom: 1.6rem;
     }
 
     .form {
         @include flexing(flex, initial, wrap, initial, initial, initial);
         width: 28.8rem;
             border-bottom: 0.1rem solid #E1E1E1;
-            padding: 1.6rem 0 3.2rem;
+            padding: 1.6rem 0 4rem;
 
         &__image {
+            background-image: url(../assets/images/mohan-muruge.jpg);
+            background-position: center;
+            background-size: cover;
             height: 4.8rem;
             width: 4.8rem;
             border-radius: 50%;
@@ -226,7 +229,9 @@
                 height: 4.8rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
-                
+                outline-color: $color-background-alternate;
+                // border-radius: 0.4rem;
+                // background-color: $color-text-alternate;
                 padding: 0 0.8rem;
             }
 
@@ -240,6 +245,10 @@
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 padding: 0.8rem;
+                resize: none;
+                outline-color: $color-background-alternate;
+                border-radius: 0.4rem;
+                background-color: $color-text-alternate;
             }
 
             .button {
@@ -269,19 +278,20 @@
         .card{
             @include flexing(flex, initial, initial, initial, initial, initial);
             width: 28.8rem;
-            border-bottom: 0.1rem solid #E1E1E1;
-            padding: 1.6rem 0;
+            border-bottom: 0.1rem solid $color-divider;
+            padding: 1.6rem 0 0.8rem;
 
             &__image {
-                height: 4.8rem;
-                width: 4.8rem;
+                background-color: $color-divider;
+                height: 4.2rem;
+                width: 4.2rem;
                 border-radius: 50%;
                 margin-top: 0.8rem;
             }
 
             &__body {
                 width: 23.1rem;
-                margin-left: 0.8rem;
+                margin-left: 2rem;
             }
 
             &__heading {
@@ -301,7 +311,7 @@
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
-                margin-bottom: 1.6rem;
+                margin-bottom: 0.8rem;
             }
     
             &__text {

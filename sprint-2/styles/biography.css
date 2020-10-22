@@ -291,7 +291,7 @@
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: bold;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.6rem;
 }
 .comments .form {
   display: -webkit-box;
@@ -313,9 +313,12 @@
           justify-content: initial;
   width: 28.8rem;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0 3.2rem;
+  padding: 1.6rem 0 4rem;
 }
 .comments .form__image {
+  background-image: url(../assets/images/mohan-muruge.jpg);
+  background-position: center;
+  background-size: cover;
   height: 4.8rem;
   width: 4.8rem;
   border-radius: 50%;
@@ -349,6 +352,7 @@
   height: 4.8rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
+  outline-color: #323232;
   padding: 0 0.8rem;
 }
 .comments .form__item--margin {
@@ -360,6 +364,10 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   padding: 0.8rem;
+  resize: none;
+  outline-color: #323232;
+  border-radius: 0.4rem;
+  background-color: #FAFAFA;
 }
 .comments .form__item .button {
   display: -webkit-box;
@@ -416,17 +424,18 @@
           justify-content: initial;
   width: 28.8rem;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0;
+  padding: 1.6rem 0 0.8rem;
 }
 .comments__cards .card__image {
-  height: 4.8rem;
-  width: 4.8rem;
+  background-color: #E1E1E1;
+  height: 4.2rem;
+  width: 4.2rem;
   border-radius: 50%;
   margin-top: 0.8rem;
 }
 .comments__cards .card__body {
   width: 23.1rem;
-  margin-left: 0.8rem;
+  margin-left: 2rem;
 }
 .comments__cards .card__heading {
   display: -webkit-box;
@@ -459,7 +468,7 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
 }
 .comments__cards .card__text {
   font-size: 1.4rem;
