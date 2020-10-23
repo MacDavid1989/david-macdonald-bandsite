@@ -302,7 +302,7 @@
       -ms-flex-pack: initial;
           justify-content: initial;
   background-color: #FFF;
-  padding: 3.2rem 0 0 0;
+  padding: calc(32px + 0.035714285 * (100vw - 320px)) 0 0 0;
   width: 100%;
 }
 .comments__title {
@@ -334,7 +334,7 @@
           justify-content: initial;
   width: 90vw;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0 4rem;
+  padding: 1.6rem 0 3.2rem;
 }
 .comments .form__image {
   background-image: url(../assets/images/mohan-muruge.jpg);
@@ -907,6 +907,9 @@
     margin-left: 3.125vw;
   }
 
+  .comments {
+    padding-top: 4.8rem;
+  }
   .comments__title {
     font-size: 3.6rem;
     line-height: 4.4rem;

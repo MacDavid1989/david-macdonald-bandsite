@@ -192,7 +192,7 @@
 .comments {
     @include flexing(flex, column, initial, center, initial, initial);
     background-color: $color-white;
-    padding: 3.2rem 0 0 0;
+    padding: calc(32px + 0.035714285 * (100vw - 320px)) 0 0 0;
     width: 100%;
 
     &__title {
@@ -208,7 +208,7 @@
         @include flexing(flex, initial, initial, initial, initial, initial);
         width: 90vw;
         border-bottom: 0.1rem solid #E1E1E1;
-        padding: 1.6rem 0 4rem;
+        padding: 1.6rem 0 3.2rem;
 
         &__image {
             background-image: url(../assets/images/mohan-muruge.jpg);
@@ -687,6 +687,7 @@
     }
     // Comments Section ------------------------------------------------------------------
     .comments {
+        padding-top: 4.8rem;
     
         &__title {
             font-size: $font-size-desktop-lgheading;
