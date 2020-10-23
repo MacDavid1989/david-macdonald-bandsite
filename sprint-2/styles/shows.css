@@ -878,9 +878,13 @@
   }
 
   .hero {
-    padding: 16rem 7.8125vw;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 52.34375vw;
+    padding: 12.5vw 7.8125vw;
   }
   .hero .wrapper {
+    height: 35rem;
     margin: 0;
   }
   .hero__song {

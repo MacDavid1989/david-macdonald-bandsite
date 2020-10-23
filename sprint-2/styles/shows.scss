@@ -644,9 +644,12 @@
 
 
     .hero {
-        padding: 16rem 7.8125vw;
+        align-content: center;
+        height: 52.34375vw;
+        padding: 12.5vw 7.8125vw;
 
         .wrapper {
+            height: 35rem;
             margin: 0;
         }
 
