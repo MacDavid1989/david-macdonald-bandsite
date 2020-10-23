@@ -42,7 +42,8 @@ function formHandler(e) {
     newComment.date = date;
     newComment.comment = e.target.userComment.value;
     defaultComments.push(newComment);
-    comments.innerText = '';
+    document.getElementById('name').value = '';
+    document.getElementById('comment').value = '';
     setTimeout(() => defaultComments.forEach(e => renderComments(e.name,e.date,e.comment)),500);
 };
 
