@@ -237,30 +237,60 @@
   font-weight: bold;
   margin-bottom: 1.6rem;
 }
-.shows .card {
-  width: 28.8rem;
+.shows__header {
+  display: none;
+}
+.shows__cards {
+  width: 100%;
+}
+.shows__cards .card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   border-bottom: 0.1rem solid #E1E1E1;
   padding: 1.6rem 0;
 }
-.shows .card__label {
+.shows__cards .card__label {
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 600;
   color: #AFAFAF;
   margin-bottom: 0.8rem;
+  width: 13.6rem;
 }
-.shows .card__text-title {
+.shows__cards .card__label--margin {
+  margin-right: 8.8rem;
+}
+.shows__cards .card__text-title {
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
   margin-bottom: 1.6rem;
+  margin-right: 8.8rem;
+  width: 13.6rem;
 }
-.shows .card__text {
+.shows__cards .card__text {
   font-size: 1.2rem;
   line-height: 2rem;
   margin-bottom: 1.6rem;
+  width: 13.6rem;
 }
-.shows .card .button {
+.shows__cards .card .button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,9 +315,10 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
-  width: 28.8rem;
+  width: calc(288px - 0.285714285 * (100vw - 320px));
   height: 4.8rem;
   margin-top: 2.4rem;
+  margin-left: calc(0px + 1.285733727 * (100vw - 320px));
 }
 
 .footer {
@@ -427,6 +458,26 @@
 }
 
 @media (min-width: 328px) {
+  .shows__cards .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+
   .footer .copyright {
     width: 29.6rem;
   }
@@ -460,6 +511,10 @@
 @media (min-width: 658px) {
   .hero__title {
     line-height: 6.8rem;
+  }
+
+  .shows__cards .card .button {
+    margin-left: auto;
   }
 }
 @media (min-width: 768px) {
@@ -729,6 +784,10 @@
     font-weight: bold;
     margin-bottom: 4rem;
   }
+  .shows__cards {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
   .shows__header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -777,7 +836,7 @@
     -webkit-box-pack: initial;
         -ms-flex-pack: initial;
             justify-content: initial;
-    width: 93.75vw;
+    width: 80.4rem;
     border-bottom: 0.1rem solid #E1E1E1;
     padding: 1.6rem 0;
   }
@@ -834,6 +893,30 @@
     margin-left: auto;
   }
 }
+@media (min-width: 967px) {
+  .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .shows__cards {
+    margin-top: calc(8.4rem - 0.454054054 * (100vw - 967px));
+  }
+}
 @media (min-width: 1152px) {
   .nav {
     -webkit-box-sizing: unset;
@@ -851,6 +934,32 @@
   }
   .hero .wrapper {
     width: 108rem;
+  }
+
+  .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .shows__title {
+    width: 27.6rem;
+  }
+  .shows__cards {
+    margin-top: 0;
   }
 
   .footer {
@@ -893,57 +1002,6 @@
   }
 
   .shows {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
-    -ms-flex-item-align: initial;
-        align-self: initial;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 3.2rem 1.6rem;
-  }
-  .shows__title {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    font-weight: bold;
-    margin-bottom: 1.6rem;
-    width: 21.5625vw;
-  }
-  .shows .card {
-    width: 28.8rem;
-    border-bottom: 0.1rem solid #E1E1E1;
-    padding: 1.6rem 0;
-  }
-  .shows .card__label {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    font-weight: 600;
-    color: #AFAFAF;
-    margin-bottom: 0.8rem;
-  }
-  .shows .card__text-title {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 1.6rem;
-  }
-  .shows .card__text {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    margin-bottom: 1.6rem;
-  }
-  .shows .card .button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -961,16 +1019,9 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    border-radius: 0.4rem;
-    background-color: #323232;
-    color: #FFF;
-    text-decoration: none;
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    font-weight: 600;
-    width: 28.8rem;
-    height: 4.8rem;
-    margin-top: 2.4rem;
+  }
+  .shows__title {
+    margin-right: auto;
   }
 
   .footer {
