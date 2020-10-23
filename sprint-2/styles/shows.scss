@@ -384,7 +384,7 @@
 
     .shows {
         @include flexing(flex, column, initial, center, initial, initial);
-        padding: 4.8rem 2.4rem 4rem;
+        padding: 4.8rem 3.125vw 4rem;
 
 
         &__title {
@@ -503,12 +503,32 @@
 
 @include tablet-desktop-transition(857px) {
     .shows {
+
+        &__heading {
+            width: 18.4rem;
+
+            &--margin {
+                margin-right: 9.2rem;
+            }
+        }
+
         &__cards {
             align-self: flex-end;
             width: 80.4rem;
 
             .card{
                 width: 80.4rem;
+                
+                &__text-title {
+                    width: 16rem;
+                    margin-right: 10.4rem;
+                }
+
+                &__text {
+                    width: 16rem;
+                    margin: 0 1.2rem;
+                }
+                
             }
         }        
     }
@@ -544,6 +564,9 @@
 
     .shows {
         @include flexing(flex, initial, initial, center, initial, center);
+        width: 108rem;
+        padding: 4.8rem 0 4rem;
+        margin: 0 auto;
 
         &__title {
             width: 27.6rem;
@@ -597,7 +620,8 @@
     .shows {
         @include flexing(flex, initial, initial, center, initial, center);
         padding: 4.8rem 7.8125vw 4rem;
-
+        width: 100%;
+        margin: 0;
 
         &__title {
             margin-right: auto;
