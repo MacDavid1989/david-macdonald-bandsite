@@ -265,6 +265,7 @@
                 @include flexing(flex, initial, initial, center, flex-end, center);
                 border-radius: 0.4rem;
                 border: none;
+                outline-style: none;
                 background-color: $color-background-alternate;
                 color: $color-white;
                 font-size: $font-size-mobile-mdparagraph;
@@ -273,6 +274,11 @@
                 width: calc(160px + 0.240601503 * (586px - 100vw));
                 height: 4.8rem;
                 margin-top: 1.6rem;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: $color-black;
             }
         }
 
