@@ -312,7 +312,7 @@
   line-height: 3.2rem;
   font-weight: bold;
   margin-bottom: 1.6rem;
-  width: 100%;
+  width: 90vw;
 }
 .comments .form {
   display: -webkit-box;
@@ -348,6 +348,7 @@
 .comments .form__list {
   list-style-type: none;
   margin-left: 1.6rem;
+  width: calc(100% - 64px);
 }
 .comments .form__item {
   display: -webkit-box;
@@ -369,7 +370,7 @@
           justify-content: initial;
 }
 .comments .form__item #name {
-  width: 70vw;
+  width: 100%;
   height: 4.8rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -384,7 +385,7 @@
   margin-top: 1.6rem;
 }
 .comments .form__item #comment {
-  width: 70vw;
+  width: 100%;
   height: 9.6rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -422,7 +423,7 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
-  width: 22.4rem;
+  width: calc(160px + 0.240601503 * (586px - 100vw));
   height: 4.8rem;
   margin-top: 1.6rem;
 }
@@ -431,6 +432,9 @@
   line-height: 2rem;
   font-weight: 600;
   color: #AFAFAF;
+}
+.comments__cards {
+  width: 90vw;
 }
 .comments__cards .card {
   display: -webkit-box;
@@ -450,9 +454,9 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  width: 28.8rem;
   border-bottom: 0.1rem solid #E1E1E1;
   padding: 1.6rem 0 0.8rem;
+  width: 100%;
 }
 .comments__cards .card__image {
   background-color: #E1E1E1;
@@ -462,10 +466,11 @@
   margin-top: 0.8rem;
 }
 .comments__cards .card__body {
-  width: 23.1rem;
-  margin-left: 2rem;
+  width: calc(100% - 53.4px);
+  margin-left: 1.6rem;
 }
 .comments__cards .card__heading {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -491,14 +496,19 @@
   font-weight: 600;
   color: #AFAFAF;
   margin-bottom: 0.8rem;
+  margin-right: calc(0px + 1.164003759 * (100vw - 320px));
 }
 .comments__cards .card__text-title {
+  display: block;
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
+  margin-right: 0.8rem;
+  white-space: nowrap;
 }
 .comments__cards .card__text {
+  width: 100%;
   font-size: 1.4rem;
   line-height: 2.2rem;
   margin-bottom: 0.8rem;
@@ -669,6 +679,41 @@
   .footer .connect__title {
     margin-bottom: 0;
     width: 24.5rem;
+  }
+}
+@media (min-width: 586px) {
+  .comments .form {
+    width: 52.8rem;
+    padding-top: calc(16px + 0.131868131 * (100vw - 568px));
+  }
+  .comments .form__item #name {
+    width: 46rem;
+  }
+  .comments .form__item #comment {
+    width: 46rem;
+  }
+  .comments .form__item .button {
+    width: 16rem;
+  }
+  .comments__cards {
+    width: 52.8rem;
+  }
+  .comments__cards .card {
+    width: 52.8rem;
+  }
+  .comments__cards .card__body {
+    width: 47.1rem;
+  }
+  .comments__cards .card__heading {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+  .comments__cards .card__label {
+    margin-right: 0;
+  }
+  .comments__cards .card__text {
+    width: 100%;
   }
 }
 @media (min-width: 658px) {
@@ -902,7 +947,6 @@
   }
   .comments__cards .card__label {
     font-weight: 500;
-    margin-left: 0.8rem;
   }
   .comments__cards .card__text-title {
     font-size: 1.6rem;

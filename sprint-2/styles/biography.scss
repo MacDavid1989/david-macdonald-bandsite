@@ -201,12 +201,12 @@
         line-height: $line-height-fs24px;
         font-weight: bold;
         margin-bottom: 1.6rem;
-        width: 100%;
+        width: 90vw;
     }
 
     .form {
         @include flexing(flex, initial, initial, initial, initial, initial);
-        width: 100%;
+        width: 90vw;
         border-bottom: 0.1rem solid #E1E1E1;
         padding: 1.6rem 0 4rem;
 
@@ -223,13 +223,14 @@
         &__list {
             list-style-type: none;
             margin-left: 1.6rem;
+            width: calc(100% - 64px);
         }
 
         &__item {
             @include flexing(flex, column, initial, initial, initial, initial);
 
             #name {
-                width: ;
+                width: 100%;
                 height: 4.8rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
@@ -246,7 +247,7 @@
             }
 
             #comment {
-                width: 70vw;
+                width: 100%;
                 height: 9.6rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
@@ -269,7 +270,7 @@
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
-                width: 22.4rem;
+                width: calc(160px + 0.240601503 * (586px - 100vw));
                 height: 4.8rem;
                 margin-top: 1.6rem;
             }
@@ -284,13 +285,13 @@
     }
 
     &__cards {
-        // @include flexing(flex, column, initial, center, initial, initial);
+        width: 90vw;
 
         .card{
             @include flexing(flex, initial, initial, initial, initial, initial);
-            width: 28.8rem;
             border-bottom: 0.1rem solid $color-divider;
             padding: 1.6rem 0 0.8rem;
+            width: 100%;
 
             &__image {
                 background-color: $color-divider;
@@ -301,11 +302,12 @@
             }
 
             &__body {
-                width: 23.1rem;
-                margin-left: 2rem;
+                width: calc(100% - 53.4px);
+                margin-left: 1.6rem;
             }
 
             &__heading {
+                width: 100%;
                 @include flexing(flex, initial, initial, initial, initial, space-between);
                 margin-top: 0.8rem;
             }
@@ -316,16 +318,21 @@
                 font-weight: 600;
                 color: $color-text-label;
                 margin-bottom: 0.8rem;
+                margin-right: calc(0px + 1.164003759 * (100vw - 320px));
             }
     
             &__text-title {
+                display: block;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
                 margin-bottom: 0.8rem;
+                margin-right: 0.8rem;
+                white-space: nowrap;
             }
     
             &__text {
+                width: 100%;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 margin-bottom: 0.8rem;
@@ -456,6 +463,56 @@
             &__title {
                 margin-bottom: 0;
                 width: 24.5rem;
+            }
+        }
+    }
+}
+
+// Transition Queries to Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(586px) {
+    .comments {
+    
+        .form {
+            width: 52.8rem;
+            padding-top: calc(16px + 0.131868131 * (100vw - 568px));
+
+            &__item {
+    
+                #name {
+                    width: 46rem;
+                }
+    
+                #comment {
+                    width: 46rem;
+                }
+    
+                .button {
+                    width: 16rem;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 52.8rem;
+    
+            .card{
+                width: 52.8rem;
+    
+                &__body {
+                    width: 47.1rem;
+                }
+
+                &__heading {
+                    justify-content: initial;
+                }
+
+                &__label {
+                    margin-right: 0;
+                }
+    
+                &__text {
+                   width: 100%;
+                }   
             }
         }
     }
@@ -634,10 +691,6 @@
             width: 52.8rem;
             padding: 4rem 0 2.4rem;
     
-            &__image {
-
-            }
-    
             &__list {
                 margin-left: 2rem;
             }
@@ -687,7 +740,6 @@
         
                 &__label {
                     font-weight: 500;
-                    margin-left: 0.8rem;
                 }
         
                 &__text-title {
