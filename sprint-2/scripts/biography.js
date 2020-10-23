@@ -10,33 +10,47 @@ const button = document.querySelector('.button');
 const form = document.querySelector('.form');
 const date = new Date().toLocaleDateString();
 
-let defaultComments = [
+// default comment cards as per mockup
+const defaultComments = [
     {
-        name: 'Micheal Lyons', 
-        comment: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.',
+        name: 'Theodore Duncan',
+        date: '11/15/2018', 
+        comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!',
     },
     {
         name: 'Gary Wong',
+        date: '12/12/2018', 
         comment: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!',
     },
     {
-        name: 'Theodore Duncan',
-        comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!',
+        name: 'Micheal Lyons',
+        date: '12/18/2018', 
+        comment: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.',
     }
 ];
 
-console.log(defaultComments[0].name);
+// variable for new comments array
 
+// event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
 
+// function that deals with the form submission
 function formHandler(e) {
     e.preventDefault();
-    console.log(e.target.userName.value);
-    console.log(e.target.userComment.value);
+    let newComment = {};
+    newComment.name = e.target.userName.value;
+    newComment.date = date;
+    newComment.comment = e.target.userComment.value;
+    defaultComments.push(newComment);
+    comments.innerText = '';
+    setTimeout(() => defaultComments.forEach(e => renderComments(e.name,e.date,e.comment)),500);
 };
 
+// loop that filters through an array of objects and invokes a function to renderComments
+defaultComments.forEach(e => renderComments(e.name,e.date,e.comment));
+
 // function that renders comment section cards
-function renderComments (name, comment) {
+function renderComments (name, date, comment) {
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
@@ -60,13 +74,13 @@ function renderComments (name, comment) {
     // create Card Text
     const paragraphEl = document.createElement('p');
     paragraphEl.classList.add('card__text');
-    paragraphEl.innerText = 'hello'; // test for paragraph
+    paragraphEl.innerText = comment; // test for paragraph
     bodyEl.appendChild(paragraphEl);
 
     // create Card Name
     const nameEl = document.createElement('h2');
     nameEl.classList.add('card__text-title');
-    nameEl.innerText = "is it me"; // test for name
+    nameEl.innerText = name; // test for name
     headerEl.appendChild(nameEl);
 
     // create Card Date
@@ -77,5 +91,3 @@ function renderComments (name, comment) {
 
     return cardEl;
 }
-
-renderComments();
