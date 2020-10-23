@@ -464,7 +464,9 @@
   width: 100%;
 }
 .comments__cards .card__image {
-  background-color: #E1E1E1;
+  background-image: url(http://placekitten.com/200/300);
+  background-position: center;
+  background-size: cover;
   height: 4.2rem;
   width: 4.2rem;
   border-radius: 50%;
