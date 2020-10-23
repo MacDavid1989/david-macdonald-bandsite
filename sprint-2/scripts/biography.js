@@ -29,8 +29,6 @@ const defaultComments = [
     }
 ];
 
-// variable for new comments array
-
 // event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
 
@@ -44,6 +42,7 @@ function formHandler(e) {
     defaultComments.push(newComment);
     document.getElementById('name').value = '';
     document.getElementById('comment').value = '';
+    comments.innerHTML = '';
     setTimeout(() => defaultComments.forEach(e => renderComments(e.name,e.date,e.comment)),500);
 };
 
