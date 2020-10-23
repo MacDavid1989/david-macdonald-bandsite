@@ -79,14 +79,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 0 5vw;
-    height: 47.2rem;
+    padding: 0 calc(16px + 0.017857142 * (100vw - 320px));
+    height: calc(472px + 0.441964285 * (100vw - 320px));
     width: 100%;
     @include flexing(flex, column, initial, flex-start, initial, center);
 
     // Hero Text Wrapper
     .wrapper {
-        width: 28.8rem;
+        width: calc(228px + 0.495535714 * (100vw - 320px));
         margin-bottom: 4.8rem;
         position: relative;
         z-index: 10;
@@ -95,21 +95,23 @@
     // Hero Banner Subheading
     &__subtitle {
         color: $color-heading-alternate;
-        font-size: $font-size-mobile-mdparagraph;
+        font-size: calc(#{$font-size-mobile-mdparagraph} + 0.022321428 * (100vw - 320px)); 
         font-weight: 600;
-        line-height: $line-height-fs14px;
+        line-height: calc(#{$line-height-fs14px} + 0.022321428 * (100vw - 320px));
         margin-bottom: 0.8rem;
     }
 
     // Hero Banner Heading
     &__title {
         color: $color-heading-alternate;
-        font-size: $font-size-desktop-lgheading;
+        font-size: calc(#{$font-size-desktop-lgheading} + 0.053571428 * (100vw - 320px));
         font-weight: bold;
-        line-height: $line-height-fs36px;
+        line-height: calc(#{$line-height-fs36px} + 0.053571428 * (100vw - 320px));
     }
 
     &__song {
+        width: calc(228px + 0.330357142 * (100vw - 320px));
+        height: calc(116px + 0.066964285 * (100vw - 320px));
         position: relative;
         z-index: 10;
     }
@@ -120,7 +122,7 @@
     background-color: $color-background-base;
     width: 100%;
     @include flexing(flex, column, wrap, flex-start, initial, initial);
-    padding: 3.2rem 1.6rem;
+    padding: 3.2rem calc(16px + 0.017857142 * (100vw - 320px));
 
 
     &__title {
@@ -328,12 +330,6 @@
 
 // Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
 @include mobile-tablet-transition(658px) {
-    .hero {
-        &__title {
-            line-height: $line-height-fs60px;
-        }
-    }
-
     .shows {
         &__cards {
             .card {
@@ -373,11 +369,28 @@
     .hero {
         height: 67rem;
         padding: 0 3.125vw;
+        
+
+        .wrapper {
+            width: calc(510px + 0.351758793 * (100vw - 768px));
+        }
+
+        &__subtitle {
+            color: $color-heading-alternate;
+            font-size: $font-size-desktop-smheading;
+            font-weight: bold;
+            line-height: $line-height-fs24px;
+            margin: 0 0 4.8rem;
+        }
 
         &__title {
             font-size: $font-size-desktop-hero;
-            width: 51rem;
             line-height: $line-height-fs60px;
+        }
+
+        &__song {
+            width: 43.6rem;
+            height: 14.6rem;
         }
     }
 
@@ -501,6 +514,12 @@
 }
 
 @include tablet-desktop-transition(857px) {
+    .hero {
+        &__song {
+            margin-left: calc(0px + 4.277836363 * (100vw - 857px));
+        }
+    }
+
     .shows {
 
         &__heading {
@@ -534,6 +553,14 @@
 }
 
 @include tablet-desktop-transition(967px) {
+    .hero {
+        @include flexing(flex, initial, initial, center, initial, initial);
+
+        &__song {
+            // margin: 0 0 0 470.562px;
+        }
+    }
+
     .shows {
         @include flexing(flex, initial, initial, center, initial, space-between);
         
@@ -554,13 +581,8 @@
     }
 
     .hero {
-        @include flexing(flex, initial, initial, initial, initial, center);
-        height: 52.34375vw;
+        @include flexing(flex, initial, wrap, initial, initial, center);
         padding: 16rem 0;
-
-        &__subtitle {
-            margin: 0 0 4.8rem;
-        }
 
         &__title {
             width: 100%;
@@ -622,27 +644,15 @@
         padding: 0 7.8125vw;
     }
 
+
     .hero {
-        @include flexing(flex, initial, initial, initial, initial, initial);
-        height: 52.34375vw;
         padding: 16rem 7.8125vw;
 
-        &__subtitle {
-            margin: 0 0 4.8rem;
-        }
-
-        &__title {
-            width: 100%;
-        }
-
         .wrapper {
-            width: 58rem;
             margin: 0;
         }
 
         &__song {
-            width: 43.6rem;
-            height: 14.6rem;
             margin: 10.9rem 0 0 auto;
         }
     }

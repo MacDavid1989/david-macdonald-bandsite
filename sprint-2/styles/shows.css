@@ -164,8 +164,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  padding: 0 5vw;
-  height: 47.2rem;
+  padding: 0 calc(16px + 0.017857142 * (100vw - 320px));
+  height: calc(472px + 0.441964285 * (100vw - 320px));
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,25 +186,27 @@
           justify-content: center;
 }
 .hero .wrapper {
-  width: 28.8rem;
+  width: calc(228px + 0.495535714 * (100vw - 320px));
   margin-bottom: 4.8rem;
   position: relative;
   z-index: 10;
 }
 .hero__subtitle {
   color: #FFF;
-  font-size: 1.4rem;
+  font-size: calc(1.4rem + 0.022321428 * (100vw - 320px));
   font-weight: 600;
-  line-height: 2.2rem;
+  line-height: calc(2.2rem + 0.022321428 * (100vw - 320px));
   margin-bottom: 0.8rem;
 }
 .hero__title {
   color: #FFF;
-  font-size: 3.6rem;
+  font-size: calc(3.6rem + 0.053571428 * (100vw - 320px));
   font-weight: bold;
-  line-height: 4.4rem;
+  line-height: calc(4.4rem + 0.053571428 * (100vw - 320px));
 }
 .hero__song {
+  width: calc(228px + 0.330357142 * (100vw - 320px));
+  height: calc(116px + 0.066964285 * (100vw - 320px));
   position: relative;
   z-index: 10;
 }
@@ -229,7 +231,7 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  padding: 3.2rem 1.6rem;
+  padding: 3.2rem calc(16px + 0.017857142 * (100vw - 320px));
 }
 .shows__title {
   font-size: 2.4rem;
@@ -509,10 +511,6 @@
   }
 }
 @media (min-width: 658px) {
-  .hero__title {
-    line-height: 6.8rem;
-  }
-
   .shows__cards .card .button {
     margin-left: auto;
   }
@@ -561,10 +559,23 @@
     height: 67rem;
     padding: 0 3.125vw;
   }
+  .hero .wrapper {
+    width: calc(510px + 0.351758793 * (100vw - 768px));
+  }
+  .hero__subtitle {
+    color: #FFF;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 3.2rem;
+    margin: 0 0 4.8rem;
+  }
   .hero__title {
     font-size: 6rem;
-    width: 51rem;
     line-height: 6.8rem;
+  }
+  .hero__song {
+    width: 43.6rem;
+    height: 14.6rem;
   }
 
   .shows {
@@ -713,6 +724,10 @@
   }
 }
 @media (min-width: 857px) {
+  .hero__song {
+    margin-left: calc(0px + 4.277836363 * (100vw - 857px));
+  }
+
   .shows__heading {
     width: 18.4rem;
   }
@@ -737,6 +752,25 @@
   }
 }
 @media (min-width: 967px) {
+  .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
   .shows {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -778,8 +812,8 @@
     -webkit-box-direction: initial;
         -ms-flex-direction: initial;
             flex-direction: initial;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-align: initial;
         -ms-flex-align: initial;
             align-items: initial;
@@ -788,11 +822,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: 52.34375vw;
     padding: 16rem 0;
-  }
-  .hero__subtitle {
-    margin: 0 0 4.8rem;
   }
   .hero__title {
     width: 100%;
@@ -863,39 +893,12 @@
   }
 
   .hero {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
-    -ms-flex-item-align: initial;
-        align-self: initial;
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
-    height: 52.34375vw;
     padding: 16rem 7.8125vw;
   }
-  .hero__subtitle {
-    margin: 0 0 4.8rem;
-  }
-  .hero__title {
-    width: 100%;
-  }
   .hero .wrapper {
-    width: 58rem;
     margin: 0;
   }
   .hero__song {
-    width: 43.6rem;
-    height: 14.6rem;
     margin: 10.9rem 0 0 auto;
   }
 
