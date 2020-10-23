@@ -516,7 +516,7 @@
 @include tablet-desktop-transition(857px) {
     .hero {
         &__song {
-            margin-left: calc(0px + 4.277836363 * (100vw - 857px));
+            margin-left: calc(0px + 2.1830350847 * (100vw - 857px));
         }
     }
 
@@ -554,10 +554,8 @@
 
 @include tablet-desktop-transition(967px) {
     .hero {
-        @include flexing(flex, initial, initial, center, initial, initial);
-
-        &__song {
-            // margin: 0 0 0 470.562px;
+        .wrapper {
+            width: 58rem;
         }
     }
 

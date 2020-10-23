@@ -725,7 +725,7 @@
 }
 @media (min-width: 857px) {
   .hero__song {
-    margin-left: calc(0px + 4.277836363 * (100vw - 857px));
+    margin-left: calc(0px + 2.1830350847 * (100vw - 857px));
   }
 
   .shows__heading {
@@ -752,25 +752,10 @@
   }
 }
 @media (min-width: 967px) {
-  .hero {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-item-align: initial;
-        align-self: initial;
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
+  .hero .wrapper {
+    width: 58rem;
   }
+
   .shows {
     display: -webkit-box;
     display: -ms-flexbox;
