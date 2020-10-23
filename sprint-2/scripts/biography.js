@@ -9,8 +9,12 @@ const cardComment = document.querySelectorAll('.card__text');
 const button = document.querySelector('.button');
 const form = document.querySelector('.form')
 
+let formArray = [{name: 'Micheal Lyons'},{name: 'Gary Wong'},{name: 'Theodore Duncan'}];
+
 form.addEventListener('submit', formHandler);
 
 function formHandler(e) {
     e.preventDefault();
+    console.log(e.target.userName.value);
+    console.log(e.target.userComment.value);
 };
