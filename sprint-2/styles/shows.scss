@@ -344,6 +344,86 @@
         }
     }
 
+    .shows {
+        background-color: $color-background-base;
+        width: 100%;
+        @include flexing(flex, column, initial, center, initial, initial);
+        padding: 4.8rem 2.4rem 4rem;
+
+
+        &__title {
+            align-self: flex-start;
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            font-weight: bold;
+            margin-bottom: 4rem;
+        }
+
+        &__header {
+            @include flexing(flex, initial, initial, initial, flex-start, initial);
+            width: 72rem;
+        }
+
+        &__heading {
+            width: 13.6rem;
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+
+            &--margin {
+                margin-right: 8.8rem;
+            }
+        }
+
+        .card{
+            @include flexing(flex, initial, initial, baseline, initial, initial);
+            width: 93.75vw;
+            border-bottom: 0.1rem solid #E1E1E1;
+            padding: 1.6rem 0;
+
+            &__label {
+                display: none;
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 0.8rem;
+            }
+
+            &__text-title {
+                font-size: $font-size-desktop-lgparagraph;
+                line-height: $line-height-fs16px;
+                font-weight: 600;
+                margin-bottom: 0rem;
+                margin-right: 8.8rem;
+                width: 13.6rem;
+            }
+
+            &__text {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs14px;
+                margin-bottom: 0;
+                width: 13.6rem;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, initial, center);
+                border-radius: 0.4rem;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                text-decoration: none;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: 16rem;
+                height: 4.8rem;
+                margin-top: 0;
+                margin-left: auto;
+            }
+        }
+    }
+
     .footer {
         padding: 4.8rem 3.125vw;
 
@@ -406,6 +486,90 @@
     }
 }
 
+@include tablet-desktop-transition(857px) {
+    
+    .shows {
+        background-color: $color-background-base;
+        width: 100%;
+        @include flexing(flex, column, initial, center, initial, initial);
+        padding: 4.8rem 2.4rem 4rem;
+
+
+        &__title {
+            align-self: flex-start;
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            font-weight: bold;
+            margin-bottom: 4rem;
+        }
+
+        &__header {
+            @include flexing(flex, initial, initial, initial, flex-start, initial);
+            width: 72rem;
+        }
+
+        &__heading {
+            width: 13.6rem;
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+
+            &--margin {
+                margin-right: 8.8rem;
+            }
+        }
+
+        .card{
+            @include flexing(flex, initial, initial, baseline, initial, initial);
+            width: 93.75vw;
+            border-bottom: 0.1rem solid #E1E1E1;
+            padding: 1.6rem 0;
+
+            &__label {
+                display: none;
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 0.8rem;
+            }
+
+            &__text-title {
+                font-size: $font-size-desktop-lgparagraph;
+                line-height: $line-height-fs16px;
+                font-weight: 600;
+                margin-bottom: 0rem;
+                margin-right: 8.8rem;
+                width: 13.6rem;
+            }
+
+            &__text {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs14px;
+                margin-bottom: 0;
+                width: 13.6rem;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, initial, center);
+                border-radius: 0.4rem;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                text-decoration: none;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: 16rem;
+                height: 4.8rem;
+                margin-top: 0;
+                margin-left: auto;
+            }
+        }
+    }
+
+}
+
 // Transition Queries to Smooth Tablet into Desktop Layout
 @include tablet-desktop-transition(1152px) {
     .nav {
@@ -460,6 +624,62 @@
 
         &__wrapper {
             width: 100%;
+        }
+    }
+
+    .shows {
+        width: 100%;
+        @include flexing(flex, initial, initial, initial, initial, center);
+        padding: 3.2rem 1.6rem;
+
+
+        &__title {
+            font-size: $font-size-mobile-lgheading;
+            line-height: $line-height-fs24px;
+            font-weight: bold;
+            margin-bottom: 1.6rem;
+            width: 21.5625vw;
+        }
+
+        .card{
+            width: 28.8rem;
+            border-bottom: 0.1rem solid #E1E1E1;
+            padding: 1.6rem 0;
+
+            &__label {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 0.8rem;
+            }
+
+            &__text-title {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 1.6rem;
+            }
+
+            &__text {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                margin-bottom: 1.6rem;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, initial, center);
+                border-radius: 0.4rem;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                text-decoration: none;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: 28.8rem;
+                height: 4.8rem;
+                margin-top: 2.4rem;
+            }
         }
     }
 
