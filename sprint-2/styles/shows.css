@@ -165,7 +165,7 @@
   background-repeat: no-repeat;
   position: relative;
   padding: 0 5vw;
-  height: 147.5vw;
+  height: 47.2rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,9 +558,7 @@
   }
 
   .hero {
-    height: 52.08333333vw;
-    -webkit-box-shadow: inset 52.08333333vw rgba(50, 50, 50, 0.5);
-            box-shadow: inset 52.08333333vw rgba(50, 50, 50, 0.5);
+    height: 67rem;
     padding: 0 3.125vw;
   }
   .hero__title {
@@ -773,12 +771,40 @@
   }
 
   .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -ms-flex-item-align: initial;
+        align-self: initial;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 52.34375vw;
+    padding: 16rem 0;
+  }
+  .hero__subtitle {
+    margin: 0 0 4.8rem;
+  }
+  .hero__title {
+    width: 100%;
   }
   .hero .wrapper {
-    width: 108rem;
+    width: 58rem;
+    margin-left: auto;
+  }
+  .hero__song {
+    width: 43.6rem;
+    height: 14.6rem;
+    margin: 10.9rem auto 0 6.4rem;
   }
 
   .shows {
@@ -837,16 +863,40 @@
   }
 
   .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
     height: 52.34375vw;
-    -webkit-box-shadow: inset 52.34375vw rgba(50, 50, 50, 0.5);
-            box-shadow: inset 52.34375vw rgba(50, 50, 50, 0.5);
-    padding: 0 7.8125vw;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    padding: 16rem 7.8125vw;
   }
-  .hero__wrapper {
+  .hero__subtitle {
+    margin: 0 0 4.8rem;
+  }
+  .hero__title {
     width: 100%;
+  }
+  .hero .wrapper {
+    width: 58rem;
+    margin: 0;
+  }
+  .hero__song {
+    width: 43.6rem;
+    height: 14.6rem;
+    margin: 10.9rem 0 0 auto;
   }
 
   .shows {

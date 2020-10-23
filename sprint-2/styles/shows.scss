@@ -80,7 +80,7 @@
     background-repeat: no-repeat;
     position: relative;
     padding: 0 5vw;
-    height: 147.5vw;
+    height: 47.2rem;
     width: 100%;
     @include flexing(flex, column, initial, flex-start, initial, center);
 
@@ -371,8 +371,7 @@
     }
 
     .hero {
-        height: 52.08333333vw;
-        box-shadow: inset 52.08333333vw $color-overlay;
+        height: 67rem;
         padding: 0 3.125vw;
 
         &__title {
@@ -555,10 +554,27 @@
     }
 
     .hero {
-        justify-content: center;
+        @include flexing(flex, initial, initial, initial, initial, center);
+        height: 52.34375vw;
+        padding: 16rem 0;
+
+        &__subtitle {
+            margin: 0 0 4.8rem;
+        }
+
+        &__title {
+            width: 100%;
+        }
 
         .wrapper {
-            width: 108rem;
+            width: 58rem;
+            margin-left: auto;
+        }
+
+        &__song {
+            width: 43.6rem;
+            height: 14.6rem;
+            margin: 10.9rem auto 0 6.4rem;
         }
     }
 
@@ -596,7 +612,7 @@
             width: 108rem;
         }   
     }
-};
+}
 
 // Desktop Queries
 @include desktop {
@@ -607,13 +623,27 @@
     }
 
     .hero {
+        @include flexing(flex, initial, initial, initial, initial, initial);
         height: 52.34375vw;
-        box-shadow: inset 52.34375vw $color-overlay;
-        padding: 0 7.8125vw;
-        justify-content: flex-start;
+        padding: 16rem 7.8125vw;
 
-        &__wrapper {
+        &__subtitle {
+            margin: 0 0 4.8rem;
+        }
+
+        &__title {
             width: 100%;
+        }
+
+        .wrapper {
+            width: 58rem;
+            margin: 0;
+        }
+
+        &__song {
+            width: 43.6rem;
+            height: 14.6rem;
+            margin: 10.9rem 0 0 auto;
         }
     }
 
