@@ -10,7 +10,22 @@ const button = document.querySelector('.button');
 const form = document.querySelector('.form');
 const date = new Date().toLocaleDateString();
 
-let formArray = [{name: 'Micheal Lyons'},{name: 'Gary Wong'},{name: 'Theodore Duncan'}];
+let defaultComments = [
+    {
+        name: 'Micheal Lyons', 
+        comment: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.',
+    },
+    {
+        name: 'Gary Wong',
+        comment: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!',
+    },
+    {
+        name: 'Theodore Duncan',
+        comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!',
+    }
+];
+
+console.log(defaultComments[0].name);
 
 form.addEventListener('submit', formHandler);
 
@@ -20,7 +35,8 @@ function formHandler(e) {
     console.log(e.target.userComment.value);
 };
 
-function renderComments (comment) {
+// function that renders comment section cards
+function renderComments (name, comment) {
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
@@ -56,10 +72,10 @@ function renderComments (comment) {
     // create Card Date
     const dateEl = document.createElement('h5');
     dateEl.classList.add('card__label');
-    dateEl.innerText = date; // test for date
+    dateEl.innerText = date;
     headerEl.appendChild(dateEl);
 
     return cardEl;
 }
 
-console.log(renderComments());
+renderComments();
