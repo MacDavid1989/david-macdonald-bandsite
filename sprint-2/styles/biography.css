@@ -284,14 +284,35 @@
 }
 
 .comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   background-color: #FFF;
   padding: 3.2rem 0 0 0;
+  width: 100%;
 }
 .comments__title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: bold;
   margin-bottom: 1.6rem;
+  width: 100%;
 }
 .comments .form {
   display: -webkit-box;
@@ -301,8 +322,8 @@
   -webkit-box-direction: initial;
       -ms-flex-direction: initial;
           flex-direction: initial;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
   -webkit-box-align: initial;
       -ms-flex-align: initial;
           align-items: initial;
@@ -311,7 +332,7 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  width: 28.8rem;
+  width: 90vw;
   border-bottom: 0.1rem solid #E1E1E1;
   padding: 1.6rem 0 4rem;
 }
@@ -348,7 +369,7 @@
           justify-content: initial;
 }
 .comments .form__item #name {
-  width: 22.4rem;
+  width: 70vw;
   height: 4.8rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -363,7 +384,7 @@
   margin-top: 1.6rem;
 }
 .comments .form__item #comment {
-  width: 22.4rem;
+  width: 70vw;
   height: 9.6rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -389,8 +410,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-item-align: initial;
-      align-self: initial;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -759,7 +780,7 @@
   }
 
   .main {
-    padding: 4.8rem 3.125vw 0rem;
+    padding: 4.8rem 3.125vw 4rem;
   }
 
   .biography-card {
@@ -834,6 +855,61 @@
   }
   .gallery__image:nth-of-type(3n+2), .gallery__image:nth-of-type(3n+3) {
     margin-left: 3.125vw;
+  }
+
+  .comments__title {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+  .comments .form {
+    width: 52.8rem;
+    padding: 4rem 0 2.4rem;
+  }
+  .comments .form__list {
+    margin-left: 2rem;
+  }
+  .comments .form__item #name {
+    width: 46rem;
+    padding: 0 1.6rem;
+  }
+  .comments .form__item--margin {
+    margin-top: 2.4rem;
+  }
+  .comments .form__item #comment {
+    width: 46rem;
+    padding: 1.6rem;
+  }
+  .comments .form__item .button {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    width: 16rem;
+    margin-top: 2.4rem;
+  }
+  .comments__cards {
+    width: 52.8rem;
+  }
+  .comments__cards .card {
+    padding: 1.6rem 0;
+    width: 52.8rem;
+  }
+  .comments__cards .card__body {
+    width: 47.1rem;
+  }
+  .comments__cards .card__heading {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+  .comments__cards .card__label {
+    font-weight: 500;
+    margin-left: 0.8rem;
+  }
+  .comments__cards .card__text-title {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .comments__cards .card__text {
+    width: 100%;
   }
 
   .footer {
@@ -976,6 +1052,12 @@
     margin-left: 2.4rem;
   }
 
+  .comments__title {
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 108rem;
+  }
+
   .footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1014,7 +1096,7 @@
   }
 
   .main {
-    padding: 4.8rem 7.8125vw 0rem;
+    padding: 4.8rem 7.8125vw 4rem;
   }
 
   .biography-card__title {
@@ -1059,6 +1141,30 @@
   }
   .gallery__image:nth-of-type(3n+2), .gallery__image:nth-of-type(3n+3) {
     margin-left: 1.875vw;
+  }
+
+  .comments__title {
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    width: 100%;
+  }
+  .comments .form {
+    width: 41.25vw;
+  }
+  .comments .form__item #name {
+    width: 35.9375vw;
+  }
+  .comments .form__item #comment {
+    width: 35.9375vw;
+  }
+  .comments__cards {
+    width: 41.25vw;
+  }
+  .comments__cards .card {
+    width: 100%;
+  }
+  .comments__cards .card__body {
+    width: 36.796875vw;
   }
 
   .footer {

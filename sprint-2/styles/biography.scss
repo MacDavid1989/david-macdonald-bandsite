@@ -190,21 +190,25 @@
 
 // Comments Section
 .comments {
+    @include flexing(flex, column, initial, center, initial, initial);
     background-color: $color-white;
     padding: 3.2rem 0 0 0;
+    width: 100%;
 
     &__title {
+        align-self: flex-start;
         font-size: $font-size-mobile-lgheading;
         line-height: $line-height-fs24px;
         font-weight: bold;
         margin-bottom: 1.6rem;
+        width: 100%;
     }
 
     .form {
-        @include flexing(flex, initial, wrap, initial, initial, initial);
-        width: 28.8rem;
-            border-bottom: 0.1rem solid #E1E1E1;
-            padding: 1.6rem 0 4rem;
+        @include flexing(flex, initial, initial, initial, initial, initial);
+        width: 100%;
+        border-bottom: 0.1rem solid #E1E1E1;
+        padding: 1.6rem 0 4rem;
 
         &__image {
             background-image: url(../assets/images/mohan-muruge.jpg);
@@ -225,7 +229,7 @@
             @include flexing(flex, column, initial, initial, initial, initial);
 
             #name {
-                width: 22.4rem;
+                width: ;
                 height: 4.8rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
@@ -242,7 +246,7 @@
             }
 
             #comment {
-                width: 22.4rem;
+                width: 70vw;
                 height: 9.6rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
@@ -257,7 +261,7 @@
             }
 
             .button {
-                @include flexing(flex, initial, initial, center, initial, center);
+                @include flexing(flex, initial, initial, center, flex-end, center);
                 border-radius: 0.4rem;
                 border: none;
                 background-color: $color-background-alternate;
@@ -280,6 +284,8 @@
     }
 
     &__cards {
+        // @include flexing(flex, column, initial, center, initial, initial);
+
         .card{
             @include flexing(flex, initial, initial, initial, initial, initial);
             width: 28.8rem;
@@ -529,7 +535,7 @@
     }
 
     .main {
-        padding: 4.8rem 3.125vw 0rem;
+        padding: 4.8rem 3.125vw 4rem;
     }
 
     .biography-card {
@@ -613,6 +619,85 @@
 
             &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
                 margin-left: 3.125vw;
+            }
+        }
+    }
+    // Comments Section ------------------------------------------------------------------
+    .comments {
+    
+        &__title {
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+        }
+    
+        .form {
+            width: 52.8rem;
+            padding: 4rem 0 2.4rem;
+    
+            &__image {
+
+            }
+    
+            &__list {
+                margin-left: 2rem;
+            }
+    
+            &__item {
+    
+                #name {
+                    width: 46rem;
+                    padding: 0 1.6rem;
+                }
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+    
+                #comment {
+                    width: 46rem;
+                    padding: 1.6rem;
+                }
+    
+                .button {
+                    align-self: flex-end;
+                    width: 16rem;
+                    margin-top: 2.4rem;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 52.8rem;
+    
+            .card{
+                padding: 1.6rem 0;
+                width: 52.8rem;
+    
+                &__image {
+                    
+                }
+    
+                &__body {
+                    width: 47.1rem;
+                }
+    
+                &__heading {
+                    justify-content: initial;
+                }
+        
+                &__label {
+                    font-weight: 500;
+                    margin-left: 0.8rem;
+                }
+        
+                &__text-title {
+                    font-size: $font-size-desktop-lgparagraph;
+                    line-height: $line-height-fs16px;
+                }
+        
+                &__text {
+                   width: 100%;
+                }   
             }
         }
     }
@@ -763,6 +848,14 @@
         }
     }
 
+    .comments {
+    
+        &__title {
+            align-self: center;
+            width: 108rem;
+        }
+    }
+
     .footer {
         align-items: center;
 
@@ -803,7 +896,7 @@
     }
 
     .main {
-        padding: 4.8rem 7.8125vw 0rem;
+        padding: 4.8rem 7.8125vw 4rem;
     }
 
     .biography-card {
@@ -855,6 +948,42 @@
             }
         }
     }
+
+    .comments {
+    
+        &__title {
+            align-self: initial;
+            width: 100%;
+        }
+
+        .form {
+            width: 41.25vw;
+          
+            &__item {
+    
+                #name {
+                    width: 35.9375vw;
+                }
+    
+                #comment {
+                    width: 35.9375vw;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 41.25vw;
+    
+            .card{
+                width: 100%;
+
+                &__body {
+                    width: 36.796875vw;
+                }
+            }
+        }
+    }
+    
 
     .footer {
         padding: 4.8rem 7.8125vw;
