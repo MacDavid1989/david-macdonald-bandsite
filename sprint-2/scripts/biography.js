@@ -6,7 +6,11 @@ const cardHeader = document.querySelectorAll('.card__heading');
 const cardTitle = document.querySelectorAll('.card__text-title');
 const cardDate = document.querySelectorAll('.card__label');
 const cardComment = document.querySelectorAll('.card__text');
+const button = document.querySelector('.button');
+const form = document.querySelector('.form')
 
-console.log(comments);
+form.addEventListener('submit', formHandler);
 
-// comments.innerHTML = ''; // removes content from .comments__cards div
+function formHandler(e) {
+    e.preventDefault();
+};
