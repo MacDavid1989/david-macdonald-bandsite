@@ -7,7 +7,8 @@ const comments = document.querySelector('.comments__cards');
 // const cardDate = document.querySelectorAll('.card__label');
 // const cardComment = document.querySelectorAll('.card__text');
 const button = document.querySelector('.button');
-const form = document.querySelector('.form')
+const form = document.querySelector('.form');
+const date = new Date().toLocaleDateString();
 
 let formArray = [{name: 'Micheal Lyons'},{name: 'Gary Wong'},{name: 'Theodore Duncan'}];
 
@@ -55,7 +56,7 @@ function renderComments (comment) {
     // create Card Date
     const dateEl = document.createElement('h5');
     dateEl.classList.add('card__label');
-    dateEl.innerText = 'you\'re looking for' // test for date
+    dateEl.innerText = date; // test for date
     headerEl.appendChild(dateEl);
 
     return cardEl;
