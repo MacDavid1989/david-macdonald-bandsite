@@ -37,6 +37,7 @@ const defaultShows = [
 
 // function that creates shows cards
 function displayShows (show) {
+    
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
