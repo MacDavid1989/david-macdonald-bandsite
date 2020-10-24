@@ -530,10 +530,13 @@
             }
         }
 
-        &__cards {
+        &__list {
             align-self: flex-end;
             width: 80.4rem;
+        }
 
+        &__cards {
+            
             .card{
                 width: 80.4rem;
                 
@@ -562,7 +565,7 @@
     .shows {
         @include flexing(flex, initial, initial, center, initial, space-between);
         
-        &__cards {
+        &__list {
             margin-top: calc(8.4rem - 0.454054054 * (100vw - 967px));
         }        
     }
@@ -608,7 +611,7 @@
             width: 27.6rem;
         }
 
-        &__cards {
+        &__list {
             margin-top: 0;
         }
     }    

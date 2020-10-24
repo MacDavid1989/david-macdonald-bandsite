@@ -734,7 +734,7 @@
   .shows__heading--margin {
     margin-right: 9.2rem;
   }
-  .shows__cards {
+  .shows__list {
     -ms-flex-item-align: end;
         align-self: flex-end;
     width: 80.4rem;
@@ -775,7 +775,7 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .shows__cards {
+  .shows__list {
     margin-top: calc(8.4rem - 0.454054054 * (100vw - 967px));
   }
 }
@@ -847,7 +847,7 @@
   .shows__title {
     width: 27.6rem;
   }
-  .shows__cards {
+  .shows__list {
     margin-top: 0;
   }
 

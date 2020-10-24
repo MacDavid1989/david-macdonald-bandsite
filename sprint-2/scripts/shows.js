@@ -1,6 +1,6 @@
 const shows = document.querySelector('.shows__cards');
 
-// default comment cards as per mockup
+// default shows list as per mockup
 const defaultShows = [
     {
         date: 'Wed Aug 11 2019', 
@@ -35,31 +35,24 @@ const defaultShows = [
 ];
 
 // event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
+// button.addEventListener('click', buttonHandler);
 
 // function that deals with the form submission
-function formHandler(e) {
+function buttonHandler(e) {
     e.preventDefault(); // prevents page reload upon submission
-    const newComment = {}; // new comment object
-    newComment.name = e.target.userName.value;
-    newComment.date = date;
-    newComment.comment = e.target.userComment.value;
-    defaultComments.push(newComment); // push new comment object to existing array
-    document.getElementById('name').value = ''; // clear input 
-    document.getElementById('comment').value = ''; // clear comment textarea
-    comments.innerHTML = ''; // clear comments list
-    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); //re-renders new comments list with most recent comment.
+    shows.innerHTML = ''; // clear comments list
+    setTimeout(() => defaultShows.forEach(show => displayShows(show)),500); //re-renders new comments list with most recent comment.
 };
 
 // loop that filters through an array of objects and invokes a function to renderComments
-defaultComments.forEach(comment => displayComments(comment));
+// defaultShows.forEach(show => displayShows(show));
 
 // function that renders comment section cards
-function displayComments (comment) {
+function displayShows (show) {
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
-    comments.prepend(cardEl);
+    shows.prepend(cardEl);
 
     // create Card Image
     const imageEl = document.createElement('div');
@@ -79,18 +72,22 @@ function displayComments (comment) {
     // create Card Comment
     const paragraphEl = document.createElement('p');
     paragraphEl.classList.add('card__text');
-    paragraphEl.innerText = comment.comment;
+    paragraphEl.innerText = show.comment;
     bodyEl.appendChild(paragraphEl);
 
     // create Card Name
     const nameEl = document.createElement('h2');
     nameEl.classList.add('card__text-title');
-    nameEl.innerText = comment.name;
+    nameEl.innerText = show.name;
     headerEl.appendChild(nameEl);
 
     // create Card Date
     const dateEl = document.createElement('h5');
     dateEl.classList.add('card__label');
-    dateEl.innerText = comment.date;
+    dateEl.innerText = show.date;
     headerEl.appendChild(dateEl);
+
+    return cardEl
 }
+
+// console.log(displayShows(defaultShows));
