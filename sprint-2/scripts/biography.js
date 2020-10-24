@@ -3,7 +3,7 @@ const comments = document.querySelector('.comments__cards');
 // constant variable to contain form element with class "form"
 const form = document.querySelector('.form'); 
 // constant variable to contain value returned from Date function as a string 
-const date = new Date().toLocaleDateString(); 
+const date = new Date(); 
 
 // default comment cards as objects in an array
 const defaultComments = [
@@ -56,6 +56,11 @@ defaultComments.forEach(comment => displayComments(comment));
 
 // function that creates comment section cards
 function displayComments (comment) {
+    let x = new Date();
+    let y = new Date(comment.date);
+    let z = x - y
+    let time = timeSince(z);
+
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
@@ -91,6 +96,39 @@ function displayComments (comment) {
     // create Card Date
     const dateEl = document.createElement('h5');
     dateEl.classList.add('card__label');
-    dateEl.innerText = comment.date;
+    dateEl.innerText = time;
     headerEl.appendChild(dateEl);
+
 }
+
+defaultComments.forEach(comment => {
+
+}) 
+
+function timeSince(date) {
+  
+    let seconds = date / 1000;
+
+    let interval = seconds / 31557600;
+  
+    if (interval > 1) {
+      return Math.floor(interval) + " years ago";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      return Math.floor(interval) + " months ago";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+      return Math.floor(interval) + " days ago";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+      return Math.floor(interval) + " hours ago";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+      return Math.floor(interval) + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
+  }
