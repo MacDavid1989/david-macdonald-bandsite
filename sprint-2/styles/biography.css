@@ -1207,10 +1207,10 @@
     width: 41.25vw;
   }
   .comments .form__item #name {
-    width: 35.9375vw;
+    width: 100%;
   }
   .comments .form__item #comment {
-    width: 35.9375vw;
+    width: 100%;
   }
   .comments__cards {
     width: 41.25vw;

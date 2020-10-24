@@ -3,7 +3,7 @@ const comments = document.querySelector('.comments__cards');
 // constant variable to contain form element with class "form"
 const form = document.querySelector('.form'); 
 // constant variable to contain value returned from Date function as a string 
-const date = new Date(); 
+let date = new Date().toLocaleDateString();
 
 // default comment cards as objects in an array
 const defaultComments = [
@@ -23,9 +23,6 @@ const defaultComments = [
         comment: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.',
     }
 ];
-
-// event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -51,16 +48,8 @@ function formHandler(e) {
     setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); 
 };
 
-// loop that filters through an array of objects and invokes a function to render a comment for each object
-defaultComments.forEach(comment => displayComments(comment));
-
 // function that creates comment section cards
 function displayComments (comment) {
-    let x = new Date();
-    let y = new Date(comment.date);
-    let z = x - y
-    let time = timeSince(z);
-
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
@@ -96,39 +85,12 @@ function displayComments (comment) {
     // create Card Date
     const dateEl = document.createElement('h5');
     dateEl.classList.add('card__label');
-    dateEl.innerText = time;
+    dateEl.innerText = comment.date;
     headerEl.appendChild(dateEl);
-
 }
 
-defaultComments.forEach(comment => {
+// loop that filters through an array of objects and invokes a function to render a comment for each object
+defaultComments.forEach(comment => displayComments(comment));
 
-}) 
-
-function timeSince(date) {
-  
-    let seconds = date / 1000;
-
-    let interval = seconds / 31557600;
-  
-    if (interval > 1) {
-      return Math.floor(interval) + " years ago";
-    }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-      return Math.floor(interval) + " months ago";
-    }
-    interval = seconds / 86400;
-    if (interval > 1) {
-      return Math.floor(interval) + " days ago";
-    }
-    interval = seconds / 3600;
-    if (interval > 1) {
-      return Math.floor(interval) + " hours ago";
-    }
-    interval = seconds / 60;
-    if (interval > 1) {
-      return Math.floor(interval) + " minutes ago";
-    }
-    return Math.floor(seconds) + " seconds ago";
-  }
+// event listener for when the form button is pressed and the info is submitted
+form.addEventListener('submit', formHandler);

@@ -99,20 +99,7 @@ function displayShows (show) {
     buttonEl.setAttribute('type', 'button');
     buttonEl.innerText = 'BUY TICKETS';
     cardEl.appendChild(buttonEl);
-
-
 }
 
 // loop that filters through an array of objects and invokes a function to render shows
 defaultShows.forEach(show => displayShows(show));
-
-// const button = document.querySelectorAll('.button');
-
-// event listener for when the form button is pressed and the info is submitted
-// button.forEach(button => button.addEventListener('click', () => console.log('click')));
-
-// function that deals with the form submission
-// function buttonHandler(e) {
-//     shows.innerHTML = ''; // clear comments list
-//     setTimeout(() => defaultShows.forEach(show => displayShows(show)),500);
-// };
