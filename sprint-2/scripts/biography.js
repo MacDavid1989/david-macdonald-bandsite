@@ -1,5 +1,4 @@
 const comments = document.querySelector('.comments__cards');
-const button = document.querySelector('.button');
 const form = document.querySelector('.form');
 const date = new Date().toLocaleDateString();
 
@@ -8,7 +7,7 @@ const defaultComments = [
     {
         name: 'Theodore Duncan',
         date: '11/15/2018', 
-        comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!',
+        comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Every time I see him I feel instantly happy! He’s definitely my favorite ever!',
     },
     {
         name: 'Gary Wong',
@@ -27,23 +26,23 @@ form.addEventListener('submit', formHandler);
 
 // function that deals with the form submission
 function formHandler(e) {
-    e.preventDefault();
-    let newComment = {};
+    e.preventDefault(); // prevents page reload upon submission
+    let newComment = {}; // new comment object
     newComment.name = e.target.userName.value;
     newComment.date = date;
     newComment.comment = e.target.userComment.value;
-    defaultComments.push(newComment);
-    document.getElementById('name').value = '';
-    document.getElementById('comment').value = '';
-    comments.innerHTML = '';
-    setTimeout(() => defaultComments.forEach(e => renderComments(e.name,e.date,e.comment)),500);
+    defaultComments.push(newComment); // push new comment object to existing array
+    document.getElementById('name').value = ''; // clear input 
+    document.getElementById('comment').value = ''; // clear comment textarea
+    comments.innerHTML = ''; // clear comments list
+    setTimeout(() => defaultComments.forEach(e => displayComments(e.name,e.date,e.comment)),500); //re-renders new comments list with most recent comment.
 };
 
 // loop that filters through an array of objects and invokes a function to renderComments
-defaultComments.forEach(e => renderComments(e.name,e.date,e.comment));
+defaultComments.forEach(e => displayComments(e.name,e.date,e.comment));
 
 // function that renders comment section cards
-function renderComments (name, date, comment) {
+function displayComments (name, date, comment) {
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
