@@ -27,7 +27,7 @@ form.addEventListener('submit', formHandler);
 // function that deals with the form submission
 function formHandler(e) {
     e.preventDefault(); // prevents page reload upon submission
-    let newComment = {}; // new comment object
+    const newComment = {}; // new comment object
     newComment.name = e.target.userName.value;
     newComment.date = date;
     newComment.comment = e.target.userComment.value;
@@ -35,14 +35,14 @@ function formHandler(e) {
     document.getElementById('name').value = ''; // clear input 
     document.getElementById('comment').value = ''; // clear comment textarea
     comments.innerHTML = ''; // clear comments list
-    setTimeout(() => defaultComments.forEach(e => displayComments(e.name,e.date,e.comment)),500); //re-renders new comments list with most recent comment.
+    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); //re-renders new comments list with most recent comment.
 };
 
 // loop that filters through an array of objects and invokes a function to renderComments
-defaultComments.forEach(e => displayComments(e.name,e.date,e.comment));
+defaultComments.forEach(comment => displayComments(comment));
 
 // function that renders comment section cards
-function displayComments (name, date, comment) {
+function displayComments (comment) {
     // create Card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
@@ -66,18 +66,18 @@ function displayComments (name, date, comment) {
     // create Card Comment
     const paragraphEl = document.createElement('p');
     paragraphEl.classList.add('card__text');
-    paragraphEl.innerText = comment;
+    paragraphEl.innerText = comment.comment;
     bodyEl.appendChild(paragraphEl);
 
     // create Card Name
     const nameEl = document.createElement('h2');
     nameEl.classList.add('card__text-title');
-    nameEl.innerText = name;
+    nameEl.innerText = comment.name;
     headerEl.appendChild(nameEl);
 
     // create Card Date
     const dateEl = document.createElement('h5');
     dateEl.classList.add('card__label');
-    dateEl.innerText = date;
+    dateEl.innerText = comment.date;
     headerEl.appendChild(dateEl);
 }
