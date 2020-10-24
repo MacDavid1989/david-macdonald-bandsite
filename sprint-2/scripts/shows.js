@@ -59,9 +59,15 @@ function displayShows (show) {
     dateWrapEl.classList.add('date');
     cardEl.appendChild(dateWrapEl);
 
+    // create card Date label
+    const dateLabelEl = document.createElement('h5');
+    dateLabelEl.classList.add('card__label', 'card__label--margin');
+    dateLabelEl.innerText = 'DATE';
+    dateWrapEl.appendChild(dateLabelEl);
+
     // create card Date
     const dateEl = document.createElement('h2');
-    dateEl.classList.add('card__text-tile');
+    dateEl.classList.add('card__text-title');
     dateEl.innerText = show.date;
     dateWrapEl.appendChild(dateEl);
 
@@ -69,6 +75,12 @@ function displayShows (show) {
     const venueWrapEl = document.createElement('div');
     venueWrapEl.classList.add('venue');
     cardEl.appendChild(venueWrapEl);
+
+    // create card venue label
+    const venueLabelEl = document.createElement('h5');
+    venueLabelEl.classList.add('card__label');
+    venueLabelEl.innerText = 'VENUE';
+    venueWrapEl.appendChild(venueLabelEl);
 
     // create card venue
     const venueEl = document.createElement('p');
@@ -80,6 +92,12 @@ function displayShows (show) {
     const locationWrapEl = document.createElement('div');
     locationWrapEl.classList.add('venue');
     cardEl.appendChild(locationWrapEl);
+
+    // create card location label
+    const locationLabelEl = document.createElement('h5');
+    locationLabelEl.classList.add('card__label');
+    locationLabelEl.innerText = 'LOCATION';
+    locationWrapEl.appendChild(locationLabelEl);
 
     // create card location
     const locationEl = document.createElement('p');
@@ -93,7 +111,7 @@ function displayShows (show) {
     buttonEl.innerText = 'BUY TICKETS';
     cardEl.appendChild(buttonEl);
 
-    return cardEl
+    return cardEl;
 }
 
-defaultShows.forEach(comment => displayShows(comment));
+defaultShows.forEach(show => displayShows(show));
