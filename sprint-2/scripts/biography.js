@@ -2,27 +2,27 @@
 const comments = document.querySelector('.comments__cards'); 
 // constant variable to contain form element with class "form"
 const form = document.querySelector('.form'); 
-// constant variable to contain value returned from Date function as a string 
-let date = new Date().toLocaleDateString();
 
 // default comment cards as objects in an array
 const defaultComments = [
     {
         name: 'Theodore Duncan',
-        date: '11/15/2018', 
+        date: '1 years ago', 
         comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Every time I see him I feel instantly happy! He’s definitely my favorite ever!',
     },
     {
         name: 'Gary Wong',
-        date: '12/12/2018', 
+        date: '1 years ago', 
         comment: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!',
     },
     {
         name: 'Micheal Lyons',
-        date: '12/18/2018', 
+        date: '1 years ago', 
         comment: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.',
     }
 ];
+
+const newTime = [];
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -32,8 +32,14 @@ function formHandler(e) {
     const newComment = {}; 
     // creates name object key and sets it to the given value of the input element
     newComment.name = e.target.userName.value; 
-    // creates date object key and sets it to the given value from the constant variable date
-    newComment.date = date; 
+    // adds time since submission in milliseconds to the beginning of an array
+    newTime.unshift(e.timeStamp);
+    // creates an empty array each time the form is submitted
+    const timeArray = [];
+    // passes each value of an array through a function that converts to a time string and pushes that value to the empty array
+    newTime.forEach(timeStamp => timeArray.push(convertTime(timeStamp)));
+    // creates date object key and sets it to the return value of the function given a value in milliseconds since the form was submitted
+    newComment.date = convertTime(e.timeStamp);
     // creates comment object key and sets it to the given value of the textarea element
     newComment.comment = e.target.userComment.value; 
     // push new comment object to existing array
@@ -44,8 +50,12 @@ function formHandler(e) {
     document.getElementById('comment').value = ''; 
     // clear comments list
     comments.innerHTML = ''; 
-    //re-renders new comments list with most recent comment at the top.
-    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); 
+    //invokes a function to switch the time values so comments are updated since form submission then re-renders new comments list with most recent comment at the top.
+    setTimeout(() => {
+        timeSwitch(defaultComments, timeArray);
+        defaultComments.forEach(comment => displayComments(comment),500);
+        }
+    )    
 };
 
 // function that creates comment section cards
@@ -94,3 +104,34 @@ defaultComments.forEach(comment => displayComments(comment));
 
 // event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
+
+// function that returns a string stating how long since the comment was first submitted
+function convertTime(stamp) {
+    // converts milliseconds to seconds
+    let time = stamp / 1000;
+    // checks if total seconds is the equivalent of at least 1 year
+    if ((time/31536000) > 1) {
+      return Math.round(time/31536000) + " years ago";
+    // checks if total seconds is the equivalent of at least 1 month
+    } else if ((time/2592000) > 1) {
+      return Math.round(time/2592000) + " months ago";
+    // checks if total seconds is the equivalent of at least 1 day
+    } else if ((time/86400) > 1) {
+      return Math.round(time/8640) + " days ago";
+    // checks if total seconds is the equivalent of at least 1 hour
+    } else if ((time/3600) > 1) {
+      return Math.round(time/3600) + " hours ago";
+    // checks if total seconds is the equivalent of at least 60 minutes
+    } else if ((time/60) > 1) {
+      return Math.round(time/60) + " minutes ago";
+    // returns stamp in seconds
+    } else {
+    return Math.round(time) + " seconds ago";
+    }
+}
+// function that takes an object of time strings and the array of objects and switches the date key values of the new comments to reflect time since submission 
+function timeSwitch (array, timeArray) {
+    for(i = 3; i < array.length; i++) {
+        array[i].date = timeArray[i-3];
+    }
+}

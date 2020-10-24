@@ -19,7 +19,7 @@
     width: 100%;
     height: 8rem;
     position: fixed;
-    z-index: 1;
+    z-index: 11;
     @include flexing(flex, column, initial, center, initial, space-between);
 
     // Navigation Logo Anchor Boundary
