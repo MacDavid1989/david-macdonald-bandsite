@@ -1,8 +1,8 @@
-const comments = document.querySelector('.comments__cards');
-const form = document.querySelector('.form');
-const date = new Date().toLocaleDateString();
+const comments = document.querySelector('.comments__cards'); // constant variable to contain div with class "comments__cards"
+const form = document.querySelector('.form'); // constant variable to contain form element with class "form"
+const date = new Date().toLocaleDateString(); // constant variable to contain value returned from Date function as a string 
 
-// default comment cards as per mockup
+// default comment cards as objects in an array
 const defaultComments = [
     {
         name: 'Theodore Duncan',
@@ -24,24 +24,24 @@ const defaultComments = [
 // event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
 
-// function that deals with the form submission
+// function that deals with the form submission generated event object
 function formHandler(e) {
     e.preventDefault(); // prevents page reload upon submission
     const newComment = {}; // new comment object
-    newComment.name = e.target.userName.value;
-    newComment.date = date;
-    newComment.comment = e.target.userComment.value;
+    newComment.name = e.target.userName.value; // creates name object key and sets it to the given value of the input element
+    newComment.date = date; // creates date object key and sets it to the given value from the constant variable date
+    newComment.comment = e.target.userComment.value; // creates comment object key and sets it to the given value of the textarea element
     defaultComments.push(newComment); // push new comment object to existing array
     document.getElementById('name').value = ''; // clear input 
     document.getElementById('comment').value = ''; // clear comment textarea
     comments.innerHTML = ''; // clear comments list
-    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); //re-renders new comments list with most recent comment.
+    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); //re-renders new comments list with most recent comment at the top.
 };
 
-// loop that filters through an array of objects and invokes a function to renderComments
+// loop that filters through an array of objects and invokes a function to render a comment for each object
 defaultComments.forEach(comment => displayComments(comment));
 
-// function that renders comment section cards
+// function that creates comment section cards
 function displayComments (comment) {
     // create Card
     const cardEl = document.createElement('div');
