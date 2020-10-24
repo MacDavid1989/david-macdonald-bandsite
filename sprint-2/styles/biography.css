@@ -519,6 +519,7 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   margin-bottom: 0.8rem;
+  word-wrap: break-word;
 }
 
 .footer {

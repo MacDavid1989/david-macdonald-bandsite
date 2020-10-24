@@ -1,11 +1,4 @@
 const comments = document.querySelector('.comments__cards');
-// const card = document.querySelectorAll('.card');
-// const cardImage = document.querySelectorAll('.card__image');
-// const cardBody = document.querySelectorAll('.card__body');
-// const cardHeader = document.querySelectorAll('.card__heading');
-// const cardTitle = document.querySelectorAll('.card__text-title');
-// const cardDate = document.querySelectorAll('.card__label');
-// const cardComment = document.querySelectorAll('.card__text');
 const button = document.querySelector('.button');
 const form = document.querySelector('.form');
 const date = new Date().toLocaleDateString();
@@ -56,7 +49,7 @@ function renderComments (name, date, comment) {
     cardEl.classList.add('card');
     comments.prepend(cardEl);
 
-    // create Image
+    // create Card Image
     const imageEl = document.createElement('div');
     imageEl.classList.add('card__image');
     cardEl.appendChild(imageEl);
@@ -71,16 +64,16 @@ function renderComments (name, date, comment) {
     headerEl.classList.add('card__heading');
     bodyEl.appendChild(headerEl);
 
-    // create Card Text
+    // create Card Comment
     const paragraphEl = document.createElement('p');
     paragraphEl.classList.add('card__text');
-    paragraphEl.innerText = comment; // test for paragraph
+    paragraphEl.innerText = comment;
     bodyEl.appendChild(paragraphEl);
 
     // create Card Name
     const nameEl = document.createElement('h2');
     nameEl.classList.add('card__text-title');
-    nameEl.innerText = name; // test for name
+    nameEl.innerText = name;
     headerEl.appendChild(nameEl);
 
     // create Card Date
@@ -88,6 +81,4 @@ function renderComments (name, date, comment) {
     dateEl.classList.add('card__label');
     dateEl.innerText = date;
     headerEl.appendChild(dateEl);
-
-    return cardEl;
 }
