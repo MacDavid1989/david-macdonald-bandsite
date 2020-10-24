@@ -1,6 +1,9 @@
-const comments = document.querySelector('.comments__cards'); // constant variable to contain div with class "comments__cards"
-const form = document.querySelector('.form'); // constant variable to contain form element with class "form"
-const date = new Date().toLocaleDateString(); // constant variable to contain value returned from Date function as a string 
+// constant variable to contain div with class "comments__cards"
+const comments = document.querySelector('.comments__cards'); 
+// constant variable to contain form element with class "form"
+const form = document.querySelector('.form'); 
+// constant variable to contain value returned from Date function as a string 
+const date = new Date().toLocaleDateString(); 
 
 // default comment cards as objects in an array
 const defaultComments = [
@@ -26,16 +29,26 @@ form.addEventListener('submit', formHandler);
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
-    e.preventDefault(); // prevents page reload upon submission
-    const newComment = {}; // new comment object
-    newComment.name = e.target.userName.value; // creates name object key and sets it to the given value of the input element
-    newComment.date = date; // creates date object key and sets it to the given value from the constant variable date
-    newComment.comment = e.target.userComment.value; // creates comment object key and sets it to the given value of the textarea element
-    defaultComments.push(newComment); // push new comment object to existing array
-    document.getElementById('name').value = ''; // clear input 
-    document.getElementById('comment').value = ''; // clear comment textarea
-    comments.innerHTML = ''; // clear comments list
-    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); //re-renders new comments list with most recent comment at the top.
+    // prevents page reload upon submission
+    e.preventDefault(); 
+    // new comment object
+    const newComment = {}; 
+    // creates name object key and sets it to the given value of the input element
+    newComment.name = e.target.userName.value; 
+    // creates date object key and sets it to the given value from the constant variable date
+    newComment.date = date; 
+    // creates comment object key and sets it to the given value of the textarea element
+    newComment.comment = e.target.userComment.value; 
+    // push new comment object to existing array
+    defaultComments.push(newComment); 
+    // clear input field
+    document.getElementById('name').value = '';
+    // clear comment textarea 
+    document.getElementById('comment').value = ''; 
+    // clear comments list
+    comments.innerHTML = ''; 
+    //re-renders new comments list with most recent comment at the top.
+    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)),500); 
 };
 
 // loop that filters through an array of objects and invokes a function to render a comment for each object
