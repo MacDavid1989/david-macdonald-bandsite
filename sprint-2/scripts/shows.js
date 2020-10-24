@@ -3,23 +3,8 @@ const shows = document.querySelector('.shows__cards');
 // default shows list as per mockup
 const defaultShows = [
     {
-        date: 'Wed Aug 11 2019', 
-        venue: 'Pres Club',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Fri Sep 05 2019', 
-        venue: 'Moscow Center',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Sat Aug 12 2019', 
-        venue: 'Hyatt Agency',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Fri Jul 22 2019', 
-        venue: 'View Lounge',
+        date: 'Mon Dec 17 2018', 
+        venue: 'Ronald Lane',
         location: 'San Francisco, CA',
     },
     {
@@ -28,66 +13,87 @@ const defaultShows = [
         location: 'San Francisco, CA',
     },
     {
-        date: 'Mon Dec 17 2018', 
-        venue: 'Ronald Lane',
+        date: 'Fri Jul 22 2019', 
+        venue: 'View Lounge',
         location: 'San Francisco, CA',
-    }
+    },
+    {
+        date: 'Sat Aug 12 2019', 
+        venue: 'Hyatt Agency',
+        location: 'San Francisco, CA',
+    },
+    {
+        date: 'Fri Sep 05 2019', 
+        venue: 'Moscow Center',
+        location: 'San Francisco, CA',
+    },
+    {
+        date: 'Wed Aug 11 2019', 
+        venue: 'Pres Club',
+        location: 'San Francisco, CA',
+    },  
 ];
 
 // event listener for when the form button is pressed and the info is submitted
 // button.addEventListener('click', buttonHandler);
 
 // function that deals with the form submission
-function buttonHandler(e) {
-    e.preventDefault(); // prevents page reload upon submission
-    shows.innerHTML = ''; // clear comments list
-    setTimeout(() => defaultShows.forEach(show => displayShows(show)),500); //re-renders new comments list with most recent comment.
-};
+// function buttonHandler(e) {
+//     e.preventDefault(); // prevents page reload upon submission
+//     shows.innerHTML = ''; // clear comments list
+//     setTimeout(() => defaultShows.forEach(show => displayShows(show)),500); //re-renders new comments list with most recent comment.
+// };
 
 // loop that filters through an array of objects and invokes a function to renderComments
 // defaultShows.forEach(show => displayShows(show));
 
 // function that renders comment section cards
 function displayShows (show) {
-    // create Card
+    // create card
     const cardEl = document.createElement('div');
     cardEl.classList.add('card');
-    shows.prepend(cardEl);
+    shows.appendChild(cardEl);
 
-    // create Card Image
-    const imageEl = document.createElement('div');
-    imageEl.classList.add('card__image');
-    cardEl.appendChild(imageEl);
+    // create date wrapper
+    const dateWrapEl = document.createElement('div');
+    dateWrapEl.classList.add('date');
+    cardEl.appendChild(dateWrapEl);
 
-    // create Card Body
-    const bodyEl = document.createElement('div');
-    bodyEl.classList.add('card__body');
-    cardEl.appendChild(bodyEl);
-
-    // create Card Header
-    const headerEl = document.createElement('div');
-    headerEl.classList.add('card__heading');
-    bodyEl.appendChild(headerEl);
-
-    // create Card Comment
-    const paragraphEl = document.createElement('p');
-    paragraphEl.classList.add('card__text');
-    paragraphEl.innerText = show.comment;
-    bodyEl.appendChild(paragraphEl);
-
-    // create Card Name
-    const nameEl = document.createElement('h2');
-    nameEl.classList.add('card__text-title');
-    nameEl.innerText = show.name;
-    headerEl.appendChild(nameEl);
-
-    // create Card Date
-    const dateEl = document.createElement('h5');
-    dateEl.classList.add('card__label');
+    // create card Date
+    const dateEl = document.createElement('h2');
+    dateEl.classList.add('card__text-tile');
     dateEl.innerText = show.date;
-    headerEl.appendChild(dateEl);
+    dateWrapEl.appendChild(dateEl);
+
+    // create venue wrapper
+    const venueWrapEl = document.createElement('div');
+    venueWrapEl.classList.add('venue');
+    cardEl.appendChild(venueWrapEl);
+
+    // create card venue
+    const venueEl = document.createElement('p');
+    venueEl.classList.add('card__text');
+    venueEl.innerText = show.venue;
+    venueWrapEl.appendChild(venueEl);
+
+    // create location wrapper
+    const locationWrapEl = document.createElement('div');
+    locationWrapEl.classList.add('venue');
+    cardEl.appendChild(locationWrapEl);
+
+    // create card location
+    const locationEl = document.createElement('p');
+    locationEl.classList.add('card__text');
+    locationEl.innerText = show.location;
+    locationWrapEl.appendChild(locationEl);
+
+    // create card button
+    const buttonEl = document.createElement('a');
+    buttonEl.classList.add('button');
+    buttonEl.innerText = 'BUY TICKETS';
+    cardEl.appendChild(buttonEl);
 
     return cardEl
 }
 
-// console.log(displayShows(defaultShows));
+defaultShows.forEach(comment => displayShows(comment));
