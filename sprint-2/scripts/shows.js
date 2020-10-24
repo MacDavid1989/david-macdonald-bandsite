@@ -34,19 +34,6 @@ const defaultShows = [
     },  
 ];
 
-// event listener for when the form button is pressed and the info is submitted
-// button.addEventListener('click', buttonHandler);
-
-// function that deals with the form submission
-// function buttonHandler(e) {
-//     e.preventDefault(); // prevents page reload upon submission
-//     shows.innerHTML = ''; // clear comments list
-//     setTimeout(() => defaultShows.forEach(show => displayShows(show)),500); //re-renders new comments list with most recent comment.
-// };
-
-// loop that filters through an array of objects and invokes a function to renderComments
-// defaultShows.forEach(show => displayShows(show));
-
 // function that renders comment section cards
 function displayShows (show) {
     // create card
@@ -106,12 +93,25 @@ function displayShows (show) {
     locationWrapEl.appendChild(locationEl);
 
     // create card button
-    const buttonEl = document.createElement('a');
+    const buttonEl = document.createElement('button');
     buttonEl.classList.add('button');
+    buttonEl.setAttribute('type', 'button');
     buttonEl.innerText = 'BUY TICKETS';
     cardEl.appendChild(buttonEl);
 
-    return cardEl;
+
 }
 
+// loop that filters through an array of objects and invokes a function to render shows
 defaultShows.forEach(show => displayShows(show));
+
+// const button = document.querySelectorAll('.button');
+
+// event listener for when the form button is pressed and the info is submitted
+// button.forEach(button => button.addEventListener('click', () => console.log('click')));
+
+// function that deals with the form submission
+// function buttonHandler(e) {
+//     shows.innerHTML = ''; // clear comments list
+//     setTimeout(() => defaultShows.forEach(show => displayShows(show)),500);
+// };

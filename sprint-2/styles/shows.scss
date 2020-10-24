@@ -178,6 +178,7 @@
             .button {
                 @include flexing(flex, initial, initial, center, initial, center);
                 border-radius: 0.4rem;
+                border-style: none;
                 background-color: $color-background-alternate;
                 color: $color-white;
                 text-decoration: none;
@@ -188,6 +189,11 @@
                 height: 4.8rem;
                 margin-top: 2.4rem;
                 margin-left: calc(0px + 1.285733727 * (100vw - 320px));
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: $color-black;
             }
         }
     }
