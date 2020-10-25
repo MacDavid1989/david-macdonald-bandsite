@@ -102,12 +102,14 @@ function displayShows (show) {
     cardEl.appendChild(buttonEl);
 };
 
-// clears the shows section and informs user of ticket status before re-rendering the page
-function buttonHandler (e) {
+// function to be invoked when button is clicked
+function buttonHandler () {
+    // clears the shows section
     shows.innerHTML = '';
+    // calls function to render ticket elements
     displayTickets();
-    setTimeout(() => shows.innerHTML = '', 7000);
-    setTimeout(() => defaultShows.forEach(show => displayShows(show)), 7000);
+    // delays section clear and shows list render for 7 seconds
+    setTimeout(() => {shows.innerHTML = ''; defaultShows.forEach(show => displayShows(show));}, 7000);
 };
 
 // creates a card for tickets
@@ -134,8 +136,8 @@ defaultShows.forEach(show => displayShows(show));
 
 // event listener that calls buttonHandler function if the element clicked within the shows section has a class of button
 shows.addEventListener('click', (e) => {
-    console.log(e);
-    if (e.target.className === 'button') {
-      buttonHandler();
+        if (e.target.className === 'button') {
+          buttonHandler();
+        }
     }
-});
+);
