@@ -95,7 +95,7 @@ function formHandler(e) {
     // creates an empty array each time the form is submitted
 	const commentTime = [];
     
-    // calls the currentTime function and since the return is an array this will take each value in that array and add the value returned to the empty commentTime array
+    // calls the currentTime function and since the return is an array this will take each value in that array and add the value returned from the convertTime function to the empty commentTime array
     currentTime(originalTimeValues, e.timeStamp).forEach(timeStamp => commentTime.unshift(convertTime(timeStamp)));
     
     // clear input field
@@ -107,11 +107,11 @@ function formHandler(e) {
     // clear comments list
     comments.innerHTML = ''; 
     
-	//	invokes a function to switch the time values so comments are updated since form submission then re-renders new comments list with most recent comment at the top.
+	//	invokes a function to switch the time values so comments are updated since form submission..
 	timeSwitch(defaultComments, commentTime);
 	
 	// delays the rendering of the comments for 0.5sec to show the section clearing before rendering.
-    setTimeout(() => {defaultComments.forEach(comment => displayComments(comment))}, 500);  
+    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)), 500);  
 };
 
 // accepts the original time array and the latest timestamp from form submission and takes the difference of each value and adds it to a new array generated for that instance, then returns that array
@@ -149,18 +149,19 @@ function convertTime(stamp) {
     } else if ((time/60) > 1) {
       return Math.round(time/60) + " minutes ago";
     
-      // returns stamp in seconds
+      // returns stamp rounded to the nearest second
     } else {
     return Math.round(time) + " seconds ago";
     }
 }
 
-// function that takes an object of time strings and the array of objects and switches the date key values of the new comments to reflect time since submission 
-function timeSwitch (array, timeArray) {
-    for(i = 3; i < array.length; i++) {
-        array[i].date = timeArray[i-3];
-    }
-}
+// function that takes the array of objects and an array of time strings, switches the date key values of the objects in the array of objects to update time since submission 
+function timeSwitch (objectArray, timeArray) {
+	// begins the assignment of key values at the 4th index in the default array so as to not alter the default comments
+    for(i = 3; i < objectArray.length; i++) {
+        objectArray[i].date = timeArray[i-3];
+	}
+};
 
 // loop that filters through an array of objects and invokes a function to render a comment for each object when page initially loads
 defaultComments.forEach(comment => displayComments(comment));
