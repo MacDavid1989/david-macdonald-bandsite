@@ -326,7 +326,6 @@
                 font-weight: 600;
                 color: $color-text-label;
                 margin-bottom: 0.8rem;
-                margin-right: calc(0px + 1.164003759 * (100vw - 320px));
             }
     
             &__text-title {
@@ -455,6 +454,16 @@
 
 // Transition Queries to Unwrap Copyright for New Spacing
 @include mobile-tablet-transition(328px) {
+    .comments {
+        &__cards {
+            .card {
+                &__label {
+                margin-right: auto;
+                }
+            }
+        }
+    }
+
     .footer{
         .copyright {
             width: 29.6rem;

@@ -503,7 +503,6 @@
   font-weight: 600;
   color: #AFAFAF;
   margin-bottom: 0.8rem;
-  margin-right: calc(0px + 1.164003759 * (100vw - 320px));
 }
 .comments__cards .card__text-title {
   display: block;
@@ -659,6 +658,10 @@
 }
 
 @media (min-width: 328px) {
+  .comments__cards .card__label {
+    margin-right: auto;
+  }
+
   .footer .copyright {
     width: 29.6rem;
   }
