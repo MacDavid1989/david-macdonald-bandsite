@@ -79,14 +79,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 0 calc(16px + 0.017857142 * (100vw - 320px));
+    padding: 6.4rem calc(16px + 0.017857142 * (100vw - 320px));
     height: calc(472px + 0.441964285 * (100vw - 320px));
     width: 100%;
     @include flexing(flex, column, initial, flex-start, initial, center);
 
     // Hero Text Wrapper
     .wrapper {
-        width: calc(228px + 0.495535714 * (100vw - 320px));
+        width: calc(288px + 0.495535714 * (100vw - 320px));
         margin-bottom: 4.8rem;
         position: relative;
         z-index: 10;
@@ -196,7 +196,7 @@
                 font-weight: 600;
                 width: calc(288px - 0.285714285 * (100vw - 320px));
                 height: 4.8rem;
-                margin-top: 2.4rem;
+                margin-top: 1.6rem;
                 margin-left: calc(0px + 1.285733727 * (100vw - 320px));
                 cursor: pointer;
                 outline-style: none;
@@ -400,11 +400,10 @@
 
     .hero {
         height: 67rem;
-        padding: 0 3.125vw;
-        
+        padding: 9.6rem 3.125vw;
 
         .wrapper {
-            width: calc(510px + 0.351758793 * (100vw - 768px));
+            width: 58rem;
         }
 
         &__subtitle {
@@ -441,6 +440,7 @@
         &__header {
             @include flexing(flex, initial, initial, initial, flex-start, initial);
             width: 72rem;
+            margin-bottom: 0.2rem;
         }
 
         &__heading {
@@ -689,7 +689,7 @@
         }
 
         &__song {
-            margin: 10.9rem 0 0 auto;
+            margin: 12rem 0 0 auto;
         }
     }
 
