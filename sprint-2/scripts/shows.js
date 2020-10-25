@@ -35,7 +35,7 @@ const defaultShows = [
     },  
 ];
 
-// function that creates shows cards
+// function that creates show cards
 function displayShows (show) {
     
     // create Card
@@ -104,3 +104,18 @@ function displayShows (show) {
 
 // loop that filters through an array of objects and invokes a function to render shows
 defaultShows.forEach(show => displayShows(show));
+
+// event listener that calls buttonHandler function if the element clicked within the shows section has a class of button
+shows.addEventListener('click', (e) => {
+    console.log(e);
+    if (e.target.className === 'button') {
+      buttonHandler();
+    }
+});
+
+// clears the shows section and informs user of ticket status before re-rendering the page
+function buttonHandler (e) {
+    shows.innerHTML = 'TICKETS ARE CURRENTLY UNAVAILABLE';
+    setTimeout(() => shows.innerHTML = '', 1000);
+    setTimeout(() => defaultShows.forEach(show => displayShows(show)), 1000);
+};
