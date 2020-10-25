@@ -23,7 +23,17 @@ const defaultComments = [
     }
 ];
 
-const newTime = [];
+// array that stores the original values of the time in milliseconds since the document was loaded until each form is submitted 
+const originalTimeValues = [];
+
+// accepts the array above and the latest timestamp from form submission and takes the difference of each value and adds it to a new array generated for that instance, then returns that array
+function currentTime (originalTimeValues, timeStamp) {
+	const newTimeValues = [];
+	for(let i = 0; i < originalTimeValues.length; i++){
+		newTimeValues.push(timeStamp - originalTimeValues[i]);
+	}
+	return newTimeValues;
+}
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -37,14 +47,14 @@ function formHandler(e) {
     // creates name object key and sets it to the given value of the input element
     newComment.name = e.target.userName.value; 
     
-    // adds time since submission in milliseconds to the beginning of an array
-    newTime.unshift(e.timeStamp);
+    // adds time since document loaded to form submission in milliseconds to the beginning of an array
+    originalTimeValues.unshift(e.timeStamp);
     
     // creates an empty array each time the form is submitted
-    const timeArray = [];
+	const commentTime = [];
     
-    // passes each value of an array through a function that converts to a time string and pushes that value to the empty array
-    newTime.forEach(timeStamp => timeArray.push(convertTime(timeStamp)));
+    // calls the currentTime function and since the return is an array this will take each value in that array and add the value returned from the convertTime function to the empty commentTime array
+    currentTime(originalTimeValues, e.timeStamp).forEach(timeStamp => commentTime.unshift(convertTime(timeStamp)));
     
     // creates date object key and sets it to the return value of the function given a value in milliseconds since the form was submitted
     newComment.date = convertTime(e.timeStamp);
@@ -66,7 +76,7 @@ function formHandler(e) {
     
     //invokes a function to switch the time values so comments are updated since form submission then re-renders new comments list with most recent comment at the top.
     setTimeout(() => {
-        timeSwitch(defaultComments, timeArray);
+        timeSwitch(defaultComments, commentTime);
         defaultComments.forEach(comment => displayComments(comment), 500);
         }
     )    
