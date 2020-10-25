@@ -108,8 +108,13 @@ function buttonHandler () {
     shows.innerHTML = '';
     // calls function to render ticket elements
     displayTickets();
-    // delays section clear and shows list render for 7 seconds
-    setTimeout(() => {shows.innerHTML = ''; defaultShows.forEach(show => displayShows(show));}, 7000);
+};
+
+function buttonHandlerAlt () {
+    // clears the shows section
+    shows.innerHTML = '';
+    // calls function to render shows elements
+    defaultShows.forEach(show => displayShows(show));
 };
 
 // creates a card for tickets
@@ -127,8 +132,15 @@ function displayTickets() {
     // create Ticket Statement
     const dateEl = document.createElement('h2');
     dateEl.classList.add('card__text-title-alt');
-    dateEl.innerText = 'TICKETS ARE CURRENTLY UNAVAILABLE. WE APOLOGIZE FOR ANY INCONVENIENCE. YOU WILL BE RE-DIRECTED BACK TO ALL SHOWS SHORTLY.';
+    dateEl.innerText = 'TICKETS ARE CURRENTLY UNAVAILABLE.';
     dateWrapEl.appendChild(dateEl);
+
+    // create Card Button
+    const buttonEl = document.createElement('button');
+    buttonEl.classList.add('button-alt');
+    buttonEl.setAttribute('type', 'button');
+    buttonEl.innerText = 'ALL SHOWS';
+    cardEl.appendChild(buttonEl);
 }
 
 // loop that filters through an array of objects and invokes a function to render shows
@@ -138,6 +150,8 @@ defaultShows.forEach(show => displayShows(show));
 shows.addEventListener('click', (e) => {
         if (e.target.className === 'button') {
           buttonHandler();
+        } else if (e.target.className === 'button-alt') {
+            buttonHandlerAlt();
         }
     }
 );

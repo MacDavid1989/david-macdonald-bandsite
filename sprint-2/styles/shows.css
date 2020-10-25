@@ -291,7 +291,7 @@
   line-height: 2.2rem;
   font-weight: 600;
   margin-bottom: 1.6rem;
-  margin-right: 8.8rem;
+  margin-right: 0;
   width: 28.8rem;
 }
 .shows__cards .card__text {
@@ -300,7 +300,7 @@
   margin-bottom: 1.6rem;
   width: 13.6rem;
 }
-.shows__cards .card .button {
+.shows__cards .card .button, .shows__cards .card .button-alt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,7 +333,10 @@
   cursor: pointer;
   outline-style: none;
 }
-.shows__cards .card .button:hover {
+.shows__cards .card .button:hover, .shows__cards .card .button-alt:hover {
+  background-color: #000000;
+}
+.shows__cards .card .button-alt:hover {
   background-color: #000000;
 }
 
@@ -526,9 +529,12 @@
 }
 @media (min-width: 658px) {
   .shows__cards .card__text-title-alt {
-    width: 60rem;
+    width: 56rem;
   }
-  .shows__cards .card .button {
+  .shows__cards .card .button, .shows__cards .card .button-alt {
+    margin-left: auto;
+  }
+  .shows__cards .card .button-alt {
     margin-left: auto;
   }
 }
@@ -680,12 +686,17 @@
     line-height: 2.4rem;
     margin-bottom: 0rem;
   }
+  .shows .card__text-title-alt {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 0rem;
+  }
   .shows .card__text {
     font-size: 1.4rem;
     line-height: 2.2rem;
     margin-bottom: 0;
   }
-  .shows .card .button {
+  .shows .card .button, .shows .shows__cards .card .button-alt, .shows__cards .shows .card .button-alt {
     width: 16rem;
     margin-top: 0;
     margin-left: auto;

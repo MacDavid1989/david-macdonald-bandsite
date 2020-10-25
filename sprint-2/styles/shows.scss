@@ -173,7 +173,7 @@
                 line-height: $line-height-fs14px;
                 font-weight: 600;
                 margin-bottom: 1.6rem;
-                margin-right: 8.8rem;
+                margin-right: 0;
                 width: 28.8rem;
             }
 
@@ -202,7 +202,15 @@
                 outline-style: none;
             }
 
+            .button-alt {
+                @extend .button;
+            }
+
             .button:hover {
+                background-color: $color-black;
+            }
+
+            .button-alt:hover {
                 background-color: $color-black;
             }
         }
@@ -350,10 +358,14 @@
         &__cards {
             .card {
                 &__text-title-alt {
-                    width: 60rem;
+                    width: 56rem;
                 }
 
                 .button{
+                    margin-left: auto;
+                }
+
+                .button-alt{
                     margin-left: auto;
                 }
             }
@@ -452,6 +464,12 @@
             }
 
             &__text-title {
+                font-size: $font-size-desktop-lgparagraph;
+                line-height: $line-height-fs16px;
+                margin-bottom: 0rem;
+            }
+
+            &__text-title-alt {
                 font-size: $font-size-desktop-lgparagraph;
                 line-height: $line-height-fs16px;
                 margin-bottom: 0rem;
