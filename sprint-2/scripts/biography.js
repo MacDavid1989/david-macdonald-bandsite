@@ -1,7 +1,7 @@
-// constant variable to contain div with class "comments__cards"
+// constant variable to select div with class "comments__cards"
 const comments = document.querySelector('.comments__cards'); 
 
-// constant variable to contain form element with class "form"
+// constant variable to select form element with class "form"
 const form = document.querySelector('.form'); 
 
 // default comment cards as objects in an array
@@ -23,7 +23,7 @@ const defaultComments = [
     }
 ];
 
-// array that stores the original values of the time in milliseconds since the document was loaded until each form is submitted; before page refresh
+// declares an empty array that will store the original values of the time in milliseconds since the document was loaded until each form is submitted; before page refresh
 const originalTimeValues = [];
 
 // function that creates comment section cards
@@ -74,7 +74,7 @@ function formHandler(e) {
     // prevents page reload upon submission
     e.preventDefault(); 
 
-    // new comment object
+    // declares new comment object
     const newComment = {}; 
     
     // creates name object key and sets it to the given value of the input element
@@ -86,16 +86,16 @@ function formHandler(e) {
     // creates comment object key and sets it to the given value of the textarea element
 	newComment.comment = e.target.userComment.value; 
 	
-    // push new comment object to existing array
+    // push new comment object to the array of default comment objects
     defaultComments.push(newComment); 
     
-    // adds time since document loaded to form submission in milliseconds to the beginning of an array
+    // adds time since document loaded until form submission in milliseconds to the beginning of an array
     originalTimeValues.unshift(e.timeStamp);
     
     // creates an empty array each time the form is submitted
 	const commentTime = [];
     
-    // calls the currentTime function and since the return is an array this will take each value in that array and add the value returned from the convertTime function to the empty commentTime array
+    // calls the currentTime function and searches through each value in the returned array and adds the return from the convertTime function using that value to the empty commentTime array
     currentTime(originalTimeValues, e.timeStamp).forEach(timeStamp => commentTime.unshift(convertTime(timeStamp)));
     
     // clear input field
@@ -107,14 +107,14 @@ function formHandler(e) {
     // clear comments list
     comments.innerHTML = ''; 
     
-	//	invokes a function to switch the time values so comments are updated since form submission..
+	//	invokes a function to switch the time values so comments are updated since form submission
 	timeSwitch(defaultComments, commentTime);
 	
-	// delays the rendering of the comments for 0.5sec to show the section clearing before rendering.
+	// delays the rendering of the comments for 0.5sec to show the section clearing before rendering
     setTimeout(() => defaultComments.forEach(comment => displayComments(comment)), 500);  
 };
 
-// accepts the original time array and the latest timestamp from form submission and takes the difference of each value and adds it to a new array generated for that instance, then returns that array
+// takes the difference of each array value compared to the latest timestamp, and adds it to a new array generated for that instance, then returns that array
 function currentTime (originalTimeValues, timeStamp) {
 	const newTimeValues = [];
 	for(let i = 0; i < originalTimeValues.length; i++){
@@ -123,35 +123,31 @@ function currentTime (originalTimeValues, timeStamp) {
 	return newTimeValues;
 }
 
-// function that returns a string stating how long since the comment was first submitted
-function convertTime(stamp) {
+// returns a string stating how long since the comment was first submitted
+function convertTime(time) {
+    // checks if total milliseconds are greater than the equivalent of at least 1 year
+    if ((time/31536000000) > 1) {
+      return Math.round(time/31536000000) + " years ago";
     
-    // converts milliseconds to seconds
-    let time = stamp / 1000;
+      // checks if total milliseconds are greater than the equivalent of at least 1 month
+    } else if ((time/2592000000) > 1) {
+      return Math.round(time/2592000000) + " months ago";
     
-    // checks if total seconds is the equivalent of at least 1 year
-    if ((time/31536000) > 1) {
-      return Math.round(time/31536000) + " years ago";
+      // checks if total milliseconds are greater than the equivalent of at least 1 day
+    } else if ((time/86400000) > 1) {
+      return Math.round(time/8640000) + " days ago";
     
-      // checks if total seconds is the equivalent of at least 1 month
-    } else if ((time/2592000) > 1) {
-      return Math.round(time/2592000) + " months ago";
+      // checks if total milliseconds are greater than the equivalent of at least 1 hour
+    } else if ((time/3600000) > 1) {
+      return Math.round(time/3600000) + " hours ago";
     
-      // checks if total seconds is the equivalent of at least 1 day
-    } else if ((time/86400) > 1) {
-      return Math.round(time/8640) + " days ago";
+      // checks if total milliseconds are greater than the equivalent of at least 60 minutes
+    } else if ((time/60000) > 1) {
+      return Math.round(time/60000) + " minutes ago";
     
-      // checks if total seconds is the equivalent of at least 1 hour
-    } else if ((time/3600) > 1) {
-      return Math.round(time/3600) + " hours ago";
-    
-      // checks if total seconds is the equivalent of at least 60 minutes
-    } else if ((time/60) > 1) {
-      return Math.round(time/60) + " minutes ago";
-    
-      // returns stamp rounded to the nearest second
     } else {
-    return Math.round(time) + " seconds ago";
+      // returns string with time rounded to the nearest second
+    return Math.round(time/1000) + " seconds ago";
     }
 }
 
@@ -168,4 +164,3 @@ defaultComments.forEach(comment => displayComments(comment));
 
 // event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
-
