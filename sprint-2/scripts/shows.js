@@ -1,4 +1,4 @@
- // constant variable to contain div with class "shows__cards"
+// constant variable to contain div with class "shows__cards"
 const shows = document.querySelector('.shows__cards');
 
 // default shows list as an array of objects
@@ -100,6 +100,33 @@ function displayShows (show) {
     buttonEl.setAttribute('type', 'button');
     buttonEl.innerText = 'BUY TICKETS';
     cardEl.appendChild(buttonEl);
+};
+
+// clears the shows section and informs user of ticket status before re-rendering the page
+function buttonHandler (e) {
+    shows.innerHTML = '';
+    displayTickets();
+    setTimeout(() => shows.innerHTML = '', 7000);
+    setTimeout(() => defaultShows.forEach(show => displayShows(show)), 7000);
+};
+
+// creates a card for tickets
+function displayTickets() {
+    // create Card
+    const cardEl = document.createElement('div');
+    cardEl.classList.add('card');
+    shows.appendChild(cardEl);
+
+    // create Ticket Wrapper
+    const dateWrapEl = document.createElement('div');
+    dateWrapEl.classList.add('date');
+    cardEl.appendChild(dateWrapEl);
+
+    // create Ticket Statement
+    const dateEl = document.createElement('h2');
+    dateEl.classList.add('card__text-title-alt');
+    dateEl.innerText = 'TICKETS ARE CURRENTLY UNAVAILABLE. WE APOLOGIZE FOR ANY INCONVENIENCE. YOU WILL BE RE-DIRECTED BACK TO ALL SHOWS SHORTLY.';
+    dateWrapEl.appendChild(dateEl);
 }
 
 // loop that filters through an array of objects and invokes a function to render shows
@@ -112,10 +139,3 @@ shows.addEventListener('click', (e) => {
       buttonHandler();
     }
 });
-
-// clears the shows section and informs user of ticket status before re-rendering the page
-function buttonHandler (e) {
-    shows.innerHTML = 'TICKETS ARE CURRENTLY UNAVAILABLE';
-    setTimeout(() => shows.innerHTML = '', 1000);
-    setTimeout(() => defaultShows.forEach(show => displayShows(show)), 1000);
-};

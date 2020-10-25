@@ -168,6 +168,15 @@
                 width: 13.6rem;
             }
 
+            &__text-title-alt {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 1.6rem;
+                margin-right: 8.8rem;
+                width: 28.8rem;
+            }
+
             &__text {
                 font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
@@ -340,6 +349,10 @@
     .shows {
         &__cards {
             .card {
+                &__text-title-alt {
+                    width: 60rem;
+                }
+
                 .button{
                     margin-left: auto;
                 }

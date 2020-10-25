@@ -286,6 +286,14 @@
   margin-right: 8.8rem;
   width: 13.6rem;
 }
+.shows__cards .card__text-title-alt {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  margin-right: 8.8rem;
+  width: 28.8rem;
+}
 .shows__cards .card__text {
   font-size: 1.2rem;
   line-height: 2rem;
@@ -517,6 +525,9 @@
   }
 }
 @media (min-width: 658px) {
+  .shows__cards .card__text-title-alt {
+    width: 60rem;
+  }
   .shows__cards .card .button {
     margin-left: auto;
   }
