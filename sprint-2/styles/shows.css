@@ -205,7 +205,7 @@
   line-height: calc(4.4rem + 0.053571428 * (100vw - 320px));
 }
 .hero__song {
-  width: calc(228px + 0.330357142 * (100vw - 320px));
+  width: calc(288px + 0.330357142 * (100vw - 320px));
   height: calc(116px + 0.066964285 * (100vw - 320px));
   position: relative;
   z-index: 10;
