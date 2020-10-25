@@ -23,17 +23,50 @@ const defaultComments = [
     }
 ];
 
-// array that stores the original values of the time in milliseconds since the document was loaded until each form is submitted 
+// array that stores the original values of the time in milliseconds since the document was loaded until each form is submitted; before page refresh
 const originalTimeValues = [];
 
-// accepts the array above and the latest timestamp from form submission and takes the difference of each value and adds it to a new array generated for that instance, then returns that array
-function currentTime (originalTimeValues, timeStamp) {
-	const newTimeValues = [];
-	for(let i = 0; i < originalTimeValues.length; i++){
-		newTimeValues.push(timeStamp - originalTimeValues[i]);
-	}
-	return newTimeValues;
-}
+// function that creates comment section cards
+function displayComments (comment) {
+    
+	// create Card
+	  const cardEl = document.createElement('div');
+	  cardEl.classList.add('card');
+	  comments.prepend(cardEl);
+  
+	  // create Card Image
+	  const imageEl = document.createElement('div');
+	  imageEl.classList.add('card__image');
+	  cardEl.appendChild(imageEl);
+  
+	  // create Card Body
+	  const bodyEl = document.createElement('div');
+	  bodyEl.classList.add('card__body');
+	  cardEl.appendChild(bodyEl);
+  
+	  // create Card Header
+	  const headerEl = document.createElement('div');
+	  headerEl.classList.add('card__heading');
+	  bodyEl.appendChild(headerEl);
+  
+	  // create Card Comment
+	  const paragraphEl = document.createElement('p');
+	  paragraphEl.classList.add('card__text');
+	  paragraphEl.innerText = comment.comment;
+	  bodyEl.appendChild(paragraphEl);
+  
+	  // create Card Name
+	  const nameEl = document.createElement('h2');
+	  nameEl.classList.add('card__text-title');
+	  nameEl.innerText = comment.name;
+	  headerEl.appendChild(nameEl);
+  
+	  // create Card Date
+	  const dateEl = document.createElement('h5');
+	  dateEl.classList.add('card__label');
+	  dateEl.innerText = comment.date;
+	  headerEl.appendChild(dateEl);
+  }
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -45,7 +78,16 @@ function formHandler(e) {
     const newComment = {}; 
     
     // creates name object key and sets it to the given value of the input element
-    newComment.name = e.target.userName.value; 
+	newComment.name = e.target.userName.value; 
+	
+    // creates date object key and sets it to the return value of the function given a value in milliseconds since the form was submitted
+    newComment.date = convertTime(e.timeStamp);
+    
+    // creates comment object key and sets it to the given value of the textarea element
+	newComment.comment = e.target.userComment.value; 
+	
+    // push new comment object to existing array
+    defaultComments.push(newComment); 
     
     // adds time since document loaded to form submission in milliseconds to the beginning of an array
     originalTimeValues.unshift(e.timeStamp);
@@ -53,17 +95,8 @@ function formHandler(e) {
     // creates an empty array each time the form is submitted
 	const commentTime = [];
     
-    // calls the currentTime function and since the return is an array this will take each value in that array and add the value returned from the convertTime function to the empty commentTime array
+    // calls the currentTime function and since the return is an array this will take each value in that array and add the value returned to the empty commentTime array
     currentTime(originalTimeValues, e.timeStamp).forEach(timeStamp => commentTime.unshift(convertTime(timeStamp)));
-    
-    // creates date object key and sets it to the return value of the function given a value in milliseconds since the form was submitted
-    newComment.date = convertTime(e.timeStamp);
-    
-    // creates comment object key and sets it to the given value of the textarea element
-    newComment.comment = e.target.userComment.value; 
-    
-    // push new comment object to existing array
-    defaultComments.push(newComment); 
     
     // clear input field
     document.getElementById('name').value = '';
@@ -74,61 +107,21 @@ function formHandler(e) {
     // clear comments list
     comments.innerHTML = ''; 
     
-    //invokes a function to switch the time values so comments are updated since form submission then re-renders new comments list with most recent comment at the top.
-    setTimeout(() => {
-        timeSwitch(defaultComments, commentTime);
-        defaultComments.forEach(comment => displayComments(comment), 500);
-        }
-    )    
+	//	invokes a function to switch the time values so comments are updated since form submission then re-renders new comments list with most recent comment at the top.
+	timeSwitch(defaultComments, commentTime);
+	
+	// delays the rendering of the comments for 0.5sec to show the section clearing before rendering.
+    setTimeout(() => {defaultComments.forEach(comment => displayComments(comment))}, 500);  
 };
 
-// function that creates comment section cards
-function displayComments (comment) {
-    
-  // create Card
-    const cardEl = document.createElement('div');
-    cardEl.classList.add('card');
-    comments.prepend(cardEl);
-
-    // create Card Image
-    const imageEl = document.createElement('div');
-    imageEl.classList.add('card__image');
-    cardEl.appendChild(imageEl);
-
-    // create Card Body
-    const bodyEl = document.createElement('div');
-    bodyEl.classList.add('card__body');
-    cardEl.appendChild(bodyEl);
-
-    // create Card Header
-    const headerEl = document.createElement('div');
-    headerEl.classList.add('card__heading');
-    bodyEl.appendChild(headerEl);
-
-    // create Card Comment
-    const paragraphEl = document.createElement('p');
-    paragraphEl.classList.add('card__text');
-    paragraphEl.innerText = comment.comment;
-    bodyEl.appendChild(paragraphEl);
-
-    // create Card Name
-    const nameEl = document.createElement('h2');
-    nameEl.classList.add('card__text-title');
-    nameEl.innerText = comment.name;
-    headerEl.appendChild(nameEl);
-
-    // create Card Date
-    const dateEl = document.createElement('h5');
-    dateEl.classList.add('card__label');
-    dateEl.innerText = comment.date;
-    headerEl.appendChild(dateEl);
+// accepts the original time array and the latest timestamp from form submission and takes the difference of each value and adds it to a new array generated for that instance, then returns that array
+function currentTime (originalTimeValues, timeStamp) {
+	const newTimeValues = [];
+	for(let i = 0; i < originalTimeValues.length; i++){
+		newTimeValues.push(timeStamp - originalTimeValues[i]);
+	}
+	return newTimeValues;
 }
-
-// loop that filters through an array of objects and invokes a function to render a comment for each object
-defaultComments.forEach(comment => displayComments(comment));
-
-// event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
 
 // function that returns a string stating how long since the comment was first submitted
 function convertTime(stamp) {
@@ -168,3 +161,10 @@ function timeSwitch (array, timeArray) {
         array[i].date = timeArray[i-3];
     }
 }
+
+// loop that filters through an array of objects and invokes a function to render a comment for each object when page initially loads
+defaultComments.forEach(comment => displayComments(comment));
+
+// event listener for when the form button is pressed and the info is submitted
+form.addEventListener('submit', formHandler);
+
