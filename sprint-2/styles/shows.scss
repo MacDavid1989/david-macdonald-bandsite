@@ -79,7 +79,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 6.4rem calc(16px + 0.017857142 * (100vw - 320px));
+    padding: 6.4rem calc(16px + 0.017857142 * (100vw - 320px)) 3.2rem;
     height: calc(472px + 0.441964285 * (100vw - 320px));
     width: 100%;
     @include flexing(flex, column, initial, flex-start, initial, center);
@@ -87,7 +87,7 @@
     // Hero Text Wrapper
     .wrapper {
         width: calc(288px + 0.495535714 * (100vw - 320px));
-        margin-bottom: 4.8rem;
+        margin-bottom: 5.4rem;
         position: relative;
         z-index: 10;
     }
@@ -129,7 +129,7 @@
         font-size: $font-size-mobile-lgheading;
         line-height: $line-height-fs24px;
         font-weight: bold;
-        margin-bottom: 1.6rem;
+        margin-bottom: 2.4rem;
     }
 
     
@@ -151,7 +151,7 @@
                 line-height: $line-height-fs12px;
                 font-weight: 600;
                 color: $color-text-label;
-                margin-bottom: 0.8rem;
+                margin-bottom: 1.6rem;
                 width: 13.6rem;
 
                 &--margin {
@@ -163,7 +163,7 @@
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
-                margin-bottom: 1.6rem;
+                margin-bottom: 2.4rem;
                 margin-right: 8.8rem;
                 width: 13.6rem;
             }
@@ -180,7 +180,7 @@
             &__text {
                 font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
-                margin-bottom: 1.6rem;
+                margin-bottom: 2.4rem;
                 width: 13.6rem;
             }
 
@@ -196,7 +196,7 @@
                 font-weight: 600;
                 width: calc(288px - 0.285714285 * (100vw - 320px));
                 height: 4.8rem;
-                margin-top: 1.6rem;
+                margin-top: 0.8rem;
                 margin-left: calc(0px + 1.285733727 * (100vw - 320px));
                 cursor: pointer;
                 outline-style: none;

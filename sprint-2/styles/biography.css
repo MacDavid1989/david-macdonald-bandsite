@@ -334,7 +334,7 @@
           justify-content: initial;
   width: 90vw;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0 3.2rem;
+  padding: 2.4rem 0 3.2rem;
 }
 .comments .form__image {
   background-image: url(../assets/images/mohan-muruge.jpg);
@@ -460,7 +460,7 @@
       -ms-flex-pack: initial;
           justify-content: initial;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0 0.8rem;
+  padding: 1.6rem 0;
   width: 100%;
 }
 .comments__cards .card__image {
@@ -1210,10 +1210,10 @@
     width: 41.25vw;
   }
   .comments .form__item #name {
-    width: 35.9375vw;
+    width: 100%;
   }
   .comments .form__item #comment {
-    width: 35.9375vw;
+    width: 100%;
   }
   .comments__cards {
     width: 41.25vw;
