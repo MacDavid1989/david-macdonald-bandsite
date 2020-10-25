@@ -752,10 +752,6 @@
   }
 }
 @media (min-width: 857px) {
-  .hero__song {
-    margin-left: calc(0px + 2.1830350847 * (100vw - 857px));
-  }
-
   .shows__heading {
     width: 18.4rem;
   }

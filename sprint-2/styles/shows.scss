@@ -552,12 +552,6 @@
 }
 
 @include tablet-desktop-transition(857px) {
-    .hero {
-        &__song {
-            margin-left: calc(0px + 2.1830350847 * (100vw - 857px));
-        }
-    }
-
     .shows {
 
         &__heading {
