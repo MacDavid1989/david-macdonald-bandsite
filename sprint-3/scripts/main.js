@@ -1,9 +1,6 @@
 // constant variable to select div with class "comments__cards"
 const comments = document.querySelector('.comments__cards'); 
 
-// constant variable to select form element with class "form"
-const form = document.querySelector('.form'); 
-
 // default comment cards as objects in an array
 const defaultComments = [
     {
@@ -68,52 +65,6 @@ function displayComments (comment) {
 	  headerEl.appendChild(dateEl);
   }
 
-// function that deals with the form submission generated event object
-function formHandler(e) {
-
-    // prevents page reload upon submission
-    e.preventDefault(); 
-
-    // declares new comment object
-    const newComment = {}; 
-    
-    // creates name object key and sets it to the given value of the input element
-	newComment.name = e.target.userName.value; 
-	
-    // creates date object key and sets it to the return value of the function given a value in milliseconds since the form was submitted
-    newComment.date = convertTime(e.timeStamp);
-    
-    // creates comment object key and sets it to the given value of the textarea element
-	newComment.comment = e.target.userComment.value; 
-	
-    // push new comment object to the array of default comment objects
-    defaultComments.push(newComment); 
-    
-    // adds time since document loaded until form submission in milliseconds to the beginning of an array
-    originalTimeValues.unshift(e.timeStamp);
-    
-    // creates an empty array each time the form is submitted
-	const commentTime = [];
-    
-    // calls the currentTime function and searches through each value in the returned array and adds the return from the convertTime function using that value to the empty commentTime array
-    currentTime(originalTimeValues, e.timeStamp).forEach(timeStamp => commentTime.unshift(convertTime(timeStamp)));
-    
-    // clear input field
-    document.getElementById('name').value = '';
-    
-    // clear comment textarea 
-    document.getElementById('comment').value = ''; 
-    
-    // clear comments list
-    comments.innerHTML = ''; 
-    
-	//	invokes a function to switch the time values so comments are updated since form submission
-	timeSwitch(defaultComments, commentTime);
-	
-	// delays the rendering of the comments for 0.5sec to show the section clearing before rendering
-    setTimeout(() => defaultComments.forEach(comment => displayComments(comment)), 500);  
-};
-
 // takes the difference of each array value compared to the latest timestamp, and adds it to a new array generated for that instance, then returns that array
 function currentTime (originalTimeValues, timeStamp) {
 	const newTimeValues = [];
@@ -161,6 +112,3 @@ function timeSwitch (objectArray, timeArray) {
 
 // loop that filters through an array of objects and invokes a function to render a comment for each object when page initially loads
 defaultComments.forEach(comment => displayComments(comment));
-
-// event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
