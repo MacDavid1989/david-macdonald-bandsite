@@ -96,6 +96,176 @@
     }
 }
 
+
+// Main Container Layout
+.main {
+    background-color: $color-white;
+    @include flexing(flex, column, initial, center, initial, center);
+    padding: 3.2rem 5vw 4rem;
+}
+
+// Comments Section
+.comments {
+    @include flexing(flex, column, initial, center, initial, initial);
+    background-color: $color-white;
+    padding: calc(32px + 0.035714285 * (100vw - 320px)) 0 0 0;
+    width: 100%;
+
+    &__title {
+        align-self: flex-start;
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+        margin-bottom: 1.6rem;
+        width: 90vw;
+    }
+
+    .form {
+        @include flexing(flex, initial, initial, initial, initial, initial);
+        width: 90vw;
+        border-bottom: 0.1rem solid #E1E1E1;
+        padding: 2.4rem 0 3.2rem;
+
+        &__image {
+            background-image: url(../assets/images/mohan-muruge.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 4.8rem;
+            width: 4.8rem;
+            border-radius: 50%;
+            margin-top: 2rem;
+        }
+
+        &__list {
+            list-style-type: none;
+            margin-left: 1.6rem;
+            width: calc(100% - 64px);
+        }
+
+        &__item {
+            @include flexing(flex, column, initial, initial, initial, initial);
+
+            #name {
+                width: 100%;
+                height: 4.8rem;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                outline-color: $color-background-alternate;
+                border-radius: 0.4rem;
+                background-color: $color-text-alternate;
+                border-color: $color-divider;
+                padding: 0 0.8rem;
+                border-style: solid;
+            }
+
+            &--margin {
+                margin-top: 1.6rem;
+            }
+
+            #comment {
+                width: 100%;
+                height: 9.6rem;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                padding: 0.8rem;
+                resize: none;
+                outline-color: $color-background-alternate;
+                border-radius: 0.4rem;
+                border-color: $color-divider;
+                background-color: $color-text-alternate;
+                border-style: solid;
+                border-width: 0.2rem;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, flex-end, center);
+                border-radius: 0.4rem;
+                border: none;
+                outline-style: none;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: calc(160px + 0.240601503 * (586px - 100vw));
+                height: 4.8rem;
+                margin-top: 1.6rem;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: $color-black;
+            }
+        }
+
+        &__label {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+        }
+    }
+
+    &__cards {
+        width: 90vw;
+
+        .card{
+            @include flexing(flex, initial, initial, initial, initial, initial);
+            border-bottom: 0.1rem solid $color-divider;
+            padding: 1.6rem 0;
+            width: 100%;
+
+            &__image {
+                background-image: url(http://placekitten.com/200/300);
+                background-position: center;
+                background-size: cover;
+                height: 4.2rem;
+                width: 4.2rem;
+                border-radius: 50%;
+                margin-top: 0.8rem;
+            }
+
+            &__body {
+                width: calc(100% - 53.4px);
+                margin-left: 1.6rem;
+            }
+
+            &__heading {
+                width: 100%;
+                @include flexing(flex, initial, initial, initial, initial, space-between);
+                margin-top: 0.8rem;
+            }
+    
+            &__label {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 0.8rem;
+            }
+    
+            &__text-title {
+                display: block;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 0.8rem;
+                margin-right: 0.8rem;
+                white-space: nowrap;
+            }
+    
+            &__text {
+                width: 100%;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                margin-bottom: 0.8rem;
+                word-wrap: break-word;
+            }   
+        }
+    }
+}
+
+
 // Footer Info Section
 .footer {
     background-color: $color-background-alternate;
@@ -201,6 +371,16 @@
 
 // Transition Queries to Unwrap Copyright for New Spacing
 @include mobile-tablet-transition(328px) {
+    .comments {
+        &__cards {
+            .card {
+                &__label {
+                margin-right: auto;
+                }
+            }
+        }
+    }
+
     .footer{
         .copyright {
             width: 29.6rem;
@@ -218,6 +398,56 @@
             &__title {
                 margin-bottom: 0;
                 width: 24.5rem;
+            }
+        }
+    }
+}
+
+// Transition Queries to Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(586px) {
+    .comments {
+    
+        .form {
+            width: 52.8rem;
+            padding-top: calc(16px + 0.131868131 * (100vw - 568px));
+
+            &__item {
+    
+                #name {
+                    width: 46rem;
+                }
+    
+                #comment {
+                    width: 46rem;
+                }
+    
+                .button {
+                    width: 16rem;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 52.8rem;
+    
+            .card{
+                width: 52.8rem;
+    
+                &__body {
+                    width: 47.1rem;
+                }
+
+                &__heading {
+                    justify-content: initial;
+                }
+
+                &__label {
+                    margin-right: 0;
+                }
+    
+                &__text {
+                   width: 100%;
+                }   
             }
         }
     }
@@ -267,6 +497,84 @@
             line-height: $line-height-fs60px;
         }
     }
+
+    
+    .main {
+        padding: 4.8rem 3.125vw 4rem;
+    }
+    
+    // Comments Section
+    .comments {
+        padding-top: 4.8rem;
+    
+        &__title {
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+        }
+    
+        .form {
+            width: 52.8rem;
+            padding: 4rem 0 2.4rem;
+    
+            &__list {
+                margin-left: 2rem;
+            }
+    
+            &__item {
+    
+                #name {
+                    width: 46rem;
+                    padding: 0 1.6rem;
+                }
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+    
+                #comment {
+                    width: 46rem;
+                    padding: 1.6rem;
+                }
+    
+                .button {
+                    align-self: flex-end;
+                    width: 16rem;
+                    margin-top: 2.4rem;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 52.8rem;
+    
+            .card{
+                padding: 1.6rem 0;
+                width: 52.8rem;
+    
+                &__body {
+                    width: 47.1rem;
+                }
+    
+                &__heading {
+                    justify-content: initial;
+                }
+        
+                &__label {
+                    font-weight: 500;
+                }
+        
+                &__text-title {
+                    font-size: $font-size-desktop-lgparagraph;
+                    line-height: $line-height-fs16px;
+                }
+        
+                &__text {
+                   width: 100%;
+                }   
+            }
+        }
+    }
+
 
     .footer {
         padding: 4.8rem 3.125vw;
@@ -347,6 +655,14 @@
         }
     }
 
+    .comments {
+    
+        &__title {
+            align-self: center;
+            width: 108rem;
+        }
+    }
+
     .footer {
         align-items: center;
 
@@ -387,6 +703,19 @@
         }
     }
 
+    .main {
+        padding: 4.8rem 7.8125vw 4rem;
+    }
+
+    .comments {
+    
+        &__title {
+            align-self: initial;
+            width: 100%;
+        }
+
+    }
+
     .footer {
         padding: 4.8rem 7.8125vw;
         align-items: flex-start;
@@ -408,4 +737,5 @@
             }
         }
     }
+
 }
