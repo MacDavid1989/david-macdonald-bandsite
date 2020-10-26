@@ -120,94 +120,10 @@
         width: 90vw;
     }
 
-    .form {
-        @include flexing(flex, initial, initial, initial, initial, initial);
-        width: 90vw;
-        border-bottom: 0.1rem solid #E1E1E1;
-        padding: 2.4rem 0 3.2rem;
-
-        &__image {
-            background-image: url(../assets/images/mohan-muruge.jpg);
-            background-position: center;
-            background-size: cover;
-            height: 4.8rem;
-            width: 4.8rem;
-            border-radius: 50%;
-            margin-top: 2rem;
-        }
-
-        &__list {
-            list-style-type: none;
-            margin-left: 1.6rem;
-            width: calc(100% - 64px);
-        }
-
-        &__item {
-            @include flexing(flex, column, initial, initial, initial, initial);
-
-            #name {
-                width: 100%;
-                height: 4.8rem;
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                outline-color: $color-background-alternate;
-                border-radius: 0.4rem;
-                background-color: $color-text-alternate;
-                border-color: $color-divider;
-                padding: 0 0.8rem;
-                border-style: solid;
-            }
-
-            &--margin {
-                margin-top: 1.6rem;
-            }
-
-            #comment {
-                width: 100%;
-                height: 9.6rem;
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                padding: 0.8rem;
-                resize: none;
-                outline-color: $color-background-alternate;
-                border-radius: 0.4rem;
-                border-color: $color-divider;
-                background-color: $color-text-alternate;
-                border-style: solid;
-                border-width: 0.2rem;
-            }
-
-            .button {
-                @include flexing(flex, initial, initial, center, flex-end, center);
-                border-radius: 0.4rem;
-                border: none;
-                outline-style: none;
-                background-color: $color-background-alternate;
-                color: $color-white;
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                font-weight: 600;
-                width: calc(160px + 0.240601503 * (586px - 100vw));
-                height: 4.8rem;
-                margin-top: 1.6rem;
-                cursor: pointer;
-            }
-
-            .button:hover {
-                background-color: $color-black;
-            }
-        }
-
-        &__label {
-            font-size: $font-size-mobile-smparagraph;
-            line-height: $line-height-fs12px;
-            font-weight: 600;
-            color: $color-text-label;
-        }
-    }
-
     &__cards {
         width: 90vw;
+        border-top: 0.1rem solid $color-divider;
+
 
         .card{
             @include flexing(flex, initial, initial, initial, initial, initial);
@@ -407,26 +323,6 @@
 @include mobile-tablet-transition(586px) {
     .comments {
     
-        .form {
-            width: 52.8rem;
-            padding-top: calc(16px + 0.131868131 * (100vw - 568px));
-
-            &__item {
-    
-                #name {
-                    width: 46rem;
-                }
-    
-                #comment {
-                    width: 46rem;
-                }
-    
-                .button {
-                    width: 16rem;
-                }
-            }
-        }
-    
         &__cards {
             width: 52.8rem;
     
@@ -510,38 +406,6 @@
         &__title {
             font-size: $font-size-desktop-lgheading;
             line-height: $line-height-fs36px;
-        }
-    
-        .form {
-            width: 52.8rem;
-            padding: 4rem 0 2.4rem;
-    
-            &__list {
-                margin-left: 2rem;
-            }
-    
-            &__item {
-    
-                #name {
-                    width: 46rem;
-                    padding: 0 1.6rem;
-                }
-    
-                &--margin {
-                    margin-top: 2.4rem;
-                }
-    
-                #comment {
-                    width: 46rem;
-                    padding: 1.6rem;
-                }
-    
-                .button {
-                    align-self: flex-end;
-                    width: 16rem;
-                    margin-top: 2.4rem;
-                }
-            }
         }
     
         &__cards {
