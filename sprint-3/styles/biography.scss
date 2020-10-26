@@ -1,0 +1,1076 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+// Global Rule-sets
+*, *::before, *::after {
+    @include boundary-reset;
+    @include font-stack;
+    color: $color-text-base;
+}
+
+// Header Display 
+.header {
+    @include flexing(flex, column, initial, initial, initial, initial);
+}
+
+// Header Navigation
+.nav {
+    background-color: $color-background-alternate;
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    z-index: 11;
+    @include flexing(flex, column, initial, center, initial, space-between);
+
+    // Navigation Logo Anchor Boundary
+    &__logo {
+        margin-top: 1.3rem;
+        width: 12rem;
+        height: 2.4rem;
+        @include flexing(flex, initial, initial, center, initial, center);
+    }
+
+    // Navigation Container Excluding Logo
+    &__list {
+        margin-top: 1.6rem;
+        height: 2.7rem;
+        width: 100%;
+        @include flexing(flex, initial, initial, initial, initial, space-evenly);
+    }
+
+    // Navigation Link & States 
+    &__link {
+        text-decoration: none;
+        height: 100%;
+        width: 16rem;
+        font-size: $font-size-header;
+        color: $color-text-alternate;
+        @include flexing(flex, initial, initial, flex-start, initial, center);
+
+        &:hover, &-current {
+            color: $color-text-hover;
+            font-weight: 600;
+            border-bottom: $color-text-hover solid 0.4rem;
+        }
+    }
+}
+
+// Spacer To Position Content Beneath Nav
+.spacer {
+    height: 8rem;
+}
+
+// Hero Banner Background & Container
+.hero::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $color-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero {
+    background-image: url("../assets/images/hero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0 5vw;
+    height: 57.1875vw;
+    width: 100%;
+    @include flexing(flex, initial, initial, center, initial, initial);
+
+    // Hero Banner Heading
+    &__title {
+        color: $color-heading-alternate;
+        font-size: $font-size-mobile-hero;
+        font-weight: bold;
+        line-height: $line-height-hero-mobile;
+        width: 65.7552083vw;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+// Main Container Layout
+.main {
+    background-color: $color-white;
+    @include flexing(flex, column, initial, center, initial, center);
+    padding: 3.2rem 5vw 4rem;
+}
+
+// Biography Section Card Container Including Image
+.biography-card {
+    width: 100%;
+
+    // Card Heading
+    &__title {
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+    }
+
+    // Card Image
+    &__image {
+        margin: 2.4rem 0;
+        width: 90vw;
+        height: 45.3125vw;
+    }
+
+    // Card Quote
+    &__text {
+        font-size: $font-size-mobile-lgparagraph;
+        font-weight: 600;
+        line-height: $line-height-fs16px;
+        width: 90vw;
+
+    // Card Quote Speaker
+        &-speaker {
+            font-size: $font-size-mobile-mdparagraph;
+            line-height: $line-height-fs14px;
+            margin-top: 3.2rem;
+        }
+    }
+}
+
+// Written Biography Section
+.biography {
+    margin: 4rem 0;
+    width: 90vw;
+
+    // Biography Heading
+    &__title {
+        font-size: $font-size-mobile-smheading;
+        line-height: $line-height-fs16px;
+        font-weight: 600;
+    }
+
+    // Biography Paragraphs
+    &__text {
+        font-size: $font-size-mobile-smparagraph;
+        width: 89.75vw;
+        line-height: $line-height-fs12px;
+
+        &--margin {
+            margin: 2.4rem 0;
+        }  
+    }
+}
+
+// Photo Gallery Section
+.gallery {
+    background-color: $color-background-base;
+    width: 100vw;
+    padding: 3.2rem 5vw 4rem;
+
+    // Gallery Heading
+    &__title {
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+    }
+
+    // Gallery Photos & Photo States
+    &__image {
+        margin-top: 1.6rem;
+        width: 90vw;
+        height: 50.625vw;
+        filter: grayscale(100%);
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }      
+}
+
+// Comments Section
+.comments {
+    @include flexing(flex, column, initial, center, initial, initial);
+    background-color: $color-white;
+    padding: calc(32px + 0.035714285 * (100vw - 320px)) 0 0 0;
+    width: 100%;
+
+    &__title {
+        align-self: flex-start;
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+        margin-bottom: 1.6rem;
+        width: 90vw;
+    }
+
+    .form {
+        @include flexing(flex, initial, initial, initial, initial, initial);
+        width: 90vw;
+        border-bottom: 0.1rem solid #E1E1E1;
+        padding: 2.4rem 0 3.2rem;
+
+        &__image {
+            background-image: url(../assets/images/mohan-muruge.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 4.8rem;
+            width: 4.8rem;
+            border-radius: 50%;
+            margin-top: 2rem;
+        }
+
+        &__list {
+            list-style-type: none;
+            margin-left: 1.6rem;
+            width: calc(100% - 64px);
+        }
+
+        &__item {
+            @include flexing(flex, column, initial, initial, initial, initial);
+
+            #name {
+                width: 100%;
+                height: 4.8rem;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                outline-color: $color-background-alternate;
+                border-radius: 0.4rem;
+                background-color: $color-text-alternate;
+                border-color: $color-divider;
+                padding: 0 0.8rem;
+                border-style: solid;
+            }
+
+            &--margin {
+                margin-top: 1.6rem;
+            }
+
+            #comment {
+                width: 100%;
+                height: 9.6rem;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                padding: 0.8rem;
+                resize: none;
+                outline-color: $color-background-alternate;
+                border-radius: 0.4rem;
+                border-color: $color-divider;
+                background-color: $color-text-alternate;
+                border-style: solid;
+                border-width: 0.2rem;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, flex-end, center);
+                border-radius: 0.4rem;
+                border: none;
+                outline-style: none;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: calc(160px + 0.240601503 * (586px - 100vw));
+                height: 4.8rem;
+                margin-top: 1.6rem;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: $color-black;
+            }
+        }
+
+        &__label {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+        }
+    }
+
+    &__cards {
+        width: 90vw;
+
+        .card{
+            @include flexing(flex, initial, initial, initial, initial, initial);
+            border-bottom: 0.1rem solid $color-divider;
+            padding: 1.6rem 0;
+            width: 100%;
+
+            &__image {
+                background-image: url(http://placekitten.com/200/300);
+                background-position: center;
+                background-size: cover;
+                height: 4.2rem;
+                width: 4.2rem;
+                border-radius: 50%;
+                margin-top: 0.8rem;
+            }
+
+            &__body {
+                width: calc(100% - 53.4px);
+                margin-left: 1.6rem;
+            }
+
+            &__heading {
+                width: 100%;
+                @include flexing(flex, initial, initial, initial, initial, space-between);
+                margin-top: 0.8rem;
+            }
+    
+            &__label {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 0.8rem;
+            }
+    
+            &__text-title {
+                display: block;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 0.8rem;
+                margin-right: 0.8rem;
+                white-space: nowrap;
+            }
+    
+            &__text {
+                width: 100%;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                margin-bottom: 0.8rem;
+                word-wrap: break-word;
+            }   
+        }
+    }
+}
+
+// Footer Info Section
+.footer {
+    background-color: $color-background-alternate;
+    width: 100%;
+    padding: 4.8rem 5vw;
+    @include flexing(flex, column, initial, initial, initial, initial);
+
+
+    // Social Media Banner
+    .connect {
+        height: 3.6rem;
+        margin-bottom: 3.2rem;
+
+    // Get In Touch Heading
+        &__title {
+            height: 3.6rem;
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            font-weight: bold;
+            color: $color-heading-alternate;
+            margin-bottom: 1.8rem;
+        }
+
+        // Social Media Icon Links
+        &-social {
+            height: 2rem;
+            @include flexing(flex, initial, initial, initial, initial, initial);
+
+            &__link {
+                height: 100%;
+
+                &--margin {
+                    margin: 0 3.2rem;
+                }
+
+                &-icon {
+                    height: 100%;
+                }
+            }
+        }
+
+        // Logo Mobile Hidden Condition
+        .logo {
+            @include flexing(none, initial, initial, initial, initial, initial);
+        }
+    }
+
+    // Contact Cards Container
+    &__card {
+        @include flexing(flex, initial, wrap, initial, initial, initial);
+
+        // Contact Cards
+        .info-card {
+            width: 22.4rem;
+
+            // Card Owner and Company
+            &__title {
+                width: 19.26rem;
+                font-size: $font-size-mobile-mdparagraph;
+                font-weight: 600;
+                line-height: $line-height-fs14px;
+                color: $color-heading-alternate;
+
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+
+            // Card Location 
+            &__description {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                color: $color-text-alternate;
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+
+            // Card Email  
+            &__contact {
+                margin-top: 2.4rem;
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                color: $color-text-alternate;
+            }
+        }
+    }
+
+    // Copyright Section
+    .copyright {
+        margin-top: 4rem;
+        width: 19.26rem;
+
+        //  Copyright Info Statement
+        &__description {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            color: $color-text-alternate;
+        }
+    }
+}
+
+// Transition Queries to Unwrap Copyright for New Spacing
+@include mobile-tablet-transition(328px) {
+    .comments {
+        &__cards {
+            .card {
+                &__label {
+                margin-right: auto;
+                }
+            }
+        }
+    }
+
+    .footer{
+        .copyright {
+            width: 29.6rem;
+        }
+    }
+}
+
+// Transition Queries to Unwrap Social Section Links
+@include mobile-tablet-transition(410px) {
+    .footer {
+        .connect {
+            @include flexing(flex, initial, wrap, baseline, initial, flex-start);
+            margin-bottom: 3.2rem;
+
+            &__title {
+                margin-bottom: 0;
+                width: 24.5rem;
+            }
+        }
+    }
+}
+
+// Transition Queries to Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(586px) {
+    .comments {
+    
+        .form {
+            width: 52.8rem;
+            padding-top: calc(16px + 0.131868131 * (100vw - 568px));
+
+            &__item {
+    
+                #name {
+                    width: 46rem;
+                }
+    
+                #comment {
+                    width: 46rem;
+                }
+    
+                .button {
+                    width: 16rem;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 52.8rem;
+    
+            .card{
+                width: 52.8rem;
+    
+                &__body {
+                    width: 47.1rem;
+                }
+
+                &__heading {
+                    justify-content: initial;
+                }
+
+                &__label {
+                    margin-right: 0;
+                }
+    
+                &__text {
+                   width: 100%;
+                }   
+            }
+        }
+    }
+}
+
+// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(658px) {
+    .hero {
+        &__title {
+            line-height: $line-height-fs60px;
+        }
+    }
+
+    .biography{
+        &__content {
+            @include flexing(flex, initial, wrap, center, initial, flex-start);
+        }
+
+        &__text {
+            width: 43.7689969vw;
+
+            &:last-of-type{
+                margin-left: 2.4316109vw;
+            }
+        }
+    }
+
+    .gallery {
+        &__content {
+            @include flexing(flex, initial, wrap, initial, initial, initial);
+        }
+
+        &__image {
+            width: 43.7689969vw;
+            height: 24.62006079vw;
+
+            &:nth-of-type(2n) {
+                margin-left: 2.4316109vw;
+            }
+        }
+    }
+}
+
+// Tablet Layout Queries
+@include tablet {
+    .nav {
+        @include flexing(flex, row, initial, center, initial, flex-start);
+        padding: 0 3.125vw;
+
+        &__logo {
+            margin-top: 0;
+        }
+
+        &__list {
+            margin-top: 0;
+            padding-top: 1rem;
+            height: 8rem;
+            width: fit-content;
+        }
+
+        &__link {
+            margin-left: 5.6rem;
+            width: 8rem;
+            align-items: center;
+        }
+    }
+
+    .hero {
+        height: 52.08333333vw;
+        padding: 0 3.125vw;
+
+        &__title {
+            font-size: $font-size-desktop-hero;
+            width: 51rem;
+            line-height: $line-height-fs60px;
+        }
+    }
+
+    .main {
+        padding: 4.8rem 3.125vw 4rem;
+    }
+
+    .biography-card {
+        width: 100%;
+
+        &__title {
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            height: 3.6rem;
+        }
+
+        &__image {
+            margin: 4.8rem 0;
+            width: 93.75vw;
+            height: 47.1354166vw;
+        }
+
+        &__text {
+            font-size: $font-size-desktop-smheading;
+            font-weight: bold;
+            line-height: $line-height-fs24px;
+            width: 93.75vw;
+
+            &-speaker {
+                margin-top: 4rem;
+                font-size: $font-size-desktop-lgparagraph;
+                line-height: $line-height-fs16px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .biography {
+        margin: 5.6rem 0 4.8rem;
+        width: 93.75vw;
+
+        &__title {
+            display: flex;
+            font-size: $font-size-desktop-smheading;
+            line-height: $line-height-fs24px;
+            font-weight: bold;
+        }
+
+        &__content {
+            margin-top: 3.2rem;
+        }
+
+        &__text {
+            font-size: $font-size-desktop-smparagraph;
+            width: 44.921875vw;
+            line-height: $line-height-fs14px;
+
+            &--margin {
+                margin: 0;
+            }
+
+            &:last-of-type{
+                margin-left: 3.125vw;
+            }
+        }
+    }
+
+    .gallery {
+        padding: 4.8rem 3.125vw 4rem;
+        width: 100vw;
+
+        &__title {
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            margin-bottom: 4rem;
+        }
+
+        &__image {
+            margin-top: 2.4rem;
+            width: 29.166666vw;
+            height: 16.40625vw;
+
+            &:nth-of-type(2n) {
+                margin-left: 0;
+            }
+
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 3.125vw;
+            }
+        }
+    }
+    // Comments Section ------------------------------------------------------------------
+    .comments {
+        padding-top: 4.8rem;
+    
+        &__title {
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+        }
+    
+        .form {
+            width: 52.8rem;
+            padding: 4rem 0 2.4rem;
+    
+            &__list {
+                margin-left: 2rem;
+            }
+    
+            &__item {
+    
+                #name {
+                    width: 46rem;
+                    padding: 0 1.6rem;
+                }
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+    
+                #comment {
+                    width: 46rem;
+                    padding: 1.6rem;
+                }
+    
+                .button {
+                    align-self: flex-end;
+                    width: 16rem;
+                    margin-top: 2.4rem;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 52.8rem;
+    
+            .card{
+                padding: 1.6rem 0;
+                width: 52.8rem;
+    
+                &__body {
+                    width: 47.1rem;
+                }
+    
+                &__heading {
+                    justify-content: initial;
+                }
+        
+                &__label {
+                    font-weight: 500;
+                }
+        
+                &__text-title {
+                    font-size: $font-size-desktop-lgparagraph;
+                    line-height: $line-height-fs16px;
+                }
+        
+                &__text {
+                   width: 100%;
+                }   
+            }
+        }
+    }
+
+    .footer {
+        padding: 4.8rem 3.125vw;
+
+        .connect {
+
+            &__title {
+                width: 25.2rem;
+            }
+
+            &-social {
+                margin-left: 2.4rem;
+            }
+
+            .logo {
+                display: flex;
+                margin-left: auto;
+            }
+        }
+
+        &__card {
+            display: flex;
+            margin-top: 2.4rem;
+
+            .info-card {
+                width: 22.4rem;
+    
+                &--margin-left {
+                        margin-left: 2.4rem;
+                    }
+                
+                &__title {
+                    width: 22.4rem;
+                    font-size: $font-size-desktop-lgparagraph;
+                    line-height: $line-height-fs16px;
+
+                    &--margin {
+                        margin-top: 0;
+                    }
+                }
+
+                &__description {
+                    font-size: $font-size-desktop-smparagraph;
+                    line-height: $line-height-fs14px-alt;
+                }
+
+                &__contact {
+                    font-size: $font-size-desktop-smparagraph;
+                    line-height: $line-height-fs14px-alt;
+                }
+            }
+        }
+
+        .copyright {
+            &__description {
+                font-size: $font-size-desktop-smparagraph;
+                line-height: $line-height-fs14px-alt;
+                width: 34.8rem;
+            }
+        }
+    }
+}
+
+// Transition Queries to Smooth Tablet into Desktop Layout
+@include tablet-desktop-transition(955px) {
+    .biography-card {
+        @include flexing(flex, column, initial, initial, initial, initial);
+
+        &__image {
+            width: 89.6rem;
+            height: 45rem;
+            align-self: center;
+        }
+
+        &__text {
+            width: 89.6rem;
+            align-self: center;
+        }
+    }
+
+    .biography {
+        width: 89.6rem;
+
+        &__text {
+            width: 42rem;
+        
+            &:last-of-type{
+                margin-left: 2.4rem;
+            }
+        }
+    }
+}
+
+// Transition Queries to Smooth Tablet into Desktop Layout
+@include tablet-desktop-transition(1152px) {
+    .nav {
+        box-sizing: unset;
+        align-self: center;
+        width: 108rem;
+        padding: 0 100%;
+    }
+
+    .hero {
+        justify-content: center;
+
+        .wrapper {
+            width: 108rem;
+        }
+    }
+
+    .biography-card {
+        &__title {
+        width: 108rem;
+        align-self: center;
+        }
+    }
+
+    .biography {
+        &__text {
+            &:last-of-type{
+                margin-left: 2.6041666vw;
+            }
+        }
+    }
+
+    .gallery {
+        &__title {
+            align-self: center;
+            width: 108rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__content {
+            justify-content: center;
+        }
+        
+        &__image {
+            width: 34.4rem;
+            height: 19.3rem;
+        
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 2.4rem;
+            }
+        }
+    }
+
+    .comments {
+    
+        &__title {
+            align-self: center;
+            width: 108rem;
+        }
+    }
+
+    .footer {
+        align-items: center;
+
+        .connect {
+             width: 108rem;
+        }
+
+        &__card {
+            width: 108rem;
+
+            .info-card {
+            width: 19.44vw;
+            }
+        }
+
+        .copyright {
+            width: 108rem;
+        }   
+    }
+}
+
+// Desktop Queries
+@include desktop {
+    .nav {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 7.8125vw;
+    }
+
+    .hero {
+        height: 52.34375vw;
+        padding: 0 7.8125vw;
+        justify-content: flex-start;
+
+        &__wrapper {
+            width: 100%;
+        }
+    }
+
+    .main {
+        padding: 4.8rem 7.8125vw 4rem;
+    }
+
+    .biography-card {
+        &__title {
+            align-self: flex-start;
+        }
+
+        &__image {
+            width: 70vw;
+            height: 35.15625vw;
+        }
+
+        &__text {
+            width: 66.5vw;
+            align-self: flex-start;
+            margin-left: 7.1875vw;
+        }
+    }
+
+    .biography {
+        width: 70vw;
+
+        &__text {
+            width: 32.8125vw;
+
+            &:last-of-type{
+                margin-left: 4rem;
+            }
+        }
+    }
+
+    .gallery {
+        width: 100vw;
+        padding: 4.8rem 7.8125vw 4rem;
+
+        &__title {
+            align-self: initial;
+            width: 84.375vw;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        &__image {
+            width: 26.875vw;
+            height: 15.078125vw;
+
+            &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
+                margin-left: 1.875vw;
+            }
+        }
+    }
+
+    .comments {
+    
+        &__title {
+            align-self: initial;
+            width: 100%;
+        }
+
+        .form {
+            width: 41.25vw;
+          
+            &__item {
+    
+                #name {
+                    width: 100%;
+                }
+    
+                #comment {
+                    width: 100%;
+                }
+            }
+        }
+    
+        &__cards {
+            width: 41.25vw;
+    
+            .card{
+                width: 100%;
+
+                &__body {
+                    width: 36.796875vw;
+                }
+            }
+        }
+    }
+    
+
+    .footer {
+        padding: 4.8rem 7.8125vw;
+        align-items: flex-start;
+
+        .connect {
+            width: 100%;
+        }
+
+        &__card {
+            width: 100%;
+            .info-card {
+                width: 25.2rem;
+            }
+        }
+
+        .copyright {
+            &__description {
+                width: 36.8rem;
+            }
+        }
+    }
+}

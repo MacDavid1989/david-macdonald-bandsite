@@ -1,0 +1,728 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+// Global Rule-sets
+*, *::before, *::after {
+    @include boundary-reset;
+    @include font-stack;
+    color: $color-text-base;
+}
+
+// Header Display 
+.header {
+    @include flexing(flex, column, initial, initial, initial, initial);
+}
+
+// Header Navigation
+.nav {
+    background-color: $color-background-alternate;
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    z-index: 11;
+    @include flexing(flex, column, initial, center, initial, space-between);
+
+    // Navigation Logo Anchor Boundary
+    &__logo {
+        margin-top: 1.3rem;
+        width: 12rem;
+        height: 2.4rem;
+        @include flexing(flex, initial, initial, center, initial, center);
+    }
+
+    // Navigation Container Excluding Logo
+    &__list {
+        margin-top: 1.6rem;
+        height: 2.7rem;
+        width: 100%;
+        @include flexing(flex, initial, initial, initial, initial, space-evenly);
+    }
+
+    // Navigation Link & States 
+    &__link {
+        text-decoration: none;
+        height: 100%;
+        width: 16rem;
+        font-size: $font-size-header;
+        color: $color-text-alternate;
+        @include flexing(flex, initial, initial, flex-start, initial, center);
+
+        &:hover, &-current {
+            color: $color-text-hover;
+            font-weight: 600;
+            border-bottom: $color-text-hover solid 0.4rem;
+        }
+    }
+}
+
+// Spacer To Position Content Beneath Nav
+.spacer {
+    height: 8rem;
+}
+
+// Hero Banner Background & Container
+.hero::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $color-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero {
+    background-image: url("../assets/images/showshero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 6.4rem calc(16px + 0.017857142 * (100vw - 320px)) 3.2rem;
+    height: calc(472px + 0.441964285 * (100vw - 320px));
+    width: 100%;
+    @include flexing(flex, column, initial, flex-start, initial, center);
+
+    // Hero Text Wrapper
+    .wrapper {
+        width: calc(288px + 0.495535714 * (100vw - 320px));
+        margin-bottom: 5.4rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    // Hero Banner Subheading
+    &__subtitle {
+        color: $color-heading-alternate;
+        font-size: calc(#{$font-size-mobile-mdparagraph} + 0.022321428 * (100vw - 320px)); 
+        font-weight: 600;
+        line-height: calc(#{$line-height-fs14px} + 0.022321428 * (100vw - 320px));
+        margin-bottom: 0.8rem;
+    }
+
+    // Hero Banner Heading
+    &__title {
+        color: $color-heading-alternate;
+        font-size: calc(#{$font-size-desktop-lgheading} + 0.053571428 * (100vw - 320px));
+        font-weight: bold;
+        line-height: calc(#{$line-height-fs36px} + 0.053571428 * (100vw - 320px));
+    }
+
+    &__song {
+        width: calc(288px + 0.330357142 * (100vw - 320px));
+        height: calc(116px + 0.066964285 * (100vw - 320px));
+        position: relative;
+        z-index: 10;
+    }
+}
+
+// Shows Section
+.shows {
+    background-color: $color-background-base;
+    width: 100%;
+    @include flexing(flex, column, wrap, flex-start, initial, initial);
+    padding: 3.2rem calc(16px + 0.017857142 * (100vw - 320px));
+
+
+    &__title {
+        font-size: $font-size-mobile-lgheading;
+        line-height: $line-height-fs24px;
+        font-weight: bold;
+        margin-bottom: 2.4rem;
+    }
+
+    
+    &__header {
+        display: none;
+    }
+
+    &__cards {
+        width: 100%;
+
+        .card{
+            width: 100%;    
+            @include flexing(flex, column, wrap, flex-start, initial, initial);
+            border-bottom: 0.1rem solid #E1E1E1;
+            padding: 1.6rem 0;
+
+            &__label {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                font-weight: 600;
+                color: $color-text-label;
+                margin-bottom: 1.6rem;
+                width: 13.6rem;
+
+                &--margin {
+                    margin-right: 8.8rem;
+                }
+            }
+
+            &__text-title {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 2.4rem;
+                margin-right: 8.8rem;
+                width: 13.6rem;
+            }
+
+            &__text-title-alt {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                margin-bottom: 1.6rem;
+                margin-right: 0;
+                width: 28.8rem;
+            }
+
+            &__text {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                margin-bottom: 2.4rem;
+                width: 13.6rem;
+            }
+
+            .button {
+                @include flexing(flex, initial, initial, center, initial, center);
+                border-radius: 0.4rem;
+                border-style: none;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                text-decoration: none;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: calc(288px - 0.285714285 * (100vw - 320px));
+                height: 4.8rem;
+                margin-top: 0.8rem;
+                margin-left: calc(0px + 1.285733727 * (100vw - 320px));
+                cursor: pointer;
+                outline-style: none;
+            }
+
+            .button-alt {
+                @extend .button;
+            }
+
+            .button:hover {
+                background-color: $color-black;
+            }
+
+            .button-alt:hover {
+                background-color: $color-black;
+            }
+        }
+    }
+}
+
+// Footer Info Section
+.footer {
+    background-color: $color-background-alternate;
+    width: 100%;
+    padding: 4.8rem 5vw;
+    @include flexing(flex, column, initial, initial, initial, initial);
+
+
+    // Social Media Banner
+    .connect {
+        height: 3.6rem;
+        margin-bottom: 3.2rem;
+
+    // Get In Touch Heading
+        &__title {
+            height: 3.6rem;
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            font-weight: bold;
+            color: $color-heading-alternate;
+            margin-bottom: 1.8rem;
+        }
+
+        // Social Media Icon Links
+        &-social {
+            height: 2rem;
+            @include flexing(flex, initial, initial, initial, initial, initial);
+
+            &__link {
+                height: 100%;
+
+                &--margin {
+                    margin: 0 3.2rem;
+                }
+
+                &-icon {
+                    height: 100%;
+                }
+            }
+        }
+
+        // Logo Mobile Hidden Condition
+        .logo {
+            @include flexing(none, initial, initial, initial, initial, initial);
+        }
+    }
+
+    // Contact Cards Container
+    &__card {
+        @include flexing(flex, initial, wrap, initial, initial, initial);
+
+        // Contact Cards
+        .info-card {
+            width: 22.4rem;
+
+            // Card Owner and Company
+            &__title {
+                width: 19.26rem;
+                font-size: $font-size-mobile-mdparagraph;
+                font-weight: 600;
+                line-height: $line-height-fs14px;
+                color: $color-heading-alternate;
+
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+
+            // Card Location 
+            &__description {
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                color: $color-text-alternate;
+    
+                &--margin {
+                    margin-top: 2.4rem;
+                }
+            }
+
+            // Card Email  
+            &__contact {
+                margin-top: 2.4rem;
+                font-size: $font-size-mobile-smparagraph;
+                line-height: $line-height-fs12px;
+                color: $color-text-alternate;
+            }
+        }
+    }
+
+    // Copyright Section
+    .copyright {
+        margin-top: 4rem;
+        width: 19.26rem;
+
+        //  Copyright Info Statement
+        &__description {
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            color: $color-text-alternate;
+        }
+    }
+}
+
+// Transition Queries to Unwrap Copyright for New Spacing
+@include mobile-tablet-transition(328px) {
+    .shows {
+        &__cards {
+            .card {
+                @include flexing(flex, row, wrap, center, initial, initial);
+            }
+        }
+    }
+
+    .footer{
+        .copyright {
+            width: 29.6rem;
+        }
+    }
+}
+
+// Transition Queries to Unwrap Social Section Links
+@include mobile-tablet-transition(410px) {
+    .footer {
+        .connect {
+            @include flexing(flex, initial, wrap, baseline, initial, flex-start);
+            margin-bottom: 3.2rem;
+
+            &__title {
+                margin-bottom: 0;
+                width: 24.5rem;
+            }
+        }
+    }
+}
+
+// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(658px) {
+    .shows {
+        &__cards {
+            .card {
+                &__text-title-alt {
+                    width: 56rem;
+                }
+
+                .button{
+                    margin-left: auto;
+                }
+
+                .button-alt{
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+
+// Tablet Layout Queries
+@include tablet {
+    .nav {
+        @include flexing(flex, row, initial, center, initial, flex-start);
+        padding: 0 3.125vw;
+
+        &__logo {
+            margin-top: 0;
+        }
+
+        &__list {
+            margin-top: 0;
+            padding-top: 1rem;
+            height: 8rem;
+            width: fit-content;
+        }
+
+        &__link {
+            margin-left: 5.6rem;
+            width: 8rem;
+            align-items: center;
+        }
+    }
+
+    .hero {
+        height: 67rem;
+        padding: 9.6rem 3.125vw;
+
+        .wrapper {
+            width: 58rem;
+        }
+
+        &__subtitle {
+            color: $color-heading-alternate;
+            font-size: $font-size-desktop-smheading;
+            font-weight: bold;
+            line-height: $line-height-fs24px;
+            margin: 0 0 4.8rem;
+        }
+
+        &__title {
+            font-size: $font-size-desktop-hero;
+            line-height: $line-height-fs60px;
+        }
+
+        &__song {
+            width: 43.6rem;
+            height: 14.6rem;
+        }
+    }
+
+    .shows {
+        @include flexing(flex, column, initial, center, initial, initial);
+        padding: 4.8rem 3.125vw 4rem;
+
+
+        &__title {
+            align-self: flex-start;
+            font-size: $font-size-desktop-lgheading;
+            line-height: $line-height-fs36px;
+            margin-bottom: 4rem;
+        }
+
+        &__header {
+            @include flexing(flex, initial, initial, initial, flex-start, initial);
+            width: 72rem;
+            margin-bottom: 0.2rem;
+        }
+
+        &__heading {
+            width: 13.6rem;
+            font-size: $font-size-mobile-smparagraph;
+            line-height: $line-height-fs12px;
+            font-weight: 600;
+            color: $color-text-label;
+
+            &--margin {
+                margin-right: 8.8rem;
+            }
+        }
+
+        .card{
+            @include flexing(flex, initial, initial, baseline, initial, initial);
+            width: 93.75vw;
+           
+            &__label {
+                display: none;
+            }
+
+            &__text-title {
+                font-size: $font-size-desktop-lgparagraph;
+                line-height: $line-height-fs16px;
+                margin-bottom: 0rem;
+            }
+
+            &__text-title-alt {
+                font-size: $font-size-desktop-lgparagraph;
+                line-height: $line-height-fs16px;
+                margin-bottom: 0rem;
+            }
+
+            &__text {
+                font-size: $font-size-desktop-smparagraph;
+                line-height: $line-height-fs14px;
+                margin-bottom: 0;
+            }
+
+            .button {
+                width: 16rem;
+                margin-top: 0;
+                margin-left: auto;
+            }
+        }
+    }
+    
+    .footer {
+        padding: 4.8rem 3.125vw;
+
+        .connect {
+
+            &__title {
+                width: 25.2rem;
+            }
+
+            &-social {
+                margin-left: 2.4rem;
+            }
+
+            .logo {
+                display: flex;
+                margin-left: auto;
+            }
+        }
+
+        &__card {
+            display: flex;
+            margin-top: 2.4rem;
+
+            .info-card {
+                width: 22.4rem;
+    
+                &--margin-left {
+                        margin-left: 2.4rem;
+                    }
+                
+                &__title {
+                    width: 22.4rem;
+                    font-size: $font-size-desktop-lgparagraph;
+                    line-height: $line-height-fs16px;
+
+                    &--margin {
+                        margin-top: 0;
+                    }
+                }
+
+                &__description {
+                    font-size: $font-size-desktop-smparagraph;
+                    line-height: $line-height-fs14px-alt;
+                }
+
+                &__contact {
+                    font-size: $font-size-desktop-smparagraph;
+                    line-height: $line-height-fs14px-alt;
+                }
+            }
+        }
+
+        .copyright {
+            &__description {
+                font-size: $font-size-desktop-smparagraph;
+                line-height: $line-height-fs14px-alt;
+                width: 34.8rem;
+            }
+        }
+    }
+}
+
+@include tablet-desktop-transition(857px) {
+    .shows {
+
+        &__heading {
+            width: 18.4rem;
+
+            &--margin {
+                margin-right: 9.2rem;
+            }
+        }
+
+        &__list {
+            align-self: flex-end;
+            width: 80.4rem;
+        }
+
+        &__cards {
+            
+            .card{
+                width: 80.4rem;
+                
+                &__text-title {
+                    width: 16rem;
+                    margin-right: 10.4rem;
+                }
+
+                &__text {
+                    width: 16rem;
+                    margin: 0 1.2rem;
+                }
+                
+            }
+        }        
+    }
+}
+
+@include tablet-desktop-transition(967px) {
+    .hero {
+        .wrapper {
+            width: 58rem;
+        }
+    }
+
+    .shows {
+        @include flexing(flex, initial, initial, center, initial, space-between);
+        
+        &__list {
+            margin-top: calc(8.4rem - 0.454054054 * (100vw - 967px));
+        }        
+    }
+}
+
+
+// Transition Queries to Smooth Tablet into Desktop Layout
+@include tablet-desktop-transition(1152px) {
+    .nav {
+        box-sizing: unset;
+        align-self: center;
+        width: 108rem;
+        padding: 0 100%;
+    }
+
+    .hero {
+        @include flexing(flex, initial, wrap, initial, initial, center);
+        padding: 16rem 0;
+
+        &__title {
+            width: 100%;
+        }
+
+        .wrapper {
+            width: 58rem;
+            margin-left: auto;
+        }
+
+        &__song {
+            width: 43.6rem;
+            height: 14.6rem;
+            margin: 12rem auto 0 6.4rem;
+        }
+    }
+
+    .shows {
+        @include flexing(flex, initial, initial, center, initial, center);
+        width: 108rem;
+        padding: 4.8rem 0 4rem;
+        margin: 0 auto;
+
+        &__title {
+            width: 27.6rem;
+        }
+
+        &__list {
+            margin-top: 0;
+        }
+    }    
+
+    .footer {
+        align-items: center;
+
+        .connect {
+             width: 108rem;
+        }
+
+        &__card {
+            width: 108rem;
+
+            .info-card {
+            width: 19.44vw;
+            }
+        }
+
+        .copyright {
+            width: 108rem;
+        }   
+    }
+}
+
+// Desktop Queries
+@include desktop {
+    .nav {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 7.8125vw;
+    }
+
+
+    .hero {
+        align-content: center;
+        height: 52.34375vw;
+        padding: 12.5vw 7.8125vw;
+
+        .wrapper {
+            height: 35rem;
+            margin: 0;
+        }
+
+        &__song {
+            margin: 12rem 0 0 auto;
+        }
+    }
+
+    .shows {
+        @include flexing(flex, initial, initial, center, initial, center);
+        padding: 4.8rem 7.8125vw 4rem;
+        width: 100%;
+        margin: 0;
+
+        &__title {
+            margin-right: auto;
+        }
+    } 
+
+    .footer {
+        padding: 4.8rem 7.8125vw;
+        align-items: flex-start;
+
+        .connect {
+            width: 100%;
+        }
+
+        &__card {
+            width: 100%;
+            .info-card {
+                width: 25.2rem;
+            }
+        }
+
+        .copyright {
+            &__description {
+                width: 36.8rem;
+            }
+        }
+    }
+}
