@@ -56,8 +56,6 @@ const deleteComment = (id) => {
 	const apiKey = getApiKey();
 	axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + apiKey)
 	.then(response => {
-		document.getElementById('name').value = '';
-		document.getElementById('comment').value = ''; 
 		comments.innerHTML = '';
 		renderComments();
 	})
