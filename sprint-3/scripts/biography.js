@@ -4,64 +4,79 @@ const comments = document.querySelector('.comments__cards');
 // constant variable to select form element with class "form"
 const form = document.querySelector('.form'); 
 
-const deleteComment = (el, id) => {
-	axios.delete('https://project-1-api.herokuapp.com/comments/#{id}?api_key=' + apiKey)
-	.then(response => {
-		console.log(`DELETE: user is removed`, id);
-		// remove elem from DOM
-		el.remove();
-	})
-	.catch(error => console.error(error));
-};
+const newComment = {}; 
 
-
-// 
-const header = {
-	'Content-Type': 'application/json'
-};
-
-// anonymous function to retrieve an api key and store it in a variable 
+// Method GET to retrieve api key from object returned in response from /register route
 const getApiKey = () => {
 	axios.get('https://project-1-api.herokuapp.com/register')
 	.then(response => {
 		return response.data.api_key;		
 	})
+	.catch(error => console.error(error));
 };
-
-// contains the returned value of the invoked anonymous promise function
-const apiKey = getApiKey();
 
 // retrieves the comment objects array and then renders the objects to the browser
 const renderComments = () => {
+	const apiKey = getApiKey();
 	axios.get('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey)
 	.then(response => {
-		console.log(response.data);
 		return response.data;
 	})	
 	.then(comments => {
 		comments.forEach(object => displayComments(object));
-		const button = document.querySelector('.card');
-		console.log(button);
-		button.onclick = (e) => {
-			e.stopPropagation();
-			deleteComment(e, e.target.id);
-		}
-	});
+		const button = document.querySelectorAll('.delete');
+		button.forEach(element => {
+			element.addEventListener('click', (e)=> deleteComment(e.target.id));
+		});
+	})
+	.catch(error => console.error(error));
 };
 
-// renders comments when page loads
+// post new comment object to server
+const postNewComment = () => {
+	const apiKey = getApiKey();
+	const header = {'Content-Type': 'application/json'};
+	axios.post('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey, newComment, header)
+	.then( response => {
+		renderComments();
+	})
+	.catch(error => console.error(error));
+}
+
 renderComments();
+
+// const button = document.querySelector('.delete');
+// console.log(button);
+// 		button.addEventListener('click', (e) => {
+// 			return console.log('click');
+// 		})
+
+// delete comment 
+const deleteComment = (id) => {
+	const apiKey = getApiKey();
+	axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + apiKey)
+	.then(response => {
+		document.getElementById('name').value = '';
+		document.getElementById('comment').value = ''; 
+		comments.innerHTML = '';
+		renderComments();
+	})
+	.catch(error => console.error(error));
+};
+
+
+
+// // renders comments when page loads
+// renderComments();
 
 // event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
 
+
 // function that deals with the form submission generated event object
 function formHandler(e) {
-	// declares new comment object
-	const newComment = {}; 
-
-    // prevents page reload upon submission
-    e.preventDefault(); 
+	// prevents page reload upon submission
+	e.preventDefault(); 
 
     // creates name object key and sets it to the given value of the input element
     newComment.name = e.target.userName.value; 
@@ -78,12 +93,7 @@ function formHandler(e) {
     // clear comments list
 	comments.innerHTML = '';
 
-	// post new comment object to server
-	axios.post('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey, newComment, header)
-	.then( (response) => {
-		console.log(response);
-	renderComments();
-	});
+	postNewComment();
 };
 
 // function that creates comment section cards
@@ -92,8 +102,7 @@ function displayComments (comment) {
 	// create Card
 	const cardEl = document.createElement('div');
 	cardEl.classList.add('card');
-	cardEl.setAttribute('id', comment.id);
-	comments.prepend(cardEl);
+	comments.appendChild(cardEl);
 
 	// create Card Image
 	const imageEl = document.createElement('div');
@@ -130,10 +139,11 @@ function displayComments (comment) {
 
 	 // create Card Button
 	 const buttonEl = document.createElement('button');
-	 buttonEl.classList.add('button');
+	 buttonEl.classList.add('button', 'delete');
 	 buttonEl.setAttribute('type', 'button');
+	 buttonEl.setAttribute('id', comment.id);
 	 buttonEl.innerText = 'DELETE';
-	 cardEl.appendChild(buttonEl);
+	 bodyEl.appendChild(buttonEl);
 };
 
 // returns a string stating how long since the comment was first submitted

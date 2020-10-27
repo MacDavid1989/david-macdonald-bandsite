@@ -344,7 +344,27 @@
                 line-height: $line-height-fs14px;
                 margin-bottom: 0.8rem;
                 word-wrap: break-word;
-            }   
+            } 
+            
+            .button {
+                @include flexing(flex, initial, initial, center, initial, center);
+                border-radius: 0.4rem;
+                border: none;
+                outline-style: none;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: 160px;
+                height: 4.8rem;
+                margin: 1.6rem 0 0 auto;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: $color-black;
+            }
         }
     }
 }
