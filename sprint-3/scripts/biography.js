@@ -6,6 +6,9 @@ const form = document.querySelector('.form');
 
 const newComment = {}; 
 
+// event listener for when the form button is pressed and the info is submitted
+form.addEventListener('submit', formHandler);
+
 // Method GET to retrieve api key from object returned in response from /register route
 const getApiKey = () => {
 	axios.get('https://project-1-api.herokuapp.com/register')
@@ -41,15 +44,7 @@ const postNewComment = () => {
 		renderComments();
 	})
 	.catch(error => console.error(error));
-}
-
-renderComments();
-
-// const button = document.querySelector('.delete');
-// console.log(button);
-// 		button.addEventListener('click', (e) => {
-// 			return console.log('click');
-// 		})
+};
 
 // delete comment 
 const deleteComment = (id) => {
@@ -62,14 +57,7 @@ const deleteComment = (id) => {
 	.catch(error => console.error(error));
 };
 
-
-
-// // renders comments when page loads
-// renderComments();
-
-// event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
-
+renderComments();
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -149,7 +137,7 @@ function convertTime(timestamp) {
   // variable with the current time in milliseconds since the epoch
   const currentTime = new Date().getTime();
   // variable with the difference
-  const time = (currentTime - timestamp)/1000;
+  const time = Math.abs(currentTime - timestamp)/1000;
 
   // checks if total milliseconds are greater than the equivalent of at least 1 year
   if ((time/31536000) > 1) {

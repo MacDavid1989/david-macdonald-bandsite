@@ -1,39 +1,34 @@
 // constant variable to contain div with class "shows__cards"
 const shows = document.querySelector('.shows__cards');
 
-// default shows list as an array of objects
-const defaultShows = [
-    {
-        date: 'Mon Dec 17 2018', 
-        venue: 'Ronald Lane',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Tue Jul 18 2019', 
-        venue: 'Pier 3 East',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Fri Jul 22 2019', 
-        venue: 'View Lounge',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Sat Aug 12 2019', 
-        venue: 'Hyatt Agency',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Fri Sep 05 2019', 
-        venue: 'Moscow Center',
-        location: 'San Francisco, CA',
-    },
-    {
-        date: 'Wed Aug 11 2019', 
-        venue: 'Pres Club',
-        location: 'San Francisco, CA',
-    },  
-];
+// Method GET to retrieve api key from object returned in response from /register route
+const getApiKey = () => {
+	axios.get('https://project-1-api.herokuapp.com/register')
+	.then(response => {
+		return response.data.api_key;		
+	})
+	.catch(error => console.error(error));
+};
+
+// retrieves the comment objects array and then renders the objects to the browser
+const renderShows = () => {
+	const apiKey = getApiKey();
+	axios.get('https://project-1-api.herokuapp.com/showdates?api_key=' + apiKey)
+	.then(response => {
+        console.log(response.data)
+		return response.data;
+	})	
+	.then(comments => {
+		comments.forEach(object => displayShows(object));
+		const button = document.querySelectorAll('.delete');
+		button.forEach(element => {
+			element.addEventListener('click', (e)=> deleteComment(e.target.id));
+		});
+	})
+	.catch(error => console.error(error));
+};
+
+renderShows();
 
 // function that creates show cards
 function displayShows (show) {
@@ -74,7 +69,7 @@ function displayShows (show) {
     // create Card Venue
     const venueEl = document.createElement('p');
     venueEl.classList.add('card__text');
-    venueEl.innerText = show.venue;
+    venueEl.innerText = show.place;
     venueWrapEl.appendChild(venueEl);
 
     // create Location Wrapper
@@ -114,7 +109,7 @@ function buttonHandlerAlt () {
     // clears the shows section
     shows.innerHTML = '';
     // calls function to render shows elements
-    defaultShows.forEach(show => displayShows(show));
+    renderShows();
 };
 
 // creates a card for tickets
@@ -142,9 +137,6 @@ function displayTickets() {
     buttonEl.innerText = 'ALL SHOWS';
     cardEl.appendChild(buttonEl);
 }
-
-// loop that filters through an array of objects and invokes a function to render shows
-defaultShows.forEach(show => displayShows(show));
 
 // event listener that calls buttonHandler function if the element clicked within the shows section has a class of button
 shows.addEventListener('click', (e) => {

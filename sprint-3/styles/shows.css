@@ -698,6 +698,8 @@
     margin-bottom: 0;
   }
   .shows .card .button, .shows .shows__cards .card .button-alt, .shows__cards .shows .card .button-alt {
+    -ms-flex-item-align: center;
+        align-self: center;
     width: 16rem;
     margin-top: 0;
     margin-left: auto;
