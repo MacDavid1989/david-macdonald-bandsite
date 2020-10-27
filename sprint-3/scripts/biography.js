@@ -26,7 +26,8 @@ const renderComments = () => {
 		return response.data;
 	})	
 	.then(comments => {
-		comments.forEach(object => displayComments(object));
+		comments.splice(3,comments.length).reverse().forEach(object => displayComments(object));
+		comments.splice(0,3).forEach(object => displayComments(object));
 		const button = document.querySelectorAll('.delete');
 		button.forEach(element => {
 			element.addEventListener('click', (e)=> deleteComment(e.target.id));
