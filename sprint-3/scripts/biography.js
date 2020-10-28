@@ -32,6 +32,10 @@ const renderComments = () => {
 		button.forEach(element => {
 			element.addEventListener('click', (e)=> deleteComment(e.target.id));
 		});
+		const like = document.querySelectorAll('.like');
+		like.forEach(element => {
+			element.addEventListener('click', (e)=> likeComment(e.target.id));
+		});
 	})
 	.catch(error => console.error(error));
 };
@@ -51,6 +55,17 @@ const postNewComment = () => {
 const deleteComment = (id) => {
 	const apiKey = getApiKey();
 	axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + apiKey)
+	.then(response => {
+		comments.innerHTML = '';
+		renderComments();
+	})
+	.catch(error => console.error(error));
+};
+
+// delete comment 
+const likeComment = (id) => {
+	const apiKey = getApiKey();
+	axios.put('https://project-1-api.herokuapp.com/comments/' + id + '/like?api_key=' + apiKey)
 	.then(response => {
 		comments.innerHTML = '';
 		renderComments();
@@ -131,7 +146,35 @@ function displayComments (comment) {
 	 buttonEl.setAttribute('id', comment.id);
 	 buttonEl.innerText = 'DELETE';
 	 bodyEl.appendChild(buttonEl);
+
+	//  create Like Button
+	const likeEl = document.createElement('p');
+	likeEl.classList.add('like');
+	likeEl.setAttribute('id', comment.id);
+	likeEl.innerText = comment.likes;
+	bodyEl.appendChild(likeEl);
 };
+
+
+// ### `PUT /comments/:id/like`
+// - Increments the like counter of the comment specified by `:id`
+//   - swap `:id` for the id of the element you want to like
+// - No POST body expected
+// - Will return a 404 if no comment with that ID is found.
+// - If successful, it will return the `comment` JSON object that you just liked
+// - *This endpoint is not required to satisfy the assignment requirements*
+
+// #### Response Body Example
+// ```json
+// {
+//     "name": "Nigel",
+//     "comment": "What a cool site",
+//     "id": 0,
+//     "likes": 1,
+//     "timestamp": 1530744795832
+// }
+// ```
+
 
 // returns a string stating how long since the comment was first submitted
 function convertTime(timestamp) {

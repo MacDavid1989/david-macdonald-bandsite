@@ -520,6 +520,17 @@
   margin-bottom: 0.8rem;
   word-wrap: break-word;
 }
+.comments__cards .card .like {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+.comments__cards .card .like::before {
+  display: inline-block;
+  content: "";
+  background-color: blue;
+  height: 10px;
+  width: 10px;
+}
 .comments__cards .card .button {
   display: -webkit-box;
   display: -ms-flexbox;

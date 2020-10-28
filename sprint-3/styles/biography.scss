@@ -345,6 +345,19 @@
                 margin-bottom: 0.8rem;
                 word-wrap: break-word;
             } 
+
+            .like {
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+            }
+
+            .like::before {
+                display: inline-block;
+                content: '';
+                background-color: blue;
+                height: 10px;
+                width: 10px;
+            }
             
             .button {
                 @include flexing(flex, initial, initial, center, initial, center);
