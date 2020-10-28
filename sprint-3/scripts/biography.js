@@ -26,8 +26,9 @@ const renderComments = () => {
 		return response.data;
 	})	
 	.then(comments => {
-		comments.splice(3,comments.length).reverse().forEach(object => displayComments(object));
-		comments.splice(0,3).forEach(object => displayComments(object));
+		comments.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : -1).forEach(object => displayComments(object));
+		// comments.splice(3,comments.length).reverse().forEach(object => displayComments(object));
+		// comments.splice(0,3).forEach(object => displayComments(object));
 		const button = document.querySelectorAll('.delete');
 		button.forEach(element => {
 			element.addEventListener('click', (e)=> deleteComment(e.target.id));
@@ -104,7 +105,7 @@ function displayComments (comment) {
 	// create Card
 	const cardEl = document.createElement('div');
 	cardEl.classList.add('card');
-	comments.appendChild(cardEl);
+	comments.prepend(cardEl);
 
 	// create Card Image
 	const imageEl = document.createElement('div');
