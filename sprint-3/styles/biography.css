@@ -68,7 +68,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.nav__logo {
+.nav__logo-link {
   margin-top: 1.3rem;
   width: 12rem;
   height: 2.4rem;
@@ -843,7 +843,7 @@
             justify-content: flex-start;
     padding: 0 3.125vw;
   }
-  .nav__logo {
+  .nav__logo-link {
     margin-top: 0;
   }
   .nav__list {

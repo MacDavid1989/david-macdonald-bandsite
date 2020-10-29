@@ -23,7 +23,7 @@
     @include flexing(flex, column, initial, center, initial, space-between);
 
     // Navigation Logo Anchor Boundary
-    &__logo {
+    &__logo-link {
         margin-top: 1.3rem;
         width: 12rem;
         height: 2.4rem;
@@ -605,7 +605,7 @@
         @include flexing(flex, row, initial, center, initial, flex-start);
         padding: 0 3.125vw;
 
-        &__logo {
+        &__logo-link {
             margin-top: 0;
         }
 
