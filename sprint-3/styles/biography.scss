@@ -15,24 +15,23 @@
 
 // Header Navigation
 .nav {
+    @include flexing(flex, column, initial, center, initial, flex-end);
     background-color: $color-background-alternate;
     width: 100%;
     height: 8rem;
     position: fixed;
     z-index: 11;
-    @include flexing(flex, column, initial, center, initial, space-between);
 
     // Navigation Logo Anchor Boundary
     &__logo-link {
-        margin-top: 1.3rem;
+        @include flexing(flex, initial, initial, center, initial, center);
+        margin-bottom: 1.6rem;
         width: 12rem;
         height: 2.4rem;
-        @include flexing(flex, initial, initial, center, initial, center);
     }
 
     // Navigation Container Excluding Logo
     &__list {
-        margin-top: 1.6rem;
         height: 2.7rem;
         width: 100%;
         @include flexing(flex, initial, initial, initial, initial, space-evenly);
