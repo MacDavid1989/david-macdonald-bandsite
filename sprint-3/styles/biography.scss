@@ -42,7 +42,7 @@
     &__link {
         text-decoration: none;
         height: 100%;
-        width: 16rem;
+        width: 100%;
         font-size: $font-size-header;
         color: $color-text-alternate;
         @include flexing(flex, initial, initial, flex-start, initial, center);
@@ -164,8 +164,8 @@
 // Photo Gallery Section
 .gallery {
     background-color: $color-background-base;
-    width: 100vw;
-    padding: 3.2rem 5vw 4rem;
+    width: 100%;
+    padding: 3.2rem 0 4rem;
 
     // Gallery Heading
     &__title {
@@ -178,8 +178,7 @@
     // Gallery Photos & Photo States
     &__image {
         margin-top: 1.6rem;
-        width: 90vw;
-        height: 50.625vw;
+        width: 100%;
         filter: grayscale(100%);
 
         &:hover {
@@ -211,9 +210,6 @@
         padding: 2.4rem 0 3.2rem;
 
         &__image {
-            background-image: url(../assets/images/mohan-muruge.jpg);
-            background-position: center;
-            background-size: cover;
             height: 4.8rem;
             width: 4.8rem;
             border-radius: 50%;
@@ -594,8 +590,7 @@
         }
 
         &__image {
-            width: 43.7689969vw;
-            height: 24.62006079vw;
+            width: 48.6305764%;
 
             &:nth-of-type(2n) {
                 margin-left: 2.4316109vw;
@@ -704,8 +699,7 @@
     }
 
     .gallery {
-        padding: 4.8rem 3.125vw 4rem;
-        width: 100vw;
+        padding: 4.8rem 0 4rem;
 
         &__title {
             font-size: $font-size-desktop-lgheading;
@@ -715,8 +709,7 @@
 
         &__image {
             margin-top: 2.4rem;
-            width: 29.166666vw;
-            height: 16.40625vw;
+            width: 31.11111111%;
 
             &:nth-of-type(2n) {
                 margin-left: 0;
@@ -903,7 +896,7 @@
     .hero {
         justify-content: center;
 
-        .wrapper {
+        &__wrapper {
             width: 108rem;
         }
     }
@@ -1026,8 +1019,7 @@
     }
 
     .gallery {
-        width: 100vw;
-        padding: 4.8rem 7.8125vw 4rem;
+        padding: 4.8rem 0 4rem;
 
         &__title {
             align-self: initial;

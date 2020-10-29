@@ -119,7 +119,7 @@
 
 // Shows Section
 .shows {
-    background-color: $color-background-base;
+    background-color: $color-white;
     width: 100%;
     @include flexing(flex, column, wrap, flex-start, initial, initial);
     padding: 3.2rem calc(16px + 0.017857142 * (100vw - 320px));

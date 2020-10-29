@@ -1,27 +1,29 @@
+// Method GET to retrieve api key from object returned in response from /register route
+// const getApiKey = () => {
+// 	axios.get('https://project-1-api.herokuapp.com/register')
+// 	.then(response => {
+// 		console.log(response.data.api_key);
+// 	})
+// 	.catch(error => console.error(error));
+// };
+
 // constant variable to select div with class "comments__cards"
 const comments = document.querySelector('.comments__cards'); 
 
 // constant variable to select form element with class "form"
 const form = document.querySelector('.form'); 
 
+// constant variable containing API Key generated through GET request from /register route
+const apiKey =  'f8f9d53b-d07d-4b66-b446-e336637dd9fd';
+
+// empty object that will be used to store a new comment
 const newComment = {}; 
 
 // event listener for when the form button is pressed and the info is submitted
 form.addEventListener('submit', formHandler);
 
-// Method GET to retrieve api key from object returned in response from /register route
-const getApiKey = () => {
-	axios.get('https://project-1-api.herokuapp.com/register')
-	.then(response => {
-		return response.data.api_key;		
-	})
-	.catch(error => console.error(error));
-};
-
-
 // retrieves the comment objects array and then renders the objects to the browser
 const renderComments = () => {
-	const apiKey = getApiKey();
 	axios.get('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey)
 	.then(response => {
 		return response.data;
@@ -44,7 +46,6 @@ const renderComments = () => {
 
 // post new comment object to server
 const postNewComment = () => {
-	const apiKey = getApiKey();
 	const header = {'Content-Type': 'application/json'};
 	axios.post('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey, newComment, header)
 	.then( response => {
@@ -55,7 +56,6 @@ const postNewComment = () => {
 
 // delete comment 
 const deleteComment = (id) => {
-	const apiKey = getApiKey();
 	axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + apiKey)
 	.then(response => {
 		comments.innerHTML = '';
@@ -66,7 +66,6 @@ const deleteComment = (id) => {
 
 // delete comment 
 const likeComment = (id) => {
-	const apiKey = getApiKey();
 	axios.put('https://project-1-api.herokuapp.com/comments/' + id + '/like?api_key=' + apiKey)
 	.then(response => {
 		comments.innerHTML = '';
@@ -88,11 +87,7 @@ function formHandler(e) {
     // creates comment object key and sets it to the given value of the textarea element
     newComment.comment = e.target.userComment.value; 
 
-    // clear input field
-    document.getElementById('name').value = '';
-
-    // clear comment textarea 
-    document.getElementById('comment').value = ''; 
+	form.reset();
 
     // clear comments list
 	comments.innerHTML = '';
@@ -140,13 +135,13 @@ function displayComments (comment) {
 	bodyEl.appendChild(paragraphEl);
 
 	// create Card Name
-	const nameEl = document.createElement('h2');
+	const nameEl = document.createElement('p');
 	nameEl.classList.add('card__text-title');
 	nameEl.innerText = comment.name;
 	headerEl.appendChild(nameEl);
 
 	// create Card Date
-	const dateEl = document.createElement('h5');
+	const dateEl = document.createElement('p');
 	dateEl.classList.add('card__label');
 	dateEl.innerText = convertTime(comment.timestamp);
 	headerEl.appendChild(dateEl);
@@ -166,26 +161,6 @@ function displayComments (comment) {
 	likeEl.innerText = comment.likes;
 	bodyEl.appendChild(likeEl);
 };
-
-
-// ### `PUT /comments/:id/like`
-// - Increments the like counter of the comment specified by `:id`
-//   - swap `:id` for the id of the element you want to like
-// - No POST body expected
-// - Will return a 404 if no comment with that ID is found.
-// - If successful, it will return the `comment` JSON object that you just liked
-// - *This endpoint is not required to satisfy the assignment requirements*
-
-// #### Response Body Example
-// ```json
-// {
-//     "name": "Nigel",
-//     "comment": "What a cool site",
-//     "id": 0,
-//     "likes": 1,
-//     "timestamp": 1530744795832
-// }
-// ```
 
 
 // returns a string stating how long since the comment was first submitted

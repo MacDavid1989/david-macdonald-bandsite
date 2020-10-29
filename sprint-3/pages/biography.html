@@ -26,7 +26,7 @@
         <!-- Hero Banner -->
         <div class="hero">
             <!-- Hero Banner Heading -->
-            <div class="wrapper">
+            <div class="hero__wrapper">
                 <h1 class="hero__title">Gaspard Auge & Xavier de Ronsay</h1>
             </div>
         </div>
@@ -34,21 +34,21 @@
     <main class="main">
         <!-- Upper Biography Section Card Container -->
         <div class="biography-card">
-            <h1 class="biography-card__title">About The Musicians</h1>
+            <h2 class="biography-card__title">About The Musicians</h2>
             <img class="biography-card__image" src="../assets/images/musicians.jpg" alt="">
-            <h3 class="biography-card__text">
+            <blockquote class="biography-card__text">
                 "We are more comfortable with not fighting what comes naturally. Before we might have thought, 'We need
                 to
                 be smarter than this'"
-            </h3>
-            <h2 class="biography-card__text biography-card__text-speaker">- Xavier de Ronsay</h2>
+            </blockquote>
+            <cite class="biography-card__text biography-card__text-speaker">- Xavier de Ronsay</cite>
         </div>
         <!-- Biography Written Paragraph Section -->
         <div class="biography">
             <h3 class="biography__title">Xavier de Ronsay & Gaspard Augé</h3>
             <!-- Biography Paragraph Container -->
             <div class="biography__content">
-                <h4 class="biography__text biography__text--margin">
+                <p class="biography__text biography__text--margin">
                     Xavier De Ronsay and Gaspard Augé had a few
                     mutual friends, who happened to run a record label,
                     seeking tracks for a compilation. With an immediate
@@ -60,8 +60,8 @@
                     director of the newly founded Ed Banger Records,
                     who boasted Daft Punk as former clients. One week
                     later, they were in his office, signing a record deal.
-                </h4>
-                <h4 class="biography__text">
+                </p>
+                <p class="biography__text">
                     Xavier De Ronsay and Gaspard Augé had a few
                     mutual friends, who happened to run a record label,
                     seeking tracks for a compilation. With an immediate
@@ -73,13 +73,13 @@
                     director of the newly founded Ed Banger Records,
                     who boasted Daft Punk as former clients. One week
                     later, they were in his office, signing a record deal.
-                </h4>
+                </p>
             </div>
         </div>
         <!-- Photo Gallery -->
         <div class="gallery">
             <!-- Photo Gallery Heading -->
-            <h1 class="gallery__title">Photo Gallery</h1>
+            <h2 class="gallery__title">Photo Gallery</h2>
             <!-- Photo Gallery Image Container -->
             <div class="gallery__content">
                 <img class="gallery__image" src="../assets/images/Photo-gallery-1.jpg" alt="">
@@ -94,22 +94,22 @@
             </div>
         </div>
         <div class="comments">
-            <h1 class="comments__title">Join the Conversation</h1>
+            <h2 class="comments__title">Join the Conversation</h2>
             <form class="form" action="">
-                <div class="form__image"></div>
-                <ul class="form__list">
-                    <li class="form__item">
+                <img class="form__image" src="../assets/images/mohan-muruge.jpg">
+                <div class="form__list">
+                    <div class="form__item">
                         <label class="form__label" for="name">NAME</label>
                         <input type="text" id="name" name="userName" placeholder="Enter your name" required>
-                    </li>
-                    <li class="form__item form__item--margin">
+                    </div>
+                    <div class="form__item form__item--margin">
                         <label class="form__label" for="comment">COMMENT</label>
                         <textarea id="comment" name="userComment" placeholder="Add a new comment" required></textarea>
-                    </li>
-                    <li class="form__item">
+                    </div>
+                    <div class="form__item">
                         <input class="button" type="submit" value="COMMENT"></input>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </form>
             <div class="comments__cards">
             </div>
@@ -118,7 +118,7 @@
     <footer class="footer">
         <!-- Get In Touch Social Section Container -->
         <div class="connect">
-            <h1 class="connect__title">Get In Touch</h1>
+            <h2 class="connect__title">Get In Touch</h2>
             <!-- Social Links Container -->
             <div class="connect-social">
                 <!-- Instagram Link -->
@@ -137,41 +137,41 @@
         <div class="footer__card">
             <!-- Contact Card Richard -->
             <div class="info-card">
-                <h2 class="info-card__title info-card__title--margin">Richard Rovner</h2>
-                <h2 class="info-card__title">The Bees Knees Management</h2>
-                <h4 class="info-card__description info-card__description--margin">460 King Street West</h4>
-                <h4 class="info-card__description">Toronto, Ontario M5V 1L7</h4>
+                <p class="info-card__title info-card__title--margin">Richard Rovner</p>
+                <p class="info-card__title">The Bees Knees Management</p>
+                <p class="info-card__description info-card__description--margin">460 King Street West</p>
+                <p class="info-card__description">Toronto, Ontario M5V 1L7</p>
                 <!-- MailTo Link -->
                 <a href="mailto:info@thebeesknees.com">
-                    <h4 class="info-card__contact">info@thebeesknees.com</h4>
+                    <p class="info-card__contact">info@thebeesknees.com</p>
                 </a>
             </div>
             <!-- Contact Card Marsha -->
             <div class="info-card info-card--margin-left">
-                <h2 class="info-card__title info-card__title--margin">Marsha Vlasic</h2>
-                <h2 class="info-card__title">Artist Group International</h2>
-                <h4 class="info-card__description info-card__description--margin">Booking Agent for</h4>
-                <h4 class="info-card__description">US/South America/Japan</h4>
+                <p class="info-card__title info-card__title--margin">Marsha Vlasic</p>
+                <p class="info-card__title">Artist Group International</p>
+                <p class="info-card__description info-card__description--margin">Booking Agent for</p>
+                <p class="info-card__description">US/South America/Japan</p>
                 <!-- MailTo Link -->
                 <a href="mailto:marsha.vlasic@artistgrp.com">
-                    <h4 class="info-card__contact">marsha.vlasic@artistgrp.com</h4>
+                    <p class="info-card__contact">marsha.vlasic@artistgrp.com</p>
                 </a>
             </div>
             <!-- Contact Card Russel -->
             <div class="info-card info-card--margin-left">
-                <h2 class="info-card__title info-card__title--margin">Russel Warby</h2>
-                <h2 class="info-card__title">William Morrir Entertainment</h2>
-                <h4 class="info-card__description info-card__description--margin">Booking Agent for</h4>
-                <h4 class="info-card__description">UK/EU/AU</h4>
+                <p class="info-card__title info-card__title--margin">Russel Warby</p>
+                <p class="info-card__title">William Morrir Entertainment</p>
+                <p class="info-card__description info-card__description--margin">Booking Agent for</p>
+                <p class="info-card__description">UK/EU/AU</p>
                 <!-- MailTo Link -->
                 <a href="mailto:RLW@wmentertainment.com">
-                    <h4 class="info-card__contact">RLW@wmentertainment.com</h4>
+                    <p class="info-card__contact">RLW@wmentertainment.com</p>
                 </a>
             </div>
         </div>
         <!-- Copyright Section -->
         <div class="copyright">
-            <h4 class="copyright__description">Copyright The Bees Knees © 2018 All Rights Reserved</h4>
+            <p class="copyright__description">Copyright The Bees Knees © 2018 All Rights Reserved</p>
         </div>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

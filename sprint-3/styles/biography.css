@@ -115,7 +115,7 @@
 .nav__link {
   text-decoration: none;
   height: 100%;
-  width: 16rem;
+  width: 100%;
   font-size: 1.4rem;
   color: #FAFAFA;
   display: -webkit-box;
@@ -262,8 +262,8 @@
 
 .gallery {
   background-color: #FAFAFA;
-  width: 100vw;
-  padding: 3.2rem 5vw 4rem;
+  width: 100%;
+  padding: 3.2rem 0 4rem;
 }
 .gallery__title {
   font-size: 2.4rem;
@@ -273,8 +273,7 @@
 }
 .gallery__image {
   margin-top: 1.6rem;
-  width: 90vw;
-  height: 50.625vw;
+  width: 100%;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
@@ -337,9 +336,6 @@
   padding: 2.4rem 0 3.2rem;
 }
 .comments .form__image {
-  background-image: url(../assets/images/mohan-muruge.jpg);
-  background-position: center;
-  background-size: cover;
   height: 4.8rem;
   width: 4.8rem;
   border-radius: 50%;
@@ -820,8 +816,7 @@
             justify-content: initial;
   }
   .gallery__image {
-    width: 43.7689969vw;
-    height: 24.62006079vw;
+    width: 48.6305764%;
   }
   .gallery__image:nth-of-type(2n) {
     margin-left: 2.4316109vw;
@@ -935,8 +930,7 @@
   }
 
   .gallery {
-    padding: 4.8rem 3.125vw 4rem;
-    width: 100vw;
+    padding: 4.8rem 0 4rem;
   }
   .gallery__title {
     font-size: 3.6rem;
@@ -945,8 +939,7 @@
   }
   .gallery__image {
     margin-top: 2.4rem;
-    width: 29.166666vw;
-    height: 16.40625vw;
+    width: 31.11111111%;
   }
   .gallery__image:nth-of-type(2n) {
     margin-left: 0;
@@ -1118,7 +1111,7 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .hero .wrapper {
+  .hero__wrapper {
     width: 108rem;
   }
 
@@ -1225,8 +1218,7 @@
   }
 
   .gallery {
-    width: 100vw;
-    padding: 4.8rem 7.8125vw 4rem;
+    padding: 4.8rem 0 4rem;
   }
   .gallery__title {
     -ms-flex-item-align: initial;
