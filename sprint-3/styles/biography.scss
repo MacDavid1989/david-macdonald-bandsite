@@ -114,7 +114,7 @@
 // Biography About Quote Card
 .biography-card {
     width: 100%;
-    margin-top: 3.2rem;
+    margin-top: calc(3.2rem + (16 / 448) * (100vw - 32rem));
 
     // Card Heading
     &__title {
@@ -125,7 +125,7 @@
 
     // Card Image
     &__image {
-        margin: 2.4rem 0;
+        margin: calc(2.4rem + (24 / 448) * (100vw - 32rem)) 0;
         width: 100%;
         height: calc(14.5rem + (217 / 448) * (100vw - 32rem));
     }
@@ -140,14 +140,14 @@
         &-speaker {
             font-size: calc(#{$font-size-mobile-mdparagraph} + (2 / 448) * (100vw - 32rem));
             line-height: calc(#{$line-height-fs14px} + (2 / 448) * (100vw - 32rem));
-            margin-top: 3.2rem;
+            margin-top: calc(3.2rem + (8 / 448) * (100vw - 32rem));
         }
     }
 }
 
 // Written Biography Section
 .biography {
-    margin: 4rem 0;
+    margin: calc(4rem + (16 / 448) * (100vw - 32rem)) 0 calc(4rem + (8 / 448) * (100vw - 32rem));
     width: 100%;
 
     // Biography Heading
@@ -167,7 +167,7 @@
         font-size: calc(#{$font-size-mobile-smparagraph} + (2 / 448) * (100vw - 32rem));
         line-height: calc(#{$line-height-fs12px} + (2 / 448) * (100vw - 32rem));
         width: 100%;
-        margin-top: 2.4rem;
+        margin-top: calc(2.4rem + (8 / 448) * (100vw - 32rem));
     }
 }
 
@@ -175,7 +175,7 @@
 .gallery {
     background-color: $color-background-base;
     width: 100%;
-    margin: 3.2rem 0 4rem;
+    margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
 
     // Gallery Heading
     &__title {
@@ -205,14 +205,14 @@
 // Comments Section
 .comments {
     @include flexing(flex, column, initial, center, initial, initial);
-    margin: 3.2rem 0 4rem;
+    margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
     width: 100%;
 
     &__title {
         font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
         line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
         font-weight: bold;
-        margin-bottom: 4rem;
+        margin-bottom: calc(4rem + (16 / 448) * (100vw - 32rem));
         width: 100%;
     }
 
@@ -220,23 +220,23 @@
         @include flexing(flex, initial, initial, initial, initial, initial);
         width: 100%;
         border-bottom: 0.1rem solid $color-divider;
-        padding: 0 0 3.2rem;
+        padding: 0 0 calc(3.2rem - (8 / 448) * (100vw - 32rem));
 
         &__image {
             height: 4.8rem;
             width: 4.8rem;
             border-radius: 50%;
-            margin-top: 2rem;
+            margin-top: calc(2rem + (4 / 448) * (100vw - 32rem));
         }
 
         &__list {
-            margin-left: 1.6rem;
-            width: calc(100% - 6.4rem);
+            margin-left: calc(1.6rem + (4 / 448) * (100vw - 32rem));
+            width: calc(100% - (4.8rem + calc(1.6rem + (4 / 448) * (100vw - 32rem))));
         }
 
         &__item {
             @include flexing(flex, column, initial, initial, initial, initial);
-            margin-bottom: 1.6rem;
+            margin-bottom: calc(1.6rem + (8 / 448) * (100vw - 32rem));
 
             #name {
                 width: 100%;
@@ -315,8 +315,8 @@
             }
 
             &__text-title {
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
+                font-size: calc(#{$font-size-mobile-mdparagraph} + (2 / 448) * (100vw - 32rem));
+                line-height: calc(#{$line-height-fs14px} + (2 / 448) * (100vw - 32rem));
                 font-weight: 600;
             }
     
@@ -341,8 +341,8 @@
 
             .like {
                 @include flexing(flex, initial, initial, initial, initial, initial);
-                font-size: $font-size-mobile-lgheading;
-                line-height: $line-height-fs24px;
+                font-size: $font-size-like;
+                line-height: $line-height-fs20px;
                 cursor: pointer;
             }
 
@@ -354,8 +354,8 @@
                 mask-position: center;
                 mask-repeat: no-repeat;
                 mask-image: url(../assets/icons/svg/star-half.svg);
-                height: 2.4rem;
-                width: 2.4rem;
+                height: 2rem;
+                width: 2rem;
             }
 
             .like:hover::before {
@@ -366,8 +366,8 @@
                 mask-position: center;
                 mask-repeat: no-repeat;
                 mask-image: url(../assets/icons/svg/star-full.svg);
-                height: 2.4rem;
-                width: 2.4rem;
+                height: 2rem;
+                width: 2rem;
             }
             
             .delete {
@@ -376,8 +376,8 @@
                 mask-position: center;
                 mask-repeat: no-repeat;
                 mask-image: url(../assets/icons/svg/pacman.svg);
-                height: 2.4rem;
-                width: 2.4rem;
+                height: 2rem;
+                width: 2rem;
                 cursor: pointer;
             }
         }
@@ -560,6 +560,11 @@
             }
         }
     }
+}
+
+// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(719px) {
+
 }
 
 // Tablet Layout Queries

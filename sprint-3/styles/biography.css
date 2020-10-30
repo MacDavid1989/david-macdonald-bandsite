@@ -222,7 +222,7 @@
 
 .biography-card {
   width: 100%;
-  margin-top: 3.2rem;
+  margin-top: calc(3.2rem + (16 / 448) * (100vw - 32rem));
 }
 .biography-card__title {
   font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
@@ -230,7 +230,7 @@
   font-weight: bold;
 }
 .biography-card__image {
-  margin: 2.4rem 0;
+  margin: calc(2.4rem + (24 / 448) * (100vw - 32rem)) 0;
   width: 100%;
   height: calc(14.5rem + (217 / 448) * (100vw - 32rem));
 }
@@ -242,11 +242,11 @@
 .biography-card__text-speaker {
   font-size: calc(1.4rem + (2 / 448) * (100vw - 32rem));
   line-height: calc(2.2rem + (2 / 448) * (100vw - 32rem));
-  margin-top: 3.2rem;
+  margin-top: calc(3.2rem + (8 / 448) * (100vw - 32rem));
 }
 
 .biography {
-  margin: 4rem 0;
+  margin: calc(4rem + (16 / 448) * (100vw - 32rem)) 0 calc(4rem + (8 / 448) * (100vw - 32rem));
   width: 100%;
 }
 .biography__title {
@@ -261,13 +261,13 @@
   font-size: calc(1.2rem + (2 / 448) * (100vw - 32rem));
   line-height: calc(2rem + (2 / 448) * (100vw - 32rem));
   width: 100%;
-  margin-top: 2.4rem;
+  margin-top: calc(2.4rem + (8 / 448) * (100vw - 32rem));
 }
 
 .gallery {
   background-color: #FAFAFA;
   width: 100%;
-  margin: 3.2rem 0 4rem;
+  margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
 }
 .gallery__title {
   font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
@@ -307,14 +307,14 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  margin: 3.2rem 0 4rem;
+  margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
   width: 100%;
 }
 .comments__title {
   font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
   line-height: calc(3.2rem + (12 / 448) * (100vw - 32rem));
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: calc(4rem + (16 / 448) * (100vw - 32rem));
   width: 100%;
 }
 .comments .form {
@@ -337,17 +337,17 @@
           justify-content: initial;
   width: 100%;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 0 0 3.2rem;
+  padding: 0 0 calc(3.2rem - (8 / 448) * (100vw - 32rem));
 }
 .comments .form__image {
   height: 4.8rem;
   width: 4.8rem;
   border-radius: 50%;
-  margin-top: 2rem;
+  margin-top: calc(2rem + (4 / 448) * (100vw - 32rem));
 }
 .comments .form__list {
-  margin-left: 1.6rem;
-  width: calc(100% - 6.4rem);
+  margin-left: calc(1.6rem + (4 / 448) * (100vw - 32rem));
+  width: calc(100% - (4.8rem + calc(1.6rem + (4 / 448) * (100vw - 32rem))));
 }
 .comments .form__item {
   display: -webkit-box;
@@ -367,7 +367,7 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  margin-bottom: 1.6rem;
+  margin-bottom: calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 .comments .form__item #name, .comments .form__item #comment {
   width: 100%;
@@ -499,8 +499,8 @@
   margin-bottom: 1.6rem;
 }
 .comments__cards .card__text-title {
-  font-size: 1.4rem;
-  line-height: 2.2rem;
+  font-size: calc(1.4rem + (2 / 448) * (100vw - 32rem));
+  line-height: calc(2.2rem + (2 / 448) * (100vw - 32rem));
   font-weight: 600;
 }
 .comments__cards .card__label {
@@ -552,8 +552,8 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
   cursor: pointer;
 }
 .comments__cards .card .like::before {
@@ -568,8 +568,8 @@
           mask-repeat: no-repeat;
   -webkit-mask-image: url(../assets/icons/svg/star-half.svg);
           mask-image: url(../assets/icons/svg/star-half.svg);
-  height: 2.4rem;
-  width: 2.4rem;
+  height: 2rem;
+  width: 2rem;
 }
 .comments__cards .card .like:hover::before {
   display: inline-block;
@@ -583,8 +583,8 @@
           mask-repeat: no-repeat;
   -webkit-mask-image: url(../assets/icons/svg/star-full.svg);
           mask-image: url(../assets/icons/svg/star-full.svg);
-  height: 2.4rem;
-  width: 2.4rem;
+  height: 2rem;
+  width: 2rem;
 }
 .comments__cards .card .delete {
   background-color: #323232;
@@ -596,8 +596,8 @@
           mask-repeat: no-repeat;
   -webkit-mask-image: url(../assets/icons/svg/pacman.svg);
           mask-image: url(../assets/icons/svg/pacman.svg);
-  height: 2.4rem;
-  width: 2.4rem;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
 }
 
