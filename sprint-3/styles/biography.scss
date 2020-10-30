@@ -101,8 +101,7 @@
 
 // Main Container Layout
 .main {
-    @include flexing(flex, column, initial, center, initial, center);
-    background-color: $color-white;
+    @include flexing(flex, column, initial, center, initial, initial);
     padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 

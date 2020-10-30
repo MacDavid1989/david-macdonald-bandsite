@@ -210,10 +210,9 @@
           align-items: center;
   -ms-flex-item-align: initial;
       align-self: initial;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #FFF;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 
