@@ -483,16 +483,6 @@
 
 // Transition Queries to Unwrap Copyright for New Spacing
 @include mobile-tablet-transition(328px) {
-    .comments {
-        &__cards {
-            .card {
-                &__label {
-                margin-right: auto;
-                }
-            }
-        }
-    }
-
     .footer{
         .copyright {
             width: 29.6rem;
@@ -501,7 +491,7 @@
 }
 
 // Transition Queries to Unwrap Social Section Links
-@include mobile-tablet-transition(410px) {
+@include mobile-tablet-transition(437px) {
     .footer {
         .connect {
             @include flexing(flex, initial, wrap, baseline, initial, flex-start);
@@ -509,7 +499,12 @@
 
             &__title {
                 margin-bottom: 0;
-                width: 24.5rem;
+                width: 25.2rem;
+            }
+
+            &-social {
+                margin-bottom: 0;
+                margin-left: 2.4rem;
             }
         }
     }

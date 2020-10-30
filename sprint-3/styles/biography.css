@@ -736,15 +736,11 @@
 }
 
 @media (min-width: 328px) {
-  .comments__cards .card__label {
-    margin-right: auto;
-  }
-
   .footer .copyright {
     width: 29.6rem;
   }
 }
-@media (min-width: 410px) {
+@media (min-width: 437px) {
   .footer .connect {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -767,7 +763,11 @@
   }
   .footer .connect__title {
     margin-bottom: 0;
-    width: 24.5rem;
+    width: 25.2rem;
+  }
+  .footer .connect-social {
+    margin-bottom: 0;
+    margin-left: 2.4rem;
   }
 }
 @media (min-width: 586px) {
