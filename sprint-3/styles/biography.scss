@@ -22,12 +22,18 @@
     position: fixed;
     z-index: 100;
 
-    // Navigation Logo
+    // Navigation Logo Link Container
     &__logo-link {
         @include flexing(flex, initial, initial, center, initial, center);
         margin-bottom: 1.6rem;
         width: 12rem;
         height: 2.4rem;
+    }
+
+    // Navigation Logo
+    &__logo {
+        width: 100%;
+        height: 100%;
     }
 
     // Navigation Link Container
