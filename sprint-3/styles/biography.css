@@ -602,9 +602,6 @@
 }
 
 .footer {
-  background-color: #323232;
-  width: 100%;
-  padding: 4.8rem 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -622,10 +619,12 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
+  background-color: #323232;
+  width: 100%;
+  padding: 4.8rem calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 .footer .connect {
-  height: 3.6rem;
-  margin-bottom: 3.2rem;
+  width: 100%;
 }
 .footer .connect__title {
   height: 3.6rem;
@@ -633,10 +632,9 @@
   line-height: 4.4rem;
   font-weight: bold;
   color: #FFF;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.8rem;
 }
 .footer .connect-social {
-  height: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -651,17 +649,19 @@
           align-items: initial;
   -ms-flex-item-align: initial;
       align-self: initial;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 12.4rem;
+  height: 2rem;
+  margin-bottom: 2.8rem;
 }
 .footer .connect-social__link {
-  height: 100%;
-}
-.footer .connect-social__link--margin {
-  margin: 0 3.2rem;
+  width: 2rem;
+  height: 2rem;
 }
 .footer .connect-social__link-icon {
+  width: 100%;
   height: 100%;
 }
 .footer .connect .logo {
@@ -699,19 +699,19 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
+  width: 100%;
 }
 .footer__card .info-card {
   width: 22.4rem;
 }
 .footer__card .info-card__title {
-  width: 19.26rem;
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 2.2rem;
   color: #FFF;
 }
 .footer__card .info-card__title--margin {
-  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
 }
 .footer__card .info-card__description {
   font-size: 1.2rem;
@@ -719,19 +719,17 @@
   color: #FAFAFA;
 }
 .footer__card .info-card__description--margin {
-  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
 }
 .footer__card .info-card__contact {
-  margin-top: 2.4rem;
   font-size: 1.2rem;
   line-height: 2rem;
   color: #FAFAFA;
+  margin-bottom: 2.4rem;
 }
 .footer .copyright {
-  margin-top: 4rem;
-  width: 19.26rem;
-}
-.footer .copyright__description {
+  margin-top: 1.6rem;
+  width: 19.2rem;
   font-size: 1.2rem;
   line-height: 2rem;
   color: #FAFAFA;
