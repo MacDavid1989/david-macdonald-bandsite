@@ -1,7 +1,7 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-// Global Rule-sets
+// Global Rule-set
 *, *::before, *::after {
     @include boundary-reset;
     @include font-stack;
@@ -22,7 +22,7 @@
     position: fixed;
     z-index: 11;
 
-    // Navigation Logo Anchor Boundary
+    // Navigation Logo
     &__logo-link {
         @include flexing(flex, initial, initial, center, initial, center);
         margin-bottom: 1.6rem;
@@ -30,22 +30,23 @@
         height: 2.4rem;
     }
 
-    // Navigation Container Excluding Logo
+    // Navigation Link Container
     &__list {
-        height: 2.7rem;
-        width: 100%;
         @include flexing(flex, initial, initial, initial, initial, space-evenly);
+        width: 100%;
+        height: 2.4rem;
     }
 
-    // Navigation Link & States 
+    // Navigation Links
     &__link {
+        @include flexing(flex, initial, initial, flex-start, initial, center);
         text-decoration: none;
         height: 100%;
         width: 100%;
         font-size: $font-size-header;
         color: $color-text-alternate;
-        @include flexing(flex, initial, initial, flex-start, initial, center);
 
+        // Navigation Link Hover State and Current Page State
         &:hover, &-current {
             color: $color-text-hover;
             font-weight: 600;
@@ -56,6 +57,7 @@
 
 // Spacer To Position Content Beneath Nav
 .spacer {
+    width: 100%;
     height: 8rem;
 }
 
