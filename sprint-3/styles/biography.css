@@ -218,26 +218,26 @@
 
 .biography-card {
   width: 100%;
+  margin-top: 3.2rem;
 }
 .biography-card__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
+  line-height: calc(3.2rem + (12 / 448) * (100vw - 32rem));
   font-weight: bold;
 }
 .biography-card__image {
   margin: 2.4rem 0;
-  width: 90vw;
-  height: 45.3125vw;
+  width: 100%;
+  height: calc(14.5rem + (217 / 448) * (100vw - 32rem));
 }
 .biography-card__text {
-  font-size: 1.6rem;
+  font-size: calc(1.6rem + (8 / 448) * (100vw - 32rem));
   font-weight: 600;
-  line-height: 2.4rem;
-  width: 90vw;
+  line-height: calc(2.4rem + (8 / 448) * (100vw - 32rem));
 }
 .biography-card__text-speaker {
-  font-size: 1.4rem;
-  line-height: 2.2rem;
+  font-size: calc(1.4rem + (2 / 448) * (100vw - 32rem));
+  line-height: calc(2.2rem + (2 / 448) * (100vw - 32rem));
   margin-top: 3.2rem;
 }
 

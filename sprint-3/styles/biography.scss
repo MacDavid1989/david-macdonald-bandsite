@@ -105,35 +105,35 @@
     padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 
-// Biography Section Card Container Including Image
+// Biography About Quote Card
 .biography-card {
     width: 100%;
+    margin-top: 3.2rem;
 
     // Card Heading
     &__title {
-        font-size: $font-size-mobile-lgheading;
-        line-height: $line-height-fs24px;
+        font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
+        line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
         font-weight: bold;
     }
 
     // Card Image
     &__image {
         margin: 2.4rem 0;
-        width: 90vw;
-        height: 45.3125vw;
+        width: 100%;
+        height: calc(14.5rem + (217 / 448) * (100vw - 32rem));
     }
 
     // Card Quote
     &__text {
-        font-size: $font-size-mobile-lgparagraph;
+        font-size: calc(#{$font-size-mobile-lgparagraph} + (8 / 448) * (100vw - 32rem));
         font-weight: 600;
-        line-height: $line-height-fs16px;
-        width: 90vw;
+        line-height: calc(#{$line-height-fs16px} + (8 / 448) * (100vw - 32rem));
 
-    // Card Quote Speaker
+    // Card Author
         &-speaker {
-            font-size: $font-size-mobile-mdparagraph;
-            line-height: $line-height-fs14px;
+            font-size: calc(#{$font-size-mobile-mdparagraph} + (2 / 448) * (100vw - 32rem));
+            line-height: calc(#{$line-height-fs14px} + (2 / 448) * (100vw - 32rem));
             margin-top: 3.2rem;
         }
     }
