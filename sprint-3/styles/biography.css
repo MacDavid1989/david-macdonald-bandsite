@@ -498,36 +498,45 @@
   width: 100%;
   margin-bottom: 1.6rem;
 }
+.comments__cards .card__text-title {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+}
 .comments__cards .card__label {
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
   color: #AFAFAF;
 }
-.comments__cards .card__text-title {
-  display: block;
-  font-size: 1.4rem;
-  line-height: 2.2rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
 .comments__cards .card__text {
   width: 100%;
   font-size: 1.4rem;
   line-height: 2.2rem;
   margin-bottom: 1.6rem;
-  word-wrap: break-word;
 }
 .comments__cards .card .like {
-  font-size: 1.4rem;
-  line-height: 2.2rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  cursor: pointer;
 }
 .comments__cards .card .like::before {
   display: inline-block;
   content: "";
-  background-color: blue;
-  height: 10px;
-  width: 10px;
+  background-image: url(../assets/icons/svg/star-half.svg);
+  background-position: center;
+  background-size: cover;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+.comments__cards .card .like:hover::before {
+  display: inline-block;
+  content: "";
+  background-image: url(../assets/icons/svg/star-full.svg);
+  background-position: center;
+  background-size: cover;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 .comments__cards .card .delete {
   display: -webkit-box;
