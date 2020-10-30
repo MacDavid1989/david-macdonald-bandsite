@@ -334,7 +334,13 @@
                 margin-bottom: 1.6rem;
             } 
 
+            &__button-wrapper {
+                @include flexing(flex, initial, initial, flex-start, initial, space-between);
+                
+            }
+
             .like {
+                @include flexing(flex, initial, initial, initial, initial, initial);
                 font-size: $font-size-mobile-lgheading;
                 line-height: $line-height-fs24px;
                 cursor: pointer;
@@ -361,23 +367,9 @@
             }
             
             .delete {
-                @include flexing(flex, initial, initial, center, initial, center);
-                border-radius: 0.4rem;
-                border: none;
-                outline-style: none;
-                background-color: $color-background-alternate;
-                color: $color-white;
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                font-weight: 600;
-                width: 160px;
-                height: 4.8rem;
-                margin-left: auto;
+                height: 2.4rem;
+                width: 2.4rem;
                 cursor: pointer;
-            }
-
-            .delete:hover {
-                background-color: $color-black;
             }
         }
     }

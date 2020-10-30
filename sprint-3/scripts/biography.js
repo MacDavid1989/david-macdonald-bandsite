@@ -159,12 +159,11 @@ function displayComments (comment) {
 	wrapperEl.appendChild(likeEl);
 
 	 // create Card Button
-	 const buttonEl = document.createElement('button');
-	 buttonEl.classList.add('delete');
-	 buttonEl.setAttribute('type', 'button');
-	 buttonEl.setAttribute('id', comment.id);
-	 buttonEl.innerText = 'DELETE';
-	 wrapperEl.appendChild(buttonEl);
+	 const deleteEl = document.createElement('img');
+	 deleteEl.classList.add('delete');
+	 deleteEl.setAttribute('src', '../assets/icons/svg/pacman.svg');
+	 deleteEl.setAttribute('id', comment.id);
+	 wrapperEl.appendChild(deleteEl);
 };
 
 
