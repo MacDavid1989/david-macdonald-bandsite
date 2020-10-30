@@ -511,23 +511,14 @@
 }
 
 // Transition Queries to Ease Mobile into Tablet Layout
-@include mobile-tablet-transition(586px) {
+@include mobile-tablet-transition(561px) {
     .comments {
     
         .form {
-            width: 52.8rem;
-            padding-top: calc(16px + 0.131868131 * (100vw - 568px));
+            width: 52rem;
 
             &__item {
-    
-                #name {
-                    width: 46rem;
-                }
-    
-                #comment {
-                    width: 46rem;
-                }
-    
+
                 .button {
                     width: 16rem;
                 }
@@ -535,27 +526,7 @@
         }
     
         &__cards {
-            width: 52.8rem;
-    
-            .card{
-                width: 52.8rem;
-    
-                &__body {
-                    width: 47.1rem;
-                }
-
-                &__heading {
-                    justify-content: initial;
-                }
-
-                &__label {
-                    margin-right: 0;
-                }
-    
-                &__text {
-                   width: 100%;
-                }   
-            }
+            width: 52rem;
         }
     }
 }

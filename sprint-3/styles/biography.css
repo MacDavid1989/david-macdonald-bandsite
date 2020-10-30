@@ -770,39 +770,15 @@
     margin-left: 2.4rem;
   }
 }
-@media (min-width: 586px) {
+@media (min-width: 561px) {
   .comments .form {
-    width: 52.8rem;
-    padding-top: calc(16px + 0.131868131 * (100vw - 568px));
-  }
-  .comments .form__item #name, .comments .form__item #comment {
-    width: 46rem;
-  }
-  .comments .form__item #comment {
-    width: 46rem;
+    width: 52rem;
   }
   .comments .form__item .button {
     width: 16rem;
   }
   .comments__cards {
-    width: 52.8rem;
-  }
-  .comments__cards .card {
-    width: 52.8rem;
-  }
-  .comments__cards .card__body {
-    width: 47.1rem;
-  }
-  .comments__cards .card__heading {
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
-  }
-  .comments__cards .card__label {
-    margin-right: 0;
-  }
-  .comments__cards .card__text {
-    width: 100%;
+    width: 52rem;
   }
 }
 @media (min-width: 658px) {
