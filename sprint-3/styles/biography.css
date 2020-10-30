@@ -263,13 +263,13 @@
   margin: 3.2rem 0 4rem;
 }
 .gallery__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
+  line-height: calc(3.2rem + (12 / 448) * (100vw - 32rem));
   font-weight: bold;
-  margin-bottom: 0.8rem;
+  margin-bottom: calc(0.8rem + (32 / 448) * (100vw - 32rem));
 }
 .gallery__image {
-  margin-top: 1.6rem;
+  margin-top: calc(1.6rem + (8 / 448) * (100vw - 32rem));
   width: 100%;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);

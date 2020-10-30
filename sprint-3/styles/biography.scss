@@ -168,15 +168,15 @@
 
     // Gallery Heading
     &__title {
-        font-size: $font-size-mobile-lgheading;
-        line-height: $line-height-fs24px;
+        font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
+        line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
         font-weight: bold;
-        margin-bottom: 0.8rem;
+        margin-bottom: calc(0.8rem + (32 / 448) * (100vw - 32rem));
     }
 
     // Gallery Photos & Photo States
     &__image {
-        margin-top: 1.6rem;
+        margin-top: calc(1.6rem + (8 / 448) * (100vw - 32rem));
         width: 100%;
         filter: grayscale(100%);
 
