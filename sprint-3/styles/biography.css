@@ -243,26 +243,24 @@
 
 .biography {
   margin: 4rem 0;
-  width: 90vw;
+  width: 100%;
 }
 .biography__title {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: calc(1.6rem + (8 / 448) * (100vw - 32rem));
+  line-height: calc(2.4rem + (8 / 448) * (100vw - 32rem));
   font-weight: 600;
 }
 .biography__text {
-  font-size: 1.2rem;
-  width: 89.75vw;
-  line-height: 2rem;
-}
-.biography__text--margin {
-  margin: 2.4rem 0;
+  font-size: calc(1.2rem + (2 / 448) * (100vw - 32rem));
+  line-height: calc(2rem + (2 / 448) * (100vw - 32rem));
+  width: 100%;
+  margin-top: 2.4rem;
 }
 
 .gallery {
   background-color: #FAFAFA;
   width: 100%;
-  padding: 3.2rem 0 4rem;
+  margin: 3.2rem 0 4rem;
 }
 .gallery__title {
   font-size: 2.4rem;

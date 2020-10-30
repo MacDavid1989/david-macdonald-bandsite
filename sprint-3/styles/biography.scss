@@ -142,24 +142,21 @@
 // Written Biography Section
 .biography {
     margin: 4rem 0;
-    width: 90vw;
+    width: 100%;
 
     // Biography Heading
     &__title {
-        font-size: $font-size-mobile-smheading;
-        line-height: $line-height-fs16px;
+        font-size: calc(#{$font-size-mobile-smheading} + (8 / 448) * (100vw - 32rem));
+        line-height: calc(#{$line-height-fs16px} + (8 / 448) * (100vw - 32rem));
         font-weight: 600;
     }
 
     // Biography Paragraphs
     &__text {
-        font-size: $font-size-mobile-smparagraph;
-        width: 89.75vw;
-        line-height: $line-height-fs12px;
-
-        &--margin {
-            margin: 2.4rem 0;
-        }  
+        font-size: calc(#{$font-size-mobile-smparagraph} + (2 / 448) * (100vw - 32rem));
+        line-height: calc(#{$line-height-fs12px} + (2 / 448) * (100vw - 32rem));
+        width: 100%;
+        margin-top: 2.4rem;
     }
 }
 
@@ -167,7 +164,7 @@
 .gallery {
     background-color: $color-background-base;
     width: 100%;
-    padding: 3.2rem 0 4rem;
+    margin: 3.2rem 0 4rem;
 
     // Gallery Heading
     &__title {
