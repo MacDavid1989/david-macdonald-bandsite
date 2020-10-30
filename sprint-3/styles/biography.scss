@@ -108,13 +108,13 @@
 // Main Container Layout
 .main {
     @include flexing(flex, column, initial, center, initial, initial);
-    padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 
 // Biography About Quote Card
 .biography-card {
     width: 100%;
     margin-top: calc(3.2rem + (16 / 448) * (100vw - 32rem));
+    padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 
     // Card Heading
     &__title {
@@ -148,6 +148,7 @@
 // Written Biography Section
 .biography {
     margin: calc(4rem + (16 / 448) * (100vw - 32rem)) 0 calc(4rem + (8 / 448) * (100vw - 32rem));
+    padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
     width: 100%;
 
     // Biography Heading
@@ -175,7 +176,8 @@
 .gallery {
     background-color: $color-background-base;
     width: 100%;
-    margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
+    padding: calc(3.2rem + (16 / 448) * (100vw - 32rem)) calc(1.6rem + (8 / 448) * (100vw - 32rem)) 4rem;
+
 
     // Gallery Heading
     &__title {
@@ -206,6 +208,7 @@
 .comments {
     @include flexing(flex, column, initial, center, initial, initial);
     margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
+    padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
     width: 100%;
 
     &__title {
@@ -553,7 +556,27 @@
 
 // Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
 @include mobile-tablet-transition(719px) {
+    .footer {
+        &__card {
+            margin-bottom: 4rem;
+            // Contact Cards
+            .info-card {
 
+                &--margin {
+                    margin: 0 calc(0rem + (24 / 49) * (100vw - 71.9rem)) 0 calc(0rem + (24 / 49) * (100vw - 71.9rem));
+                }
+    
+                // Card Email  
+                &__contact {
+                   margin-bottom: 0;
+                }
+            }
+        }
+
+        .copyright{
+            margin-top: 0;
+        }
+    }
 }
 
 // Tablet Layout Queries

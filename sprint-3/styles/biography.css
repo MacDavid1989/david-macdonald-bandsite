@@ -217,12 +217,12 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 
 .biography-card {
   width: 100%;
   margin-top: calc(3.2rem + (16 / 448) * (100vw - 32rem));
+  padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 .biography-card__title {
   font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
@@ -247,6 +247,7 @@
 
 .biography {
   margin: calc(4rem + (16 / 448) * (100vw - 32rem)) 0 calc(4rem + (8 / 448) * (100vw - 32rem));
+  padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
   width: 100%;
 }
 .biography__title {
@@ -267,7 +268,7 @@
 .gallery {
   background-color: #FAFAFA;
   width: 100%;
-  margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
+  padding: calc(3.2rem + (16 / 448) * (100vw - 32rem)) calc(1.6rem + (8 / 448) * (100vw - 32rem)) 4rem;
 }
 .gallery__title {
   font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
@@ -308,6 +309,7 @@
       -ms-flex-pack: initial;
           justify-content: initial;
   margin: calc(3.2rem + (16 / 448) * (100vw - 32rem)) 0 4rem;
+  padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
   width: 100%;
 }
 .comments__title {
@@ -810,6 +812,20 @@
   }
   .gallery__image:nth-of-type(2n) {
     margin-left: 2.4rem;
+  }
+}
+@media (min-width: 719px) {
+  .footer__card {
+    margin-bottom: 4rem;
+  }
+  .footer__card .info-card--margin {
+    margin: 0 calc(0rem + (24 / 49) * (100vw - 71.9rem)) 0 calc(0rem + (24 / 49) * (100vw - 71.9rem));
+  }
+  .footer__card .info-card__contact {
+    margin-bottom: 0;
+  }
+  .footer .copyright {
+    margin-top: 0;
   }
 }
 @media (min-width: 768px) {
