@@ -172,13 +172,14 @@
   padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
   height: calc(18.3rem + (217 / 448) * (100vw - 32rem));
   width: 100%;
+  z-index: 0;
 }
 .hero__title {
   color: #FFF;
-  font-size: 7.5vw;
+  font-size: calc(2.4rem + (36 / 448) * (100vw - 32rem));
   font-weight: bold;
-  line-height: 10vw;
-  width: 65.7552083vw;
+  line-height: calc(3.2rem + (36 / 448) * (100vw - 32rem));
+  width: calc(21rem + (293 / 448) * (100vw - 32rem));
   position: relative;
   z-index: 10;
 }
@@ -191,11 +192,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .main {
-  background-color: #FFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,7 +213,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 3.2rem 5vw 4rem;
+  background-color: #FFF;
+  padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 
 .biography-card {
@@ -765,10 +766,6 @@
   }
 }
 @media (min-width: 658px) {
-  .hero__title {
-    line-height: 6.8rem;
-  }
-
   .biography__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -868,7 +865,7 @@
   .hero__title {
     font-size: 6rem;
     width: 51rem;
-    line-height: 6.8rem;
+    line-height: 68px;
   }
 
   .main {

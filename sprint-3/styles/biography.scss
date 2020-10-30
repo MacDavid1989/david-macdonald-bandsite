@@ -72,14 +72,15 @@
     padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
     height: calc(18.3rem + (217 / 448) * (100vw - 32rem));
     width: 100%;
+    z-index: 0;
 
     // Hero Banner Heading
     &__title {
         color: $color-heading-alternate;
-        font-size: $font-size-mobile-hero;
+        font-size: calc(#{$font-size-mobile-hero} + (36 / 448) * (100vw - 32rem));
         font-weight: bold;
-        line-height: $line-height-hero-mobile;
-        width: 65.7552083vw;
+        line-height: calc(#{$line-height-hero-mobile} + (36 / 448) * (100vw - 32rem));
+        width: calc(21rem + (293 / 448) * (100vw - 32rem));
         position: relative;
         z-index: 10;
     }
@@ -94,18 +95,15 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 0;
+        z-index: 1;
     }
-    
 }
-
-
 
 // Main Container Layout
 .main {
-    background-color: $color-white;
     @include flexing(flex, column, initial, center, initial, center);
-    padding: 3.2rem 5vw 4rem;
+    background-color: $color-white;
+    padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 }
 
 // Biography Section Card Container Including Image
@@ -569,12 +567,6 @@
 
 // Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
 @include mobile-tablet-transition(658px) {
-    .hero {
-        &__title {
-            line-height: $line-height-fs60px;
-        }
-    }
-
     .biography{
         &__content {
             @include flexing(flex, initial, wrap, center, initial, flex-start);
@@ -635,7 +627,7 @@
         &__title {
             font-size: $font-size-desktop-hero;
             width: 51rem;
-            line-height: $line-height-fs60px;
+            line-height: 68px;
         }
     }
 
