@@ -307,18 +307,15 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  background-color: #FFF;
-  padding: calc(32px + 0.035714285 * (100vw - 320px)) 0 0 0;
+  margin: 3.2rem 0 4rem;
   width: 100%;
 }
 .comments__title {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: calc(2.4rem + (12 / 448) * (100vw - 32rem));
+  line-height: calc(3.2rem + (12 / 448) * (100vw - 32rem));
   font-weight: bold;
-  margin-bottom: 1.6rem;
-  width: 90vw;
+  margin-bottom: 4rem;
+  width: 100%;
 }
 .comments .form {
   display: -webkit-box;
@@ -338,9 +335,9 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  width: 90vw;
+  width: 100%;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 2.4rem 0 3.2rem;
+  padding: 0 0 3.2rem;
 }
 .comments .form__image {
   height: 4.8rem;
@@ -349,9 +346,8 @@
   margin-top: 2rem;
 }
 .comments .form__list {
-  list-style-type: none;
   margin-left: 1.6rem;
-  width: calc(100% - 64px);
+  width: calc(100% - 6.4rem);
 }
 .comments .form__item {
   display: -webkit-box;
@@ -371,37 +367,32 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
+  margin-bottom: 1.6rem;
 }
-.comments .form__item #name {
+.comments .form__item #name, .comments .form__item #comment {
   width: 100%;
-  height: 4.8rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
   outline-color: #323232;
   border-radius: 0.4rem;
   background-color: #FAFAFA;
   border-color: #E1E1E1;
-  padding: 0 0.8rem;
-  border-style: solid;
-}
-.comments .form__item--margin {
-  margin-top: 1.6rem;
-}
-.comments .form__item #comment {
-  width: 100%;
-  height: 9.6rem;
-  font-size: 1.4rem;
-  line-height: 2.2rem;
   padding: 0.8rem;
-  resize: none;
-  outline-color: #323232;
-  border-radius: 0.4rem;
-  border-color: #E1E1E1;
-  background-color: #FAFAFA;
   border-style: solid;
   border-width: 0.2rem;
+  height: 4.8rem;
 }
-.comments .form__item .button {
+.comments .form__item #comment {
+  height: 9.6rem;
+  resize: none;
+}
+.comments .form__label {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: #AFAFAF;
+}
+.comments .form .button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,11 +402,11 @@
           flex-direction: initial;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -427,22 +418,33 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
-  width: calc(160px + 0.240601503 * (586px - 100vw));
+  width: calc(22.4rem - (64 / 448) * (100vw - 32rem));
   height: 4.8rem;
-  margin-top: 1.6rem;
+  margin-left: auto;
   cursor: pointer;
 }
-.comments .form__item .button:hover {
+.comments .form .button:hover {
   background-color: #000000;
 }
-.comments .form__label {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  font-weight: 600;
-  color: #AFAFAF;
-}
 .comments__cards {
-  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  width: 100%;
 }
 .comments__cards .card {
   display: -webkit-box;
@@ -463,21 +465,19 @@
       -ms-flex-pack: initial;
           justify-content: initial;
   border-bottom: 0.1rem solid #E1E1E1;
-  padding: 1.6rem 0;
   width: 100%;
+  padding: 2.4rem 0;
 }
 .comments__cards .card__image {
   height: 4.2rem;
   width: 4.2rem;
   border-radius: 50%;
-  margin-top: 0.8rem;
 }
 .comments__cards .card__body {
-  width: calc(100% - 53.4px);
+  width: calc(100% - 5.8rem);
   margin-left: 1.6rem;
 }
 .comments__cards .card__heading {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,29 +495,27 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 0.8rem;
+  width: 100%;
+  margin-bottom: 1.6rem;
 }
 .comments__cards .card__label {
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
   color: #AFAFAF;
-  margin-bottom: 0.8rem;
 }
 .comments__cards .card__text-title {
   display: block;
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
-  margin-bottom: 0.8rem;
-  margin-right: 0.8rem;
   white-space: nowrap;
 }
 .comments__cards .card__text {
   width: 100%;
   font-size: 1.4rem;
   line-height: 2.2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
   word-wrap: break-word;
 }
 .comments__cards .card .like {
@@ -531,7 +529,7 @@
   height: 10px;
   width: 10px;
 }
-.comments__cards .card .button {
+.comments__cards .card .delete {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -559,10 +557,10 @@
   font-weight: 600;
   width: 160px;
   height: 4.8rem;
-  margin: 1.6rem 0 0 auto;
+  margin-left: auto;
   cursor: pointer;
 }
-.comments__cards .card .button:hover {
+.comments__cards .card .delete:hover {
   background-color: #000000;
 }
 
@@ -742,7 +740,7 @@
     width: 52.8rem;
     padding-top: calc(16px + 0.131868131 * (100vw - 568px));
   }
-  .comments .form__item #name {
+  .comments .form__item #name, .comments .form__item #comment {
     width: 46rem;
   }
   .comments .form__item #comment {
@@ -965,7 +963,7 @@
   .comments .form__list {
     margin-left: 2rem;
   }
-  .comments .form__item #name {
+  .comments .form__item #name, .comments .form__item #comment {
     width: 46rem;
     padding: 0 1.6rem;
   }
@@ -1246,7 +1244,7 @@
   .comments .form {
     width: 41.25vw;
   }
-  .comments .form__item #name {
+  .comments .form__item #name, .comments .form__item #comment {
     width: 100%;
   }
   .comments .form__item #comment {

@@ -146,20 +146,25 @@ function displayComments (comment) {
 	dateEl.innerText = convertTime(comment.timestamp);
 	headerEl.appendChild(dateEl);
 
-	 // create Card Button
-	 const buttonEl = document.createElement('button');
-	 buttonEl.classList.add('button', 'delete');
-	 buttonEl.setAttribute('type', 'button');
-	 buttonEl.setAttribute('id', comment.id);
-	 buttonEl.innerText = 'DELETE';
-	 bodyEl.appendChild(buttonEl);
+	// create Card Buttons Wrapper
+	const wrapperEl = document.createElement('div');
+	wrapperEl.classList.add('card__button-wrapper');
+	bodyEl.appendChild(wrapperEl);
 
 	//  create Like Button
 	const likeEl = document.createElement('p');
 	likeEl.classList.add('like');
 	likeEl.setAttribute('id', comment.id);
 	likeEl.innerText = comment.likes;
-	bodyEl.appendChild(likeEl);
+	wrapperEl.appendChild(likeEl);
+
+	 // create Card Button
+	 const buttonEl = document.createElement('button');
+	 buttonEl.classList.add('delete');
+	 buttonEl.setAttribute('type', 'button');
+	 buttonEl.setAttribute('id', comment.id);
+	 buttonEl.innerText = 'DELETE';
+	 wrapperEl.appendChild(buttonEl);
 };
 
 

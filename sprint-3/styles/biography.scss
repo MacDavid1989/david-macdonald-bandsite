@@ -205,24 +205,22 @@
 // Comments Section
 .comments {
     @include flexing(flex, column, initial, center, initial, initial);
-    background-color: $color-white;
-    padding: calc(32px + 0.035714285 * (100vw - 320px)) 0 0 0;
+    margin: 3.2rem 0 4rem;
     width: 100%;
 
     &__title {
-        align-self: flex-start;
-        font-size: $font-size-mobile-lgheading;
-        line-height: $line-height-fs24px;
+        font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
+        line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
         font-weight: bold;
-        margin-bottom: 1.6rem;
-        width: 90vw;
+        margin-bottom: 4rem;
+        width: 100%;
     }
 
     .form {
         @include flexing(flex, initial, initial, initial, initial, initial);
-        width: 90vw;
-        border-bottom: 0.1rem solid #E1E1E1;
-        padding: 2.4rem 0 3.2rem;
+        width: 100%;
+        border-bottom: 0.1rem solid $color-divider;
+        padding: 0 0 3.2rem;
 
         &__image {
             height: 4.8rem;
@@ -232,64 +230,32 @@
         }
 
         &__list {
-            list-style-type: none;
             margin-left: 1.6rem;
-            width: calc(100% - 64px);
+            width: calc(100% - 6.4rem);
         }
 
         &__item {
             @include flexing(flex, column, initial, initial, initial, initial);
+            margin-bottom: 1.6rem;
 
             #name {
                 width: 100%;
-                height: 4.8rem;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 outline-color: $color-background-alternate;
                 border-radius: 0.4rem;
                 background-color: $color-text-alternate;
                 border-color: $color-divider;
-                padding: 0 0.8rem;
+                padding: 0.8rem;
                 border-style: solid;
-            }
-
-            &--margin {
-                margin-top: 1.6rem;
+                border-width: 0.2rem;
+                height: 4.8rem;
             }
 
             #comment {
-                width: 100%;
+                @extend #name;
                 height: 9.6rem;
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                padding: 0.8rem;
                 resize: none;
-                outline-color: $color-background-alternate;
-                border-radius: 0.4rem;
-                border-color: $color-divider;
-                background-color: $color-text-alternate;
-                border-style: solid;
-                border-width: 0.2rem;
-            }
-
-            .button {
-                @include flexing(flex, initial, initial, center, flex-end, center);
-                border-radius: 0.4rem;
-                border: none;
-                outline-style: none;
-                background-color: $color-background-alternate;
-                color: $color-white;
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                font-weight: 600;
-                width: calc(160px + 0.240601503 * (586px - 100vw));
-                height: 4.8rem;
-                margin-top: 1.6rem;
-                cursor: pointer;
-            }
-
-            .button:hover {
-                background-color: $color-black;
             }
         }
 
@@ -299,33 +265,53 @@
             font-weight: 600;
             color: $color-text-label;
         }
+
+         .button {
+                @include flexing(flex, initial, initial, initial, initial, center);
+                border-radius: 0.4rem;
+                border: none;
+                outline-style: none;
+                background-color: $color-background-alternate;
+                color: $color-white;
+                font-size: $font-size-mobile-mdparagraph;
+                line-height: $line-height-fs14px;
+                font-weight: 600;
+                width: calc(22.4rem - (64 / 448) * (100vw - 32rem));
+                height: 4.8rem;
+                margin-left: auto;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: $color-black;
+            }
     }
 
     &__cards {
-        width: 90vw;
-
+        @include flexing(flex, column, initial, initial, initial, initial);
+        width: 100%;
+       
         .card{
             @include flexing(flex, initial, initial, initial, initial, initial);
             border-bottom: 0.1rem solid $color-divider;
-            padding: 1.6rem 0;
             width: 100%;
+            padding: 2.4rem 0;
 
             &__image {
                 height: 4.2rem;
                 width: 4.2rem;
                 border-radius: 50%;
-                margin-top: 0.8rem;
             }
 
             &__body {
-                width: calc(100% - 53.4px);
+                width: calc(100% - 5.8rem);
                 margin-left: 1.6rem;
             }
 
             &__heading {
-                width: 100%;
                 @include flexing(flex, initial, initial, initial, initial, space-between);
-                margin-top: 0.8rem;
+                width: 100%;
+                margin-bottom: 1.6rem;
             }
     
             &__label {
@@ -333,7 +319,6 @@
                 line-height: $line-height-fs14px;
                 font-weight: 600;
                 color: $color-text-label;
-                margin-bottom: 0.8rem;
             }
     
             &__text-title {
@@ -341,8 +326,6 @@
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
-                margin-bottom: 0.8rem;
-                margin-right: 0.8rem;
                 white-space: nowrap;
             }
     
@@ -350,7 +333,7 @@
                 width: 100%;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
-                margin-bottom: 0.8rem;
+                margin-bottom: 1.6rem;
                 word-wrap: break-word;
             } 
 
@@ -367,7 +350,7 @@
                 width: 10px;
             }
             
-            .button {
+            .delete {
                 @include flexing(flex, initial, initial, center, initial, center);
                 border-radius: 0.4rem;
                 border: none;
@@ -379,11 +362,11 @@
                 font-weight: 600;
                 width: 160px;
                 height: 4.8rem;
-                margin: 1.6rem 0 0 auto;
+                margin-left: auto;
                 cursor: pointer;
             }
 
-            .button:hover {
+            .delete:hover {
                 background-color: $color-black;
             }
         }
