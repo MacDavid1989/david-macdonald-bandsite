@@ -559,22 +559,43 @@
 .comments__cards .card .like::before {
   display: inline-block;
   content: "";
-  background-image: url(../assets/icons/svg/star-half.svg);
-  background-position: center;
-  background-size: cover;
+  background-color: #323232;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url(../assets/icons/svg/star-half.svg);
+          mask-image: url(../assets/icons/svg/star-half.svg);
   height: 2.4rem;
   width: 2.4rem;
 }
 .comments__cards .card .like:hover::before {
   display: inline-block;
   content: "";
-  background-image: url(../assets/icons/svg/star-full.svg);
-  background-position: center;
-  background-size: cover;
+  background-color: #323232;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url(../assets/icons/svg/star-full.svg);
+          mask-image: url(../assets/icons/svg/star-full.svg);
   height: 2.4rem;
   width: 2.4rem;
 }
 .comments__cards .card .delete {
+  background-color: #323232;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url(../assets/icons/svg/pacman.svg);
+          mask-image: url(../assets/icons/svg/pacman.svg);
   height: 2.4rem;
   width: 2.4rem;
   cursor: pointer;

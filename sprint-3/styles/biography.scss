@@ -349,9 +349,11 @@
             .like::before {
                 display: inline-block;
                 content: '';
-                background-image: url(../assets/icons/svg/star-half.svg);
-                background-position: center;
-                background-size: cover;
+                background-color: $color-text-base;
+                mask-size: cover;
+                mask-position: center;
+                mask-repeat: no-repeat;
+                mask-image: url(../assets/icons/svg/star-half.svg);
                 height: 2.4rem;
                 width: 2.4rem;
             }
@@ -359,14 +361,21 @@
             .like:hover::before {
                 display: inline-block;
                 content: '';
-                background-image: url(../assets/icons/svg/star-full.svg);
-                background-position: center;
-                background-size: cover;
+                background-color: $color-text-base;
+                mask-size: cover;
+                mask-position: center;
+                mask-repeat: no-repeat;
+                mask-image: url(../assets/icons/svg/star-full.svg);
                 height: 2.4rem;
                 width: 2.4rem;
             }
             
             .delete {
+                background-color: $color-text-base;
+                mask-size: cover;
+                mask-position: center;
+                mask-repeat: no-repeat;
+                mask-image: url(../assets/icons/svg/pacman.svg);
                 height: 2.4rem;
                 width: 2.4rem;
                 cursor: pointer;

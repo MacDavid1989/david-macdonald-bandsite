@@ -152,16 +152,15 @@ function displayComments (comment) {
 	bodyEl.appendChild(wrapperEl);
 
 	//  create Like Button
-	const likeEl = document.createElement('p');
+	const likeEl = document.createElement('div');
 	likeEl.classList.add('like');
 	likeEl.setAttribute('id', comment.id);
 	likeEl.innerText = comment.likes;
 	wrapperEl.appendChild(likeEl);
 
 	 // create Card Button
-	 const deleteEl = document.createElement('img');
+	 const deleteEl = document.createElement('div');
 	 deleteEl.classList.add('delete');
-	 deleteEl.setAttribute('src', '../assets/icons/svg/pacman.svg');
 	 deleteEl.setAttribute('id', comment.id);
 	 wrapperEl.appendChild(deleteEl);
 };
