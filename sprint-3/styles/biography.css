@@ -254,6 +254,9 @@
   line-height: calc(2.4rem + (8 / 448) * (100vw - 32rem));
   font-weight: 600;
 }
+.biography__content {
+  width: 100%;
+}
 .biography__text {
   font-size: calc(1.2rem + (2 / 448) * (100vw - 32rem));
   line-height: calc(2rem + (2 / 448) * (100vw - 32rem));
@@ -271,6 +274,9 @@
   line-height: calc(3.2rem + (12 / 448) * (100vw - 32rem));
   font-weight: bold;
   margin-bottom: calc(0.8rem + (32 / 448) * (100vw - 32rem));
+}
+.gallery__content {
+  width: 100%;
 }
 .gallery__image {
   margin-top: calc(1.6rem + (8 / 448) * (100vw - 32rem));

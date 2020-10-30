@@ -157,6 +157,11 @@
         font-weight: 600;
     }
 
+    // Biography Tex Container
+    &__content {
+        width: 100%;
+    }
+
     // Biography Paragraphs
     &__text {
         font-size: calc(#{$font-size-mobile-smparagraph} + (2 / 448) * (100vw - 32rem));
@@ -178,6 +183,11 @@
         line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
         font-weight: bold;
         margin-bottom: calc(0.8rem + (32 / 448) * (100vw - 32rem));
+    }
+
+    // Gallery Images Container
+    &__content {
+        width: 100%;
     }
 
     // Gallery Photos & Photo States
