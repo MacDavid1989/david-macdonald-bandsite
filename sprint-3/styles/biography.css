@@ -566,27 +566,51 @@
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  -webkit-mask-image: url(../assets/icons/svg/star-half.svg);
-          mask-image: url(../assets/icons/svg/star-half.svg);
+  -webkit-mask-image: url(../assets/icons/svg/heart.svg);
+          mask-image: url(../assets/icons/svg/heart.svg);
   height: 2rem;
   width: 2rem;
 }
 .comments__cards .card .like:hover::before {
   display: inline-block;
   content: "";
-  background-color: #323232;
+  background-color: #000000;
   -webkit-mask-size: cover;
           mask-size: cover;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  -webkit-mask-image: url(../assets/icons/svg/star-full.svg);
-          mask-image: url(../assets/icons/svg/star-full.svg);
+  -webkit-mask-image: url(../assets/icons/svg/heart.svg);
+          mask-image: url(../assets/icons/svg/heart.svg);
   height: 2rem;
   width: 2rem;
 }
 .comments__cards .card .delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  cursor: pointer;
+}
+.comments__cards .card .delete::before {
+  display: inline-block;
+  content: "";
   background-color: #323232;
   -webkit-mask-size: cover;
           mask-size: cover;
@@ -598,7 +622,21 @@
           mask-image: url(../assets/icons/svg/pacman.svg);
   height: 2rem;
   width: 2rem;
-  cursor: pointer;
+}
+.comments__cards .card .delete:hover::before {
+  display: inline-block;
+  content: "";
+  background-color: #000000;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url(../assets/icons/svg/pacman.svg);
+          mask-image: url(../assets/icons/svg/pacman.svg);
+  height: 2rem;
+  width: 2rem;
 }
 
 .footer {

@@ -353,7 +353,7 @@
                 mask-size: cover;
                 mask-position: center;
                 mask-repeat: no-repeat;
-                mask-image: url(../assets/icons/svg/star-half.svg);
+                mask-image: url(../assets/icons/svg/heart.svg);
                 height: 2rem;
                 width: 2rem;
             }
@@ -361,16 +361,25 @@
             .like:hover::before {
                 display: inline-block;
                 content: '';
-                background-color: $color-text-base;
+                background-color: $color-black;
                 mask-size: cover;
                 mask-position: center;
                 mask-repeat: no-repeat;
-                mask-image: url(../assets/icons/svg/star-full.svg);
+                mask-image: url(../assets/icons/svg/heart.svg);
                 height: 2rem;
                 width: 2rem;
             }
             
             .delete {
+                @include flexing(flex, initial, initial, initial, initial, initial);
+                font-size: $font-size-like;
+                line-height: $line-height-fs20px;
+                cursor: pointer;
+            }
+
+            .delete::before {
+                display: inline-block;
+                content: '';
                 background-color: $color-text-base;
                 mask-size: cover;
                 mask-position: center;
@@ -378,7 +387,18 @@
                 mask-image: url(../assets/icons/svg/pacman.svg);
                 height: 2rem;
                 width: 2rem;
-                cursor: pointer;
+            }
+
+            .delete:hover::before {
+                display: inline-block;
+                content: '';
+                background-color: $color-black;
+                mask-size: cover;
+                mask-position: center;
+                mask-repeat: no-repeat;
+                mask-image: url(../assets/icons/svg/pacman.svg);
+                height: 2rem;
+                width: 2rem;
             }
         }
     }

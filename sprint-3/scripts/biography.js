@@ -158,10 +158,11 @@ function displayComments (comment) {
 	likeEl.innerText = comment.likes;
 	wrapperEl.appendChild(likeEl);
 
-	 // create Card Button
+	 // create Delete Button
 	 const deleteEl = document.createElement('div');
 	 deleteEl.classList.add('delete');
 	 deleteEl.setAttribute('id', comment.id);
+	 deleteEl.innerText = "Delete"
 	 wrapperEl.appendChild(deleteEl);
 };
 
