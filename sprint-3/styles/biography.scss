@@ -532,17 +532,17 @@
 }
 
 // Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
-@include mobile-tablet-transition(658px) {
+@include mobile-tablet-transition(644px) {
     .biography{
         &__content {
             @include flexing(flex, initial, wrap, center, initial, flex-start);
         }
 
         &__text {
-            width: 43.7689969vw;
+            width: calc(28.8rem + (60 / 124) * (100vw - 64.4rem));
 
             &:last-of-type{
-                margin-left: 2.4316109vw;
+                margin-left: 2.4rem;
             }
         }
     }
@@ -553,10 +553,10 @@
         }
 
         &__image {
-            width: 48.6305764%;
+            width: calc(28.8rem + (60 / 124) * (100vw - 64.4rem));
 
             &:nth-of-type(2n) {
-                margin-left: 2.4316109vw;
+                margin-left: 2.4rem;
             }
         }
     }
