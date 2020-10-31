@@ -1,7 +1,7 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-// Global Rule-sets
+// Global Rule-set
 *, *::before, *::after {
     @include boundary-reset;
     @include font-stack;
@@ -15,38 +15,44 @@
 
 // Header Navigation
 .nav {
+    @include flexing(flex, column, initial, center, initial, flex-end);
     background-color: $color-background-alternate;
     width: 100%;
     height: 8rem;
     position: fixed;
-    z-index: 11;
-    @include flexing(flex, column, initial, center, initial, space-between);
+    z-index: 100;
 
-    // Navigation Logo Anchor Boundary
-    &__logo {
-        margin-top: 1.3rem;
+    // Navigation Logo Link Container
+    &__logo-link {
+        @include flexing(flex, initial, initial, center, initial, center);
+        margin-bottom: 1.6rem;
         width: 12rem;
         height: 2.4rem;
-        @include flexing(flex, initial, initial, center, initial, center);
     }
 
-    // Navigation Container Excluding Logo
-    &__list {
-        margin-top: 1.6rem;
-        height: 2.7rem;
+    // Navigation Logo
+    &__logo {
         width: 100%;
-        @include flexing(flex, initial, initial, initial, initial, space-evenly);
+        height: 100%;
     }
 
-    // Navigation Link & States 
+    // Navigation Link Container
+    &__list {
+        @include flexing(flex, initial, initial, initial, initial, space-evenly);
+        width: 100%;
+        height: 2.4rem;
+    }
+
+    // Navigation Links
     &__link {
+        @include flexing(flex, initial, initial, flex-start, initial, center);
         text-decoration: none;
         height: 100%;
-        width: 16rem;
+        width: 100%;
         font-size: $font-size-header;
         color: $color-text-alternate;
-        @include flexing(flex, initial, initial, flex-start, initial, center);
 
+        // Navigation Link Hover State and Current Page State
         &:hover, &-current {
             color: $color-text-hover;
             font-weight: 600;
@@ -57,6 +63,7 @@
 
 // Spacer To Position Content Beneath Nav
 .spacer {
+    width: 100%;
     height: 8rem;
 }
 
@@ -377,24 +384,27 @@
 // Tablet Layout Queries
 @include tablet {
     .nav {
-        @include flexing(flex, row, initial, center, initial, flex-start);
-        padding: 0 3.125vw;
+        @include flexing(flex, initial, initial, center, initial, flex-start);
+        padding: 0 2.4rem;
 
-        &__logo {
-            margin-top: 0;
+        &__logo-link{
+            margin-bottom: 0;
         }
 
         &__list {
-            margin-top: 0;
-            padding-top: 1rem;
-            height: 8rem;
-            width: fit-content;
+        @include flexing(flex, initial, initial, center, initial, flex-start);
+            height: 100%;
+            width: 27.2rem;
         }
 
         &__link {
+        @include flexing(flex, initial, initial, center, initial, center);
             margin-left: 5.6rem;
             width: 8rem;
-            align-items: center;
+
+            &-current {
+                border-top: 0.4rem solid #323232;
+            }
         }
     }
 
@@ -604,15 +614,14 @@
     }
 }
 
+@include tablet-desktop-transition(1128px) {
+    .nav {
+        padding: 0 calc(50% - 54rem);
+    }
+}
 
 // Transition Queries to Smooth Tablet into Desktop Layout
 @include tablet-desktop-transition(1152px) {
-    .nav {
-        box-sizing: unset;
-        align-self: center;
-        width: 108rem;
-        padding: 0 100%;
-    }
 
     .hero {
         @include flexing(flex, initial, wrap, initial, initial, center);
@@ -672,12 +681,6 @@
 
 // Desktop Queries
 @include desktop {
-    .nav {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 0 7.8125vw;
-    }
-
 
     .hero {
         align-content: center;
