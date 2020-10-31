@@ -108,8 +108,6 @@
         height: calc(116px + (30 / 448) * (100vw - 320px));
         position: relative;
         z-index: 10;
-        position: relative;
-        z-index: 10;
     }
 
     &::after {
@@ -432,26 +430,26 @@
     }
 
     .hero {
+        padding: 9.6rem 2.4rem;
         height: 67rem;
-        padding: 9.6rem 3.125vw;
 
-        .wrapper {
-            width: 58rem;
-        }
-
+        // Hero Banner Subheading
         &__subtitle {
-            color: $color-heading-alternate;
-            font-size: $font-size-desktop-smheading;
+            font-size: $font-size-desktop-smheading; 
             font-weight: bold;
             line-height: $line-height-fs24px;
-            margin: 0 0 4.8rem;
+            width: 57.6rem;
+            margin-bottom: 4.8rem;
         }
-
+    
+        // Hero Banner Heading
         &__title {
             font-size: $font-size-desktop-hero;
             line-height: $line-height-fs60px;
+            width: 57.6rem;
+            margin-bottom: 4.8rem;
         }
-
+    
         &__song {
             width: 43.6rem;
             height: 14.6rem;
@@ -604,11 +602,7 @@
 }
 
 @include tablet-desktop-transition(967px) {
-    .hero {
-        .wrapper {
-            width: 58rem;
-        }
-    }
+
 
     .shows {
         @include flexing(flex, initial, initial, center, initial, space-between);
@@ -622,6 +616,21 @@
 @include tablet-desktop-transition(1128px) {
     .nav {
         padding: 0 calc(50% - 54rem);
+    }
+
+    .hero {
+        @include flexing(flex, initial, wrap, flex-start, initial, initial);
+        padding: 16rem calc(50% - 54rem) 22.6rem;
+
+        &__title {
+            margin-bottom: 0;
+        }
+
+        &__song {
+            margin-left: 6.4rem;
+            margin-top: 4rem;
+        }
+
     }
 
     .footer {
@@ -638,25 +647,6 @@
 // Transition Queries to Smooth Tablet into Desktop Layout
 @include tablet-desktop-transition(1152px) {
 
-    .hero {
-        @include flexing(flex, initial, wrap, initial, initial, center);
-        padding: 16rem 0;
-
-        &__title {
-            width: 100%;
-        }
-
-        .wrapper {
-            width: 58rem;
-            margin-left: auto;
-        }
-
-        &__song {
-            width: 43.6rem;
-            height: 14.6rem;
-            margin: 12rem auto 0 6.4rem;
-        }
-    }
 
     .shows {
         @include flexing(flex, initial, initial, center, initial, center);
@@ -677,20 +667,6 @@
 // Desktop Queries
 @include desktop {
 
-    .hero {
-        align-content: center;
-        height: 52.34375vw;
-        padding: 12.5vw 7.8125vw;
-
-        .wrapper {
-            height: 35rem;
-            margin: 0;
-        }
-
-        &__song {
-            margin: 12rem 0 0 auto;
-        }
-    }
 
     .shows {
         @include flexing(flex, initial, initial, center, initial, center);
