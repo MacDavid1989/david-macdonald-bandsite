@@ -436,6 +436,7 @@
       -ms-flex-pack: initial;
           justify-content: initial;
   margin-bottom: calc(1.6rem + (8 / 448) * (100vw - 32rem));
+  width: 100%;
 }
 .comments .form__item #name, .comments .form__item #comment {
   width: 100%;
@@ -1030,9 +1031,7 @@
   }
   .comments .form__list {
     margin-left: 2rem;
-  }
-  .comments .form__list .button {
-    width: 16rem;
+    width: calc(100% - 6.8rem);
   }
   .comments .form__item {
     margin-bottom: 2.4rem;
@@ -1164,6 +1163,9 @@
 
   .comments {
     padding: 0 calc(50% - 54rem);
+  }
+  .comments .form {
+    width: 52.8rem;
   }
 }
 @media (min-width: 1280px) {

@@ -259,6 +259,7 @@
         &__item {
             @include flexing(flex, column, initial, initial, initial, initial);
             margin-bottom: calc(1.6rem + (8 / 448) * (100vw - 32rem));
+            width: 100%;
 
             #name {
                 width: 100%;
@@ -718,10 +719,7 @@
 
             &__list {
                 margin-left: 2rem;
-
-                .button {
-                    width: 16rem;
-                }
+                width: calc(100% - 6.8rem);
             }
     
             &__item {
@@ -883,6 +881,9 @@
     .comments {
         padding: 0 calc(50% - 54rem);
 
+        .form {
+            width: 52.8rem;
+        }
     }
 }
 
