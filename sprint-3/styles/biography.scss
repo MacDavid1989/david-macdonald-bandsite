@@ -359,6 +359,7 @@
                 mask-image: url(../assets/icons/svg/heart.svg);
                 height: 2rem;
                 width: 2rem;
+                margin-right: 1rem;
             }
 
             .like:hover::before {
@@ -702,7 +703,8 @@
             }
         }
     }
-    // Comments Section ------------------------------------------------------------------
+    
+    // Comments Section
     .comments {
         margin: 4.8rem 0 4rem;
         padding: 0 2.4rem;
@@ -739,29 +741,19 @@
             width: calc(52rem + (8 / 360) * (100vw - 76.8rem));
     
             .card{
-                padding: 1.6rem 0;
-                width: 52.8rem;
-    
-                &__body {
-                    width: 47.1rem;
-                }
-    
+
                 &__heading {
-                    justify-content: initial;
-                }
-        
-                &__label {
-                    font-weight: 500;
-                }
-        
+                    @include flexing(flex, initial, initial, initial, initial, initial);
+                }                
+
                 &__text-title {
                     font-size: $font-size-desktop-lgparagraph;
                     line-height: $line-height-fs16px;
                 }
-        
-                &__text {
-                   width: 100%;
-                }   
+
+                &__label {
+                    margin-left: 1.6rem;
+                }
             }
         }
     }
@@ -884,143 +876,9 @@
         .form {
             width: 52.8rem;
         }
-    }
-}
 
-// // Transition Queries to Smooth Tablet into Desktop Layout
-// @include tablet-desktop-transition(955px) {
-//     .biography-card {
-//         @include flexing(flex, column, initial, initial, initial, initial);
-
-//         &__image {
-//             width: 89.6rem;
-//             height: 45rem;
-//             align-self: center;
-//         }
-
-//         &__text {
-//             width: 89.6rem;
-//             align-self: center;
-//         }
-//     }
-
-//     .biography {
-//         width: 89.6rem;
-
-//         &__text {
-//             width: 42rem;
-        
-//             &:last-of-type{
-//                 margin-left: 2.4rem;
-//             }
-//         }
-//     }
-// }
-
-// // Transition Queries to Smooth Tablet into Desktop Layout
-// @include tablet-desktop-transition(1152px) {
-//     .nav {
-//         box-sizing: unset;
-//         align-self: center;
-//         width: 108rem;
-//         padding: 0 100%;
-//     }
-
-//     .hero {
-//         justify-content: center;
-
-//         &__wrapper {
-//             width: 108rem;
-//         }
-//     }
-
-//     .biography-card {
-//         &__title {
-//         width: 108rem;
-//         align-self: center;
-//         }
-//     }
-
-//     .biography {
-//         &__text {
-//             &:last-of-type{
-//                 margin-left: 2.6041666vw;
-//             }
-//         }
-//     }
-
-//     .gallery {
-//         &__title {
-//             align-self: center;
-//             width: 108rem;
-//             margin-left: auto;
-//             margin-right: auto;
-//         }
-
-//         &__content {
-//             justify-content: center;
-//         }
-        
-//         &__image {
-//             width: 34.4rem;
-//             height: 19.3rem;
-        
-//             &:nth-of-type(3n+2), &:nth-of-type(3n+3) {
-//                 margin-left: 2.4rem;
-//             }
-//         }
-//     }
-
-//     .comments {
-    
-//         &__title {
-//             align-self: center;
-//             width: 108rem;
-//         }
-//     }
-
-//     .footer {
-//         align-items: center;
-
-//         .connect {
-//              width: 108rem;
-//         }
-
-//         &__card {
-//             width: 108rem;
-
-//             .info-card {
-//             width: 19.44vw;
-//             }
-//         }
-
-//         .copyright {
-//             width: 108rem;
-//         }   
-//     }
-// }
-
-// Desktop Queries
-@include desktop {
-    .footer {
-        padding: 4.8rem 7.8125vw;
-        align-items: flex-start;
-
-        .connect {
-            width: 100%;
-        }
-
-        &__card {
-            width: 100%;
-            .info-card {
-                width: 25.2rem;
-            }
-        }
-
-        .copyright {
-            &__description {
-                width: 36.8rem;
-            }
+        &__cards{
+            width: 52.8rem;
         }
     }
 }
