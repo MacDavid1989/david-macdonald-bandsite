@@ -125,32 +125,40 @@
 
 // Shows Section
 .shows {
-    background-color: $color-white;
+    @include flexing(flex, column, initial, initial, initial, initial);
     width: 100%;
-    @include flexing(flex, column, wrap, flex-start, initial, initial);
-    padding: 3.2rem calc(16px + 0.017857142 * (100vw - 320px));
+    padding: 3.2rem calc(1.6rem + (8 / 448) * (100vw - 32rem)) 4rem;
 
 
     &__title {
-        font-size: $font-size-mobile-lgheading;
+        font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
         line-height: $line-height-fs24px;
         font-weight: bold;
         margin-bottom: 2.4rem;
     }
 
-    
     &__header {
         display: none;
     }
 
     &__cards {
+        @include flexing(flex, initial, wrap, initial, initial, center);
         width: 100%;
 
         .card{
-            width: 100%;    
-            @include flexing(flex, column, wrap, flex-start, initial, initial);
+            @include flexing(flex, column, initial, initial, initial, initial);
+            width: calc(28.8rem - ( 128 / 448) * (100vw - 32rem));  
             border-bottom: 0.1rem solid #E1E1E1;
             padding: 1.6rem 0;
+            margin: 0 0.8rem;
+
+            .venue {
+                height: 10rem;
+            }
+
+            .location {
+                height: 10rem;
+            }
 
             &__label {
                 font-size: $font-size-mobile-smparagraph;
@@ -158,11 +166,7 @@
                 font-weight: 600;
                 color: $color-text-label;
                 margin-bottom: 1.6rem;
-                width: 13.6rem;
-
-                &--margin {
-                    margin-right: 8.8rem;
-                }
+                width: 16rem;
             }
 
             &__text-title {
@@ -170,24 +174,14 @@
                 line-height: $line-height-fs14px;
                 font-weight: 600;
                 margin-bottom: 2.4rem;
-                margin-right: 8.8rem;
-                width: 13.6rem;
-            }
-
-            &__text-title-alt {
-                font-size: $font-size-mobile-mdparagraph;
-                line-height: $line-height-fs14px;
-                font-weight: 600;
-                margin-bottom: 1.6rem;
-                margin-right: 0;
-                width: 28.8rem;
+                width: 16rem;
             }
 
             &__text {
                 font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
                 margin-bottom: 2.4rem;
-                width: 13.6rem;
+                width: 16rem;
             }
 
             .button {
@@ -196,14 +190,11 @@
                 border-style: none;
                 background-color: $color-background-alternate;
                 color: $color-white;
-                text-decoration: none;
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
                 font-weight: 600;
-                width: calc(288px - 0.285714285 * (100vw - 320px));
+                width: calc(28.8rem - ( 128 / 448) * (100vw - 32rem));
                 height: 4.8rem;
-                margin-top: 0.8rem;
-                margin-left: calc(0px + 1.285733727 * (100vw - 320px));
                 cursor: pointer;
                 outline-style: none;
             }
@@ -324,14 +315,6 @@
 
 // Transition Queries to Unwrap Copyright for New Spacing
 @include mobile-tablet-transition(328px) {
-    .shows {
-        &__cards {
-            .card {
-                @include flexing(flex, row, wrap, center, initial, initial);
-            }
-        }
-    }
-
     .footer{
         .copyright {
             width: 100%;
@@ -359,26 +342,6 @@
     }
 }
 
-// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
-@include mobile-tablet-transition(658px) {
-    .shows {
-        &__cards {
-            .card {
-                &__text-title-alt {
-                    width: 56rem;
-                }
-
-                .button{
-                    margin-left: auto;
-                }
-
-                .button-alt{
-                    margin-left: auto;
-                }
-            }
-        }
-    }
-}
 
 // Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
 @include mobile-tablet-transition(719px) {
@@ -630,7 +593,6 @@
             margin-left: 6.4rem;
             margin-top: 4rem;
         }
-
     }
 
     .footer {
@@ -646,8 +608,6 @@
 
 // Transition Queries to Smooth Tablet into Desktop Layout
 @include tablet-desktop-transition(1152px) {
-
-
     .shows {
         @include flexing(flex, initial, initial, center, initial, center);
         width: 108rem;
@@ -666,8 +626,6 @@
 
 // Desktop Queries
 @include desktop {
-
-
     .shows {
         @include flexing(flex, initial, initial, center, initial, center);
         padding: 4.8rem 7.8125vw 4rem;

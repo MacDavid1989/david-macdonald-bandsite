@@ -45,7 +45,7 @@ function displayShows (show) {
 
     // create Card Date Label
     const dateLabelEl = document.createElement('h3');
-    dateLabelEl.classList.add('card__label', 'card__label--margin');
+    dateLabelEl.classList.add('card__label');
     dateLabelEl.innerText = 'DATE';
     dateWrapEl.appendChild(dateLabelEl);
 
@@ -62,7 +62,7 @@ function displayShows (show) {
 
     // create Card Venue Label
     const venueLabelEl = document.createElement('h3');
-    venueLabelEl.classList.add('card__label');
+    venueLabelEl.classList.add('card__label', 'card__label-alt');
     venueLabelEl.innerText = 'VENUE';
     venueWrapEl.appendChild(venueLabelEl);
 
@@ -79,7 +79,7 @@ function displayShows (show) {
 
     // create Card Location Label
     const locationLabelEl = document.createElement('h3');
-    locationLabelEl.classList.add('card__label');
+    locationLabelEl.classList.add('card__label','card__label-alt');
     locationLabelEl.innerText = 'LOCATION';
     locationWrapEl.appendChild(locationLabelEl);
 
