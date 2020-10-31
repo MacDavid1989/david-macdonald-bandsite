@@ -694,6 +694,8 @@
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
+  width: 12rem;
+  height: 2.4rem;
 }
 .footer__card {
   display: -webkit-box;
@@ -714,6 +716,7 @@
       -ms-flex-pack: initial;
           justify-content: initial;
   width: 100%;
+  margin-bottom: 1.6rem;
 }
 .footer__card .info-card {
   width: 22.4rem;
@@ -742,7 +745,6 @@
   margin-bottom: 2.4rem;
 }
 .footer .copyright {
-  margin-top: 1.6rem;
   width: 19.2rem;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -751,7 +753,7 @@
 
 @media (min-width: 328px) {
   .footer .copyright {
-    width: 29.6rem;
+    width: 100%;
   }
 }
 @media (min-width: 437px) {
@@ -763,8 +765,8 @@
     -webkit-box-direction: initial;
         -ms-flex-direction: initial;
             flex-direction: initial;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
@@ -773,7 +775,7 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    margin-bottom: 3.2rem;
+    margin-bottom: 5.6rem;
   }
   .footer .connect__title {
     margin-bottom: 0;
@@ -858,9 +860,6 @@
   }
   .footer__card .info-card__contact {
     margin-bottom: 0;
-  }
-  .footer .copyright {
-    margin-top: 0;
   }
 }
 @media (min-width: 768px) {
@@ -1074,13 +1073,7 @@
   }
 
   .footer {
-    padding: 4.8rem 3.125vw;
-  }
-  .footer .connect__title {
-    width: 25.2rem;
-  }
-  .footer .connect-social {
-    margin-left: 2.4rem;
+    padding: 4.8rem 2.4rem;
   }
   .footer .connect .logo {
     display: -webkit-box;
@@ -1088,25 +1081,15 @@
     display: flex;
     margin-left: auto;
   }
-  .footer__card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 2.4rem;
-  }
   .footer__card .info-card {
-    width: 22.4rem;
+    width: calc(22.4rem + (28 / 360) * (100vw - 76.8rem));
   }
-  .footer__card .info-card--margin-left {
-    margin-left: 2.4rem;
+  .footer__card .info-card--margin {
+    margin: 0 2.4rem;
   }
   .footer__card .info-card__title {
-    width: 22.4rem;
     font-size: 1.6rem;
     line-height: 2.4rem;
-  }
-  .footer__card .info-card__title--margin {
-    margin-top: 0;
   }
   .footer__card .info-card__description {
     font-size: 1.4rem;
@@ -1116,10 +1099,9 @@
     font-size: 1.4rem;
     line-height: 2rem;
   }
-  .footer .copyright__description {
+  .footer .copyright {
     font-size: 1.4rem;
     line-height: 2rem;
-    width: 34.8rem;
   }
 }
 @media (min-width: 1128px) {
@@ -1174,6 +1156,13 @@
   }
   .comments__cards {
     width: 52.8rem;
+  }
+
+  .footer {
+    padding: 4.8rem calc(50% - 54rem);
+  }
+  .footer__card .info-card {
+    width: 25.2rem;
   }
 }
 /*# sourceMappingURL=biography.css.map */

@@ -419,6 +419,8 @@
         // Logo Mobile Hidden Condition
         .logo {
             @include flexing(none, initial, initial, initial, initial, initial);
+            width: 12rem;
+            height: 2.4rem;
         }
     }
 
@@ -426,6 +428,7 @@
     &__card {
         @include flexing(flex, initial, wrap, initial, initial, initial);
         width: 100%;
+        margin-bottom: 1.6rem;
 
         // Contact Cards
         .info-card {
@@ -466,7 +469,6 @@
 
     // Copyright Section
     .copyright {
-        margin-top: 1.6rem;
         width: 19.2rem;
         font-size: $font-size-mobile-smparagraph;
         line-height: $line-height-fs12px;
@@ -478,7 +480,7 @@
 @include mobile-tablet-transition(328px) {
     .footer{
         .copyright {
-            width: 29.6rem;
+            width: 100%;
         }
     }
 }
@@ -487,8 +489,8 @@
 @include mobile-tablet-transition(437px) {
     .footer {
         .connect {
-            @include flexing(flex, initial, wrap, baseline, initial, flex-start);
-            margin-bottom: 3.2rem;
+            @include flexing(flex, initial, initial, baseline, initial, flex-start);
+            margin-bottom: 5.6rem;
 
             &__title {
                 margin-bottom: 0;
@@ -561,6 +563,7 @@
     .footer {
         &__card {
             margin-bottom: 4rem;
+
             // Contact Cards
             .info-card {
 
@@ -573,10 +576,6 @@
                    margin-bottom: 0;
                 }
             }
-        }
-
-        .copyright{
-            margin-top: 0;
         }
     }
 }
@@ -703,7 +702,7 @@
             }
         }
     }
-    
+
     // Comments Section
     .comments {
         margin: 4.8rem 0 4rem;
@@ -759,17 +758,9 @@
     }
 
     .footer {
-        padding: 4.8rem 3.125vw;
+        padding: 4.8rem 2.4rem;
 
         .connect {
-
-            &__title {
-                width: 25.2rem;
-            }
-
-            &-social {
-                margin-left: 2.4rem;
-            }
 
             .logo {
                 display: flex;
@@ -778,24 +769,17 @@
         }
 
         &__card {
-            display: flex;
-            margin-top: 2.4rem;
 
             .info-card {
-                width: 22.4rem;
+                width:  calc(22.4rem + (28 / 360) * (100vw - 76.8rem));
     
-                &--margin-left {
-                        margin-left: 2.4rem;
+                &--margin {
+                        margin: 0 2.4rem;
                     }
                 
                 &__title {
-                    width: 22.4rem;
                     font-size: $font-size-desktop-lgparagraph;
                     line-height: $line-height-fs16px;
-
-                    &--margin {
-                        margin-top: 0;
-                    }
                 }
 
                 &__description {
@@ -811,11 +795,8 @@
         }
 
         .copyright {
-            &__description {
-                font-size: $font-size-desktop-smparagraph;
-                line-height: $line-height-fs14px-alt;
-                width: 34.8rem;
-            }
+            font-size: $font-size-desktop-smparagraph;
+            line-height: $line-height-fs14px-alt;
         }
     }
 }
@@ -879,6 +860,16 @@
 
         &__cards{
             width: 52.8rem;
+        }
+    }
+
+    .footer {
+        padding: 4.8rem calc(50% - 54rem);
+
+        &__card {
+            .info-card {
+                width: 25.2rem;
+            }
         }
     }
 }
