@@ -126,7 +126,7 @@ function displayTickets() {
 
     // create Ticket Statement
     const dateEl = document.createElement('h2');
-    dateEl.classList.add('card__text-title-alt');
+    dateEl.classList.add('card__text-title','card__text-title-alt');
     dateEl.innerText = 'TICKETS ARE CURRENTLY UNAVAILABLE.';
     dateWrapEl.appendChild(dateEl);
 
