@@ -289,9 +289,43 @@
   margin: 0 0.8rem;
 }
 .shows__cards .card .venue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   height: 10rem;
 }
 .shows__cards .card .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -ms-flex-item-align: initial;
+      align-self: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
   height: 10rem;
 }
 .shows__cards .card__label {
@@ -310,10 +344,7 @@
   width: 16rem;
 }
 .shows__cards .card__text-title-alt {
-  font-size: 1.4rem;
-  line-height: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 2.4rem;
+  width: 100%;
 }
 .shows__cards .card__text {
   font-size: 1.2rem;
@@ -633,23 +664,6 @@
   }
 
   .shows {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
-    -ms-flex-item-align: initial;
-        align-self: initial;
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
     padding: 4.8rem 2.4rem 4rem;
   }
   .shows__title {
@@ -675,27 +689,28 @@
     -webkit-box-pack: initial;
         -ms-flex-pack: initial;
             justify-content: initial;
-    width: 100%;
+    width: calc(72rem + (84 / 320) * (100vw - 76.8rem));
+    margin: 0 auto;
   }
   .shows__heading {
-    width: 22.4rem;
+    width: calc(22.4rem + (52 / 320) * (100vw - 76.8rem));
     font-size: 1.2rem;
     line-height: 2rem;
     font-weight: 600;
     color: #AFAFAF;
   }
   .shows__heading-alt {
-    width: 12.4rem;
+    width: calc(12.4rem + (36 / 320) * (100vw - 76.8rem));
     margin-right: 2.4rem;
   }
-  .shows .card {
+  .shows__cards {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -ms-flex-wrap: initial;
         flex-wrap: initial;
     -webkit-box-align: initial;
@@ -706,32 +721,90 @@
     -webkit-box-pack: initial;
         -ms-flex-pack: initial;
             justify-content: initial;
+    width: calc(72rem + (84 / 320) * (100vw - 76.8rem));
+    margin: 0 auto;
+  }
+  .shows__cards .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
     width: 100%;
     margin: 0;
   }
-  .shows .card .venue {
+  .shows__cards .card .venue {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
     height: 6.6rem;
   }
-  .shows .card .location {
+  .shows__cards .card .location {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
     height: 6.6rem;
   }
-  .shows .card__label {
+  .shows__cards .card__label {
     display: none;
   }
-  .shows .card__text-title {
+  .shows__cards .card__text-title {
     font-size: 1.6rem;
     line-height: 2.4rem;
     margin-bottom: 0rem;
-    width: 22.4rem;
+    width: calc(22.4rem + (52 / 320) * (100vw - 76.8rem));
   }
-  .shows .card__text {
+  .shows__cards .card__text-title-alt {
+    width: 100%;
+  }
+  .shows__cards .card__text {
     font-size: 1.4rem;
     line-height: 2.2rem;
     margin-bottom: 0rem;
-    width: 12.4rem;
+    width: calc(12.4rem + (36 / 320) * (100vw - 76.8rem));
     margin-right: 2.4rem;
   }
-  .shows .card .button, .shows .shows__cards .card .button-alt, .shows__cards .shows .card .button-alt {
+  .shows__cards .card .button, .shows__cards .card .button-alt {
     width: 16rem;
     margin-left: auto;
   }
@@ -799,6 +872,48 @@
   .hero__song {
     margin-left: 6.4rem;
     margin-top: 4rem;
+  }
+
+  .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -ms-flex-item-align: initial;
+        align-self: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    padding: 4.8rem calc(50% - 54rem) 4rem;
+  }
+  .shows__header {
+    width: 80.4rem;
+  }
+  .shows__heading {
+    width: 27.6rem;
+  }
+  .shows__heading-alt {
+    width: 16rem;
+  }
+  .shows__cards {
+    width: 80.4rem;
+  }
+  .shows__cards .card__text-title {
+    width: 27.6rem;
+  }
+  .shows__cards .card__text-title-alt {
+    width: 100%;
+  }
+  .shows__cards .card__text {
+    width: 16rem;
   }
 
   .footer {
