@@ -1033,13 +1033,12 @@
   }
   .comments .form__list .button {
     width: 16rem;
-    margin-top: 2.4rem;
+  }
+  .comments .form__item {
+    margin-bottom: 2.4rem;
   }
   .comments .form__item #name, .comments .form__item #comment {
     padding: 0 1.6rem;
-  }
-  .comments .form__item--margin {
-    margin-top: 2.4rem;
   }
   .comments .form__item #comment {
     padding: 1.6rem;
@@ -1162,32 +1161,12 @@
     width: 34.4rem;
     height: 19.3rem;
   }
+
+  .comments {
+    padding: 0 calc(50% - 54rem);
+  }
 }
 @media (min-width: 1280px) {
-  .comments__title {
-    -ms-flex-item-align: initial;
-        align-self: initial;
-    width: 100%;
-  }
-  .comments .form {
-    width: 41.25vw;
-  }
-  .comments .form__item #name, .comments .form__item #comment {
-    width: 100%;
-  }
-  .comments .form__item #comment {
-    width: 100%;
-  }
-  .comments__cards {
-    width: 41.25vw;
-  }
-  .comments__cards .card {
-    width: 100%;
-  }
-  .comments__cards .card__body {
-    width: 36.796875vw;
-  }
-
   .footer {
     padding: 4.8rem 7.8125vw;
     -webkit-box-align: start;

@@ -721,18 +721,14 @@
 
                 .button {
                     width: 16rem;
-                    margin-top: 2.4rem;
                 }
             }
     
             &__item {
-    
+                margin-bottom: 2.4rem;
+
                 #name {
                     padding: 0 1.6rem;
-                }
-    
-                &--margin {
-                    margin-top: 2.4rem;
                 }
     
                 #comment {
@@ -883,6 +879,11 @@
             height: 19.3rem;
         }
     }
+
+    .comments {
+        padding: 0 calc(50% - 54rem);
+
+    }
 }
 
 // // Transition Queries to Smooth Tablet into Desktop Layout
@@ -1000,43 +1001,6 @@
 
 // Desktop Queries
 @include desktop {
-
-    .comments {
-    
-        &__title {
-            align-self: initial;
-            width: 100%;
-        }
-
-        .form {
-            width: 41.25vw;
-          
-            &__item {
-    
-                #name {
-                    width: 100%;
-                }
-    
-                #comment {
-                    width: 100%;
-                }
-            }
-        }
-    
-        &__cards {
-            width: 41.25vw;
-    
-            .card{
-                width: 100%;
-
-                &__body {
-                    width: 36.796875vw;
-                }
-            }
-        }
-    }
-    
-
     .footer {
         padding: 4.8rem 7.8125vw;
         align-items: flex-start;
