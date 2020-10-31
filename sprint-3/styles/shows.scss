@@ -70,23 +70,16 @@
 // Hero Banner Background & Container
 
 .hero {
-    @include flexing(flex, column, initial, initial, initial, initial);
+    @include flexing(flex, column, initial, initial, initial, space-between);
     background-image: url("../assets/images/hero.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
+    padding: calc(6.4rem + (32 / 448) * (100vw - 32rem)) calc(1.6rem + (8 / 448) * (100vw - 32rem));
     height: calc(47.2rem + (198 / 448) * (100vw - 32rem));
     width: 100%;
     z-index: 0;
-
-    // Hero Text Wrapper
-    .wrapper {
-        width: 100%;
-        position: relative;
-        z-index: 10;
-    }
 
     // Hero Banner Subheading
     &__subtitle {
@@ -95,6 +88,8 @@
         font-weight: 600;
         line-height: calc(#{$line-height-fs14px} + (10 / 448) * (100vw - 320px));
         width: 100%;
+        position: relative;
+        z-index: 10;
     }
 
     // Hero Banner Heading
@@ -105,11 +100,14 @@
         line-height: calc(#{$line-height-fs36px} + (24 / 448) * (100vw - 32rem));
         width: calc(28.8rem + (241 / 448) * (100vw - 32rem));
         position: relative;
+        z-index: 10;
     }
 
     &__song {
-        width: calc(288px + 0.330357142 * (100vw - 320px));
-        height: calc(116px + 0.066964285 * (100vw - 320px));
+        width: calc(288px + (148 / 448) * (100vw - 320px));
+        height: calc(116px + (30 / 448) * (100vw - 320px));
+        position: relative;
+        z-index: 10;
         position: relative;
         z-index: 10;
     }
