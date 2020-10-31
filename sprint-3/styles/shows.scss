@@ -226,16 +226,14 @@
 
 // Footer Info Section
 .footer {
+    @include flexing(flex, column, initial, initial, initial, initial);
     background-color: $color-background-alternate;
     width: 100%;
-    padding: 4.8rem 5vw;
-    @include flexing(flex, column, initial, initial, initial, initial);
-
+    padding: 4.8rem calc(1.6rem + (8 / 448) * (100vw - 32rem));
 
     // Social Media Banner
     .connect {
-        height: 3.6rem;
-        margin-bottom: 3.2rem;
+        width: 100%;
 
     // Get In Touch Heading
         &__title {
@@ -244,22 +242,22 @@
             line-height: $line-height-fs36px;
             font-weight: bold;
             color: $color-heading-alternate;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2.8rem;
         }
 
         // Social Media Icon Links
         &-social {
+            @include flexing(flex, initial, initial, initial, initial, space-between);
+            width: 12.4rem;
             height: 2rem;
-            @include flexing(flex, initial, initial, initial, initial, initial);
+            margin-bottom: 2.8rem;
 
             &__link {
-                height: 100%;
-
-                &--margin {
-                    margin: 0 3.2rem;
-                }
+                width: 2rem;
+                height: 2rem;
 
                 &-icon {
+                    width: 100%;
                     height: 100%;
                 }
             }
@@ -268,12 +266,16 @@
         // Logo Mobile Hidden Condition
         .logo {
             @include flexing(none, initial, initial, initial, initial, initial);
+            width: 12rem;
+            height: 2.4rem;
         }
     }
 
     // Contact Cards Container
     &__card {
         @include flexing(flex, initial, wrap, initial, initial, initial);
+        width: 100%;
+        margin-bottom: 1.6rem;
 
         // Contact Cards
         .info-card {
@@ -281,14 +283,13 @@
 
             // Card Owner and Company
             &__title {
-                width: 19.26rem;
                 font-size: $font-size-mobile-mdparagraph;
                 font-weight: 600;
                 line-height: $line-height-fs14px;
                 color: $color-heading-alternate;
 
                 &--margin {
-                    margin-top: 2.4rem;
+                    margin-bottom: 2.4rem;
                 }
             }
 
@@ -297,33 +298,28 @@
                 font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
                 color: $color-text-alternate;
-    
+
                 &--margin {
-                    margin-top: 2.4rem;
+                    margin-bottom: 2.4rem;
                 }
             }
 
             // Card Email  
             &__contact {
-                margin-top: 2.4rem;
                 font-size: $font-size-mobile-smparagraph;
                 line-height: $line-height-fs12px;
                 color: $color-text-alternate;
+                margin-bottom: 2.4rem;
             }
         }
     }
 
     // Copyright Section
     .copyright {
-        margin-top: 4rem;
-        width: 19.26rem;
-
-        //  Copyright Info Statement
-        &__description {
-            font-size: $font-size-mobile-smparagraph;
-            line-height: $line-height-fs12px;
-            color: $color-text-alternate;
-        }
+        width: 19.2rem;
+        font-size: $font-size-mobile-smparagraph;
+        line-height: $line-height-fs12px;
+        color: $color-text-alternate;
     }
 }
 
@@ -339,21 +335,26 @@
 
     .footer{
         .copyright {
-            width: 29.6rem;
+            width: 100%;
         }
     }
 }
 
 // Transition Queries to Unwrap Social Section Links
-@include mobile-tablet-transition(410px) {
+@include mobile-tablet-transition(437px) {
     .footer {
         .connect {
-            @include flexing(flex, initial, wrap, baseline, initial, flex-start);
-            margin-bottom: 3.2rem;
+            @include flexing(flex, initial, initial, baseline, initial, flex-start);
+            margin-bottom: 5.6rem;
 
             &__title {
                 margin-bottom: 0;
-                width: 24.5rem;
+                width: 25.2rem;
+            }
+
+            &-social {
+                margin-bottom: 0;
+                margin-left: 2.4rem;
             }
         }
     }
@@ -380,6 +381,27 @@
     }
 }
 
+// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+@include mobile-tablet-transition(719px) {
+    .footer {
+        &__card {
+            margin-bottom: 4rem;
+
+            // Contact Cards
+            .info-card {
+
+                &--margin {
+                    margin: 0 calc(0rem + (24 / 49) * (100vw - 71.9rem)) 0 calc(0rem + (24 / 49) * (100vw - 71.9rem));
+                }
+    
+                // Card Email  
+                &__contact {
+                   margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
 
 // Tablet Layout Queries
 @include tablet {
@@ -501,17 +523,9 @@
     }
     
     .footer {
-        padding: 4.8rem 3.125vw;
+        padding: 4.8rem 2.4rem;
 
         .connect {
-
-            &__title {
-                width: 25.2rem;
-            }
-
-            &-social {
-                margin-left: 2.4rem;
-            }
 
             .logo {
                 display: flex;
@@ -520,24 +534,17 @@
         }
 
         &__card {
-            display: flex;
-            margin-top: 2.4rem;
 
             .info-card {
-                width: 22.4rem;
+                width:  calc(22.4rem + (28 / 360) * (100vw - 76.8rem));
     
-                &--margin-left {
-                        margin-left: 2.4rem;
+                &--margin {
+                        margin: 0 2.4rem;
                     }
                 
                 &__title {
-                    width: 22.4rem;
                     font-size: $font-size-desktop-lgparagraph;
                     line-height: $line-height-fs16px;
-
-                    &--margin {
-                        margin-top: 0;
-                    }
                 }
 
                 &__description {
@@ -553,11 +560,8 @@
         }
 
         .copyright {
-            &__description {
-                font-size: $font-size-desktop-smparagraph;
-                line-height: $line-height-fs14px-alt;
-                width: 34.8rem;
-            }
+            font-size: $font-size-desktop-smparagraph;
+            line-height: $line-height-fs14px-alt;
         }
     }
 }
@@ -618,6 +622,16 @@
     .nav {
         padding: 0 calc(50% - 54rem);
     }
+
+    .footer {
+        padding: 4.8rem calc(50% - 54rem);
+
+        &__card {
+            .info-card {
+                width: 25.2rem;
+            }
+        }
+    }
 }
 
 // Transition Queries to Smooth Tablet into Desktop Layout
@@ -657,26 +671,6 @@
             margin-top: 0;
         }
     }    
-
-    .footer {
-        align-items: center;
-
-        .connect {
-             width: 108rem;
-        }
-
-        &__card {
-            width: 108rem;
-
-            .info-card {
-            width: 19.44vw;
-            }
-        }
-
-        .copyright {
-            width: 108rem;
-        }   
-    }
 }
 
 // Desktop Queries
@@ -707,26 +701,4 @@
             margin-right: auto;
         }
     } 
-
-    .footer {
-        padding: 4.8rem 7.8125vw;
-        align-items: flex-start;
-
-        .connect {
-            width: 100%;
-        }
-
-        &__card {
-            width: 100%;
-            .info-card {
-                width: 25.2rem;
-            }
-        }
-
-        .copyright {
-            &__description {
-                width: 36.8rem;
-            }
-        }
-    }
 }
