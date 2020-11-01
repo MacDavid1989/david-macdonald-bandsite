@@ -55,6 +55,7 @@ const postNewComment = () => {
 const deleteComment = (id) => {
 	axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + apiKey)
 	.then(response => {
+		comments.innerHTML = '';
 		renderComments();
 	})
 	.catch(error => console.error(error));
@@ -64,7 +65,7 @@ const deleteComment = (id) => {
 const likeComment = (id) => {
 	axios.put('https://project-1-api.herokuapp.com/comments/' + id + '/like?api_key=' + apiKey)
 	.then(response => {
-		renderComments();
+		document.getElementById(`${id}`).innerText = `${response.data.likes}`;
 	})
 	.catch(error => console.error(error));
 };
