@@ -256,7 +256,6 @@
                 font-size: calc(#{$font-size-mobile-mdparagraph} + (2 / 448) * (100vw - 32rem));
                 line-height: calc(#{$line-height-fs14px} + (2 / 448) * (100vw - 32rem));
                 font-weight: 600;
-                word-break: break-all;
             }
     
             &__label {
@@ -264,8 +263,6 @@
                 line-height: $line-height-fs14px;
                 font-weight: 600;
                 color: $color-text-label;
-                min-width: 12.5rem;
-                word-wrap: none;
             }
     
             &__text {

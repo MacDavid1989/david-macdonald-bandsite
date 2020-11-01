@@ -538,15 +538,12 @@
   font-size: calc(1.4rem + (2 / 448) * (100vw - 32rem));
   line-height: calc(2.2rem + (2 / 448) * (100vw - 32rem));
   font-weight: 600;
-  word-break: break-all;
 }
 .comments__cards .card__label {
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 600;
   color: #AFAFAF;
-  min-width: 12.5rem;
-  word-wrap: none;
 }
 .comments__cards .card__text {
   width: 100%;
