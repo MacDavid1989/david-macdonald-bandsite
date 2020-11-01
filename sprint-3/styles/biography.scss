@@ -11,15 +11,15 @@
     color: $color-text-base;
 }
 
-// Header Display 
+// Header 
 .header {
     @include flexing(flex, column, initial, initial, initial, initial);
 }
 
-// Header Navigation
+// Navigation
     @include nav-mobile;
 
-// Spacer To Position Content Beneath Nav
+// Spacer
 .spacer {
     width: 100%;
     height: 8rem;
@@ -28,7 +28,7 @@
 // Hero Banner
     @include hero-mobile("../assets/images/hero.jpg");
     .hero {
-          // Hero Banner Heading
+          // Hero Banner Title
           &__title {
             color: $color-heading-alternate;
             font-size: calc(#{$font-size-mobile-hero} + (36 / 448) * (100vw - 32rem));
@@ -40,34 +40,32 @@
         }
     }
 
-// Biography About Quote Card
+// Biography Quote Section
 .biography-card {
     @include flexing(flex, column, initial, initial, initial, initial);
     width: 100%;
     margin-top: calc(3.2rem + (16 / 448) * (100vw - 32rem));
     padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
 
-    // Card Heading
     &__title {
         font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
         line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
         font-weight: bold;
     }
 
-    // Card Image
     &__image {
         margin: calc(2.4rem + (24 / 448) * (100vw - 32rem)) 0;
         width: 100%;
         height: calc(14.5rem + (217 / 448) * (100vw - 32rem));
     }
 
-    // Card Quote
+    // Biography Quote
     &__text {
         font-size: calc(#{$font-size-mobile-lgparagraph} + (8 / 448) * (100vw - 32rem));
         font-weight: 600;
         line-height: calc(#{$line-height-fs16px} + (8 / 448) * (100vw - 32rem));
 
-    // Card Author
+    // Quote Author
         &-speaker {
             font-size: calc(#{$font-size-mobile-mdparagraph} + (2 / 448) * (100vw - 32rem));
             line-height: calc(#{$line-height-fs14px} + (2 / 448) * (100vw - 32rem));
@@ -76,26 +74,24 @@
     }
 }
 
-// Written Biography Section
+// Biography Section
 .biography {
     @include flexing(flex, column, initial, initial, initial, initial);
     margin: calc(4rem + (16 / 448) * (100vw - 32rem)) 0 calc(4rem + (8 / 448) * (100vw - 32rem));
     padding: 0 calc(1.6rem + (8 / 448) * (100vw - 32rem));
     width: 100%;
 
-    // Biography Heading
     &__title {
         font-size: calc(#{$font-size-mobile-smheading} + (8 / 448) * (100vw - 32rem));
         line-height: calc(#{$line-height-fs16px} + (8 / 448) * (100vw - 32rem));
         font-weight: 600;
     }
 
-    // Biography Tex Container
+    // Biography Text Container
     &__content {
         width: 100%;
     }
 
-    // Biography Paragraphs
     &__text {
         font-size: calc(#{$font-size-mobile-smparagraph} + (2 / 448) * (100vw - 32rem));
         line-height: calc(#{$line-height-fs12px} + (2 / 448) * (100vw - 32rem));
@@ -112,7 +108,6 @@
     padding: calc(3.2rem + (16 / 448) * (100vw - 32rem)) calc(1.6rem + (8 / 448) * (100vw - 32rem)) 4rem;
 
 
-    // Gallery Heading
     &__title {
         font-size: calc(#{$font-size-mobile-lgheading} + (12 / 448) * (100vw - 32rem));
         line-height: calc(#{$line-height-fs24px} + (12 / 448) * (100vw - 32rem));
@@ -125,7 +120,6 @@
         width: 100%;
     }
 
-    // Gallery Photos & Photo States
     &__image {
         margin-top: calc(1.6rem + (8 / 448) * (100vw - 32rem));
         width: 100%;
@@ -153,6 +147,7 @@
         width: 100%;
     }
 
+    // Comments Form
     .form {
         @include flexing(flex, initial, initial, initial, initial, initial);
         width: 100%;
@@ -166,6 +161,7 @@
             margin-top: 2rem
         }
 
+        // Form Inputs and Button Container
         &__list {
             margin-left: calc(1.6rem + (4 / 448) * (100vw - 32rem));
             width: calc(100% - (4.8rem + calc(1.6rem + (4 / 448) * (100vw - 32rem))));
@@ -191,6 +187,7 @@
             }
         }
 
+        // Form Inputs And Label Container
         &__item {
             @include flexing(flex, column, initial, initial, initial, initial);
             margin-bottom: calc(1.6rem + (8 / 448) * (100vw - 32rem));
@@ -225,10 +222,12 @@
         }
     }
 
+    // Comments Container
     &__cards {
         @include flexing(flex, column, initial, initial, initial, initial);
         width: 100%;
        
+        // Comment
         .card{
             @include flexing(flex, initial, initial, initial, initial, initial);
             border-bottom: 0.1rem solid $color-divider;
@@ -241,23 +240,27 @@
                 border-radius: 50%;
             }
 
+            // Comment Heading and Text Container
             &__body {
                 width: calc(100% - 5.8rem);
                 margin-left: 1.6rem;
             }
 
+            // Name and Date Container
             &__heading {
                 @include flexing(flex, initial, initial, initial, initial, space-between);
                 width: 100%;
                 margin-bottom: 1.6rem;
             }
 
+            // Name
             &__text-title {
                 font-size: calc(#{$font-size-mobile-mdparagraph} + (2 / 448) * (100vw - 32rem));
                 line-height: calc(#{$line-height-fs14px} + (2 / 448) * (100vw - 32rem));
                 font-weight: 600;
             }
-    
+
+            // Date
             &__label {
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
@@ -272,6 +275,7 @@
                 margin-bottom: 1.6rem;
             } 
 
+            // Like and Delete Buttons Container
             &__button-wrapper {
                 @include flexing(flex, initial, initial, flex-start, initial, space-between);
                 
@@ -312,20 +316,20 @@
     }
 }
 
-// Footer Info Section
+// Footer Section
 @include footer-mobile;
 
-// Transition Queries to Unwrap Copyright for New Spacing
+// Unwrap Copyright
 @include mobile-tablet-transition(330px) {
    @include footer-mobile330;
 }
 
-// Transition Queries to Unwrap Social Section Links
+// Unwrap Social Section Links
 @include mobile-tablet-transition(437px) {
    @include footer-mobile437;
 }
 
-// Transition Queries to Ease Mobile into Tablet Layout
+// Point at which Widths reach Tablet size prior to Tablet breakpoint
 @include mobile-tablet-transition(561px) {
     .comments {
     
@@ -346,7 +350,7 @@
     }
 }
 
-// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+// Point at which mobile mockup content widths can now be aligned side by side
 @include mobile-tablet-transition(644px) {
     .biography{
         &__content {
@@ -378,12 +382,12 @@
     }
 }
 
-// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+// Change margins to match Tablet layout prior to reaching Tablet breakpoint
 @include mobile-tablet-transition(719px) {
     @include footer-mobile719;
 }
 
-// Tablet Layout Queries
+// Tablet breakpoint
 @include tablet {
     @include nav-tablet;
 
@@ -483,7 +487,6 @@
         }
     }
 
-    // Comments Section
     .comments {
         margin: 4.8rem 0 4rem;
         padding: 0 2.4rem;
@@ -540,6 +543,8 @@
     @include footer-tablet;
 }
 
+// Breakpoint where all content width reaches Desktop mockup size before Desktop breakpoint
+// Desktop Breakpoint removed as padding growth matches desktop mockup at 1280
 @include tablet-desktop-transition(1128px) {
     @include nav-desktop;
 
