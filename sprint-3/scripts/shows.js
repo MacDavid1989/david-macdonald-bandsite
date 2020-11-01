@@ -15,7 +15,6 @@ const renderShows = () => {
 	const apiKey = getApiKey();
 	axios.get('https://project-1-api.herokuapp.com/showdates?api_key=' + apiKey)
 	.then(response => {
-        console.log(response.data)
 		return response.data;
 	})	
 	.then(comments => {

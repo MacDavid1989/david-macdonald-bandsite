@@ -1,5 +1,6 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
+@use './partials/nav-mixins' as *;
 
 // Global Rule-set
 *, *::before, *::after {
@@ -14,52 +15,7 @@
 }
 
 // Header Navigation
-.nav {
-    @include flexing(flex, column, initial, center, initial, flex-end);
-    background-color: $color-background-alternate;
-    width: 100%;
-    height: 8rem;
-    position: fixed;
-    z-index: 100;
-
-    // Navigation Logo Link Container
-    &__logo-link {
-        @include flexing(flex, initial, initial, center, initial, center);
-        margin-bottom: 1.6rem;
-        width: 12rem;
-        height: 2.4rem;
-    }
-
-    // Navigation Logo
-    &__logo {
-        width: 100%;
-        height: 100%;
-    }
-
-    // Navigation Link Container
-    &__list {
-        @include flexing(flex, initial, initial, initial, initial, space-evenly);
-        width: 100%;
-        height: 2.4rem;
-    }
-
-    // Navigation Links
-    &__link {
-        @include flexing(flex, initial, initial, flex-start, initial, center);
-        text-decoration: none;
-        height: 100%;
-        width: 100%;
-        font-size: $font-size-header;
-        color: $color-text-alternate;
-
-        // Navigation Link Hover State and Current Page State
-        &:hover, &-current {
-            color: $color-text-hover;
-            font-weight: 600;
-            border-bottom: $color-text-hover solid 0.4rem;
-        }
-    }
-}
+    @include nav-mobile;
 
 // Spacer To Position Content Beneath Nav
 .spacer {
@@ -585,30 +541,7 @@
 
 // Tablet Layout Queries
 @include tablet {
-    .nav {
-        @include flexing(flex, initial, initial, center, initial, flex-start);
-        padding: 0 2.4rem;
-
-        &__logo-link{
-            margin-bottom: 0;
-        }
-
-        &__list {
-        @include flexing(flex, initial, initial, center, initial, flex-start);
-            height: 100%;
-            width: 27.2rem;
-        }
-
-        &__link {
-        @include flexing(flex, initial, initial, center, initial, center);
-            margin-left: 5.6rem;
-            width: 8rem;
-
-            &-current {
-                border-top: 0.4rem solid #323232;
-            }
-        }
-    }
+    @include nav-tablet;
 
     .hero {
         height: calc(40rem + (270 / 360) * (100vw - 76.8rem));
@@ -805,9 +738,7 @@
 }
 
 @include tablet-desktop-transition(1128px) {
-    .nav {
-        padding: 0 calc(50% - 54rem);
-    }
+    @include nav-desktop;
 
     .hero {
         height: 67rem;
