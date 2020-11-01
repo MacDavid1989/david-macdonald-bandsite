@@ -12,40 +12,37 @@
     <header class="header">
         <!-- Header Navigation -->
         <nav class="nav">
-            <!-- Navigation Logo Link -->
+            <!-- Navigation Logo -->
             <a class="nav__logo-link" href="./biography.html">
-                <img class="nav__logo" src="../assets/logo/Logo-bandsite.svg"alt="">
+                <img class="nav__logo" src="../assets/logo/Logo-bandsite.svg" alt="">
             </a>
-            <!-- Navigation Link Container Excluding Logo -->
+            <!-- Navigation Links -->
             <div class="nav__list">
                 <a class="nav__link nav__link-current" href="./biography.html">Biography</a>
                 <a class="nav__link" href="./shows.html">Shows</a>
             </div>
         </nav>
-        <!-- Content Spacer To Position Hero Fully Below Nav -->
+        <!-- Spacer Div to position Hero below Nav -->
         <div class="spacer"></div>
         <!-- Hero Banner -->
         <div class="hero">
-            <!-- Hero Banner Heading -->
-                <h1 class="hero__title">Gaspard Auge & Xavier de Ronsay</h1>
+            <h1 class="hero__title">Gaspard Auge & Xavier de Ronsay</h1>
         </div>
     </header>
     <main class="main">
-        <!-- Upper Biography Section Card Container -->
+        <!-- About Biography Quote Section -->
         <div class="biography-card">
             <h2 class="biography-card__title">About The Musicians</h2>
             <img class="biography-card__image" src="../assets/images/musicians.jpg" alt="">
             <blockquote class="biography-card__text">
                 "We are more comfortable with not fighting what comes naturally. Before we might have thought, 'We need
-                to
-                be smarter than this'"
+                to be smarter than this'"
             </blockquote>
             <p class="biography-card__text biography-card__text-speaker">- Xavier de Ronsay</p>
         </div>
-        <!-- Biography Written Paragraph Section -->
+        <!-- Biography Section -->
         <div class="biography">
             <h3 class="biography__title">Xavier de Ronsay & Gaspard Augé</h3>
-            <!-- Biography Paragraph Container -->
             <div class="biography__content">
                 <p class="biography__text biography__text--margin">
                     Xavier De Ronsay and Gaspard Augé had a few
@@ -75,11 +72,9 @@
                 </p>
             </div>
         </div>
-        <!-- Photo Gallery -->
+        <!-- Photo Gallery Section -->
         <div class="gallery">
-            <!-- Photo Gallery Heading -->
             <h2 class="gallery__title">Photo Gallery</h2>
-            <!-- Photo Gallery Image Container -->
             <div class="gallery__content">
                 <img class="gallery__image" src="../assets/images/Photo-gallery-1.jpg" alt="">
                 <img class="gallery__image" src="../assets/images/Photo-gallery-2.jpg" alt="">
@@ -92,43 +87,46 @@
                 <img class="gallery__image" src="../assets/images/Photo-gallery-9.jpg" alt="">
             </div>
         </div>
+        <!-- Comments Section -->
         <div class="comments">
             <h2 class="comments__title">Join the Conversation</h2>
+            <!-- Comments Section Form -->
             <form class="form" action="">
                 <img class="form__image" src="../assets/images/mohan-muruge.jpg">
                 <div class="form__list">
+                    <!-- Form Name Input -->
                     <div class="form__item">
                         <label class="form__label" for="name">NAME</label>
                         <input type="text" id="name" name="userName" placeholder="Enter your name" required>
                     </div>
+                    <!-- Form Comment Input -->
                     <div class="form__item">
                         <label class="form__label" for="comment">COMMENT</label>
                         <textarea id="comment" name="userComment" placeholder="Add a new comment" required></textarea>
                     </div>
+                    <!-- Form Submit Button -->
                     <input class="button" type="submit" value="COMMENT"></input>
                 </div>
             </form>
+            <!-- Comments Section Cards -->
             <div class="comments__cards">
             </div>
         </div>
     </main>
     <footer class="footer">
-        <!-- Get In Touch Social Section Container -->
+        <!-- Social Section Header -->
         <div class="connect">
             <h2 class="connect__title">Get In Touch</h2>
-            <!-- Social Links Container -->
+                <!-- Social Section Links -->
             <div class="connect-social">
-                <!-- Instagram Link -->
                 <a class="connect-social__link" href="https://www.instagram.com/"><img class="connect-social__link-icon"
                         src="../assets/icons/svg/icon-instagram.svg" alt=""></a>
-                <!-- Facebook Link -->
-                <a class="connect-social__link" href="https://www.facebook.com/"><img
-                        class="connect-social__link-icon" src="../assets/icons/svg/icon-facebook.svg" alt=""></a>
-                <!-- Twitter Link -->
+                <a class="connect-social__link" href="https://www.facebook.com/"><img class="connect-social__link-icon"
+                        src="../assets/icons/svg/icon-facebook.svg" alt=""></a>
                 <a class="connect-social__link" href="https://twitter.com/"><img class="connect-social__link-icon"
                         src="../assets/icons/svg/icon-twitter.svg" alt=""></a>
             </div>
-            <!-- Logo In Footer -->
+            <!-- Footer Logo -->
             <img class="logo" src="../assets/logo/Logo-bandsite.svg" alt="">
         </div>
         <div class="footer__card">
@@ -167,8 +165,9 @@
             </div>
         </div>
         <!-- Copyright Section -->
-            <p class="copyright">Copyright The Bees Knees © 2018 All Rights Reserved</p>    
-        </footer>
+        <p class="copyright">Copyright The Bees Knees © 2018 All Rights Reserved</p>
+    </footer>
+    <!-- Script Links -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../scripts/biography.js"></script>
 </body>
