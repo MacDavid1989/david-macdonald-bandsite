@@ -1,4 +1,4 @@
-// Method GET to retrieve api key from object returned in response from /register route
+// Method GET used to retrieve api key from object returned in response from /register route
 // const getApiKey = () => {
 // 	axios.get('https://project-1-api.herokuapp.com/register')
 // 	.then(response => {
@@ -18,9 +18,6 @@ const apiKey =  'f8f9d53b-d07d-4b66-b446-e336637dd9fd';
 
 // empty object that will be used to store a new comment
 const newComment = {}; 
-
-// event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
 
 // retrieves the comment objects array and then renders the objects to the browser
 const renderComments = () => {
@@ -58,23 +55,24 @@ const postNewComment = () => {
 const deleteComment = (id) => {
 	axios.delete('https://project-1-api.herokuapp.com/comments/' + id + '?api_key=' + apiKey)
 	.then(response => {
-		comments.innerHTML = '';
 		renderComments();
 	})
 	.catch(error => console.error(error));
 };
 
-// delete comment 
+// like comment 
 const likeComment = (id) => {
 	axios.put('https://project-1-api.herokuapp.com/comments/' + id + '/like?api_key=' + apiKey)
 	.then(response => {
-		comments.innerHTML = '';
 		renderComments();
 	})
 	.catch(error => console.error(error));
 };
 
 renderComments();
+
+// event listener for when the form button is pressed and the info is submitted
+form.addEventListener('submit', formHandler);
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -94,7 +92,6 @@ function formHandler(e) {
 
 	postNewComment();
 };
-
 
 // function that creates comment section cards
 function displayComments (comment) {
@@ -158,12 +155,12 @@ function displayComments (comment) {
 	likeEl.innerText = comment.likes;
 	wrapperEl.appendChild(likeEl);
 
-	 // create Delete Button
-	 const deleteEl = document.createElement('div');
-	 deleteEl.classList.add('delete');
-	 deleteEl.setAttribute('id', comment.id);
-	 deleteEl.innerText = "Delete"
-	 wrapperEl.appendChild(deleteEl);
+	// create Delete Button
+	const deleteEl = document.createElement('div');
+	deleteEl.classList.add('delete');
+	deleteEl.setAttribute('id', comment.id);
+	deleteEl.innerText = "Delete"
+	wrapperEl.appendChild(deleteEl);
 };
 
 
