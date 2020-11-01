@@ -525,7 +525,7 @@
   color: #FAFAFA;
 }
 
-@media (min-width: 328px) {
+@media (min-width: 330px) {
   .footer .copyright {
     width: 100%;
   }
