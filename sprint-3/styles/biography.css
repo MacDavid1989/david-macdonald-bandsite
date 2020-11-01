@@ -178,15 +178,6 @@
   width: 100%;
   z-index: 0;
 }
-.hero__title {
-  color: #FFF;
-  font-size: calc(2.4rem + (36 / 448) * (100vw - 32rem));
-  font-weight: bold;
-  line-height: calc(3.2rem + (36 / 448) * (100vw - 32rem));
-  width: calc(21rem + (293 / 448) * (100vw - 32rem));
-  position: relative;
-  z-index: 10;
-}
 .hero::after {
   content: "";
   display: block;
@@ -197,6 +188,16 @@
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.hero__title {
+  color: #FFF;
+  font-size: calc(2.4rem + (36 / 448) * (100vw - 32rem));
+  font-weight: bold;
+  line-height: calc(3.2rem + (36 / 448) * (100vw - 32rem));
+  width: calc(21rem + (293 / 448) * (100vw - 32rem));
+  position: relative;
+  z-index: 10;
 }
 
 .biography-card {
