@@ -133,14 +133,12 @@
         &__card {
             margin-bottom: 4rem;
 
-            // Contact Cards
             .info-card {
 
                 &--margin {
                     margin: 0 calc(0rem + (24 / 49) * (100vw - 71.9rem)) 0 calc(0rem + (24 / 49) * (100vw - 71.9rem));
                 }
     
-                // Card Email  
                 &__contact {
                    margin-bottom: 0;
                 }
