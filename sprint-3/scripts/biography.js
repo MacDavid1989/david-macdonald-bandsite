@@ -95,28 +95,29 @@ function formHandler(e) {
 	postNewComment();
 };
 
+// get request to kitty api to render a new kitty image each time comments are rendered
+const getKitty = (id) => {
+	axios.get('https://api.thecatapi.com/v1/images/search')
+	.then(response => {
+		// create Card Image
+		const imageEl = document.createElement('img');
+		imageEl.classList.add('card__image');
+		imageEl.setAttribute('src', response.data[0].url);
+		document.getElementById(`card-${id}`).prepend(imageEl);
+	})
+	.catch(error => console.error(error));
+};
+
 // function that creates comment section cards
 function displayComments (comment) {
 
 	// create Card
 	const cardEl = document.createElement('div');
 	cardEl.classList.add('card');
+	cardEl.setAttribute('id', `card-${comment.id}`)
 	comments.prepend(cardEl);
-
-	// get request to kitty api to render a new kitty image each time comments are rendered
-	const getKitty = () => {
-		axios.get('https://api.thecatapi.com/v1/images/search')
-		.then(response => {
-			// create Card Image
-			const imageEl = document.createElement('img');
-			imageEl.classList.add('card__image');
-			imageEl.setAttribute('src', response.data[0].url);
-			cardEl.prepend(imageEl);
-		})
-		.catch(error => console.error(error));
-	};
 	
-	getKitty();
+	getKitty(comment.id);
 
 	// create Card Body
 	const bodyEl = document.createElement('div');
@@ -165,7 +166,6 @@ function displayComments (comment) {
 	deleteEl.innerText = "Delete"
 	wrapperEl.appendChild(deleteEl);
 };
-
 
 // returns a string stating how long since the comment was first submitted
 function convertTime(timestamp) {
