@@ -10,7 +10,7 @@
         position: fixed;
         z-index: 100;
     
-        // Navigation Logo Link Container
+        // Navigation Logo Container
         &__logo-link {
             @include flexing(flex, initial, initial, center, initial, center);
             margin-bottom: 1.6rem;
@@ -24,14 +24,14 @@
             height: 100%;
         }
     
-        // Navigation Link Container
+        // Navigation Links Container
         &__list {
             @include flexing(flex, initial, initial, initial, initial, space-evenly);
             width: 100%;
             height: 2.4rem;
         }
     
-        // Navigation Links
+        // Navigation Link
         &__link {
             @include flexing(flex, initial, initial, flex-start, initial, center);
             text-decoration: none;
