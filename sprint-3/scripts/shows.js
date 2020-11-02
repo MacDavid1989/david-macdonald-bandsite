@@ -31,6 +31,16 @@ const renderShows = () => {
 
 renderShows();
 
+// event listener that calls buttonHandler function if the element clicked within the shows section has a class of button
+shows.addEventListener('click', (e) => {
+    if (e.target.className === 'button') {
+      buttonHandler();
+    } else if (e.target.className === 'button-alt') {
+        buttonHandlerAlt();
+    }
+}
+);
+
 // function that creates show cards
 function displayShows (show) {
     
@@ -138,13 +148,3 @@ function displayTickets() {
     buttonEl.innerText = 'ALL SHOWS';
     cardEl.appendChild(buttonEl);
 }
-
-// event listener that calls buttonHandler function if the element clicked within the shows section has a class of button
-shows.addEventListener('click', (e) => {
-        if (e.target.className === 'button') {
-          buttonHandler();
-        } else if (e.target.className === 'button-alt') {
-            buttonHandlerAlt();
-        }
-    }
-);
