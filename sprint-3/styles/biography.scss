@@ -28,7 +28,6 @@
 // Hero Banner
     @include hero-mobile("../assets/images/hero.jpg");
     .hero {
-          // Hero Banner Title
           &__title {
             color: $color-heading-alternate;
             font-size: calc(#{$font-size-mobile-hero} + (36 / 448) * (100vw - 32rem));

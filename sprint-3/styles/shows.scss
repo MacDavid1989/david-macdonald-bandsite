@@ -12,28 +12,27 @@
     color: $color-text-base;
 }
 
-// Header Display 
+// Header
 .header {
     @include flexing(flex, column, initial, initial, initial, initial);
 }
 
-// Header Navigation
+// Header
     @include nav-mobile;
 
-// Spacer To Position Content Beneath Nav
+// Spacer
 .spacer {
     width: 100%;
     height: 8rem;
 }
 
-// Hero Banner Background & Container
+// Hero Banner
 @include hero-mobile("../assets/images/showshero.jpg");
 .hero {
     @include flexing(flex, column, initial, initial, initial, space-between);
     padding: calc(6.4rem + (32 / 448) * (100vw - 32rem)) calc(1.6rem + (8 / 448) * (100vw - 32rem));
     height: calc(47.2rem + (198 / 448) * (100vw - 32rem));
 
-    // Hero Banner Subheading
     &__subtitle {
         color: $color-heading-alternate;
         font-size: calc(#{$font-size-mobile-mdparagraph} + (10 / 448) * (100vw - 320px)); 
@@ -44,7 +43,6 @@
         z-index: 10;
     }
 
-    // Hero Banner Heading
     &__title {
         color: $color-heading-alternate;
         font-size: calc(#{$font-size-desktop-lgheading} + (24 / 448) * (100vw - 32rem));
@@ -78,14 +76,17 @@
         width: 27.6rem;
     }
 
+    // Tablet and Desktop Heading Banner
     &__header {
         display: none;
     }
 
+    // Shows List Container
     &__cards {
         @include flexing(flex, initial, wrap, initial, initial, center);
         width: 100%;
 
+        // Show
         .card{
             @include flexing(flex, column, initial, initial, initial, initial);
             width: calc(28.8rem - ( 128 / 448) * (100vw - 32rem));  
@@ -93,11 +94,13 @@
             padding: 1.6rem 0;
             margin: 0 0.8rem;
 
+            // Show Venue Container
             .venue {
                 @include flexing(flex, column, initial, initial, initial, initial);
                 height: 10rem;
             }
 
+            // Show Location Container
             .location {
                 @include flexing(flex, column, initial, initial, initial, initial);
                 height: 10rem;
@@ -112,6 +115,7 @@
                 width: 16rem;
             }
 
+            // Show Date
             &__text-title {
                 font-size: $font-size-mobile-mdparagraph;
                 line-height: $line-height-fs14px;
@@ -120,6 +124,7 @@
                 width: 16rem;
             }
 
+            // Tickets Message
             &__text-title-alt {
                 width: 100%;
             }
@@ -131,6 +136,7 @@
                 width: 16rem;
             }
 
+            // Buy Tickets Button
             .button {
                 @include flexing(flex, initial, initial, center, initial, center);
                 border-radius: 0.4rem;
@@ -146,6 +152,7 @@
                 outline-style: none;
             }
 
+            // All Shows Button
             .button-alt {
                 @extend .button;
             }
@@ -161,25 +168,25 @@
     }
 }
 
-// Footer Info Section
+// Footer Section
 @include footer-mobile;
 
-// Transition Queries to Unwrap Copyright for New Spacing
+// Unwrap Copyright
 @include mobile-tablet-transition(330px) {
     @include footer-mobile330;
 }
 
-// Transition Queries to Unwrap Social Section Links
+// Unwrap Social Section Links
 @include mobile-tablet-transition(437px) {
     @include footer-mobile437;
 }
 
-// Transition Queries to Wrap Sections and Ease Mobile into Tablet Layout
+// Change margins to match Tablet layout prior to reaching Tablet breakpoint
 @include mobile-tablet-transition(719px) {
     @include footer-mobile719;
 }
 
-// Tablet Layout Queries
+// Tablet breakpoint
 @include tablet {
     @include nav-tablet;
 
@@ -187,7 +194,6 @@
         padding: 9.6rem 2.4rem;
         height: 67rem;
 
-        // Hero Banner Subheading
         &__subtitle {
             font-size: $font-size-desktop-smheading; 
             font-weight: bold;
@@ -196,7 +202,6 @@
             margin-bottom: 4.8rem;
         }
     
-        // Hero Banner Heading
         &__title {
             font-size: $font-size-desktop-hero;
             line-height: $line-height-fs60px;
@@ -293,6 +298,8 @@
     @include footer-tablet;
 }
 
+// Breakpoint where all content width reaches Desktop mockup size before Desktop breakpoint
+// Desktop Breakpoint removed as padding growth matches desktop mockup at 1280
 @include tablet-desktop-transition(1128px) {
     @include nav-desktop;
 
