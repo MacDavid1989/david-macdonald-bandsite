@@ -108,22 +108,6 @@ function displayShows (show) {
     cardEl.appendChild(buttonEl);
 };
 
-// function to be invoked when buy tickets button is clicked
-function buttonHandler () {
-    // clears the shows section
-    shows.innerHTML = '';
-    // calls function to render ticket elements
-    displayTickets();
-};
-
-// function to be invoked when all shows button is clicked
-function buttonHandlerAlt () {
-    // clears the shows section
-    shows.innerHTML = '';
-    // calls function to render shows elements
-    renderShows();
-};
-
 // creates a card for tickets
 function displayTickets() {
     // create Card
@@ -149,3 +133,19 @@ function displayTickets() {
     buttonEl.innerText = 'ALL SHOWS';
     cardEl.appendChild(buttonEl);
 }
+
+// function to be invoked when buy tickets button is clicked
+function buttonHandler () {
+    // clears the shows section
+    shows.innerHTML = '';
+    // calls function to render ticket elements
+    displayTickets();
+};
+
+// function to be invoked when all shows button is clicked
+function buttonHandlerAlt () {
+    // clears the shows section
+    shows.innerHTML = '';
+    // calls function to render shows elements
+    renderShows();
+};
