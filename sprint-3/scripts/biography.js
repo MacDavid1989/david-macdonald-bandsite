@@ -41,7 +41,12 @@ const renderComments = () => {
 	.catch(error => console.error(error));
 };
 
-// post new comment object to server
+renderComments();
+
+// event listener for when the form button is pressed and the info is submitted
+form.addEventListener('submit', formHandler);
+
+// post new comment object to api
 const postNewComment = () => {
 	const header = {'Content-Type': 'application/json'};
 	axios.post('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey, newComment, header)
@@ -70,11 +75,6 @@ const likeComment = (id) => {
 	.catch(error => console.error(error));
 };
 
-renderComments();
-
-// event listener for when the form button is pressed and the info is submitted
-form.addEventListener('submit', formHandler);
-
 // function that deals with the form submission generated event object
 function formHandler(e) {
 	// prevents page reload upon submission
@@ -86,6 +86,7 @@ function formHandler(e) {
     // creates comment object key and sets it to the given value of the textarea element
     newComment.comment = e.target.userComment.value; 
 
+	// resets form inputs
 	form.reset();
 
     // clear comments list
@@ -102,6 +103,7 @@ function displayComments (comment) {
 	cardEl.classList.add('card');
 	comments.prepend(cardEl);
 
+	// get request to kitty api to render a new kitty image each time comments are rendered
 	const getKitty = () => {
 		axios.get('https://api.thecatapi.com/v1/images/search')
 		.then(response => {
