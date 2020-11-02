@@ -602,8 +602,8 @@
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  -webkit-mask-image: url(../assets/icons/);
-          mask-image: url(../assets/icons/);
+  -webkit-mask-image: url(../assets/icons/svg/heart.svg);
+          mask-image: url(../assets/icons/svg/heart.svg);
   height: 2rem;
   width: 2rem;
   margin-right: 1rem;
