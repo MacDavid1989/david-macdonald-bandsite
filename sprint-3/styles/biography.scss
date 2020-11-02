@@ -357,7 +357,7 @@
         }
 
         &__text {
-            width: calc(28.8rem + (60 / 124) * (100vw - 64.4rem));
+            width: calc((100% - 2.4rem) / 2);
 
             &:last-of-type{
                 margin-left: 2.4rem;
@@ -371,7 +371,7 @@
         }
 
         &__image {
-            width: calc(28.8rem + (60 / 124) * (100vw - 64.4rem));
+            width: calc((106.5% - 7.2rem) / 2);
             height: calc(16.2rem + (33.75 / 124) * (100vw - 64.4rem));
 
             &:nth-of-type(2n) {
@@ -423,7 +423,7 @@
             font-weight: bold;
             line-height: $line-height-fs24px;
             width: calc(72rem + (84 / 360) * (100vw - 76.8rem));
-            margin-left: calc(0rem + (92 / 360) * (100vw - 76.8rem));
+            margin-left: calc(0rem + (92 / 360) * (100vw - 76.8rem - 2.4rem));
 
             &-speaker {
                 margin-top: 4rem;
@@ -442,18 +442,17 @@
             font-size: $font-size-desktop-smheading;
             line-height: $line-height-fs24px;
             font-weight: bold;
-            margin-left: calc(0rem + (92 / 360) * (100vw - 76.8rem));
+            margin-left: calc(0rem + (92 / 360) * (100vw - 76.8rem - 2.4rem));
         }
-
         &__content {
             margin-top: 3.2rem;
         }
 
         &__text {
             font-size: $font-size-desktop-smparagraph;
-            width: calc(34.5rem + (75 / 360) * (100vw - 76.8rem));
+            width: calc(50.8% - 2.4rem - calc(0rem + (92 / 360) * (100vw - 76.8rem - 2.4rem)) - calc(0rem + (92 / 360) * (100vw - 76.8rem - 2.4rem)) / 2);
             line-height: $line-height-fs14px;
-            margin-left: calc(0rem + (92 / 360) * (100vw - 76.8rem));
+            margin-left: calc(0rem + (92 / 360) * (100vw - 76.8rem - 2.4rem));
             margin-top: 0;
 
             &:last-of-type{
@@ -473,7 +472,7 @@
 
         &__image {
             margin-top: 2.4rem;
-            width: calc(22.4rem + (120 / 360) * (100vw - 76.8rem));
+            width: calc((104.45% - 9.6rem)/3);
             height: calc(12.6rem + (67 / 360) * (100vw - 76.8rem));
 
             &:nth-of-type(2n) {
