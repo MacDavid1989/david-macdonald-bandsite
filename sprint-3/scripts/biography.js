@@ -75,6 +75,19 @@ const likeComment = (id) => {
 	.catch(error => console.error(error));
 };
 
+// get request to kitty api to render a new kitty image each time comments are rendered
+const getKitty = (id) => {
+	axios.get('https://api.thecatapi.com/v1/images/search')
+	.then(response => {
+		// create Card Image
+		const imageEl = document.createElement('img');
+		imageEl.classList.add('card__image');
+		imageEl.setAttribute('src', response.data[0].url);
+		document.getElementById(`card-${id}`).prepend(imageEl);
+	})
+	.catch(error => console.error(error));
+};
+
 // function that deals with the form submission generated event object
 function formHandler(e) {
 	// prevents page reload upon submission
@@ -93,19 +106,6 @@ function formHandler(e) {
 	comments.innerHTML = '';
 
 	postNewComment();
-};
-
-// get request to kitty api to render a new kitty image each time comments are rendered
-const getKitty = (id) => {
-	axios.get('https://api.thecatapi.com/v1/images/search')
-	.then(response => {
-		// create Card Image
-		const imageEl = document.createElement('img');
-		imageEl.classList.add('card__image');
-		imageEl.setAttribute('src', response.data[0].url);
-		document.getElementById(`card-${id}`).prepend(imageEl);
-	})
-	.catch(error => console.error(error));
 };
 
 // function that creates comment section cards
