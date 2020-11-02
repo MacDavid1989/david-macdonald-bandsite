@@ -1,18 +1,20 @@
+// Method GET used to retrieve api key from object returned in response from /register route
+// const getApiKey = () => {
+// 	axios.get('https://project-1-api.herokuapp.com/register')
+// 	.then(response => {
+// 		console.log(response.data.api_key);
+// 	})
+// 	.catch(error => console.error(error));
+// };
+
 // constant variable to contain div with class "shows__cards"
 const shows = document.querySelector('.shows__cards');
 
-// Method GET to retrieve api key from object returned in response from /register route
-const getApiKey = () => {
-	axios.get('https://project-1-api.herokuapp.com/register')
-	.then(response => {
-		return response.data.api_key;		
-	})
-	.catch(error => console.error(error));
-};
+// constant variable containing API Key generated through GET request from /register route
+const apiKey =  'f8f9d53b-d07d-4b66-b446-e336637dd9fd';
 
 // retrieves the comment objects array and then renders the objects to the browser
 const renderShows = () => {
-	const apiKey = getApiKey();
 	axios.get('https://project-1-api.herokuapp.com/showdates?api_key=' + apiKey)
 	.then(response => {
 		return response.data;
