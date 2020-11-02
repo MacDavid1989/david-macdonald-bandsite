@@ -13,14 +13,14 @@ const shows = document.querySelector('.shows__cards');
 // constant variable containing API Key generated through GET request from /register route
 const apiKey =  'f8f9d53b-d07d-4b66-b446-e336637dd9fd';
 
-// retrieves the comment objects array and then renders the objects to the browser
+// retrieves the shows dates objects array and then renders the shows list to the browser
 const renderShows = () => {
 	axios.get('https://project-1-api.herokuapp.com/showdates?api_key=' + apiKey)
 	.then(response => {
 		return response.data;
 	})	
-	.then(comments => {
-		comments.forEach(object => displayShows(object));
+	.then(shows => {
+		shows.forEach(object => displayShows(object));
 		const button = document.querySelectorAll('.delete');
 		button.forEach(element => {
 			element.addEventListener('click', (e)=> deleteComment(e.target.id));
@@ -31,7 +31,7 @@ const renderShows = () => {
 
 renderShows();
 
-// event listener that calls buttonHandler function if the element clicked within the shows section has a class of button
+// event listener that calls buttonHandler function if the element clicked within the shows section has a specific class
 shows.addEventListener('click', (e) => {
     if (e.target.className === 'button') {
       buttonHandler();
@@ -108,7 +108,7 @@ function displayShows (show) {
     cardEl.appendChild(buttonEl);
 };
 
-// function to be invoked when button is clicked
+// function to be invoked when buy tickets button is clicked
 function buttonHandler () {
     // clears the shows section
     shows.innerHTML = '';
@@ -116,6 +116,7 @@ function buttonHandler () {
     displayTickets();
 };
 
+// function to be invoked when all shows button is clicked
 function buttonHandlerAlt () {
     // clears the shows section
     shows.innerHTML = '';
