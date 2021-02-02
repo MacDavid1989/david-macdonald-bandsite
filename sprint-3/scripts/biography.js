@@ -1,7 +1,7 @@
 // Method GET used to retrieve api key from object returned in response from /register route
 // const getApiKey = () => {
-// 	axios.get('https://project-1-api.herokuapp.com/register')
-// 	.then(response => {
+	// 	axios.get('https://project-1-api.herokuapp.com/register')
+	// 	.then(response => {
 // 		console.log(response.data.api_key);
 // 	})
 // 	.catch(error => console.error(error));
@@ -18,6 +18,19 @@ const apiKey =  'f8f9d53b-d07d-4b66-b446-e336637dd9fd';
 
 // empty object that will be used to store a new comment
 const newComment = {}; 
+
+// get request to kitty api to render a new kitty image each time comments are rendered
+const getKitty = (id) => {
+	axios.get('https://api.thecatapi.com/v1/images/search')
+	.then(response => {
+		// create Card Image
+		const imageEl = document.createElement('img');
+		imageEl.classList.add('card__image');
+		imageEl.setAttribute('src', response.data[0].url);
+		document.getElementById(`card-${id}`).prepend(imageEl);
+	})
+	.catch(error => console.error(error));
+};
 
 // retrieves the comment objects array and then renders the objects to the browser
 const renderComments = () => {
@@ -73,20 +86,8 @@ const likeComment = (id) => {
 		document.getElementById(`${id}`).innerText = `${response.data.likes}`;
 	})
 	.catch(error => console.error(error));
-};
+};s
 
-// get request to kitty api to render a new kitty image each time comments are rendered
-const getKitty = (id) => {
-	axios.get('https://api.thecatapi.com/v1/images/search')
-	.then(response => {
-		// create Card Image
-		const imageEl = document.createElement('img');
-		imageEl.classList.add('card__image');
-		imageEl.setAttribute('src', response.data[0].url);
-		document.getElementById(`card-${id}`).prepend(imageEl);
-	})
-	.catch(error => console.error(error));
-};
 
 // function that deals with the form submission generated event object
 function formHandler(e) {
@@ -146,6 +147,7 @@ function displayComments (comment) {
 	dateEl.classList.add('card__label');
 	dateEl.innerText = convertTime(comment.timestamp);
 	headerEl.appendChild(dateEl);
+	console.log(comment.timestamp)
 
 	// create Card Buttons Wrapper
 	const wrapperEl = document.createElement('div');
